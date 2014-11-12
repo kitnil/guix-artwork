@@ -1,0 +1,15 @@
+Background Images
+=================
+
+The SVG files in this directory are intended to be used as backgrounds for
+different components of the GNU system like login managers and desktop
+environments. The backgrounds are available in different aspect ratios which
+are indicated in the file name. For example, "waves-16-9.svg" has an aspect
+ratio of 16:9.
+
+
+Copying
+-------
+
+See the file metadata for information about authors and copyright. If you are
+using Inkscape, you can access the Document metadata from the File menu.
