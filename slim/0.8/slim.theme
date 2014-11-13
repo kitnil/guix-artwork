@@ -1,6 +1,6 @@
 # Based on text04 theme for SLiM
 # by Johannes Winkelmann.
-# Modified by Ludovic Courtès <ludo@gnu.org.
+# Modified by Ludovic Courtès <ludo@gnu.org>.
 
 # Messages (ie: shutdown)
 msg_color               #FFFFFF
