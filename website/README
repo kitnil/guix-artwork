@@ -4,9 +4,21 @@ Website Graphics
 The SVG files in this directory are intended to be used as assets for GNU Guix
 and the Guix System Distribution (GuixSD) websites.
 
+- mockup.svg illustrates a homepage aimed at average users. This is for use
+  when GuixSD is getting closer to a production-ready system.
+- mockup-techie.svg illustrates a homepage aimed at skilled devs and sysadmins.
+  This is for use during the alpha phase of development.
+
 
 Copying
 -------
 
-See the file metadata for information about authors and copyright. If you are
-using Inkscape, you can access the Document metadata from the File menu.
+Public domain 2015 Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
+
+All the graphics in this directory are dedicated to the public domain, except
+for the Guix System Distribution logo, which can be used under the Creative
+Commons Attribution-ShareAlike 4.0 International License.
+
+You can find information about authors and copyright in the metadata of SVG
+files. If you are using Inkscape, you can access the Document metadata from
+the File menu.
