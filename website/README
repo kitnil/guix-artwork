@@ -1,9 +1,11 @@
 Website Graphics
 ================
 
-The SVG files in this directory are intended to be used as assets for GNU Guix
-and the Guix System Distribution (GuixSD) websites.
+The files in this directory are intended to be used as assets for the GuixSD
+website.
 
+- The www directory is an HTML implementation of the techie mockup. Links assume
+  "/software/guix" is the root directory of the website.
 - mockup.svg illustrates a homepage aimed at average users. This is for use
   when GuixSD is getting closer to a production-ready system.
 - mockup-techie.svg illustrates a homepage aimed at skilled devs and sysadmins.

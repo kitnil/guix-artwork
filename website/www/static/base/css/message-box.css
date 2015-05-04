@@ -1,0 +1,37 @@
+/*
+    Public domain 2015 Luis Felipe López Acevedo. All rights waived.
+    <felipe.lopez@openmailbox.org>
+   
+    NOTE  The default style is targeted at screens with a width less than
+          1024 pixels.
+*/
+
+.message-box {
+    background-image: url("../img/msg-info-bg.png");
+    background-position: -5px -5px;
+    background-repeat: no-repeat;
+    color: white;
+    font-size: 12px;
+    padding: 20px;
+}
+
+.message-box > a:link, .message-box > a:visited {
+    border-color: white;
+    border-style: none none dotted none;
+    border-width: thin;
+    color: white;
+    text-decoration: none;
+}
+
+.msg-info {
+    background-color: #5FBCD3;
+}
+
+.msg-warning {
+    background-color: #D35F5F;
+}
+
+.msg-label {
+    font-weight: bold;
+    padding-right: 10px;
+}

@@ -1,0 +1,19 @@
+/*
+    Public domain 2015 Luis Felipe López Acevedo. All rights waived.
+    <felipe.lopez@openmailbox.org>
+   
+    NOTE  The default style is targeted at screens with a width less than
+          1024 pixels.
+*/
+
+#footer-box {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+.metta {
+    color: #F4BB15;
+}
