@@ -321,9 +321,11 @@ lists")))))
     (lambda (port)
       (sxml->xml page port))))
 
-(define (export-web-site)
-  "Export the whole web site as HTML files created in the current directory."
+(define* (export-web-site #:optional (directory "."))
+  "Export the whole web site as HTML files created in DIRECTORY."
   (for-each (match-lambda
-              ((file page)
-               (export-web-page page file)))
+              ((filename page)
+               (export-web-page page (string-append directory
+						    file-name-separator-string
+						    filename))))
             %web-pages))
