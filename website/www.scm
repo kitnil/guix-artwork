@@ -1,5 +1,17 @@
 (define-module (www)
-  #:export (main-page))
+  #:use-module (www packages)
+  #:use-module (www download)
+  #:use-module (www donate)
+  #:use-module (www about)
+  #:use-module (www contribute)
+  #:use-module (www help)
+  #:use-module (sxml simple)
+  #:use-module (ice-9 match)
+  #:export (main-page
+
+            %web-pages
+            export-web-page
+            export-web-site))
 
 (define main-page
   '(html (@ (lange "en"))
@@ -277,3 +289,41 @@ lists")))))
 		    ". Made with "
 		    (span (@ (class "metta")) "♥")
 		    " by humans."))))
+
+
+;;;
+;;; HTML export.
+;;;
+
+(define %web-pages
+  ;; Mapping of web pages to HTML file names.
+  `(("index.html" ,main-page)
+    ("about/index.html" ,about-page)
+    ("contribute/index.html" ,contribute-page)
+    ("donate/index.html" ,donate-page)
+    ("download/index.html" ,download-page)
+    ("help/index.html" ,help-page)
+    ("packages/index.html" ,packages-page)))
+
+(define (mkdir* directory)
+  "Make DIRECTORY unless it already exists."
+  (catch 'system-error
+    (lambda ()
+      (mkdir directory))
+    (lambda args
+      (unless (= EEXIST (system-error-errno args))
+        (apply throw args)))))
+
+(define (export-web-page page file)
+  "Export PAGE, an SXML tree, to FILE."
+  (mkdir* (dirname file))
+  (call-with-output-file file
+    (lambda (port)
+      (sxml->xml page port))))
+
+(define (export-web-site)
+  "Export the whole web site as HTML files created in the current directory."
+  (for-each (match-lambda
+              ((file page)
+               (export-web-page page file)))
+            %web-pages))
