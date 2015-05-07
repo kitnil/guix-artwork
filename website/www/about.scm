@@ -1,7 +1,7 @@
 (define-module (www about)
-  #:export (about))
+  #:export (about-page))
 
-(define about
+(define about-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")

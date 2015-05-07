@@ -1,7 +1,7 @@
 (define-module (www download)
-  #:export (download))
+  #:export (download-page))
 
-(define download
+(define download-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")

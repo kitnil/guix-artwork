@@ -1,7 +1,7 @@
 (define-module (www help)
-  #:export (help))
+  #:export (help-page))
 
-(define help
+(define help-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")

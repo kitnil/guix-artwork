@@ -1,7 +1,7 @@
 (define-module (www donate)
-  #:export (donate))
+  #:export (donate-page))
 
-(define donate
+(define donate-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")

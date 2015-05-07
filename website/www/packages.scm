@@ -1,7 +1,7 @@
 (define-module (www packages)
-  #:export (packages))
+  #:export (packages-page))
 
-(define packages
+(define packages-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")

@@ -1,7 +1,7 @@
 (define-module (www contribute)
-  #:export (contribute))
+  #:export (contribute-page))
 
-(define contribute
+(define contribute-page
   '(html (@ (lang "en"))
 	 (head (meta (@ (charset "utf-8")))
 	       (meta (@ (name "author")
