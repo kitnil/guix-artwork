@@ -1,4 +1,5 @@
 (define-module (www donate)
+  #:use-module (www utils)
   #:use-module (www shared)
   #:export (donate-page))
 
@@ -17,7 +18,7 @@
 		   " of the Guix System Distribution runs on donated hardware
 and hosting. Please consider helping the project with donations. ")
 		(p "As the distribution grows (see the "
-		   (a (@ (href "/software/guix/packages/"))
+		   (a (@ (href ,(base-url "packages")))
 		      "package list")
 		   "), so do the computing and storage needs. We are looking for
 donations of hardware and optionally hosting for the following kinds of
@@ -31,9 +32,9 @@ binaries for the "
 			";")
 		    (li "mips64el machines to strengthen this port."))
 		(p "Please get in touch with us through the "
-		   (a (@ (href "/software/guix/about/#contact"))
+		   (a (@ (href ,(base-url "about/#contact")))
 		      "usual channels")
-		   "or using the guix-hardware@gnu.org private alias to discuss
+		   " or using the guix-hardware@gnu.org private alias to discuss
 any opportunities. ")
 		(h2 (@ (id "hardware-donors")) "Thanks to the donors!")
 		(p "The table below summarizes hardware and hosting donations
@@ -47,23 +48,23 @@ reality.")
 				  (th "donors")))
 		       (tbody (tr (td "hydra.gnu.org")
 				  (td "build farm front-end")
-				  (td (ul (li (a (@ (href "http://www.fsf.org/"))
-						 "Free Software \t          Foundation")))))
+				  (td (ul (li (a (@ (href "https://www.fsf.org/"))
+						 "Free Software Foundation")))))
 			      (tr (td "hydra.gnunet.org")
 				  (td "x86_64-linux, i686-linux")
 				  (td (ul (li (a (@ (href "https://gnunet.org/fsnsg"))
-						 "Free Secure
-Network Systems Group")
+						 "Free Secure Network Systems
+Group")
 					      " at the "
-					      (a (@ (href "http://www.tum.de/"))
-						 "Technische
-Universität München")))))
+					      (a (@ (href "https://www.tum.de/"))
+						 "Technische Universität
+München")))))
 			      (tr (td "chapters.gnu.org")
 				  (td "x86_64-linux, i686-linux")
-				  (td (ul (li (a (@ (href "http://es.gnu.org"))
+				  (td (ul (li (a (@ (href "https://es.gnu.org"))
 						 "GNU\xa0España")
 					      " (hardware)")
-					  (li (a (@ (href "http://fsffrance.org/index.en.html"))
+					  (li (a (@ (href "https://fsffrance.org/index.en.html"))
 						 "FSF\xa0France")
 					      " (hosting)"))))
 			      (tr (td "wildebeest")

@@ -1,4 +1,5 @@
 (define-module (www contribute)
+  #:use-module (www utils)
   #:use-module (www shared)
   #:export (contribute-page))
 
@@ -53,7 +54,7 @@ the project is available in the "
 			  (h2 (@ (id "documentation"))
 			      "Documentation")
 			  (p "You can read the "
-			     (a (@ (href "/software/guix/help/"))
+			     (a (@ (href ,(base-url "help")))
 				"project documentation")
 			     " already available in the system and in the
 website, and help us identify any errors or omissions. Creating new manuals,
@@ -61,7 +62,7 @@ tutorials, and blog entries will also help users and developers discover what we
 do. ")
 			  (p "Helping improve the documentation of
 the "
-			     (a (@ (href "/software/guix/packages/"))
+			     (a (@ (href ,(base-url "packages")))
 				"packaged software")
 			     " is another way to contribute. ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
@@ -74,7 +75,7 @@ need to be packaged to make it easier for users to install their favorite tools
 with the Guix package manager, and be productive using the system. ")
 			  (p "Information on how to add packages to the
 distribution can be found "
-			     (a (@ (href "/software/guix/manual/guix.html#Packaging-Guidelines"))
+			     (a (@ (href ,(guix-url "manual/guix.html#Packaging-Guidelines")))
 				"in the manual")
 			     ". ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
@@ -83,15 +84,15 @@ distribution can be found "
 		     (div (@ (class "summary-box"))
 			  (h2 (@ (id "programming")) "Programming")
 			  (p "We use "
-			     (a (@ (href "/software/guile/"))
+			     (a (@ (href ,(gnu-url "software/guile")))
 				"GNU Guile")
 			     " as the main programming and extension language
 for the components of the system. ")
 			  (p "You will find it useful to browse the "
-			     (a (@ (href "/software/guile/manual"))
+			     (a (@ (href ,(gnu-url "software/guile/manual")))
 				"Guile's manual")
 			     " or other "
-			     (a (@ (href "http://schemers.org/Documents/#intro-texts"))
+			     (a (@ (href "https://schemers.org/Documents/#intro-texts"))
 				"introductory material about Scheme")
 			     ". Also, make sure to read the "
 			     (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/HACKING"))
@@ -109,7 +110,7 @@ all the contributors to communicate and collaborate in the project, and users to
 be able to download and install packages. Help us keep the system up and running
 smoothly. ")
 			  (p "You can also "
-			     (a (@ (href "/software/guix/donate/"))
+			     (a (@ (href ,(base-url "donate")))
 				"donate hardware or hosting")
 			     ". ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
@@ -122,10 +123,10 @@ smoothly. ")
 community about your experience. Help the project reporting bugs.")
 			  (p "Before reporting a bug, please check whether the
 bug is already "
-			     (a (@ (href "http://debbugs.gnu.org/guix"))
+			     (a (@ (href "https://debbugs.gnu.org/guix"))
 				"in the bug database")
 			     ". See "
-			     (a (@ (href "http://debbugs.gnu.org/Developer.html"))
+			     (a (@ (href "https://debbugs.gnu.org/Developer.html"))
 				"the developer information page")
 			     " for more information on how to manipulate bug
 reports. ")
@@ -137,15 +138,15 @@ reports. ")
 			  (p "You can help us translate software and
 documentation to your language. The main components of the Guix System
 Distribution, including the Guix package manager, can be translated in the "
-			     (a (@ (href "http://translationproject.org/"))
+			     (a (@ (href "https://translationproject.org/"))
 				"Translation Project")
 			     ".")
 			  (p "Other "
-			     (a (@ (href "/software/guix/packages/"))
+			     (a (@ (href ,(base-url "packages")))
 				"software packaged")
 			     " for the system may have their own translation
 tools. Visit their websites and help translate. ")
-			  (a (@ (href "http://translationproject.org/")
+			  (a (@ (href "https://translationproject.org/")
 				(class "hlink-more-dark"))
 			     "Start translating")))
 		(h2 (@ (id "resources"))

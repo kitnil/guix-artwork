@@ -1,4 +1,5 @@
 (define-module (www download)
+  #:use-module (www utils)
   #:use-module (www shared)
   #:export (download-page))
 
@@ -12,20 +13,20 @@
 	       (article
 		(h1 "Download")
 		(p "As of version 0.8.1, the Guix System Distribution "
-		   (a (@ (href "/software/guix/manual/html_node/System-Installation.html"))
+		   (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 		      "can be installed")
 		   " on an i686 or x86_64 machine. It uses the "
-		   (a (@ (href "/software/linux-libre"))
+		   (a (@ (href ,(gnu-url "software/linux-libre")))
 		      "Linux-Libre")
 		   " kernel and the "
-		   (a (@ (href "/software/dmd")) "GNU dmd")
+		   (a (@ (href ,(gnu-url "software/dmd"))) "GNU dmd")
 		   " init system. Alternately, its package manager, GNU Guix,
 can be installed as an additional package manager on top of an installed
 Linux-based system.")
 		(div (@ (class "text-center"))
 		     (div (@ (class "summary-box"))
 			  (div (@ (class "text-center"))
-			       (img (@ (src "/software/guix/static/base/img/GuixSD-package.png")
+			       (img (@ (src ,(image-url "GuixSD-package.png"))
 				       (alt ""))))
 			  (h2 "GuixSD 0.8.2 (i686)")
 			  (p "USB installer for machines with the following
@@ -47,7 +48,7 @@ minimum system requirements:")
 			     (br)
 			     (a (@ (href "#")) "Get signature"))
 			  (p "See the "
-			     (a (@ (href "/software/guix/manual/html_node/System-Installation.html"))
+			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 				"installation instructions")
 			     " from the manual.")
 			  (p "Alternative download methods: "
@@ -55,7 +56,7 @@ minimum system requirements:")
 			     "."))
 		     (div (@ (class "summary-box"))
 			  (div (@ (class "text-center"))
-			       (img (@ (src "/software/guix/static/base/img/GuixSD-package.png")
+			       (img (@ (src ,(image-url "GuixSD-package.png"))
 				       (alt ""))))
 			  (h2 "GuixSD 0.8.2 (x86_64)")
 			  (p "USB installer for machines with the following
@@ -77,7 +78,7 @@ minimum system requirements:")
 			     (br)
 			     (a (@ (href "#")) "Get signature"))
 			  (p "See the "
-			     (a (@ (href "/software/guix/manual/html_node/System-Installation.html"))
+			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 				"installation instructions")
 			     " from the manual.")
 			  (p "Alternative download methods: "
@@ -85,7 +86,7 @@ minimum system requirements:")
 			     "."))
 		     (div (@ (class "summary-box"))
 			  (div (@ (class "text-center"))
-			       (img (@ (src "/software/guix/static/base/img/Guix-package.png")
+			       (img (@ (src ,(image-url "Guix-package.png"))
 				       (alt ""))))
 			  (h2 "GNU Guix 0.8.2")
 			  (p "Archive distribution to install from source on
@@ -107,7 +108,7 @@ machines with the following minimum system requirements:")
 			     (br)
 			     (a (@ (href "#")) "Get signature"))
 			  (p "See the "
-			     (a (@ (href "/software/guix/manual/html_node/System-Installation.html"))
+			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 				" installation instructions")
 			     " from the manual.")
 			  (p "Alternative download methods: "

@@ -1,4 +1,5 @@
 (define-module (www about)
+  #:use-module (www utils)
   #:use-module (www shared)
   #:export (about-page))
 
@@ -17,7 +18,7 @@
 		   (em "GNU Guix")
 		   " package manager are free software projects developed by
 the "
-		   (a (@ (href "http://www.gnu.org/"))
+		   (a (@ (href ,(gnu-url "")))
 		      "GNU Project")
 		   " and independent volunteers from various parts of the
 world. This is the official website for both projects. ")
@@ -30,7 +31,7 @@ understand the concept, you should think of \"free\" as in \"free speech\", not
 as in \"free beer\". ")
 		 (p "More precisely, free software means users of a program have
 the "
-		    (a (@ (href "/philosophy/free-sw.html"))
+		    (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
 		       "four essential freedoms")
 		    ":")
 		 (ul (li "The freedom to run the program as you wish, for any
@@ -52,7 +53,7 @@ Courtès. Please use the "
 		(h2 (@ (id "license")) "Licensing")
 		(p "Guix is free software; you can redistribute it and/or modify
 it under the terms of the "
-		   (a (@ (rel "license") (href "/licenses/gpl.html"))
+		   (a (@ (rel "license") (href ,(gnu-url "licenses/gpl.html")))
 		      "GNU General Public License")
 		   " as published by the Free Software Foundation; either
 version\xa03 of the License, or (at your option) any later version. ")

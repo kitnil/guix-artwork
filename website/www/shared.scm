@@ -1,4 +1,5 @@
 (define-module (www shared)
+  #:use-module (www utils)
   #:export (html-page-header
 	    html-page-description
 	    html-page-links
@@ -23,13 +24,13 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 		  (content "width=device-width, initial-scale=1.0")))
 	 (link (@ (type "text/css")
 		  (rel "stylesheet")
-		  (href "/software/guix/static/base/css/base.css")))
+		  (href ,(css-url "base.css"))))
 	 (link (@ (type "text/css")
 		  (rel "stylesheet")
-		  (href "/software/guix/static/base/css/index.css")))
+		  (href ,(css-url "index.css"))))
 	 (link (@ (type "image/png")
 		  (rel "icon")
-		  (href "/software/guix/static/base/img/favicon.png")))
+		  (href ,(image-url "favicon.png"))))
 	 (link (@ (rel "license") (href "Pending...")))
 	 (title ,(string-append title " - GuixSD"))))
 
@@ -39,26 +40,26 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 	"The Guix System Distribution (GuixSD) is alpha software. This means it
 is not production-ready. It may contain bugs and lack important features. But
 more than a disclaimer, this is an invitation to join us in improving it. See "
-	(a (@ (href "/software/guix/contribute/")) "Contributing")
+	(a (@ (href ,(base-url "contribute"))) "Contributing")
 	", for more information. We hope you can soon switch to GuixSD without
 fear. "))
 
 (define (html-page-links)
   `(div (@ (id "header-box"))
-	(a (@ (id "logo") (href "/software/guix/"))
-	   (img (@ (src "/software/guix/static/base/img/GuixSD-logo.png")
+	(a (@ (id "logo") (href ,(base-url "")))
+	   (img (@ (src ,(image-url "GuixSD-logo.png"))
 		   (alt "GuixSD"))))
 	(ul (@ (id "site-nav"))
-	    (li (a (@ (href "/software/guix/download/")) "Download"))
-	    (li (a (@ (href "/software/guix/package-list.html")) "Packages"))
-	    (li (a (@ (href "/software/guix/help/")) "Help"))
-	    (li (a (@ (href "/software/guix/contribute/")) "Contribute"))
-	    (li (a (@ (href "/software/guix/donate/")) "Donate"))
-	    (li (a (@ (href "/software/guix/about/")) "About")))))
+	    (li (a (@ (href ,(base-url "download"))) "Download"))
+	    (li (a (@ (href ,(guix-url "package-list.html"))) "Packages"))
+	    (li (a (@ (href ,(base-url "help"))) "Help"))
+	    (li (a (@ (href ,(base-url "contribute"))) "Contribute"))
+	    (li (a (@ (href ,(base-url "donate"))) "Donate"))
+	    (li (a (@ (href ,(base-url "about"))) "About")))))
 
 (define (html-page-footer)
   `(div (@ (id "footer-box"))
 	"copyleft 2015 GuixSD "
-	(a (@ (href "/software/guix/contribute/") (class "hlink-yellow"))
+	(a (@ (href ,(base-url "contribute")) (class "hlink-yellow"))
 	   "Contributors")
 	". Made with " (span (@ (class "metta")) "♥") " by humans."))
