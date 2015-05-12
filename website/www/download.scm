@@ -3,6 +3,54 @@
   #:use-module (www shared)
   #:export (download-page))
 
+(define %usb-image-description
+  "USB installer of the Guix System Distribution.")
+
+(define %usb-image-manual
+  "manual/html_node/System-Installation.html")
+
+(define %guixsd-image
+  "GuixSD-package.png")
+
+(define %binary-tarball-description
+  "Self-contained tarball providing binaries for Guix and for all its
+dependencies.")
+
+(define %binary-tarball-manual
+  "manual/html_node/Binary-Installation.html")
+
+(define %source-tarball-description
+  "Source code distribution.")
+
+(define %source-tarball-manual
+  "manual/html_node/Installation.html")
+
+(define %guix-image
+  "Guix-package.png")
+
+(define* (summary-box title
+                      #:key description image manual)
+  `(div (@ (class "summary-box"))
+        (div (@ (class "text-center"))
+             (img (@ (src ,(image-url image))
+                     (alt ""))))
+        (h2 ,title)
+        (p ,description)
+
+        (p (@ (class "text-center"))
+           (a (@ (href "#")
+                 (class "hlink-yellow-boxed"))
+              "DOWNLOAD")
+           (br)
+           ;; FIXME: Size?
+           ;; "(140MB approx.)"
+           (br)
+           (a (@ (href "#")) "Get signature"))
+        (p "See the "
+           (a (@ (href ,(guix-url manual)))
+              "installation instructions")
+           " from the manual.")))
+
 (define (download-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Download" #:css "download.css")
@@ -23,217 +71,37 @@
 		   " init system. Alternately, its package manager, GNU Guix,
 can be installed as an additional package manager on top of an installed
 Linux-based system.")
+
 		(div (@ (class "text-center"))
-		     (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "GuixSD-package.png"))
-				       (alt ""))))
-			  (h2 "GuixSD 0.8.2 (i686)")
-			  (p "USB installer for machines with the following
-minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "i686"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "#")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(140MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				"installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     "."))
-		     (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "GuixSD-package.png"))
-				       (alt ""))))
-			  (h2 "GuixSD 0.8.2 (x86_64)")
-			  (p "USB installer for machines with the following
-minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "x86_64"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "#")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(144MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				"installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     "."))
-			 (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "Guix-package.png"))
-				       (alt ""))))
-			  (h2 "GNU Guix 0.8.2 Binary (i686)")
-			  (p "Self-contained tarball providing binaries for Guix and for 
-all its dependencies. Minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "i686"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "ftp://alpha.gnu.org/gnu/guix/guix-binary-0.8.2.i686.tar.xz")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(7.7MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				" installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     ". "))
-			 (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "Guix-package.png"))
-				       (alt ""))))
-			  (h2 "GNU Guix 0.8.2 Binary (x86_64)")
-			  (p "Self-contained tarball providing binaries for Guix and for 
-all its dependencies. Minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "x86_64"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "ftp://alpha.gnu.org/gnu/guix/guix-binary-0.8.2.x86_64.tar.xz")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(7.7MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				" installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     ". "))
-			 (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "Guix-package.png"))
-				       (alt ""))))
-			  (h2 "GNU Guix 0.8.2 Binary (mips64el)")
-			  (p "Self-contained tarball providing binaries for Guix and for 
-all its dependencies. Minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "mips64el"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "ftp://alpha.gnu.org/gnu/guix/guix-binary-0.8.2.mips64el.tar.xz")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(7.7MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				" installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     ". "))
-			 (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "Guix-package.png"))
-				       (alt ""))))
-			  (h2 "GNU Guix 0.8.2 Binary (armv7)")
-			  (p "Self-contained tarball providing binaries for Guix and for 
-all its dependencies. Minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "armv7"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "ftp://alpha.gnu.org/gnu/guix/guix-binary-0.8.2.i686.tar.xz")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(7.7MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				" installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     ". "))
-		     (div (@ (class "summary-box"))
-			  (div (@ (class "text-center"))
-			       (img (@ (src ,(image-url "Guix-package.png"))
-				       (alt ""))))
-			  (h2 "GNU Guix 0.8.2 Source")
-			  (p "Archive distribution to install from source on
-machines with the following minimum system requirements:")
-			  (table (tbody (tr (th "Architecture")
-					    (td "i686, x86_64, mips64el, or armv7"))
-					(tr (th "Processor")
-					    (td "1GHz"))
-					(tr (th "Memory")
-					    (td "512MB"))
-					(tr (th "Hard Drive")
-					    (td "5GB"))))
-			  (p (@ (class "text-center"))
-			     (a (@ (href "#")
-				   (class "hlink-yellow-boxed"))
-				"DOWNLOAD")
-			     (br)
-			     "(7.7MB approx.)"
-			     (br)
-			     (a (@ (href "#")) "Get signature"))
-			  (p "See the "
-			     (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
-				" installation instructions")
-			     " from the manual.")
-			  (p "Alternative download methods: "
-			     (a (@ (href "#")) "torrent")
-			     ". ")))
+                     ,(summary-box "GuixSD 0.8.2 (i686)"
+                                   #:description %usb-image-description
+                                   #:manual %usb-image-manual
+                                   #:image %guixsd-image)
+                     ,(summary-box "GuixSD 0.8.2 (x86_64)"
+                                   #:description %usb-image-description
+                                   #:manual %usb-image-manual
+                                   #:image %guixsd-image)
+                     ,(summary-box "GNU Guix 0.8.2 Binary (i686)"
+                                   #:description %binary-tarball-description
+                                   #:manual %binary-tarball-manual
+                                   #:image %guix-image)
+                     ,(summary-box "GNU Guix 0.8.2 Binary (x86_64)"
+                                   #:description %binary-tarball-description
+                                   #:manual %binary-tarball-manual
+                                   #:image %guix-image)
+                     ,(summary-box "GNU Guix 0.8.2 Binary (mips64el)"
+                                   #:description %binary-tarball-description
+                                   #:manual %binary-tarball-manual
+                                   #:image %guix-image)
+                     ,(summary-box "GNU Guix 0.8.2 Binary (armv7)"
+                                   #:description %binary-tarball-description
+                                   #:manual %binary-tarball-manual
+                                   #:image %guix-image)
+                     ,(summary-box "GNU Guix 0.8.2 Source"
+                                   #:description %source-tarball-description
+                                   #:manual %source-tarball-manual
+                                   #:image %guix-image))
+
 		(p "Source code for the Guix System Distribution USB
 installation images as well as GNU Guix can be found on the GNU ftp server for "
 		   (em "alpha")
