@@ -1,9 +1,13 @@
 (define-module (www shared)
   #:use-module (www utils)
-  #:export (html-page-header
+  #:export (latest-guix-version
+            html-page-header
 	    html-page-description
 	    html-page-links
 	    html-page-footer))
+
+(define latest-guix-version
+  (make-parameter "0.8.1"))
 
 (define* (html-page-header title #:key (css "article.css"))
   `(head (meta (@ (charset "utf-8")))

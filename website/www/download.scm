@@ -60,7 +60,8 @@ dependencies.")
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "Download")
-		(p "As of version 0.8.1, the Guix System Distribution "
+		(p "As of version " (latest-guix-version)
+                   ", the Guix System Distribution "
 		   (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 		      "can be installed")
 		   " on an i686 or x86_64 machine. It uses the "
@@ -73,31 +74,25 @@ can be installed as an additional package manager on top of an installed
 Linux-based system.")
 
 		(div (@ (class "text-center"))
-                     ,(summary-box "GuixSD 0.8.2 (i686)"
-                                   #:description %usb-image-description
-                                   #:manual %usb-image-manual
-                                   #:image %guixsd-image)
-                     ,(summary-box "GuixSD 0.8.2 (x86_64)"
-                                   #:description %usb-image-description
-                                   #:manual %usb-image-manual
-                                   #:image %guixsd-image)
-                     ,(summary-box "GNU Guix 0.8.2 Binary (i686)"
-                                   #:description %binary-tarball-description
-                                   #:manual %binary-tarball-manual
-                                   #:image %guix-image)
-                     ,(summary-box "GNU Guix 0.8.2 Binary (x86_64)"
-                                   #:description %binary-tarball-description
-                                   #:manual %binary-tarball-manual
-                                   #:image %guix-image)
-                     ,(summary-box "GNU Guix 0.8.2 Binary (mips64el)"
-                                   #:description %binary-tarball-description
-                                   #:manual %binary-tarball-manual
-                                   #:image %guix-image)
-                     ,(summary-box "GNU Guix 0.8.2 Binary (armv7)"
-                                   #:description %binary-tarball-description
-                                   #:manual %binary-tarball-manual
-                                   #:image %guix-image)
-                     ,(summary-box "GNU Guix 0.8.2 Source"
+                     ,@(map (lambda (arch)
+                              (summary-box (string-append "GuixSD "
+                                                          (latest-guix-version)
+                                                          " (" arch ")")
+                                           #:description %usb-image-description
+                                           #:manual %usb-image-manual
+                                           #:image %guixsd-image))
+                            '("x86_64" "i686"))
+                     ,@(map (lambda (arch)
+                              (summary-box (string-append "GNU Guix "
+                                                          (latest-guix-version)
+                                                          " Binary (" arch ")")
+                                           #:description %binary-tarball-description
+                                           #:manual %binary-tarball-manual
+                                           #:image %guix-image))
+                            '("x86_64" "i686" "mips64el" "armhf"))
+                     ,(summary-box (string-append "GNU Guix "
+                                                  (latest-guix-version)
+                                                  " Source")
                                    #:description %source-tarball-description
                                    #:manual %source-tarball-manual
                                    #:image %guix-image))
