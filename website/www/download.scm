@@ -28,8 +28,11 @@ dependencies.")
 (define %guix-image
   "Guix-package.png")
 
+(define (ftp-url file)
+  (string-append "ftp://alpha.gnu.org/gnu/guix/" file))
+
 (define* (summary-box title
-                      #:key description image manual)
+                      #:key file description image manual)
   `(div (@ (class "summary-box"))
         (div (@ (class "text-center"))
              (img (@ (src ,(image-url image))
@@ -38,14 +41,15 @@ dependencies.")
         (p ,description)
 
         (p (@ (class "text-center"))
-           (a (@ (href "#")
+           (a (@ (href ,(ftp-url file))
                  (class "hlink-yellow-boxed"))
               "DOWNLOAD")
            (br)
            ;; FIXME: Size?
            ;; "(140MB approx.)"
            (br)
-           (a (@ (href "#")) "Get signature"))
+           (a (@ (href ,(string-append (ftp-url file) ".sig")))
+              "Get signature"))
         (p "See the "
            (a (@ (href ,(guix-url manual)))
               "installation instructions")
@@ -78,6 +82,10 @@ Linux-based system.")
                               (summary-box (string-append "GuixSD "
                                                           (latest-guix-version)
                                                           " (" arch ")")
+                                           #:file (string-append
+                                                   "guixsd-usb-install-"
+                                                   (latest-guix-version)
+                                                   "." arch "-linux.xz")
                                            #:description %usb-image-description
                                            #:manual %usb-image-manual
                                            #:image %guixsd-image))
@@ -86,6 +94,10 @@ Linux-based system.")
                               (summary-box (string-append "GNU Guix "
                                                           (latest-guix-version)
                                                           " Binary (" arch ")")
+                                           #:file (string-append
+                                                   "guix-binary-"
+                                                   (latest-guix-version)
+                                                   "." arch "-linux.tar.xz")
                                            #:description %binary-tarball-description
                                            #:manual %binary-tarball-manual
                                            #:image %guix-image))
@@ -93,6 +105,9 @@ Linux-based system.")
                      ,(summary-box (string-append "GNU Guix "
                                                   (latest-guix-version)
                                                   " Source")
+                                   #:file (string-append "guix-"
+                                                         (latest-guix-version)
+                                                         ".tar.gz")
                                    #:description %source-tarball-description
                                    #:manual %source-tarball-manual
                                    #:image %guix-image))
