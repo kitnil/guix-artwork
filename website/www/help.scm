@@ -5,7 +5,7 @@
 
 (define help-page
   `(html (@ (lang "en"))
-	 ,(html-page-header "Help")
+	 ,(html-page-header "Help" #:css "help.css")
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)

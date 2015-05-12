@@ -5,7 +5,7 @@
 
 (define download-page
   `(html (@ (lang "en"))
-	 ,(html-page-header "Download")
+	 ,(html-page-header "Download" #:css "download.css")
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)

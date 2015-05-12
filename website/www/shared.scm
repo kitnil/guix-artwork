@@ -5,7 +5,7 @@
 	    html-page-links
 	    html-page-footer))
 
-(define (html-page-header title)
+(define* (html-page-header title #:key (css "article.css"))
   `(head (meta (@ (charset "utf-8")))
 	 (meta (@ (name "author")
 		  (content "GuixSD Contributors")))
@@ -27,7 +27,7 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 		  (href ,(css-url "base.css"))))
 	 (link (@ (type "text/css")
 		  (rel "stylesheet")
-		  (href ,(css-url "index.css"))))
+		  (href ,(css-url css))))
 	 (link (@ (type "image/png")
 		  (rel "icon")
 		  (href ,(image-url "favicon.png"))))

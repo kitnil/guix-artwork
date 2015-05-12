@@ -17,7 +17,7 @@
 
 (define main-page
   `(html (@ (lang "en"))
-	 ,(html-page-header "Home")
+	 ,(html-page-header "Home" #:css "index.css")
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)
