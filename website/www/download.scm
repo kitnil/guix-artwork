@@ -3,7 +3,7 @@
   #:use-module (www shared)
   #:export (download-page))
 
-(define download-page
+(define (download-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Download" #:css "download.css")
 	 (body

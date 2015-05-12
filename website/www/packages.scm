@@ -2,7 +2,7 @@
   #:use-module (www shared)
   #:export (packages-page))
 
-(define packages-page
+(define (packages-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Packages")
 	 (body

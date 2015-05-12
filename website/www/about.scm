@@ -3,7 +3,7 @@
   #:use-module (www shared)
   #:export (about-page))
 
-(define about-page
+(define (about-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "About")
 	 (body

@@ -3,7 +3,7 @@
   #:use-module (www shared)
   #:export (contribute-page))
 
-(define contribute-page
+(define (contribute-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Contribute")
 	 (body

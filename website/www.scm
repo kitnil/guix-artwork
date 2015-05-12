@@ -15,7 +15,7 @@
             export-web-page
             export-web-site))
 
-(define main-page
+(define (main-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Home" #:css "index.css")
 	 (body
@@ -262,7 +262,8 @@ the broader GNU system.")
   "Export the whole web site as HTML files created in DIRECTORY."
   (for-each (match-lambda
               ((filename page)
-               (export-web-page page (string-append directory
-						    file-name-separator-string
-						    filename))))
+               (export-web-page (page)
+                                (string-append directory
+                                               file-name-separator-string
+                                               filename))))
             %web-pages))

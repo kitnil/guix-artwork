@@ -3,7 +3,7 @@
   #:use-module (www shared)
   #:export (donate-page))
 
-(define donate-page
+(define (donate-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Home")
 	 (body

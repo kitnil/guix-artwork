@@ -3,7 +3,7 @@
   #:use-module (www shared)
   #:export (help-page))
 
-(define help-page
+(define (help-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Help" #:css "help.css")
 	 (body
