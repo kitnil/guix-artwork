@@ -192,11 +192,6 @@ by running info guix.")
 			    "A paper presented at the 2013 European Lisp
 Symposium (ELS), describes the rationale, design, and implementation of Guix's
 packaging API. ")
-			 (p (a (@ (href "http://www.gnu.org/manual/")
-				  (class "hlink-yellow"))
-			       "GNU Manuals Online")
-			    (br)
-			    "Primary documentation for official GNU packages.")
 			 (p (a (@ (href ,(base-url "help"))
 				  (class "hlink-more-light"))
 			       "Find more documentation")))
