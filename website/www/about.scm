@@ -154,8 +154,10 @@ urgent issue, you can escalate to the general "
 			   ").")))
 
                 (h2 (@ (id "artwork")) "Artwork")
-                (p "This web site was designed by Luis Felipe López
-Acevedo.  See the "
+                (p "This web site was designed by "
+                   (a (@ (href "http://sirgazil.bitbucket.org/"))
+                      "Luis Felipe López Acevedo")
+                   ".  See the "
                    (a (@ (href ,(base-url "graphics"))) "graphics page")
                    " for information about the Guix and GuixSD logotypes.")))
 
