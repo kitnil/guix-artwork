@@ -83,25 +83,27 @@ Linux-based system.")
                                                           (latest-guix-version)
                                                           " (" arch ")")
                                            #:file (string-append
-                                                   "guixsd-usb-install-"
+                                                   ;; TODO: Adjust for 0.8.2.
+                                                   "gsd-usb-install-"
                                                    (latest-guix-version)
                                                    "." arch "-linux.xz")
                                            #:description %usb-image-description
                                            #:manual %usb-image-manual
                                            #:image %guixsd-image))
                             '("x86_64" "i686"))
-                     ,@(map (lambda (arch)
-                              (summary-box (string-append "GNU Guix "
-                                                          (latest-guix-version)
-                                                          " Binary (" arch ")")
-                                           #:file (string-append
-                                                   "guix-binary-"
-                                                   (latest-guix-version)
-                                                   "." arch "-linux.tar.xz")
-                                           #:description %binary-tarball-description
-                                           #:manual %binary-tarball-manual
-                                           #:image %guix-image))
-                            '("x86_64" "i686" "mips64el" "armhf"))
+                     ;; TODO: Reinstate for 0.8.2.
+                     ;; ,@(map (lambda (arch)
+                     ;;          (summary-box (string-append "GNU Guix "
+                     ;;                                      (latest-guix-version)
+                     ;;                                      " Binary (" arch ")")
+                     ;;                       #:file (string-append
+                     ;;                               "guix-binary-"
+                     ;;                               (latest-guix-version)
+                     ;;                               "." arch "-linux.tar.xz")
+                     ;;                       #:description %binary-tarball-description
+                     ;;                       #:manual %binary-tarball-manual
+                     ;;                       #:image %guix-image))
+                     ;;        '("x86_64" "i686" "mips64el" "armhf"))
                      ,(summary-box (string-append "GNU Guix "
                                                   (latest-guix-version)
                                                   " Source")
