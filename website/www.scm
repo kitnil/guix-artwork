@@ -237,10 +237,15 @@ packaging API. ")
 				      "channel logs")
 				   ")")
 			    ".")
-			 (p (@ (class "text-right"))
-			    (a (@ (href "http://webchat.freenode.net/?channels=%23guix")
-				  (class "button btn-blue"))
-			       "Connect"))
+
+                         ;; XXX: Doesn't feel right to (1) suggest a JS
+                         ;; client, and (2) make it too easy to join the
+                         ;; channel.
+			 ;; (p (@ (class "text-right"))
+			 ;;    (a (@ (href "http://webchat.freenode.net/?channels=%23guix")
+			 ;;          (class "button btn-blue"))
+			 ;;       "Connect"))
+
 			 (h3 "Report Bugs")
 			 (p "Use the bugs mailing list to report bugs. Please
 check whether the bug is already in the "
