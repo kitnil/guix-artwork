@@ -298,14 +298,18 @@ the broader GNU system.")
 ;;;
 
 (define %web-pages
-  ;; Mapping of web pages to HTML file names.
-  `(("index.html" ,main-page)
+  ;; Mapping of web pages to HTML file names.  Note: in the CVS repo at
+  ;; sv.gnu.org, the main page has to be called 'guix.html'.
+  `(("guix.html" ,main-page)
     ("about/index.html" ,about-page)
     ("contribute/index.html" ,contribute-page)
     ("donate/index.html" ,donate-page)
     ("download/index.html" ,download-page)
     ("help/index.html" ,help-page)
-    ("packages/index.html" ,packages-page)))
+
+    ;; XXX: The following one is not ready yet.
+    ;; ("packages/index.html" ,packages-page)
+    ))
 
 (define (mkdir* directory)
   "Make DIRECTORY unless it already exists."
