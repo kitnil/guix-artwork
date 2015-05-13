@@ -33,7 +33,11 @@ will do our best to guide you. ")
 maintenance and distribution of the Guix System Distribution and GNU Guix.")
 			  (p "The source files for all the components of the
 project, including software, web site, documentation, and artwork, are available
-in repositories at Savannah. ")
+in "
+                             (a (@ (href
+                                    "https://savannah.gnu.org/git/?group=guix"))
+                                "Git repositories")
+                             " at Savannah. ")
 			  (a (@ (href "https://savannah.gnu.org/projects/guix")
 				(class "hlink-more-dark"))
 			     "Access Savannah"))
@@ -83,7 +87,11 @@ distribution can be found "
 			     "Send a new package"))
 		     (div (@ (class "summary-box"))
 			  (h2 (@ (id "programming")) "Programming")
-			  (p "We use "
+			  (p "Source code is in the "
+                             (a (@ (href
+                                    "http://git.savannah.gnu.org/cgit/guix.git/"))
+                                "main Git repository") ".  "
+                             "We use "
 			     (a (@ (href ,(gnu-url "software/guile")))
 				"GNU Guile")
 			     " as the main programming and extension language
