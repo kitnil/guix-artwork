@@ -50,7 +50,7 @@ documentation, presentations, and promotional items. ")
 the project is available in the "
 			     (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
 				"guix-artwork")
-			     "repository. ")
+			     " repository. ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
 				(class "hlink-more-dark"))
 			     "Contribute"))
@@ -98,7 +98,7 @@ distribution can be found "
 for the components of the system. ")
 			  (p "You will find it useful to browse the "
 			     (a (@ (href ,(gnu-url "software/guile/manual")))
-				"Guile's manual")
+				"Guile manual")
 			     " or other "
 			     (a (@ (href "https://schemers.org/Documents/#intro-texts"))
 				"introductory material about Scheme")
