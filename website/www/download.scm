@@ -64,7 +64,7 @@ dependencies.")
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "Download")
-		(p "As of version " (latest-guix-version)
+		(p "As of version " ,(latest-guix-version)
                    ", the Guix System Distribution "
 		   (a (@ (href ,(guix-url "manual/html_node/System-Installation.html")))
 		      "can be installed")
