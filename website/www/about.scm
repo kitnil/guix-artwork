@@ -9,6 +9,7 @@
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)
+
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "About the Project")
@@ -16,34 +17,59 @@
 		   (em "Guix System Distribution (GuixSD)")
 		   " and the "
 		   (em "GNU Guix")
-		   " package manager are free software projects developed by
+		   " package manager are "
+                   (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
+                      "free software")
+                   " projects developed by
 volunteers around the work under the umbrella of the "
 		   (a (@ (href ,(gnu-url "")))
 		      "GNU Project") ".  "
-		   " This is the official web site for both projects. ")
+                      " This is the official web site for both projects. ")
 
-		(blockquote
-		 (p (strong
-		     "Free software means the users have the freedom to run,
-copy, distribute, study, change and improve the software."))
-		 (p "Free software is a matter of liberty, not price. To
-understand the concept, you should think of \"free\" as in \"free speech\", not
-as in \"free beer\". ")
-		 (p "More precisely, free software means users of a program have
+                (p "GuixSD is a GNU/Linux distribution committed to
+respecting and enhancing "
+                   (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
+                      "the freedom of its users")
+                   ".  As such, it adheres to the "
+                   (a (@ (href ,(gnu-url
+                                 "distros/free-system-distribution-guidelines.html")))
+                      "GNU Free System Distribution Guidelines") ".")
+
+                (p "GNU Guix provides "
+                   (a (@ (href ,(base-url "manual/html_node/Features.html")))
+                      "state-of-the-art package management features")
+                   " such as transactional upgrades and roll-backs,
+reproducible build environments, unprivileged package management, and
+per-user profiles.  It uses low-level mechanisms from the "
+                   (a (@ (href "https://nixos.org/nix/")) "Nix")
+                   " package manager, but packages are "
+                   (a (@ (href ,(base-url
+                                 "manual/html_node/Defining-Packages.html")))
+                      "defined")
+                   " as native "
+                   (a (@ (href ,(gnu-url "software/guile"))) "Guile")
+                   " modules, using extensions to the "
+                   (a (@ (href "http://schemers.org")) "Scheme")
+                   " language—which makes it nicely hackable.")
+
+                (p "GuixSD takes that a step further by supporting stateless,
+reproducible "
+                   (a (@ (href ,(base-url
+                                 "manual/html_node/Using-the-Configuration-System.html")))
+                      "operating system configurations")
+                   ".  This time the whole system is hackable in Scheme, from
 the "
-		    (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
-		       "four essential freedoms")
-		    ":")
-		 (ul (li "The freedom to run the program as you wish, for any
-purpose (freedom 0).")
-		     (li "The freedom to study how the program works, and adapt
-it to your needs (freedom 1). Access to the source code is a precondition for
-this.")
-		     (li "The freedom to redistribute copies so you can help
-your neighbor (freedom 2).")
-		     (li "The freedom to improve the program, and release your
-improvements to the public, so that the whole community benefits (freedom
-3). Access to the source code is a precondition for this.")))
+                   (a (@ (href ,(base-url
+                                 "manual/html_node/Initial-RAM-Disk.html")))
+                      "initial RAM disk")
+                   " to the "
+                   (a (@ (href ,(gnu-url "software/dmd")))
+                      "initialization system")
+                   ", and to the "
+                   (a (@ (href ,(base-url
+                                 "manual/html_node/Defining-Services.html")))
+                      "system services")
+                   ".")
 
 		(h2 (@ (id "mantainer")) "Maintainer")
 		(p "Guix is currently being maintained by Ludovic
@@ -125,6 +151,12 @@ urgent issue, you can escalate to the general "
 			   " channel of the Freenode IRC network ("
 			   (a (@ (href "https://gnunet.org/bot/log/guix/"))
 			      "logs")
-			   ").")))))
+			   ").")))
+
+                (h2 (@ (id "artwork")) "Artwork")
+                (p "This web site was designed by Luis Felipe López
+Acevedo.  See the "
+                   (a (@ (href ,(base-url "graphics"))) "graphics page")
+                   " for information about the Guix and GuixSD logotypes.")))
 
 	  ,(html-page-footer))))
