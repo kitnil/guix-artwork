@@ -120,7 +120,9 @@ smoothly. ")
 			  (p "You can also "
 			     (a (@ (href ,(base-url "donate")))
 				"donate hardware or hosting")
-			     ". ")
+			     " for our "
+                             (a (@ (href "http://hydra.gnu.org"))
+                                "build farm") ".  ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
 				(class "hlink-more-dark"))
 			     "Contribute"))
