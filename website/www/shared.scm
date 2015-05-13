@@ -41,12 +41,12 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 (define (html-page-description)
   `(div (@ (class "message-box msg-info"))
 	(span (@ (class "msg-label")) "Note ")
-	"The Guix System Distribution (GuixSD) is alpha software, which means it
-is not production-ready.  It may contain bugs and lack important features. But
-more than a disclaimer, this is an invitation to join us in improving it. See "
-	(a (@ (href ,(base-url "contribute"))) "Contributing")
-	", for more information. We hope you can soon switch to GuixSD without
-fear. "))
+	"The Guix System Distribution (GuixSD) is alpha software, "
+        "which means it is "
+        (a (@ (href ,(base-url "manual/html_node/System-Installation.html#Limitations")))
+           "not production-ready")
+        ".  But you can "
+	(a (@ (href ,(base-url "contribute"))) "help") "!"))
 
 (define (html-page-links)
   `(div (@ (id "header-box"))
