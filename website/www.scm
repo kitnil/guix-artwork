@@ -8,12 +8,102 @@
   #:use-module (www contribute)
   #:use-module (www help)
   #:use-module (sxml simple)
+  #:use-module (sxml match)
+  #:use-module (web client)
+  #:use-module (srfi srfi-1)
+  #:use-module (srfi srfi-9)
+  #:use-module (srfi srfi-19)
+  #:use-module (srfi srfi-26)
   #:use-module (ice-9 match)
   #:export (main-page
 
             %web-pages
             export-web-page
             export-web-site))
+
+(define %atom-url
+  ;; The web site's news feed.
+  "http://savannah.gnu.org/news/atom.php?group=guix")
+
+(define (fetch-news)
+  "Return the SXML tree of the Atom news feed."
+  (call-with-values
+      (lambda ()
+        (http-get %atom-url))
+    (lambda (response contents)
+      (call-with-input-string contents
+        (lambda (port)
+          (xml->sxml port
+                     #:namespaces '((atom . "http://www.w3.org/2005/Atom")
+                                    (x . "http://www.w3.org/1999/xhtml"))
+                     #:trim-whitespace? #t))))))
+
+(define-record-type <news-entry>
+  (news-entry url title date author content)
+  news-entry?
+  (url      news-entry-url)                       ;string
+  (title    news-entry-title)                     ;string
+  (date     news-entry-date)                      ;SRFI-19 date
+  (author   news-entry-author)                    ;sxml
+  (content  news-entry-content))                  ;sxml
+
+(define (news-items)
+  "Return the list of <news-entry> taken from the web site's RSS feed."
+  (sxml-match (fetch-news)
+    ((*TOP* (*PI* ,pi ...)
+            (atom:feed
+             (atom:id ,feed-id)
+             (atom:link)
+             (atom:title ,feed-title)
+             (atom:updated ,feed-updated)
+             (atom:entry
+              (atom:id ,id)
+              (atom:link (@ (href ,link)))
+              (atom:title ,title)
+              (atom:updated ,updated)
+              (atom:author ,author)
+              (atom:content ,content)
+              ,rest ...)
+             ...
+             ))
+     (map news-entry
+          link title
+          (map (cut string->date <> "~Y-~m-~d") updated)
+          author content))))
+
+(define (sxml->string* tree)
+  "Flatten tree by dismissing tags and attributes, and return the resulting
+string."
+  (define (sxml->strings tree)
+    (match tree
+      (((? symbol?) ('@ _ ...) body ...)
+       (append-map sxml->strings body))
+      (((? symbol?) body ...)
+       (append-map sxml->strings body))
+      ((? string?)
+       (list tree))))
+
+  (string-concatenate (sxml->strings tree)))
+
+(define (summarize-string str n)
+  "Truncate STR at the first space encountered starting from the Nth
+character."
+  (if (<= (string-length str) n)
+      str
+      (let ((space (string-index str #\space n)))
+        (string-take str (or space n)))))
+
+(define (news-entry->sxml entry)
+  "Return the an SXML tree representing ENTRY, a <news-entry>."
+  `(a (@ (href ,(news-entry-url entry))
+         (class "news-entry"))
+      (h4 ,(news-entry-title entry))
+      (p (@ (class "news-date"))
+         ,(date->string (news-entry-date entry) "~B ~e, ~Y"))
+      (p (@ (class "news-summary"))
+         ,(summarize-string (sxml->string* (news-entry-content entry))
+                            230)
+         "…")))
 
 (define (main-page)
   `(html (@ (lang "en"))
@@ -128,38 +218,14 @@ packaging API. ")
 		    (p (a (@ (href ,(base-url "contribute") )
 			     (class "hlink-yellow-boxed"))
 			  "Help us package more software →")))
+
 	       (div (@ (id "news-box"))
 		    (h2 "News")
-		    (a (@ (href "http://www.fsf.org/news/fsf-adds-guix-system-distribution-to-list-of-endorsed-distributions")
-			  (class "news-entry"))
-		       (h4 "FSF adds Guix System Distribution to list of
-endorsed distributions")
-		       (p (@ (class "news-date")) "February 3, 2015")
-		       (p (@ (class "news-summary"))
-			  "The Guix System Distribution is a new and growing
-distro that currently ships with just over 1000 packages, already including
-almost all of the programs available from the GNU Project..."))
-		    (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8193")
-			  (class "news-entry"))
-		       (h4 "GNU Guix 0.8.1 Released")
-		       (p (@ (class "news-date")) "January 29, 2015")
-		       (p (@ (class "news-summary"))
-			  "We are pleased to announce the next alpha release of
-GNU Guix, version 0.8.1. The release comes both with a source tarball, which
-allows you to install it on top of a running GNU/Linux system, and a USB
-installation image to install the standalone Guix System..."))
-		    (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8191")
-			  (class "news-entry"))
-		       (h4 "GNU Guix at FOSDEM")
-		       (p (@ (class "news-date")) "January 27, 2015")
-		       (p (@ (class "news-summary"))
-			  "Guix will be present at FOSDEM in Brussels, Belgium,
-with a talk entitled \"The Emacs of Distros\" this Saturday, at 3PM, in room
-H.1302. The talk will give an update on developments in Guix and the Guix System
-Distribution since last year..."))
+		    ,@(map news-entry->sxml (take (news-items) 3))
 		    (p (a (@ (href "https://savannah.gnu.org/news/?group=guix")
 			     (class "hlink-more-dark"))
 			  "More news")))
+
 	       (div (@ (id "contact-box"))
 		    (h2 "Contact")
 		    (div (@ (class "info-box text-justify"))
@@ -267,3 +333,7 @@ the broader GNU system.")
                                                file-name-separator-string
                                                filename))))
             %web-pages))
+
+;; Local Variables:
+;; eval: (put 'sxml-match 'scheme-indent-function 1)
+;; End:
