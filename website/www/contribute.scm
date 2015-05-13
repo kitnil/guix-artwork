@@ -25,18 +25,18 @@ will do our best to guide you. ")
 		(div (@ (class "text-center"))
 		     (div (@ (class "summary-box"))
 			  (h2 (@ (id "pms"))
-			      "Project Management System")
+			      "Project Management")
 			  (p "We use "
 			     (a (@ (href "https://savannah.gnu.org/"))
 				"Savannah")
 			     " as the central point for development,
 maintenance and distribution of the Guix System Distribution and GNU Guix.")
 			  (p "The source files for all the components of the
-project, including software, webiste, documentation, and artwork, are available
-in various repositories in Savannah. ")
+project, including software, web site, documentation, and artwork, are available
+in repositories at Savannah. ")
 			  (a (@ (href "https://savannah.gnu.org/projects/guix")
 				(class "hlink-more-dark"))
-			     "Get the source"))
+			     "Access Savannah"))
 		     (div (@ (class "summary-box"))
 			  (h2 (@ (id "art")) "Art")
 			  (p "We are always looking for artists to help us
@@ -138,7 +138,7 @@ reports. ")
 			  (p "You can help us translate software and
 documentation to your language. The main components of the Guix System
 Distribution, including the Guix package manager, can be translated in the "
-			     (a (@ (href "https://translationproject.org/"))
+			     (a (@ (href "https://translationproject.org/html/translators.html"))
 				"Translation Project")
 			     ".")
 			  (p "Other "

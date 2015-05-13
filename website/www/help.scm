@@ -94,7 +94,7 @@ the Guix System Distribution (GuixSD).")
 			     (br)
 			     "Bug reports for GNU Guix and the Guix System
 Distribution. ")
-			  (a (@ (href "https://savannah.gnu.org/mail/?group=guix")
+			  (a (@ (href ,(base-url "about#contact"))
 				(class "hlink-more-dark"))
 			     "Check all the lists")))
 		(h2 "Additional Documentation")

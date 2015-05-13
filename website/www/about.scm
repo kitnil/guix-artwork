@@ -17,11 +17,11 @@
 		   " and the "
 		   (em "GNU Guix")
 		   " package manager are free software projects developed by
-the "
+volunteers around the work under the umbrella of the "
 		   (a (@ (href ,(gnu-url "")))
-		      "GNU Project")
-		   " and independent volunteers from various parts of the
-world. This is the official website for both projects. ")
+		      "GNU Project") ".  "
+		   " This is the official web site for both projects. ")
+
 		(blockquote
 		 (p (strong
 		     "Free software means the users have the freedom to run,
@@ -43,13 +43,14 @@ this.")
 your neighbor (freedom 2).")
 		     (li "The freedom to improve the program, and release your
 improvements to the public, so that the whole community benefits (freedom
-3). Access to the source code is a precondition for this."))
-		 (p "\xa0gnu.org"))
+3). Access to the source code is a precondition for this.")))
+
 		(h2 (@ (id "mantainer")) "Maintainer")
 		(p "Guix is currently being maintained by Ludovic
 Courtès. Please use the "
 		   (a (@ (href "#contact")) "mailing lists")
 		   " for contact. ")
+
 		(h2 (@ (id "license")) "Licensing")
 		(p "Guix is free software; you can redistribute it and/or modify
 it under the terms of the "
@@ -57,6 +58,7 @@ it under the terms of the "
 		      "GNU General Public License")
 		   " as published by the Free Software Foundation; either
 version\xa03 of the License, or (at your option) any later version. ")
+
 		(h2 (@ (id "contact")) "Contact")
 		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
 		      (b "guix-devel"))
@@ -85,8 +87,7 @@ System Distribution (GuixSD). "
 			     "archive")
 			  ") ")
 		   (br)
-		   "Discussion about the development of the broader GNU
-system.")
+		   "Discussion about the development of the broader GNU system.")
 		(p (a (@ (href "https://lists.nongnu.org/mailman/listinfo/gnu-linux-libre"))
 		      (b "gnu-linux-libre"))
 		   (small " ("
@@ -125,4 +126,5 @@ urgent issue, you can escalate to the general "
 			   (a (@ (href "https://gnunet.org/bot/log/guix/"))
 			      "logs")
 			   ").")))))
+
 	  ,(html-page-footer))))

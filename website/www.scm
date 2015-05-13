@@ -135,7 +135,7 @@ character."
 				 (a (@ (href ,(guix-url "manual"))
 				       (class "hlink-yellow"))
 				    "GNU Guix")
-				 " Package Manager, in addition to standard
+				 " package manager, in addition to standard
 package management features, supports transactional upgrades and roll-backs,
 unprivileged package management, per-user profiles, and garbage collection.")
 			     (li (b "Hackable.")
@@ -251,6 +251,7 @@ check whether the bug is already in the "
 			    (a (@ (href "mailto:bug-guix@gnu.org")
 				  (class "button btn-red"))
 			       "Report")))
+
 		    (div (@ (class "info-box text-left"))
 			 (h3 "Mailing Lists")
 			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
@@ -273,22 +274,15 @@ the Guix System Distribution (GuixSD).")
 Distribution.")
 			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/gnu-system-discuss"))
 			       (b "gnu-system-discuss"))
-			    (small " ( "
+			    (small " ("
 				   (a (@ (href "http://lists.gnu.org/archive/html/gnu-system-discuss/"))
 				      "archive")
 				   ")")
 			    (br)
 			    "Discussion about the development of
 the broader GNU system.")
-			 (p (a (@ (href "https://lists.nongnu.org/mailman/listinfo/gnu-linux-libre"))
-			       (b "gnu-linux-libre"))
-			    (small " ("
-				   (a (@ (href "http://lists.nongnu.org/archive/html/gnu-linux-libre/"))
-				      "archive")
-				   ")")
-			    (br)
-			    "Workgroup for fully free GNU/Linux distributions.")
-			 (p (a (@ (href "https://savannah.gnu.org/mail/?group=guix")
+
+			 (p (a (@ (href (base-url "about#contact"))
 				  (class "hlink-more-dark"))
 			       "Find all the available lists")))))
 	  ,(html-page-footer))))
