@@ -137,15 +137,28 @@ character."
 				    "GNU Guix")
 				 " package manager, in addition to standard
 package management features, supports transactional upgrades and roll-backs,
-unprivileged package management, per-user profiles, and garbage collection.")
+unprivileged package management, per-user profiles, "
+                                 (a (@ (href ,(base-url
+                                               "manual/html_node/Features.html"))
+                                       (class "hlink-yellow"))
+                                    "and more") ".")
 			     (li (b "Hackable.")
 				 " It provides "
 				 (a (@ (href ,(gnu-url "software/guile/"))
 				       (class "hlink-yellow"))
 				    "Guile Scheme")
 				 " APIs, including high-level embedded
-domain-specific languages (EDSLs), to describe how packages are built and
-composed."))
+domain-specific languages (EDSLs) to "
+                                 (a (@ (href ,(base-url
+                                               "manual/html_node/Defining-Packages.html"))
+                                       (class "hlink-yellow"))
+                                    "define packages")
+                                 " and "
+                                 (a (@ (href ,(base-url
+                                               "manual/html_node/System-Configuration.html"))
+                                       (class "hlink-yellow"))
+                                    "whole-system configurations")
+                                 "."))
 			 (div (@ (class "featured-actions"))
 			      (a (@ (href ,(base-url "download"))
 				    (class "action download"))
