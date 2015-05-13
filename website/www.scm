@@ -287,7 +287,7 @@ Distribution.")
 			    "Discussion about the development of
 the broader GNU system.")
 
-			 (p (a (@ (href (base-url "about#contact"))
+			 (p (a (@ (href ,(base-url "about#contact"))
 				  (class "hlink-more-dark"))
 			       "Find all the available lists")))))
 	  ,(html-page-footer))))
