@@ -21,7 +21,7 @@
                    (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
                       "free software")
                    " projects developed by
-volunteers around the work under the umbrella of the "
+volunteers around the world under the umbrella of the "
 		   (a (@ (href ,(gnu-url "")))
 		      "GNU Project") ".  "
                       " This is the official web site for both projects. ")
