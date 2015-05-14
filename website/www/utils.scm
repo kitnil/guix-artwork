@@ -49,7 +49,7 @@
   (string-append (static-base-url) "img/" file))
 
 (define (thumb-url file)
-  (string-append (image-url "screenshots/") file))
+  (string-append (image-url "screenshots/thumbs/") file))
 
 (define (screenshot-url version file)
   (string-append (guix-url "screenshots/") version "/" file))

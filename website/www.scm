@@ -105,6 +105,15 @@ character."
                             170)
          "…")))
 
+(define* (screenshot image
+                     #:key
+                     (directory (latest-guix-version))
+                     (alt ""))
+  `(a (@ (href ,(screenshot-url directory image)))
+      (img (@ (src ,(thumb-url image))
+              (class "screenshot-thumb")
+              (alt ,alt)))))
+
 (define (main-page)
   `(html (@ (lang "en"))
 	 ,(html-page-header "Home" #:css "index.css")
@@ -199,30 +208,20 @@ packaging API. ")
 			    (class "h-separator")
 			    (alt "")))
 		    (div (@ (id "screens-box"))
-			 (a (@ (href ,(screenshot-url "0.8.2" "grub-menu.png")))
-			    (img (@ (src ,(thumb-url "grub-menu-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "GRUB menu"))))
-			 (a (@ (href ,(screenshot-url "0.8.2" "slim.png")))
-			    (img (@ (src ,(thumb-url "slim-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "Slim login manager"))))
-			 (a (@ (href ,(screenshot-url "0.8.2" "windowmaker+icecat+inkscape.png")))
-			    (img (@ (src ,(thumb-url "windowmaker+icecat+inkscape-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "Windowmaker, Icecat, and Inkscape"))))
-			 (a (@ (href ,(screenshot-url "0.8.2" "user-interfaces.png")))
-			    (img (@ (src ,(thumb-url "user-interfaces-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "mplayer and xterm"))))
-			 (a (@ (href ,(screenshot-url "0.8.2" "emacs-ui-packages.png")))
-			    (img (@ (src ,(thumb-url "emacs-ui-packages-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "Emacs user interface to the package manager."))))
-			 (a (@ (href ,(screenshot-url "0.8.2" "emacs-ui-generations.png")))
-			    (img (@ (src ,(thumb-url "emacs-ui-generations-thumb.png"))
-				    (class "screenshot-thumb")
-				    (alt "Emacs user interface generations.")))))
+                         ,@(map (lambda (file alt)
+                                  (screenshot file #:alt alt))
+                                '("guixsd-grub.png"
+                                  "guixsd-slim.png"
+                                  "guix-screenie.png"
+                                  ;; "guixsd-xfce-emacs.png"
+                                  "guixsd-xfce-icecat-emacs.png"
+                                  "guixsd-xfce-mines.png")
+                                '("GRUB menu"
+                                  "Graphical log-in screen"
+                                  "Emacs, IceCat, and Evince"
+                                  ;; "Xfce and Emacs"
+                                  "Xfce, IceCat, and Emacs"
+                                  "Xfce and GNOME Mines")))
 		    (p (a (@ (href ,(base-url "contribute") )
 			     (class "hlink-yellow-boxed"))
 			  "Help us package more software →")))
