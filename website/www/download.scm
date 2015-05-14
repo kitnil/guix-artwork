@@ -23,7 +23,7 @@ dependencies.")
   "Source code distribution.")
 
 (define %source-tarball-manual
-  "manual/html_node/Installation.html")
+  "manual/html_node/Requirements.html")
 
 (define %guix-image
   "Guix-package.png")
