@@ -102,7 +102,7 @@ character."
          ,(date->string (news-entry-date entry) "~B ~e, ~Y"))
       (p (@ (class "news-summary"))
          ,(summarize-string (sxml->string* (news-entry-content entry))
-                            230)
+                            170)
          "…")))
 
 (define (main-page)
