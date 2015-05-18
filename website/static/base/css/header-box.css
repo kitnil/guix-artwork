@@ -12,6 +12,13 @@
 
 #logo {
     border-style: none;
+    color: white;
+    font-weight: bold;
+    line-height: 55px;
+}
+
+#logo:active, #logo:focus, #logo:hover {
+    color: #F4BB15;
 }
 
 #site-nav {
