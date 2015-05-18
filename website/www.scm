@@ -116,7 +116,10 @@ character."
 
 (define (main-page)
   `(html (@ (lang "en"))
-	 ,(html-page-header "Home" #:css "index.css")
+	 ,(html-page-header
+           "GNU's advanced distro and transactional package manager"
+           #:css "index.css")
+
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)
