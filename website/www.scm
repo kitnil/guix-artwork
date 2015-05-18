@@ -130,9 +130,9 @@ character."
 			     "The Guix System Distribution")
 			 (ul (li (b "Liberating.")
 				 " GuixSD is an advanced distribution of the "
-				 (a (@ (href ,(gnu-url ""))
+				 (a (@ (href ,(gnu-url "gnu/about-gnu.html"))
 				       (class "hlink-yellow"))
-				    "GNU Operating System")
+				    "GNU operating system")
 				 " developed by the "
 				 (a (@ (href ,(gnu-url ""))
 				       (class "hlink-yellow"))
