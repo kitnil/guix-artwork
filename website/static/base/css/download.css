@@ -1,9 +1,48 @@
 /*
     Public domain 2015 Luis Felipe López Acevedo. All rights waived.
     <felipe.lopez@openmailbox.org>
-   
-    NOTE  The default style is targeted at screens with a width less than
-          1024 pixels.
 */
 
 @import url("article.css");
+
+
+.download-box {
+    border-color: #CCC;
+    border-style: none none solid none;
+    border-width: thin;
+    color: #4D4D4D;
+    font-size: 0.9em;
+    padding: 10px;
+    text-align: center;
+}
+
+.hlink-download, .hlink-download:link, .hlink-download:visited {
+    background-color: #E6E6E6;
+    border-style: none;
+    border-radius: 5px;
+    color: black;
+    display: inline-block;
+    font-weight: bold;
+    margin: 5px;
+    padding: 5px 10px;
+}
+
+.hlink-download:active, .hlink-download:focus, .hlink-download:hover {
+    background-color: #F4BB15;
+}
+
+.hlink-signature {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+
+@media screen and (min-width: 800px) {
+    .download-box {
+        border-style: solid;
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: 270px;
+    }
+}

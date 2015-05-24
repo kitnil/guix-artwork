@@ -31,25 +31,42 @@ dependencies.")
 (define (ftp-url file)
   (string-append "ftp://alpha.gnu.org/gnu/guix/" file))
 
-(define* (summary-box title
-                      #:key file description image manual)
-  `(div (@ (class "summary-box"))
-        (div (@ (class "text-center"))
-             (img (@ (src ,(image-url image))
-                     (alt ""))))
+(define (guixsd-files archs)
+  (map (lambda (arch)
+         (cons arch (ftp-url (string-append "guixsd-usb-install-"
+                                            (latest-guix-version) "." arch
+                                            "-linux.xz"))))
+       archs))
+
+(define (guix-files archs)
+  (map (lambda (arch)
+         (cons arch (ftp-url (string-append "guix-binary-" (latest-guix-version)
+                                            "." arch "-linux.tar.xz"))))
+       archs))
+
+(define (guix-source-files variants)
+  (map (lambda (variant)
+         (cons variant (ftp-url (string-append "guix-" (latest-guix-version)
+                                               ".tar.gz"))))
+       variants))
+
+(define* (download-box title
+                       #:key files description image manual)
+  `(div (@ (class "download-box"))
+        (img (@ (src ,(image-url image)) (alt "")))
         (h2 ,title)
         (p ,description)
-
-        (p (@ (class "text-center"))
-           (a (@ (href ,(ftp-url file))
-                 (class "hlink-yellow-boxed"))
-              "DOWNLOAD")
-           (br)
-           ;; FIXME: Size?
-           ;; "(140MB approx.)"
-           (br)
-           (a (@ (href ,(string-append (ftp-url file) ".sig")))
-              "Get signature"))
+        (p "Download options:")
+        ,(map (lambda (file)
+                `(a (@ (href ,(cdr file)) (class "hlink-download"))
+                   ,file))
+              files)
+        (p "Signatures: "
+           ,(map (lambda (file)
+                   `(a (@ (href ,(string-append (cdr file) ".sig"))
+                          (class "hlink-signature"))
+                      ,(string-append (car file))))
+             files))
         (p "See the "
            (a (@ (href ,(guix-url manual)))
               "installation instructions")
@@ -78,39 +95,24 @@ can be installed as an additional package manager on top of an installed
 Linux-based system.")
 
 		(div (@ (class "text-center"))
-                     ,@(map (lambda (arch)
-                              (summary-box (string-append "GuixSD "
-                                                          (latest-guix-version)
-                                                          " (" arch ")")
-                                           #:file (string-append
-                                                   "guixsd-usb-install-"
-                                                   (latest-guix-version)
-                                                   "." arch "-linux.xz")
-                                           #:description %usb-image-description
-                                           #:manual %usb-image-manual
-                                           #:image %guixsd-image))
-                            '("x86_64" "i686"))
-                     ,@(map (lambda (arch)
-                              (summary-box (string-append "GNU Guix "
-                                                          (latest-guix-version)
-                                                          " Binary (" arch ")")
-                                           #:file (string-append
-                                                   "guix-binary-"
-                                                   (latest-guix-version)
-                                                   "." arch "-linux.tar.xz")
-                                           #:description %binary-tarball-description
-                                           #:manual %binary-tarball-manual
-                                           #:image %guix-image))
-                            '("x86_64" "i686" "mips64el" "armhf"))
-                     ,(summary-box (string-append "GNU Guix "
-                                                  (latest-guix-version)
-                                                  " Source")
-                                   #:file (string-append "guix-"
-                                                         (latest-guix-version)
-                                                         ".tar.gz")
-                                   #:description %source-tarball-description
-                                   #:manual %source-tarball-manual
-                                   #:image %guix-image))
+             ,(download-box (string-append "GuixSD " (latest-guix-version))
+                            #:files (guixsd-files '("x86_64" "i686"))
+                            #:description %usb-image-description
+                            #:manual %usb-image-manual
+                            #:image %guixsd-image)
+             ,(download-box (string-append "GNU Guix " (latest-guix-version)
+                                           " Binary")
+                            #:files (guix-files '("x86_64" "i686" "mips64el"
+                                                  "armhf"))
+                            #:description %binary-tarball-description
+                            #:manual %binary-tarball-manual
+                            #:image %guix-image)
+             ,(download-box (string-append "GNU Guix " (latest-guix-version)
+                                           " Source")
+                            #:files (guix-source-files '("tarball"))
+                            #:description %source-tarball-description
+                            #:manual %source-tarball-manual
+                            #:image %guix-image))
 
 		(p "Source code for the Guix System Distribution USB
 installation images as well as GNU Guix can be found on the GNU ftp server for "
