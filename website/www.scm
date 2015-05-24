@@ -150,7 +150,7 @@ character."
 				 " package manager, in addition to standard
 package management features, supports transactional upgrades and roll-backs,
 unprivileged package management, per-user profiles, "
-                                 (a (@ (href ,(base-url
+                                 (a (@ (href ,(guix-url
                                                "manual/html_node/Features.html"))
                                        (class "hlink-yellow"))
                                     "and more") ".")
@@ -161,12 +161,12 @@ unprivileged package management, per-user profiles, "
 				    "Guile Scheme")
 				 " APIs, including high-level embedded
 domain-specific languages (EDSLs) to "
-                                 (a (@ (href ,(base-url
+                                 (a (@ (href ,(guix-url
                                                "manual/html_node/Defining-Packages.html"))
                                        (class "hlink-yellow"))
                                     "define packages")
                                  " and "
-                                 (a (@ (href ,(base-url
+                                 (a (@ (href ,(guix-url
                                                "manual/html_node/System-Configuration.html"))
                                        (class "hlink-yellow"))
                                     "whole-system configurations")
