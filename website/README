@@ -22,6 +22,12 @@ objects.
 
 * Copying
 
+** Guile code
+
+See [[file:COPYING][COPYING]].
+
+** Graphics
+
 Public domain 2015 [[mailto:felipe.lopez@openmailbox.org][Luis Felipe López Acevedo]]
 
 All the graphics in this directory are dedicated to the public domain, except
