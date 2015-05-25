@@ -90,6 +90,6 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 	   "Guile") " under "
 	(a (@ (href ,(gnu-url "licenses/agpl-3.0.html")) (class "hlink-yellow"))
 	   "AGPL") " license ("
-        (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git")
+        (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website")
 	      (class "hlink-yellow"))
 	   "Source code") ")."))
