@@ -44,7 +44,8 @@ with the whole world.")))
 		  (content
 		   "GNU, FSF, Free Software Foundation, Linux, Emacs, GCC,
 Unix, Free Software, Libre Software, Operating System, GNU Kernel, GNU Hurd,
-GUix Package Manager, Guile Scheme, Functional package management")))
+Guix Package Manager, Guile Scheme, Transactional upgrades,
+Functional package management,")))
 	 (meta (@ (name "viewport")
 		  (content "width=device-width, initial-scale=1.0")))
 	 (link (@ (type "text/css")
