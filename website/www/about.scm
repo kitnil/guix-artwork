@@ -2,7 +2,7 @@
 ;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2015 David Thompson <davet@gnu.org>
-;;; Initially written by Felipe López Acevedo <felipe.lopez@openmailbox.org>
+;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
 ;;;
 ;;; This file is part of GuixSD website.
