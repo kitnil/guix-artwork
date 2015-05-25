@@ -290,15 +290,6 @@ the Guix System Distribution (GuixSD).")
 			    (br)
 			    "Bug reports for GNU Guix and the Guix System
 Distribution.")
-			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/gnu-system-discuss"))
-			       (b "gnu-system-discuss"))
-			    (small " ("
-				   (a (@ (href "http://lists.gnu.org/archive/html/gnu-system-discuss/"))
-				      "archive")
-				   ")")
-			    (br)
-			    "Discussion about the development of
-the broader GNU system.")
 
 			 (p (a (@ (href ,(base-url "about#contact"))
 				  (class "hlink-more-dark"))
