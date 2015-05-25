@@ -85,11 +85,12 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 (define (html-page-footer)
   `(div (@ (id "footer-box"))
 	"Made with " (span (@ (class "metta")) "♥")
-	" by humans. Powered by GNU "
+	" by humans and powered by "
 	(a (@ (href ,(gnu-url "software/guile")) (class "hlink-yellow"))
-	   "Guile") " under "
-	(a (@ (href ,(gnu-url "licenses/agpl-3.0.html")) (class "hlink-yellow"))
-	   "AGPL") " license ("
+	   "GNU Guile") ".  "
         (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website")
-	      (class "hlink-yellow"))
-	   "Source code") ")."))
+              (class "hlink-yellow"))
+           "Source code")
+        " under the "
+	(a (@ (href ,(gnu-url "licenses/agpl-3.0.html")) (class "hlink-yellow"))
+	   "GNU AGPL") "."))
