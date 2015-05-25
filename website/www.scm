@@ -71,6 +71,9 @@
           (map (cut string->date <> "~Y-~m-~d") updated)
           author content))))
 
+(define %video-url
+  "http://audio-video.gnu.org/video/misc/2015-01__GNU_Guix__The_Emacs_of_Distros.webm")
+
 (define (sxml->string* tree)
   "Flatten tree by dismissing tags and attributes, and return the resulting
 string."
@@ -181,15 +184,15 @@ domain-specific languages (EDSLs) to "
 	       (div (@ (id "discovery-box"))
 		    (h2 "Discover GuixSD")
 		    (div (@ (class "info-box text-center"))
-			 (video (@ (src "http://audio-video.gnu.org/video/misc/2015-01__GNU_Guix__The_Emacs_of_Distros.webm")
+			 (video (@ (src ,%video-url)
 				   (poster
 				    ,(image-url "the-emacs-of-distros.png"))
 				   (controls "controls")
-				   (class "video-preview")))
-			 (p "January 2015, The Emacs of Distros (48 minutes)")
-			 (p (a (@ (href ,(base-url "help/#talks"))
-				  (class "hlink-more-light"))
-			       "Check all talks")))
+				   (class "video-preview"))
+				(p "Video: "
+				   (a (@ (href ,%video-url)
+					 (class "hlink-more-light"))
+				      "The Emacs of Distros (48 minutes)"))))
 		    (div (@ (class "info-box text-left"))
 			 (p (a (@ (href ,(guix-url "manual"))
 				  (class "hlink-yellow"))
