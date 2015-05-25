@@ -106,7 +106,13 @@ Distribution. ")
 			", describes the rationale, design, and
 implementation of Guix's packaging API. \t "))
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "February 2015, "
+		(ul (li "May 2015, "
+                        (a (@ (href "http://opentechsummit.net/en.html"))
+                           "OpenTechSummit")
+                        ": "
+                        (a (@ (href ,(slides-url "guix-opentechsummit-201505014.pdf")))
+                           "slides"))
+                    (li "February 2015, "
 			(a (@ (href "https://fosdem.org/2015/schedule/event/the_emacs_of_distros/"))
 			   "FOSDEM")
 			": "
