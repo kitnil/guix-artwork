@@ -329,6 +329,7 @@ Distribution.")
   (mkdir* (dirname file))
   (call-with-output-file file
     (lambda (port)
+      (display "<!DOCTYPE html>\n" port)
       (sxml->xml page port))))
 
 (define* (export-web-site #:optional (directory "."))
