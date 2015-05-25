@@ -57,7 +57,7 @@ GUix Package Manager, Guile Scheme, Functional package management")))
 		  (rel "icon")
 		  (href ,(image-url "favicon.png"))))
 	 (link (@ (rel "license") (href "Pending...")))
-	 (title ,(string-append title " - GuixSD"))))
+	 (title ,(string-append title " — GuixSD"))))
 
 (define (html-page-description)
   `(div (@ (class "message-box msg-info"))
