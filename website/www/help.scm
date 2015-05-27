@@ -157,7 +157,7 @@ implementation of Guix's packaging API. \t "))
 			(a (@ (href "https://www.open-bio.org/wiki/Codefest_2014"))
 			   "Open Bioinformatics Codefest 2014")
 			": "
-			(a (@ (href "guix-openbio-codefest-20140709.pdf"))
+			(a (@ (href ,(slides-url "guix-openbio-codefest-20140709.pdf")))
 			   "slides"))
 		    (li "February 2014, "
 			(a (@ (href "https://fosdem.org/2014/schedule/event/gnuguix/"))
