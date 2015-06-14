@@ -28,6 +28,7 @@
 	    guix-url
 	    static-base-url
 	    css-url
+	    js-url
 	    image-url
 	    thumb-url
 	    screenshot-url
@@ -65,6 +66,9 @@
 
 (define (css-url file)
   (string-append (static-base-url) "css/" file))
+
+(define (js-url file)
+  (string-append (static-base-url) "js/" file))
 
 (define (image-url file)
   (string-append (static-base-url) "img/" file))

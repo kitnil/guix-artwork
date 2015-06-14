@@ -30,7 +30,7 @@
 (define latest-guix-version
   (make-parameter "0.8.2"))
 
-(define* (html-page-header title #:key (css "article.css"))
+(define* (html-page-header title #:key (css "article.css") js)
   `(head (meta (@ (charset "utf-8")))
 	 (meta (@ (name "author")
 		  (content "GuixSD Contributors")))
@@ -58,7 +58,8 @@ Functional package management,")))
 		  (rel "icon")
 		  (href ,(image-url "favicon.png"))))
 	 (link (@ (rel "license") (href "Pending...")))
-	 (title ,(string-append title " — GuixSD"))))
+	 (title ,(string-append title " — GuixSD"))
+	 ,(if js `(script (@ (src ,(js-url js))) "") "")))
 
 (define (html-page-description)
   `(div (@ (class "message-box msg-info"))
