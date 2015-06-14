@@ -1,0 +1,64 @@
+/* license: CC0 */
+
+@import url("article.css");
+
+a {
+    transition: all 0.3s;
+}
+table#packages, table#packages tr, table#packages tbody, table#packages td, table#packages th {
+    border: 0px solid black;
+    clear: both;
+}
+table#packages tr:nth-child(even) {
+    background-color: #FFF;
+}
+table#packages tr:nth-child(odd) {
+    background-color: #EEE;
+}
+table#packages tr:hover, table#packages tr:focus, table#packages tr:active {
+    background-color: #DDD;
+}
+table#packages th {
+    background-color: #333;
+    color: #fff;
+}
+table#packages td {
+    margin:0px;
+    padding:0.2em 0.5em;
+}
+table#packages td:first-child {
+    width:10%;
+    text-align:center;
+}
+table#packages td:nth-child(2) {
+    width:30%;
+}
+table#packages td:last-child {
+    width:60%;
+}
+img.package-logo {
+    float: left;
+    padding: 0.75em;
+}
+table#packages span {
+    font-weight: 700;
+}
+table#packages span a {
+    float: right;
+    font-weight: 500;
+}
+a#top {
+    position:fixed;
+    right:10px;
+    bottom:10px;
+    font-size:150%;
+    background-color:#EEE;
+    padding:10px 7.5px 0 7.5px;
+    text-decoration:none;
+    color:#000;
+    border-radius:5px;
+}
+a#top:hover, a#top:focus {
+    background-color:#333;
+    color:#fff;
+}

@@ -331,9 +331,7 @@ Distribution.")
     ("donate/index.html" ,donate-page)
     ("download/index.html" ,download-page)
     ("help/index.html" ,help-page)
-
-    ;; XXX: The following one is not ready yet.
-    ;; ("packages/index.html" ,packages-page)
+    ;; ("packages/index.html" ,packages-page) ; Need Guix
     ))
 
 (define (mkdir* directory)
