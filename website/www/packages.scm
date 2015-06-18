@@ -184,7 +184,7 @@ description-ids as formal parameters."
 
     (let ((description-ids (cons description-id description-ids)))
       `(tr (td ,(if (gnu-package? package)
-                    `(img (@ (src ,(gnu-url "/graphics/gnu-head-mini.png"))
+                    `(img (@ (src ,(gnu-url "graphics/gnu-head-mini.png"))
                              (alt "Part of GNU")
                              (title "Part of GNU")))
                     ""))
