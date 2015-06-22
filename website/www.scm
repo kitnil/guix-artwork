@@ -168,10 +168,10 @@ character."
 				 ". ")
 			     (li (b "Dependable.")
 				 " The "
-				 (a (@ (href ,(guix-url "manual"))
+				 (a (@ (href ,(guix-url "manual/html_node/Package-Management.html"))
 				       (class "hlink-yellow"))
-				    "GNU Guix")
-				 " package manager, in addition to standard
+				    "GNU Guix package manager")
+                                 ", in addition to standard
 package management features, supports transactional upgrades and roll-backs,
 unprivileged package management, per-user profiles, "
                                  (a (@ (href ,(guix-url
