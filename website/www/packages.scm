@@ -257,8 +257,7 @@ description-ids as formal parameters."
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "Packages")
-		(p "The Guix System Distribution provides 1,500+ packages
-transparently "
+		(p "GNU Guix provides 1,500+ packages transparently "
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
 		      "available as pre-built binaries")
 		   ". This is a complete lists of the packages. Our "
