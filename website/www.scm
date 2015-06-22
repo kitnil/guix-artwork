@@ -349,7 +349,8 @@ Distribution.")
   (call-with-output-file file
     (lambda (port)
       (display "<!DOCTYPE html>\n" port)
-      (sxml->xml page port))))
+      (sxml->xml page port))
+    #:encoding "UTF-8"))
 
 (define* (export-web-site #:optional (directory "."))
   "Export the whole web site as HTML files created in DIRECTORY."
