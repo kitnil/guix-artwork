@@ -120,12 +120,21 @@ Distribution. ")
 			     "Check all the lists")))
 		(h2 "Additional Documentation")
 		(ul (li (a (@ (href "https://arxiv.org/abs/1305.4584"))
-			   (i "Functional Package Management with Guix"))
+                           (i "Functional Package Management with Guix"))
 			", presented at the "
 			(a (@ (href "https://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
 			   "2013 European Lisp Symposium (ELS)")
 			", describes the rationale, design, and
-implementation of Guix's packaging API. \t "))
+implementation of Guix's packaging API.")
+                    (li (a (@ (href "http://arxiv.org/abs/1506.02822"))
+                           (i "Reproducible and User-Controlled Software
+Environments in HPC with Guix"))
+                        ", to be presented at the "
+                        (a (@ (href "http://reppar.org/"))
+                           "2015 International Workshop on Reproducibility in
+Parallel Computing (RepPar)")
+                        ", discusses the use of Guix in high-performance
+computing (HPC)."))
 		(h2 (@ (id "talks")) "Talks")
 		(ul (li "May 2015, "
                         (a (@ (href "http://opentechsummit.net/en.html"))
