@@ -121,7 +121,7 @@ for the components of the system. ")
 			     (a (@ (href ,(gnu-url "software/guile/manual")))
 				"Guile manual")
 			     " or other "
-			     (a (@ (href "http://schemers.org/Documents/#intro-texts"))
+			     (a (@ (href "http://www.schemers.org/Documents/#intro-texts"))
 				"introductory material about Scheme")
 			     ". Also, make sure to read the "
 			     (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/HACKING"))
