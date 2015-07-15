@@ -255,6 +255,7 @@ description-ids as formal parameters."
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)
+
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "Packages")
@@ -269,8 +270,9 @@ description-ids as formal parameters."
 				       (lambda (p1 p2)
 					 (string<? (package-name p1)
 						   (package-name p2))))))
-		   (packages->sxml packages))))
+		   (packages->sxml packages))
 
-          (p "Updated " ,(date->string (current-date) "~B ~e, ~Y") ".")
+                (p "Updated " ,(date->string (current-date) "~B ~e, ~Y")
+                   ".")))
 
 	  ,(html-page-footer))))
