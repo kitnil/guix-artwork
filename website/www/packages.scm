@@ -35,6 +35,7 @@
   #:use-module (web uri)
   #:use-module (ice-9 match)
   #:use-module (srfi srfi-1)
+  #:use-module (srfi srfi-19)
   #:export (packages-page))
 
 (define lookup-gnu-package
@@ -269,4 +270,7 @@ description-ids as formal parameters."
 					 (string<? (package-name p1)
 						   (package-name p2))))))
 		   (packages->sxml packages))))
+
+          (p "Updated " ,(date->string (current-date) "~B ~e, ~Y") ".")
+
 	  ,(html-page-footer))))
