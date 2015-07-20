@@ -179,11 +179,10 @@ reports. ")
 			     (a (@ (href "https://translationproject.org/html/translators.html"))
 				"Translation Project")
 			     " for information on how you can help.")
-			  (p "Other "
-			     (a (@ (href ,(base-url "packages")))
-				"software packaged")
-			     " for the system may have their own translation
-tools. Visit their websites and help translate. ")
+			  (p (a (@ (href ,(base-url "packages")))
+				"Software packages")
+			     " provided by the system may have their own translation
+tools.  Visit their websites and help translate. ")
 			  (a (@ (href "https://translationproject.org/")
 				(class "hlink-more-dark"))
 			     "Start translating")))
