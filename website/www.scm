@@ -235,20 +235,21 @@ packaging API. ")
 			    (class "h-separator")
 			    (alt "")))
 		    (div (@ (id "screens-box"))
-                         ,@(map (lambda (file alt)
-                                  (screenshot file #:alt alt))
-                                '("guixsd-grub.png"
-                                  "guixsd-slim.png"
-                                  "guix-screenie.png"
-                                  ;; "guixsd-xfce-emacs.png"
-                                  "guixsd-xfce-icecat-emacs.png"
-                                  "guixsd-xfce-mines.png")
-                                '("GRUB menu"
-                                  "Graphical log-in screen"
-                                  "Emacs, IceCat, and Evince"
-                                  ;; "Xfce and Emacs"
+                         ,@(map (match-lambda*
+                                  (((version file) alt)
+                                   (screenshot file
+                                               #:alt alt
+                                               #:directory version)))
+                                '(("0.8.2" "guixsd-slim.png")
+                                  ("0.8.2" "guixsd-xfce-icecat-emacs.png")
+                                  ("0.8.3" "guix-system-vm.png")
+                                  ("0.8.3" "guix-edit+evince.png")
+                                  ("0.8.3" "enlightenment-inkscape.png"))
+                                '("Graphical log-in screen"
                                   "Xfce, IceCat, and Emacs"
-                                  "Xfce and GNOME Mines")))
+                                  "VM started with 'guix system vm'"
+                                  "Evince, Emacs, and 'guix edit'"
+                                  "Enlightenment, Inkscape, and Serbian text")))
 		    (p (a (@ (href ,(base-url "contribute") )
 			     (class "hlink-yellow-boxed"))
 			  "Help us package more software →")))
