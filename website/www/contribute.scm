@@ -166,12 +166,19 @@ reports. ")
 			     "Report a bug"))
 		     (div (@ (class "summary-box"))
 			  (h2 (@ (id "translation")) "Translation")
-			  (p "You can help us translate software and
-documentation to your language. The main components of the Guix System
-Distribution, including the Guix package manager, can be translated in the "
+			  (p "You can help translate the "
+                             (a (@ (href
+                                    "http://translationproject.org/domain/guix.html"))
+                                "software")
+                             " and the "
+                             (a (@ (href
+                                    "http://translationproject.org/domain/guix-packages.html"))
+                                "package descriptions")
+                             " to your language.  "
+                             "See the"
 			     (a (@ (href "https://translationproject.org/html/translators.html"))
 				"Translation Project")
-			     ".")
+			     " for information on how you can help.")
 			  (p "Other "
 			     (a (@ (href ,(base-url "packages")))
 				"software packaged")
