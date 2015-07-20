@@ -42,7 +42,7 @@
 			  (p "The documentation about the Guix System
 Distribution is available online as part of the GNU Guix package manager
 manual.")
-			  (a (@ (href ,(guix-url "manual/guix.html#GNU-Distribution"))
+			  (a (@ (href ,(guix-url "manual/html_node/GNU-Distribution.html"))
 				(class "hlink-more-dark"))
 			     "Read the manual"))
 		     (div (@ (class "summary-box"))

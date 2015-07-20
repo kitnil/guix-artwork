@@ -100,7 +100,7 @@ need to be packaged to make it easier for users to install their favorite tools
 with the Guix package manager, and be productive using the system. ")
 			  (p "Information on how to add packages to the
 distribution can be found "
-			     (a (@ (href ,(guix-url "manual/guix.html#Packaging-Guidelines")))
+			     (a (@ (href ,(guix-url "manual/html_node/Packaging-Guidelines.html")))
 				"in the manual")
 			     ". ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
