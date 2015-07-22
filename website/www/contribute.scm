@@ -124,9 +124,9 @@ for the components of the system. ")
 			     (a (@ (href "http://www.schemers.org/Documents/#intro-texts"))
 				"introductory material about Scheme")
 			     ". Also, make sure to read the "
-			     (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/HACKING"))
-				"HACKING")
-			     " files for more details on the development setup,
+			     (a (@ (href ,(guix-url "manual/html_node/Contributing.html")))
+				"Contributing")
+			     " section of the manual for more details on the development setup,
 as well as the coding and cooperation conventions used in the project. ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
 				(class "hlink-more-dark"))
