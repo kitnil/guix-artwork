@@ -88,10 +88,9 @@ dependencies.")
                           (class "hlink-signature"))
                       ,(string-append (car file))))
              files))
-        (p "See the "
-           (a (@ (href ,(guix-url manual)))
-              "installation instructions")
-           " from the manual.")))
+        (p (a (@ (href ,(guix-url manual)))
+              "Installation instructions")
+           ".")))
 
 (define (download-page)
   `(html (@ (lang "en"))
