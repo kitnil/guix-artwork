@@ -34,6 +34,7 @@
   #:use-module (sxml fold)
   #:use-module (web uri)
   #:use-module (ice-9 match)
+  #:use-module (ice-9 i18n)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-19)
   #:export (packages-page))
@@ -248,6 +249,13 @@ description-ids as formal parameters."
           (id "top"))
        "^")))
 
+(define (number* number)
+  "Return NUMBER correctly formatting according to English conventions."
+  (number->locale-string number 0
+                         (or (false-if-exception
+                              (make-locale LC_ALL "en_US.utf8"))
+                             (make-locale LC_ALL "en_US.UTF-8"))))
+
 
 (define (packages-page)
   `(html (@ (lang "en"))
@@ -259,7 +267,9 @@ description-ids as formal parameters."
 	  (div (@ (id "content-box"))
 	       (article
 		(h1 "Packages")
-		(p "GNU Guix provides 1,500+ packages transparently "
+		(p "GNU Guix provides "
+                   ,(number* (fold-packages (lambda (p n) (+ 1 n)) 0))
+                   " packages transparently "
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
 		      "available as pre-built binaries")
 		   ". This is a complete lists of the packages. Our "
