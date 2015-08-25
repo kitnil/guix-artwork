@@ -136,12 +136,20 @@ Parallel Computing (RepPar)")
                         ", discusses the use of Guix in high-performance
 computing (HPC)."))
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "May 2015, "
-                        (a (@ (href "http://opentechsummit.net/en.html"))
-                           "OpenTechSummit")
+		(ul (li "August 2015, "
+                        (a (@ (href "http://reppar.org"))
+                           "Workshop on Reproducibility in Parallel Computing
+ (RepPar)")
                         ": "
-                        (a (@ (href ,(slides-url "guix-opentechsummit-201505014.pdf")))
+                        (a (@ (href ,(slides-url
+                                      "guix-reppar-20150825.pdf")))
                            "slides"))
+                    (li "May 2015, "
+                           (a (@ (href "http://opentechsummit.net/en.html"))
+                              "OpenTechSummit")
+                           ": "
+                           (a (@ (href ,(slides-url "guix-opentechsummit-201505014.pdf")))
+                              "slides"))
                     (li "February 2015, "
 			(a (@ (href "https://fosdem.org/2015/schedule/event/the_emacs_of_distros/"))
 			   "FOSDEM")
