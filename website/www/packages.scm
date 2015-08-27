@@ -37,6 +37,8 @@
   #:use-module (ice-9 i18n)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-19)
+  #:use-module (texinfo)
+  #:use-module (texinfo html)
   #:export (packages-page))
 
 (define lookup-gnu-package
@@ -170,6 +172,12 @@ decreasing, is 1."
                             (package-transitive-supported-systems package)))
                       " ")))
 
+  (define (package-description-shtml package)
+    "Return a SXML representation of PACKAGE description field with HTML
+vocabulary."
+    (and=> (package-description package)
+           (compose stexi->shtml texi-fragment->stexi)))
+
   (define (package-logo name)
     (and=> (lookup-gnu-package name)
            gnu-package-logo))
@@ -203,7 +211,7 @@ description-ids as formal parameters."
                                  (class "package-logo")
                                  (alt ("Logo of " ,(package-name package))))))
                        (_ #f))
-                    (p ,(package-description package))
+                    (p ,(package-description-shtml package))
                     ,(license package)
                     (a (@ (href ,(package-home-page package))
                           (title "Link to the package's website"))
