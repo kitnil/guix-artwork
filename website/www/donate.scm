@@ -58,8 +58,8 @@ binaries for the "
 		(p "Please get in touch with us through the "
 		   (a (@ (href ,(base-url "about/#contact")))
 		      "usual channels")
-		   " or using the guix-hardware@gnu.org private alias to discuss
-any opportunities. ")
+		   " or using the " (tt "guix-hardware@gnu.org")
+                   " private alias to discuss any opportunities. ")
 		(h2 (@ (id "hardware-donors")) "Thanks to the donors!")
 		(p "The table below summarizes hardware and hosting donations
 that make the "
