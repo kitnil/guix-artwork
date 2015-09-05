@@ -49,11 +49,8 @@ donations of hardware and optionally hosting for the following kinds of
 machines (they should be usable with exclusively free software): ")
 		(ul (li "x86_64 machines, with on the order of 1\xa0TiB of
 storage and 4\xa0GiB of RAM;")
-		    (li "armv7 machines that would allow us to provide pre-built
-binaries for the "
-			(a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8175"))
-			   "recently-added ARM port")
-			";")
+		    (li "armv7 machines (such as the Novena) to more quickly
+test and provide binaries for the " (tt "armhf-linux") " port;")
 		    (li "mips64el machines to strengthen this port."))
 		(p "Please get in touch with us through the "
 		   (a (@ (href ,(base-url "about/#contact")))
