@@ -29,7 +29,7 @@
 
 (define (donate-page)
   `(html (@ (lang "en"))
-	 ,(html-page-header "Home")
+	 ,(html-page-header "Donate")
 	 (body
 	  ,(html-page-description)
 	  ,(html-page-links)
