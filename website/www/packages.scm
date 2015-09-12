@@ -175,8 +175,11 @@ decreasing, is 1."
   (define (package-description-shtml package)
     "Return a SXML representation of PACKAGE description field with HTML
 vocabulary."
-    (and=> (package-description package)
-           (compose stexi->shtml texi-fragment->stexi)))
+    ;; 'texi-fragment->stexi' uses 'call-with-input-string', so make sure
+    ;; those string ports are Unicode-capable.
+    (with-fluids ((%default-port-encoding "UTF-8"))
+      (and=> (package-description package)
+             (compose stexi->shtml texi-fragment->stexi))))
 
   (define (package-logo name)
     (and=> (lookup-gnu-package name)
