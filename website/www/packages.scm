@@ -283,7 +283,7 @@ description-ids as formal parameters."
                    " packages transparently "
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
 		      "available as pre-built binaries")
-		   ". This is a complete lists of the packages. Our "
+		   ". This is a complete list of the packages.  Our "
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
 		      "continuous integration system")
 		   " shows their current build status.")
