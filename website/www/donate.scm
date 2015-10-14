@@ -107,10 +107,11 @@ München")))))
                                   (td (ul (li "Steve Sprang (hardware)")
                                           ;; XXX: Eventually move to the FSF?
                                           (li "Mark H Weaver (hosting)"))))
-                              (tr (td "n/a")   ;update once it's up & running
+                              (tr (td "hydra-slave2")
                                   (td "armhf-linux")
                                   (td (ul (li (a (@ (href "http://harmoninstruments.com/"))
                                                  "Harmon Instruments")
                                               " (hardware)")
+                                          ;; XXX: Eventually move to the FSF?
                                           (li "Mark H Weaver (hosting)"))))))))
 	  ,(html-page-footer))))
