@@ -130,7 +130,7 @@ implementation of Guix's packaging API.")
                     (li (a (@ (href "http://arxiv.org/abs/1506.02822"))
                            (i "Reproducible and User-Controlled Software
 Environments in HPC with Guix"))
-                        ", to be presented at the "
+                        ", presented at the "
                         (a (@ (href "http://reppar.org/"))
                            "2015 International Workshop on Reproducibility in
 Parallel Computing (RepPar)")
