@@ -118,6 +118,7 @@ Distribution. ")
 			  (a (@ (href ,(base-url "about#contact"))
 				(class "hlink-more-dark"))
 			     "Check all the lists")))
+
 		(h2 "Additional Documentation")
 		(ul (li (a (@ (href "https://arxiv.org/abs/1305.4584"))
                            (i "Functional Package Management with Guix"))
@@ -134,7 +135,17 @@ Environments in HPC with Guix"))
                            "2015 International Workshop on Reproducibility in
 Parallel Computing (RepPar)")
                         ", discusses the use of Guix in high-performance
-computing (HPC)."))
+computing (HPC).")
+                    (li (a (@ (href
+                               "http://nixos.org/~eelco/pubs/phd-thesis.pdf"))
+                           (i "The Purely Functional Software Deployment
+Model"))
+                        ", 2006; this is Eelco Dolstra's seminal PhD thesis
+about the Nix package manager, which "
+                        (a (@ (href
+                               ,(guix-url "manual/html_node/Acknowledgments.html")))
+                           "Guix is based on") "."))
+
 		(h2 (@ (id "talks")) "Talks")
 		(ul (li "August 2015, "
                         (a (@ (href "http://reppar.org"))
