@@ -15,10 +15,13 @@ website]] which is implemented in [[https://www.gnu.org/software/guile][Guile]] 
 
 * Building
 
-In this implementation, links assume =/software/guix= is the root directory of
-the website.  In order to build the website on your machine, you will want to
-modify the values of ‘(current-url-root)’ and ‘(gnu.org-root)’ parameter
-objects.
+Building the website depends on the static site generator:
+
+  - [[http://haunt.dthompson.us/][Haunt]]
+
+To build the site, run ‘haunt build’ to compile all of the HTML pages.
+To view the results, run ‘haunt serve’ and visit <http://localhost:8080>
+in a web browser.
 
 * Copying
 
