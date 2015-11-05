@@ -252,7 +252,7 @@ packaging API. ")
                                   "Enlightenment, Inkscape, and Serbian text")))
 		    (p (a (@ (href ,(base-url "contribute") )
 			     (class "hlink-yellow-boxed"))
-			  "Help us package more software →")))
+			  "Help us improve Guix →")))
 
 	       (div (@ (id "news-box"))
 		    (h2 "News")
