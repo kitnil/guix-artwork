@@ -147,7 +147,15 @@ about the Nix package manager, which "
                            "Guix is based on") "."))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "August 2015, "
+		(ul (li "November 2015, Inria: "
+                        (a (@ (href ,(slides-url
+                                      "guix-rennes-20151109.pdf")))
+                           "slides") ", "
+                        (a (@ (href
+                               "https://gnunet.org/sites/default/files/ludo2015guix.webm"))
+                           "video")
+                        " (WebM; 73 minutes)")
+                    (li "August 2015, "
                         (a (@ (href "http://reppar.org"))
                            "Workshop on Reproducibility in Parallel Computing
  (RepPar)")
