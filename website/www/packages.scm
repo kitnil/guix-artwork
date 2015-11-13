@@ -319,7 +319,7 @@ list of checker/report tuples."
            ,@(map (match-lambda
                     ((checker report)
                      `(tr (td ,(lint-checker-name checker))
-                          (td (pre ,report)))))
+                          (td (pre ,(string-trim-right report))))))
                   issues))))))
 
 (define* (package->issue-sxml package #:key (checkers %issue-checkers))
