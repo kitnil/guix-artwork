@@ -333,6 +333,7 @@ Distribution.")
     ("download/index.html" ,download-page)
     ("help/index.html" ,help-page)
     ;; ("packages/index.html" ,packages-page) ; Need Guix
+    ;; ("packages/issues.html" ,issues-page)
     ))
 
 (define (mkdir* directory)
