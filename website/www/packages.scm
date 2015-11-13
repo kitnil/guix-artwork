@@ -42,7 +42,8 @@
   #:use-module (srfi srfi-26)
   #:use-module (texinfo)
   #:use-module (texinfo html)
-  #:export (packages-page))
+  #:export (packages-page
+            issues-page))
 
 (define lookup-gnu-package
   (let ((gnu (official-gnu-packages)))
