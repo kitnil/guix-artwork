@@ -40,11 +40,26 @@
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
 		      "build farm")
 		   " of the Guix System Distribution runs on donated hardware
-and hosting. Please consider helping the project with donations. ")
-		(p "As the distribution grows (see the "
-		   (a (@ (href ,(base-url "packages")))
-		      "package list")
-		   "), so do the computing and storage needs. We are looking for
+and hosting.  "
+                   "As the distribution grows (see the "
+                   (a (@ (href ,(base-url "packages")))
+                      "package list")
+                   "), so do the computing and storage needs.")
+                (p "We have "
+                   (a (@ (href
+                          "https://savannah.gnu.org/forum/forum.php?forum_id=8423"))
+                      "started a fundraising campaign")
+                   " to strengthen our build farm, with "
+                   (a (@ (href
+                          "https://www.fsf.org/blogs/community/fsf-announces-support-for-gnu-guix"))
+                      "support from the Free Software Foundation (FSF)")
+                   ".  Please consider helping out by making a donation on
+this FSF-hosted page:")
+                (p (a (@ (href "https://my.fsf.org/civicrm/contribute/transact?reset=1&id=50")
+                         (class "button btn-blue"))
+                      "♥ DONATE!"))
+
+                (p "We are also looking for
 donations of hardware and optionally hosting for the following kinds of
 machines (they should be usable with exclusively free software): ")
 		(ul (li "x86_64 machines, with on the order of 1\xa0TiB of
