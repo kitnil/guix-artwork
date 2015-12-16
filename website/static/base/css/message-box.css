@@ -26,11 +26,28 @@
 .msg-info {
     background-color: #5FBCD3;
 }
-
+.donate-info {
+    background-color: #FFFFFF;
+    color: #000;
+}
 .msg-warning {
     background-color: #D35F5F;
 }
-
+.donate-button {
+    background-color: #F4BB15;
+    padding: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.donate-button:hover {
+    background-color: #F7CB50;
+}
+.donate-info > a:link, .donate-info > a:visited {
+    color: #000;
+    font-weight: bold;
+    border: none;
+}
 .msg-label {
     font-weight: bold;
     padding-right: 10px;
