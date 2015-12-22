@@ -108,6 +108,20 @@ it under the terms of the "
 version\xa03 of the License, or (at your option) any later version. ")
 
 		(h2 (@ (id "contact")) "Contact")
+
+                (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/help-guix"))
+                      (b "help-guix"))
+                   (small " ("
+                          (a (@ (href "https://lists.gnu.org/archive/html/help-guix"))
+                             "archive")
+                          ") ")
+                   (br)
+                   "Support for users of GNU Guix and
+the Guix System Distribution (GuixSD).  "
+                   (a (@ (href
+                          "https://lists.gnu.org/archive/html/guix-devel/2015-12/msg00584.html"))
+                      "Until December 2015")
+                   ", the Guix-devel mailing list filled that role.")
 		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
 		      (b "guix-devel"))
 		   (small " ("
@@ -156,7 +170,7 @@ System Distribution (GuixSD). "
 are made on "
 			   (a (@ (href "http://lists.gnu.org/mailman/listinfo/info-gnu"))
 			      "info-gnu")
-			   "("
+			   " ("
 			   (a (@ (href "http://lists.gnu.org/archive/html/info-gnu/"))
 			      "archive")
 			   ")."))

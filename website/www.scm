@@ -294,14 +294,14 @@ check whether the bug is already in the "
 
 		    (div (@ (class "info-box text-left"))
 			 (h3 "Mailing Lists")
-			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
-			       (b "guix-devel"))
+			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/help-guix"))
+			       (b "help-guix"))
 			    (small " ("
-				   (a (@ (href "https://lists.gnu.org/archive/html/guix-devel"))
+				   (a (@ (href "https://lists.gnu.org/archive/html/help-guix"))
 				      "archive")
 				   ")")
 			    (br)
-			    "Discussion about the development of GNU Guix and
+			    "Support for users of GNU Guix and
 the Guix System Distribution (GuixSD).")
 			 (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/bug-guix"))
 			       (b "bug-guix"))
