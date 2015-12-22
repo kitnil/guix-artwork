@@ -36,6 +36,7 @@
   #:use-module (sxml fold)
   #:use-module (web uri)
   #:use-module (ice-9 match)
+  #:use-module (ice-9 vlist)
   #:use-module (ice-9 i18n)
   #:use-module (ice-9 format)
   #:use-module (srfi srfi-1)
@@ -78,13 +79,16 @@
   (let ((loc (package-location package)))
     (and loc (location-url loc))))
 
-(define (package->sxml package previous description-ids remaining)
+(define (package->sxml package+anchor previous description-ids remaining)
   "Return 3 values: the SXML for PACKAGE added to all previously collected
 package output in PREVIOUS, a list of DESCRIPTION-IDS and the number of
 packages still to be processed in REMAINING.  Also Introduces a call to the
 JavaScript prep_pkg_descs function as part of the output of PACKAGE, every
 time the length of DESCRIPTION-IDS, increasing, is 15 or when REMAINING,
 decreasing, is 1."
+  (define-values (package anchor)
+    (car+cdr package+anchor))
+
   (define (license package)
     (define ->sxml
       (match-lambda
@@ -210,7 +214,8 @@ description-ids as formal parameters."
                      (title "Link to the Guix package source code"))
                   ,(package-name package) " "
                   ,(package-version package)))
-           (td (span ,(package-synopsis package))
+           (td (a (@ (name ,anchor)))
+               (span ,(package-synopsis package))
                (div (@ (id ,description-id))
                     ,(match (package-logo (package-name package))
                        ((? string? url)
@@ -252,14 +257,62 @@ description-ids as formal parameters."
             (cons description-id description-ids) ; Update description-ids
             (1- remaining))))))                   ; Reduce remaining
 
+(define (packages->anchors packages)
+  "Return a one-argument procedure that, given package from the PACKAGES
+list, returns a unique anchor for it.
+
+Anchors are assigned such that the package name is the anchor of the latest
+version of the package; older versions of the package, if any, have an anchor
+of the form \"PACKAGE-X.Y.Z\"."
+  (define anchor
+    (let ((mapping (fold (lambda (package result)
+                           (vhash-cons (package-name package) package
+                                       result))
+                         vlist-null
+                         packages)))
+      (lambda (package)
+        ;; Return the anchor for PACKAGE.
+        (match (vhash-fold* cons '() (package-name package) mapping)
+          ((one)
+           ;; There's only one version of PACKAGE, so use its name as the
+           ;; anchor.
+           (package-name package))
+          ((several ..1)
+           ;; There are several versions of PACKAGE.
+           (let ((latest (reduce (lambda (v1 v2)
+                                   (if (version>? v1 v2)
+                                       v1 v2))
+                                 (package-version package)
+                                 (map package-version several))))
+             ;; When PACKAGE is the latest version, use its name as the anchor;
+             ;; otherwise use the full NAME-VERSION form.
+             (if (string=? (package-version package) latest)
+                 (package-name package)
+                 (package-full-name package))))))))
+
+  ;; Precompute the package → anchor mapping.
+  (let ((anchors (fold (lambda (package result)
+                         (vhash-consq package (anchor package) result))
+                       vlist-null
+                       packages)))
+    (lambda (package)
+      (match (vhash-assq package anchors)
+        ((_ . anchor) anchor)))))
+
 (define (packages->sxml packages)
   "Return an SXML table describing PACKAGES."
+  (define package-anchor
+    ;; Assignment of anchors to packages.
+    (packages->anchors packages))
+
   `(div
     (table (@ (id "packages"))
            (tr (th "GNU?")
                (th "Package version")
                (th "Package details"))
-           ,@(fold-values package->sxml packages '() '() (length packages)))
+           ,@(fold-values package->sxml
+                          (zip packages (map package-anchor packages))
+                          '() '() (length packages)))
     (a (@ (href "#content-box")
           (title "Back to top.")
           (id "top"))
