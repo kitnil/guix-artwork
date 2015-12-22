@@ -214,8 +214,8 @@ description-ids as formal parameters."
                      (title "Link to the Guix package source code"))
                   ,(package-name package) " "
                   ,(package-version package)))
-           (td (a (@ (name ,anchor)))
-               (span ,(package-synopsis package))
+           (td (span ,(package-synopsis package)
+                     (a (@ (name ,anchor))))
                (div (@ (id ,description-id))
                     ,(match (package-logo (package-name package))
                        ((? string? url)
