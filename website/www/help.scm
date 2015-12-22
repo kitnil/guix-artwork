@@ -115,7 +115,9 @@ the Guix System Distribution (GuixSD).")
 				    ") ")
 			     (br)
 			     "Bug reports for GNU Guix and the Guix System
-Distribution. ")
+Distribution.  Messages sent to this list populate the "
+                             (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
+                                "bug database") ".")
 			  (a (@ (href ,(base-url "about#contact"))
 				(class "hlink-more-dark"))
 			     "Check all the lists")))

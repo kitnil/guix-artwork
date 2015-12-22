@@ -141,7 +141,10 @@ System Distribution (GuixSD). "
 			     "archive")
 			  ")")
 		   (br)
-		   "Bug reports for GNU Guix and the Guix System Distribution.")
+                   "Bug reports for GNU Guix and the Guix System
+Distribution.  Messages sent to this list populate the "
+                   (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
+                      "bug database") ".")
 		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/gnu-system-discuss"))
 		      (b "gnu-system-discuss"))
 		   (small " ("
