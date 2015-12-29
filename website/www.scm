@@ -93,7 +93,9 @@
           author content))))
 
 (define %video-url
-  "http://audio-video.gnu.org/video/misc/2015-01__GNU_Guix__The_Emacs_of_Distros.webm")
+  ;; Note: No "http:" so that people viewing the parent page via HTTPS get
+  ;; the video via HTTPS as well (otherwise some browsers complain.)
+  "//audio-video.gnu.org/video/misc/2015-01__GNU_Guix__The_Emacs_of_Distros.webm")
 
 (define (sxml->string* tree)
   "Flatten tree by dismissing tags and attributes, and return the resulting
