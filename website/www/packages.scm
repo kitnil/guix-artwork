@@ -48,12 +48,12 @@
             issues-page))
 
 (define lookup-gnu-package
-  (let ((gnu (official-gnu-packages)))
+  (let ((gnu (delay (official-gnu-packages))))
     (lambda (name)
       "Return the package description for GNU package NAME, or #f."
       (find (lambda (package)
               (equal? (gnu-package-name package) name))
-            gnu))))
+            (force gnu)))))
 
 (define (list-join lst item)
   "Join the items in LST by inserting ITEM between each pair of elements."
