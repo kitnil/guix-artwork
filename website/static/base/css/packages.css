@@ -62,3 +62,6 @@ a#top:hover, a#top:focus {
     background-color:#333;
     color:#fff;
 }
+img.status-icon {
+    padding-right: 1em;
+}

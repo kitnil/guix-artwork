@@ -167,14 +167,18 @@ decreasing, is 1."
 
   (define (status package)
     (define (url system)
-      `(a (@ (href ,(string-append "http://hydra.gnu.org/job/gnu/master/"
+      `(div (img (@ (src ,(image-url "status-icons/undefined.png"))
+                    (id ,(string-append "icon-" (package-full-name package) "." system))
+                    (class "status-icon")
+                    (alt "Unknown")
+                    (title "Unknown")))
+            (a (@ (href ,(string-append "http://hydra.gnu.org/job/gnu/master/"
                                    (package-full-name package) "."
                                    system))
              (title "View the status of this architecture's build at Hydra"))
-          ,system))
+          ,system)))
 
-    `(div "status: "
-          ,(list-join (map url
+    `(div ,(list-join (map url
                            (lset-intersection
                             string=?
                             %hydra-supported-systems
@@ -229,8 +233,9 @@ description-ids as formal parameters."
                     (a (@ (href ,(package-home-page package))
                           (title "Link to the package's website"))
                        ,(package-home-page package))
-                    ,(status package)
                     ,(patches package)
+                    (br)
+                    ,(status package)
                     ,(if js?
                          (insert-js-call description-ids)
                          ""))))))

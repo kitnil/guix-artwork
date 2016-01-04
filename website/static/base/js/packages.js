@@ -1,5 +1,27 @@
 /* license: CC0 */
 
+function set_build_status (pkg_string)
+{
+  /* Find the element to put the status icon in. */
+  var pkgIcon = document.getElementById("icon-"+ pkg_string);
+
+  /* Don't bother when the icon doesn't exist. */
+  if (pkgIcon != null)
+  {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+          /* The API call returns JSON. Parse it, and change the icon's source. */
+          var pkgInfo = JSON.parse(xhttp.responseText);
+          pkgIcon.src = "../static/base/img/status-icons/"+ pkgInfo[0]["buildstatus"] + ".png";
+      }
+    }
+    xhttp.open("GET", "http://hydra.gnu.org/api/latestbuilds?nr=1&project=gnu&jobset=master&job="+ pkg_string, true);
+    xhttp.send();
+  }
+}
+
 function show_hide(idThing)
 {
   if(document.getElementById && document.createTextNode) {
@@ -9,6 +31,11 @@ function show_hide(idThing)
     var thingLink = thing.previousSibling.lastChild.firstChild;
     if (thing) {
       if (thing.style.display == "none") {
+        var column = thing.parentNode;
+        var pkg_icons = column.getElementsByTagName('img')
+        for (var i=0; i < pkg_icons.length; i++) {
+            set_build_status (pkg_icons[i].id.slice(5));
+        }
         thing.style.display = "";
         thingLink.data = 'Collapse';
       } else {
