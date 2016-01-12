@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -75,7 +75,7 @@ Functional package management,")))
          (span (@ (class "msg-label")) "Donate ")
          "For Guix to grow we need to upgrade our hardware. Please consider "
          (a (@ (href "https://my.fsf.org/civicrm/contribute/transact?reset=1&id=50")
-               (class "donate-button")) "donating") " for the holidays!")))
+               (class "donate-button")) "donating") "!")))
 
 (define (html-page-links)
   `(div (@ (id "header-box"))
