@@ -1,6 +1,7 @@
 ;;; GuixSD website --- GNU's advanced distro website
 ;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
+;;; Copyright © 2016 Andreas Enge <andreas@enge.fr>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
 ;;;
@@ -125,5 +126,11 @@ München")))))
                                                  "Harmon Instruments")
                                               " (hardware)")
                                           ;; XXX: Eventually move to the FSF?
-                                          (li "Mark H Weaver (hosting)"))))))))
+                                          (li "Mark H Weaver (hosting)"))))
+                              (tr (td "redhill")
+                                  (td "armhf-linux")
+                                  (td (ul (li (a (@ (href "http://www.kosagi.com/w/index.php?title=Novena_Main_Page"))
+                                                 "Kosagi (Sutajio Ko-Usagi Pte Ltd)")
+                                              " (hardware)")
+                                          (li "Andreas Enge (hosting)"))))))))
 	  ,(html-page-footer))))
