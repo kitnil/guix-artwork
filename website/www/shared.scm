@@ -71,11 +71,12 @@ Functional package management,")))
             "not production-ready")
          ".  But you can "
          (a (@ (href ,(base-url "contribute"))) "help") "!")
-    (div (@ (class "message-box donate-info"))
-         (span (@ (class "msg-label")) "Donate ")
-         "For Guix to grow we need to upgrade our hardware. Please consider "
-         (a (@ (href "https://my.fsf.org/civicrm/contribute/transact?reset=1&id=50")
-               (class "donate-button")) "donating") "!")))
+    ;; (div (@ (class "message-box donate-info"))
+    ;;      (span (@ (class "msg-label")) "Donate ")
+    ;;      "For Guix to grow we need to upgrade our hardware. Please consider "
+    ;;      (a (@ (href "https://my.fsf.org/civicrm/contribute/transact?reset=1&id=50")
+    ;;            (class "donate-button")) "donating") "!")
+    ))
 
 (define (html-page-links)
   `(div (@ (id "header-box"))
