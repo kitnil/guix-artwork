@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -150,7 +150,48 @@ about the Nix package manager, which "
                            "Guix is based on") "."))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "November 2015, Inria: "
+		(ul (li "January 2016, "
+                        (a (@ (href "https://fosdem.org/2016/")) "FOSDEM")
+                        (ul
+                         (li (i "Adding GNU/Hurd support to GNU Guix")
+                             " (Manolis Ragkousis): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-hurd-20160130.pdf")))
+                                "slides"))
+                         (li (i "A gentle introduction to functional package
+management with GNU Guix")
+                             " (Ricardo Wurmus): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-intro-20160130.pdf")))
+                                "slides"))
+                         (li (i "Your distro is a Scheme library")
+                             " (Ludovic Courtès): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-scheme-20160130.pdf")))
+                                "slides"))
+                         (li (i "Foreign packages in GNU Guix")
+                             " (Pjotr Prins): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-ruby-20160130.pdf")))
+                                "slides"))
+                         (li (i "Reproducible and Customizable Deployments
+with GNU Guix")
+                             " (Ludovic Courtès): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-deployments-20160130.pdf")))
+                                "slides"))
+                         (li (i "Guix-tox, a functional version of tox")
+                             " (Cyril Roelandt): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-tox-20160130.pdf")))
+                                "slides"))
+                         (li (i "Reproducible and User-Controlled Package
+Management in HPC with GNU Guix")
+                             " (Ricardo Wurmus): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-hpc-20160131.pdf")))
+                                "slides"))))
+                    (li "November 2015, Inria: "
                         (a (@ (href ,(slides-url
                                       "guix-rennes-20151109.pdf")))
                            "slides") ", "
