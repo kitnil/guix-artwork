@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -109,7 +109,7 @@ dependencies.")
 		   (a (@ (href ,(gnu-url "software/linux-libre")))
 		      "Linux-Libre")
 		   " kernel and the "
-		   (a (@ (href ,(gnu-url "software/dmd"))) "GNU dmd")
+		   (a (@ (href ,(gnu-url "software/shepherd"))) "GNU Shepherd")
 		   " init system. Alternately, its package manager, GNU Guix,
 can be installed as an additional package manager on top of an installed
 Linux-based system.")

@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2015 David Thompson <davet@gnu.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
@@ -85,7 +85,7 @@ the "
                                  "manual/html_node/Initial-RAM-Disk.html")))
                       "initial RAM disk")
                    " to the "
-                   (a (@ (href ,(gnu-url "software/dmd")))
+                   (a (@ (href ,(gnu-url "software/shepherd")))
                       "initialization system")
                    ", and to the "
                    (a (@ (href ,(base-url
