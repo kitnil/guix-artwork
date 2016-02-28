@@ -163,23 +163,39 @@ management with GNU Guix")
                              " (Ricardo Wurmus): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-intro-20160130.pdf")))
-                                "slides"))
+                                "slides")
+                             ", "
+                             (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Gentle_Introduction_to_Functional_Package_Management.webm"))
+                                "partial video")
+                             " (WebM; 7 minutes) ")
                          (li (i "Your distro is a Scheme library")
                              " (Ludovic Courtès): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-scheme-20160130.pdf")))
-                                "slides"))
+                                "slides")
+                             ", "
+                             (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Your_Distro_is_a_Scheme_Library.webm"))
+                                "video")
+                             " (WebM; 29 minutes) ")
                          (li (i "Foreign packages in GNU Guix")
                              " (Pjotr Prins): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-ruby-20160130.pdf")))
-                                "slides"))
+                                "slides")
+                             ", "
+                             (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Foreign_Packages_in_GNU_Guix.webm"))
+                                "video")
+                             " (WebM; 19 minutes) ")
                          (li (i "Reproducible and Customizable Deployments
 with GNU Guix")
                              " (Ludovic Courtès): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-deployments-20160130.pdf")))
-                                "slides"))
+                                "slides")
+                             ", "
+                             (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Reproducible_and_Customizable_Deployments.webm"))
+                                "video")
+                             " (WebM; 54 minutes) ")
                          (li (i "Guix-tox, a functional version of tox")
                              " (Cyril Roelandt): "
                              (a (@ (href ,(slides-url
@@ -190,7 +206,11 @@ Management in HPC with GNU Guix")
                              " (Ricardo Wurmus): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-hpc-20160131.pdf")))
-                                "slides"))))
+                                "slides")
+                             ", "
+                             (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Reproducible_and_User-controlled_Package_Management_in_HPC.webm"))
+                                "video")
+                             " (WebM; 5 minutes) ")))
                     (li "November 2015, Inria: "
                         (a (@ (href ,(slides-url
                                       "guix-rennes-20151109.pdf")))
