@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2013, 2014, 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2013, 2014, 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
@@ -429,7 +429,11 @@ PACKAGES."
 
 (define (all-packages)
   "Return the list of all package objects, sorted by name."
-  (sort (fold-packages cons '())
+  (sort (fold-packages (lambda (package lst)
+                         (cons (or (package-replacement package)
+                                   package)
+                               lst))
+                       '())
         (lambda (p1 p2)
           (string<? (package-name p1)
                     (package-name p2)))))
