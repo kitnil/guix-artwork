@@ -164,7 +164,8 @@ character."
 				       (class "hlink-yellow"))
 				    "GNU Project ")
 				 "—which respects the "
-				 (a (@ (href ,(gnu-url "philosophy/free-sw.html"))
+				 (a (@ (href ,(gnu-url
+                                               "distros/free-system-distribution-guidelines.html"))
 				       (class "hlink-yellow"))
 				    "freedom of computer users")
 				 ". ")
