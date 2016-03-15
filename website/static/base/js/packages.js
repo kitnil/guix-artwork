@@ -16,8 +16,14 @@ function set_build_status (pkg_string)
           var pkgInfo = JSON.parse(xhttp.responseText);
           pkgIcon.src = "../static/base/img/status-icons/"+ pkgInfo[0]["buildstatus"] + ".png";
       }
-    }
-    xhttp.open("GET", "http://hydra.gnu.org/api/latestbuilds?nr=1&project=gnu&jobset=master&job="+ pkg_string, true);
+    };
+
+    /* Make the request using the same scheme as the current URL to
+       avoid "mixed content" errors (making an HTTP request from an
+       HTTPS page.)  */
+    xhttp.open("GET", window.location.href.split(":")[0] +
+	       "://hydra.gnu.org/api/latestbuilds?nr=1&project=gnu&jobset=master&job="
+	       + pkg_string, true);
     xhttp.send();
   }
 }
