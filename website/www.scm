@@ -244,9 +244,9 @@ packaging API. ")
                                                #:alt alt
                                                #:directory version)))
                                 '(("0.8.2" "guixsd-slim.png")
+                                  ("0.9.1" "gnome-totem-epiphany.png")
                                   ("0.8.2" "guixsd-xfce-icecat-emacs.png")
                                   ("0.8.3" "guix-system-vm.png")
-                                  ("0.8.3" "guix-edit+evince.png")
                                   ("0.8.3" "enlightenment-inkscape.png"))
                                 '("Graphical log-in screen"
                                   "Xfce, IceCat, and Emacs"
