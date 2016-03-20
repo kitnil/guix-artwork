@@ -249,9 +249,9 @@ packaging API. ")
                                   ("0.8.3" "guix-system-vm.png")
                                   ("0.8.3" "enlightenment-inkscape.png"))
                                 '("Graphical log-in screen"
+                                  "GNOME with Totem and Ephiphany"
                                   "Xfce, IceCat, and Emacs"
                                   "VM started with 'guix system vm'"
-                                  "Evince, Emacs, and 'guix edit'"
                                   "Enlightenment, Inkscape, and Serbian text")))
 		    (p (a (@ (href ,(base-url "contribute") )
 			     (class "hlink-yellow-boxed"))
