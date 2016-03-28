@@ -149,6 +149,34 @@ about the Nix package manager, which "
                                ,(guix-url "manual/html_node/Acknowledgments.html")))
                            "Guix is based on") "."))
 
+                (h2 (@ (id "posts")) "Blog Posts")
+
+                ;; For posts other than announcements, things that complement
+                ;; the manual.
+                (ul (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8491"))
+                           (i "GNOME in GuixSD"))
+                        ", March 2016")
+                    (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8470"))
+                           (i "Timely delivery of security updates"))
+                        ", March 2016")
+                    (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8412"))
+                           (i "Service composition in GuixSD"))
+                        ", November 2015")
+                    (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8407"))
+                           (i "Reproducible builds: a means to an end"))
+                        ", November 2015")
+                    (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+                           (i "Container provisioning with Guix"))
+                        ", October 2015")
+                    (li (a (@ (href
+                               "https://savannah.gnu.org/news/?group=guix"))
+                           "more posts")))
+
 		(h2 (@ (id "talks")) "Talks")
 		(ul (li "January 2016, "
                         (a (@ (href "https://fosdem.org/2016/")) "FOSDEM")
@@ -228,11 +256,11 @@ Management in HPC with GNU Guix")
                                       "guix-reppar-20150825.pdf")))
                            "slides"))
                     (li "May 2015, "
-                           (a (@ (href "http://opentechsummit.net/en.html"))
-                              "OpenTechSummit")
-                           ": "
-                           (a (@ (href ,(slides-url "guix-opentechsummit-201505014.pdf")))
-                              "slides"))
+                        (a (@ (href "http://opentechsummit.net/en.html"))
+                           "OpenTechSummit")
+                        ": "
+                        (a (@ (href ,(slides-url "guix-opentechsummit-201505014.pdf")))
+                           "slides"))
                     (li "February 2015, "
 			(a (@ (href "https://fosdem.org/2015/schedule/event/the_emacs_of_distros/"))
 			   "FOSDEM")
