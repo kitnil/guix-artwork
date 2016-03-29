@@ -122,7 +122,8 @@ Distribution.  Messages sent to this list populate the "
 				(class "hlink-more-dark"))
 			     "Check all the lists")))
 
-		(h2 "Additional Documentation")
+		(h2 (@ (id "papers")) "Papers")
+
 		(ul (li (a (@ (href "https://arxiv.org/abs/1305.4584"))
                            (i "Functional Package Management with Guix"))
 			", presented at the "
