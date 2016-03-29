@@ -28,7 +28,7 @@
 	    html-page-footer))
 
 (define latest-guix-version
-  (make-parameter "0.9.0"))
+  (make-parameter "0.10.0"))
 
 (define* (html-page-header title #:key (css "article.css") js)
   `(head (meta (@ (charset "utf-8")))
