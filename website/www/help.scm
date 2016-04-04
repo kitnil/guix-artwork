@@ -179,7 +179,20 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "January 2016, "
+		(ul (li "March 2016, "
+                        (a (@ (href "https://libreplanet.org/2016/"))
+                           "LibrePlanet")
+                        ", " (i "Solving the Deployment Crisis with GNU Guix")
+                        " (Christopher Allan Webber and David Thompson): "
+                        (a (@ (href
+                               ,(slides-url "guix-libreplanet-solving-the-deployment-crisis-20160319.pdf")))
+                           "slides")
+                        ", "
+                        (a (@ (href
+                               "https://media.libreplanet.org/mgoblin_media/media_entries/1419/LP_2016_03_19_Webber_-_Thompson_Solving_the_deployment_crisis_with_GNU_STREAM.webm"))
+                           "video")
+                        " (WebM; 44 minutes)")
+                    (li "January 2016, "
                         (a (@ (href "https://fosdem.org/2016/")) "FOSDEM")
                         (ul
                          (li (i "Adding GNU/Hurd support to GNU Guix")
