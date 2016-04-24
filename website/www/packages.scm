@@ -214,10 +214,12 @@ description-ids as formal parameters."
                              (alt "Part of GNU")
                              (title "Part of GNU")))
                     ""))
+           "\n"
            (td (a (@ (href ,(source-url package))
                      (title "Link to the Guix package source code"))
                   ,(package-name package) " "
                   ,(package-version package)))
+           "\n"
            (td (span ,(package-synopsis package)
                      (a (@ (name ,anchor))))
                (div (@ (id ,description-id))
@@ -228,17 +230,22 @@ description-ids as formal parameters."
                                  (class "package-logo")
                                  (alt ("Logo of " ,(package-name package))))))
                        (_ #f))
+                    "\n"
                     (p ,(package-description-shtml package))
+                    "\n"
                     ,(license package)
                     (a (@ (href ,(package-home-page package))
                           (title "Link to the package's website"))
                        ,(package-home-page package))
                     ,(patches package)
                     (br)
+                    "\n"
                     ,(status package)
+                    "\n"
                     ,(if js?
                          (insert-js-call description-ids)
-                         ""))))))
+                         "")))
+           "\n")))
 
   (let ((description-id (symbol->string
                          (gensym (package-name package)))))
@@ -375,11 +382,12 @@ list of checker/report tuples."
           (div (b ,(number->string count)
                   ,(if (= count 1) " issue" " issues")))
           (table
-           ,@(map (match-lambda
-                    ((checker report)
-                     `(tr (td ,(lint-checker-name checker))
-                          (td (pre ,(string-trim-right report))))))
-                  issues))))))
+           ,@(list-join (map (match-lambda
+                               ((checker report)
+                                `(tr (td ,(lint-checker-name checker))
+                                     (td (pre ,(string-trim-right report))))))
+                             issues)
+                        "\n"))))))
 
 (define* (package->issue-sxml package
                               #:key
@@ -397,6 +405,7 @@ by CHECKERS."
                 ,(if (null? issues)
                      name+version
                      `(b ,name+version))))
+         "\n"
          (td (a (@ (name ,anchor)))
              ,(issues->sxml package issues)))))
 
@@ -415,12 +424,14 @@ PACKAGES."
     (packages->anchors packages))
 
   `(table
-    ,@(map (lambda (package)
-             (report-progress)
-             (package->issue-sxml package
-                                  #:anchor (package-anchor package)
-                                  #:checkers checkers))
-           packages)))
+    ,@(list-join
+       (map (lambda (package)
+              (report-progress)
+              (package->issue-sxml package
+                                   #:anchor (package-anchor package)
+                                   #:checkers checkers))
+            packages)
+       "\n")))
 
 
 ;;;
