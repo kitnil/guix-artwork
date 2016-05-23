@@ -179,7 +179,11 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "March 2016, "
+		(ul (li "May 2016, DConf: "
+                        (a (@ (href ,(slides-url
+                                      "guix-dconf-20160505.pdf")))
+                           "slides"))
+                    (li "March 2016, "
                         (a (@ (href "https://libreplanet.org/2016/"))
                            "LibrePlanet")
                         ", " (i "Solving the Deployment Crisis with GNU Guix")
@@ -253,6 +257,9 @@ Management in HPC with GNU Guix")
                              (a (@ (href "https://audio-video.gnu.org/video/misc/2016-01__GNU_Guix__Reproducible_and_User-controlled_Package_Management_in_HPC.webm"))
                                 "video")
                              " (WebM; 5 minutes) ")))
+                    (li "January 2016, Boston Linux & Unix User Group: "
+                        (a (@ (href ,(slides-url "guix-blu-20160120.pdf")))
+                           "slides"))
                     (li "November 2015, Inria: "
                         (a (@ (href ,(slides-url
                                       "guix-rennes-20151109.pdf")))
