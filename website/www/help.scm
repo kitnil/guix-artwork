@@ -155,6 +155,10 @@ about the Nix package manager, which "
                 ;; For posts other than announcements, things that complement
                 ;; the manual.
                 (ul (li (a (@ (href
+                               "https://savannah.gnu.org/forum/forum.php?forum_id=8605"))
+                           (i "GuixSD system tests"))
+                        ", June 2016")
+                    (li (a (@ (href
                                "https://savannah.gnu.org/forum/forum.php?forum_id=8491"))
                            (i "GNOME in GuixSD"))
                         ", March 2016")
