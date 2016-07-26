@@ -94,8 +94,8 @@ the "
                    ".")
 
 		(h2 (@ (id "mantainer")) "Maintainer")
-		(p "Guix is currently being maintained by Ludovic
-Courtès. Please use the "
+		(p "Guix is currently maintained by Ludovic Courtès and
+Ricardo Wurmus.  Please use the "
 		   (a (@ (href "#contact")) "mailing lists")
 		   " for contact. ")
 
