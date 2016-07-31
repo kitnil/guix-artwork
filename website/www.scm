@@ -95,7 +95,7 @@
 (define %video-url
   ;; Note: No "http:" so that people viewing the parent page via HTTPS get
   ;; the video via HTTPS as well (otherwise some browsers complain.)
-  "//audio-video.gnu.org/video/misc/2015-01__GNU_Guix__The_Emacs_of_Distros.webm")
+  "//audio-video.gnu.org/video/misc/2016-07__GNU_Guix_Demo_2.webm")
 
 (define (sxml->string* tree)
   "Flatten tree by dismissing tags and attributes, and return the resulting
@@ -210,7 +210,7 @@ domain-specific languages (EDSLs) to "
 		    (div (@ (class "info-box text-center"))
 			 (video (@ (src ,%video-url)
 				   (poster
-				    ,(image-url "the-emacs-of-distros.png"))
+				    ,(image-url "guix-demo.png"))
 				   (controls "controls")
 				   (class "video-preview"))
 				(p "Video: "
