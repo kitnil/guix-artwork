@@ -183,7 +183,21 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "May 2016, DConf: "
+		(ul (li "August 2016, "
+			(a (@ (href ,(gnu-url "ghm/program.html")))
+			   "GNU Hackers Meeting")
+			(ul (li (i "GNU Guix is 4 years old!")
+                                " (Ludovic Courtès): "
+				(a (@ (href ,(slides-url "guix-ghm-20160818.pdf")))
+				   "slides"))
+                            (li (i "Using Guix and Emacs in perfect harmony")
+                                " (Ludovic Courtès): "
+                                " (demo)")
+			    (li (i "Navigating the Guix subsystems")
+                                " (Ludovic Courtès): "
+				(a (@ (href ,(slides-url "guix-ghm-20160819.pdf")))
+				   "slides"))))
+                    (li "May 2016, DConf: "
                         (a (@ (href ,(slides-url
                                       "guix-dconf-20160505.pdf")))
                            "slides"))
