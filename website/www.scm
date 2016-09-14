@@ -216,7 +216,7 @@ domain-specific languages (EDSLs) to "
 				(p "Video: "
 				   (a (@ (href ,%video-url)
 					 (class "hlink-more-light"))
-				      "The Emacs of Distros (48 minutes)"))))
+				      "Guix in action (1m30)"))))
 		    (div (@ (class "info-box text-left"))
 			 (p (a (@ (href ,(guix-url "manual"))
 				  (class "hlink-yellow"))
