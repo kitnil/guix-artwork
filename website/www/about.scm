@@ -145,6 +145,34 @@ System Distribution (GuixSD). "
 Distribution.  Messages sent to this list populate the "
                    (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
                       "bug database") ".")
+		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-commits"))
+		      (b "guix-commits"))
+		   (small " ("
+			  (a (@ (href "https://lists.gnu.org/archive/html/guix-commits"))
+			     "archive")
+			  ")")
+		   (br)
+                   "Notifications of commits made to the "
+                   (a (@ (href ,(base-url "contribute")))
+                      "Git repositories") ".")
+		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-security"))
+		      (b "guix-security"))
+		   (br)
+                   "This is a private mailing list that anyone can post to "
+                   "to " (b "report security issues") " in Guix itself or in "
+                   "the " (a (@ (href ,(base-url "packages"))) "packages")
+                   " it provides.  Posting here allows Guix developers to "
+                   "address the problem before it is widely publicized.")
+		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-sysadmin"))
+		      (b "guix-sysadmin"))
+		   (br)
+                   "Private mailing list for the "
+                   (a (@ (href "https://hydra.gnu.org/"))
+                      "build farm") " system administration.")
+
+
+                ;; Non-Guix lists.
+
 		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/gnu-system-discuss"))
 		      (b "gnu-system-discuss"))
 		   (small " ("
@@ -161,36 +189,14 @@ Distribution.  Messages sent to this list populate the "
 			  ") ")
 		   (br)
 		   "Workgroup for fully free GNU/Linux distributions.")
-		(dl (dt "Commit notifications")
-		    (dd (p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-commits"))
-			      "Guix-commits")
-			   " receives notifications of commits to the "
-			   (a (@ (href "#contribute"))
-			      "version control repository")
-			   "."))
-		    (dt "Announcements")
-		    (dd (p "Announcements about Guix and most other GNU software
-are made on "
-			   (a (@ (href "http://lists.gnu.org/mailman/listinfo/info-gnu"))
-			      "info-gnu")
-			   " ("
-			   (a (@ (href "http://lists.gnu.org/archive/html/info-gnu/"))
-			      "archive")
-			   ")."))
-		    (dt "Security reports")
-		    (dd (p "Security reports that should not be made immediately
-public can be sent directly to the maintainer.  If there is no response to an
-urgent issue, you can escalate to the general "
-			   (a (@ (href "http://lists.gnu.org/mailman/listinfo/security"))
-			      "security")
-			   " mailing list for advice."))
-		    (dt "Internet relay chat")
-		    (dd (p "Some Guix users and developers hang out on the "
-			   (em "#guix")
-			   " channel of the Freenode IRC network ("
-			   (a (@ (href "https://gnunet.org/bot/log/guix/"))
-			      "logs")
-			   ").")))
+		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/info-gnu"))
+		      (b "info-gnu"))
+		   (small " ("
+			  (a (@ (href "http://lists.gnu.org/archive/html/info-gnu/"))
+			     "archive")
+			  ") ")
+		   (br)
+		   "GNU software announcements.")
 
                 (h2 (@ (id "artwork")) "Artwork")
                 (p "This web site was designed by "
