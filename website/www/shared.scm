@@ -88,6 +88,7 @@ Functional package management,")))
 	    ;; Note: valid only if `packages-page' is exported.
 	    (li (a (@ (href ,(base-url "packages"))) "Packages"))
 	    (li (a (@ (href ,(base-url "help"))) "Help"))
+	    (li (a (@ (href ,(base-url "security"))) "Security"))
 	    (li (a (@ (href ,(base-url "contribute"))) "Contribute"))
 	    (li (a (@ (href ,(base-url "donate"))) "Donate"))
 	    (li (a (@ (href ,(base-url "about"))) "About")))))
