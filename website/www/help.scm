@@ -183,7 +183,26 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "August 2016, "
+		(ul (li "September 2016, "
+                        (a (@ (href "http://cufp.org/2016/"))
+                           "Commercial Users of Functional Programming (CUFP)")
+                        ", "
+                        (i "Guix: Scheme as a uniform OS admin and deployment
+interface")
+                        " (Ludovic Courtès): "
+                        (a (@ (href ,(slides-url "guix-cufp-20160924.pdf")))
+                           "slides"))
+                    (li "September 2016, "
+                        (a (@ (href "http://scheme2016.snow-fort.org/"))
+                           "Scheme Workshop")
+                        ", "
+                        (i "GNU Guix: The Functional GNU/Linux Distro That’s
+a Scheme Library")
+                        " (Ludovic Courtès): "
+                        (a (@ (href ,(slides-url
+                                      "guix-scheme-workshop-20160918.pdf")))
+                           "slides"))
+                    (li "August 2016, "
 			(a (@ (href ,(gnu-url "ghm/program.html")))
 			   "GNU Hackers Meeting")
 			(ul (li (i "GNU Guix is 4 years old!")
