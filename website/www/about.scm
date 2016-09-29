@@ -159,7 +159,9 @@ Distribution.  Messages sent to this list populate the "
 		      (b "guix-security"))
 		   (br)
                    "This is a private mailing list that anyone can post to "
-                   "to " (b "report security issues") " in Guix itself or in "
+                   "to " (a (@ (href ,(base-url "security")))
+                            "report security issues")
+                   " in Guix itself or in "
                    "the " (a (@ (href ,(base-url "packages"))) "packages")
                    " it provides.  Posting here allows Guix developers to "
                    "address the problem before it is widely publicized.")
