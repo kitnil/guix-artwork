@@ -24,32 +24,36 @@
 (define (security-page)
   `(html (@ (lang "en"))
          ,(html-page-header "Security")
-         ,(html-page-links)
-         (div (@ (id "content-box"))
-              (article
-               (h1 "Security")
-               (h2 "How to report security issues")
-               (p "To report sensitive security issues in Guix itself or the packages it "
-                  "provides, you can write to the private mailing list "
-                  (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-security"))
-                     ("guix-security@gnu.org"))
-                     ".  This list is monitored by a small team of Guix "
-                     "developers.")
-               (h2 "Release signatures")
-               (p "Releases of Guix and GuixSD are signed using the OpenPGP "
-                  "key with the fingerprint "
-                  "3CE4 6455 8A84 FDC6 9DB4  0CFB 090B 1199 3D9A EBB5.  "
-                  "Users should "
-                  (a (@ (href ,(base-url "manual/html_node/Binary-Installation.html")))
-                     "verify")
-                  " their downloads before extracting or running them.")
-               (h2 "Security updates")
-               (p "When security vulnerabilities are found in Guix or the "
-                  "packages provided by Guix, we will provide "
-                  (a (@ (href ,(base-url "manual/html_node/Security-Updates.html")))
-                     "security updates")
-                  " quickly and with minimal disruption for users.")
-               (p "Guix uses a \"rolling release\" model.  All security "
-                  "bug-fixes are pushed directly to the master branch.  There"
-                  " is no \"stable\" branch that only receives security fixes.")
-               ,(html-page-footer)))))
+         (body
+	  ,(html-page-description)
+          ,(html-page-links)
+
+          (div (@ (id "content-box"))
+               (article
+                (h1 "Security")
+                (h2 "How to report security issues")
+                (p "To report sensitive security issues in Guix itself or the packages it "
+                   "provides, you can write to the private mailing list "
+                   (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-security"))
+                      ("guix-security@gnu.org"))
+                   ".  This list is monitored by a small team of Guix "
+                   "developers.")
+                (h2 "Release signatures")
+                (p "Releases of Guix and GuixSD are signed using the OpenPGP "
+                   "key with the fingerprint "
+                   "3CE4 6455 8A84 FDC6 9DB4  0CFB 090B 1199 3D9A EBB5.  "
+                   "Users should "
+                   (a (@ (href ,(base-url "manual/html_node/Binary-Installation.html")))
+                      "verify")
+                   " their downloads before extracting or running them.")
+                (h2 "Security updates")
+                (p "When security vulnerabilities are found in Guix or the "
+                   "packages provided by Guix, we will provide "
+                   (a (@ (href ,(base-url "manual/html_node/Security-Updates.html")))
+                      "security updates")
+                   " quickly and with minimal disruption for users.")
+                (p "Guix uses a \"rolling release\" model.  All security "
+                   "bug-fixes are pushed directly to the master branch.  There"
+                   " is no \"stable\" branch that only receives security fixes.")))
+
+          ,(html-page-footer))))
