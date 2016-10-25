@@ -57,7 +57,7 @@
         (lambda (port)
           (xml->sxml port
                      #:namespaces '((atom . "http://www.w3.org/2005/Atom")
-                                    (x . "http://www.w3.org/1999/xhtml"))
+                                    (xhtml . "http://www.w3.org/1999/xhtml"))
                      #:trim-whitespace? #t))))))
 
 (define-record-type <news-entry>
@@ -83,7 +83,7 @@
               (atom:link (@ (href ,link)))
               (atom:title ,title)
               (atom:updated ,updated)
-              (atom:author ,author)
+              (atom:author (atom:name ,author))
               (atom:content ,content)
               ,rest ...)
              ...
