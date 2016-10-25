@@ -25,9 +25,12 @@
              (haunt html)
              (haunt utils)
              (haunt builder assets)
+             (haunt builder blog)
+             (haunt builder atom)
              (ice-9 match)
              (www)
-             (www utils))
+             (www utils)
+             (www news))
 
 (define %local-test?
   ;; True when we're testing locally, as opposed to producing things to
@@ -39,6 +42,28 @@
   ;; The URLs produced in these pages are only meant for local consumption.
   (format #t "~%Producing Web pages for local tests *only*!~%~%"))
 
+(define-syntax-rule (with-url-parameters body ...)
+  "Run BODY in a context where URL parameters honor %LOCAL-TEST?."
+  (parameterize ((current-url-root (if %local-test?
+                                       ""
+                                       (current-url-root)))
+                 (gnu.org-root (if %local-test?
+                                   "https://www.gnu.org"
+                                   (gnu.org-root))))
+    body ...))
+
+(define (parameterized-procedure proc)
+  (lambda args
+    (with-url-parameters
+     (apply proc args))))
+
+(define (parameterized-theme thm)
+  (theme #:name (theme-name thm)
+         #:layout (parameterized-procedure (theme-layout thm))
+         #:post-template (parameterized-procedure (theme-post-template thm))
+         #:collection-template (parameterized-procedure
+                                (theme-collection-template thm))))
+
 (site #:title "GNU's advanced distro and transactional package manager"
       #:domain "//www.gnu.org/software/guix"
       #:default-metadata
@@ -49,12 +74,11 @@
       `(,@(map (match-lambda
                  ((file-name contents)
                   (lambda (site posts)
-                    (parameterize ((current-url-root (if %local-test?
-                                                         ""
-                                                         (current-url-root)))
-                                   (gnu.org-root (if %local-test?
-                                                     "https://www.gnu.org"
-                                                     (gnu.org-root))))
+                    (with-url-parameters
                       (make-page file-name (contents) sxml->html)))))
                %web-pages)
+        ,(blog #:theme (parameterized-theme %news-haunt-theme)
+               #:prefix "news")
+        ,(atom-feed #:file-name "news/feed.xml"
+                    #:blog-prefix "news")
         ,(static-directory "static")))
