@@ -28,6 +28,7 @@
              (haunt builder blog)
              (haunt builder atom)
              (ice-9 match)
+             (srfi srfi-1)
              (www)
              (www utils)
              (www news))
@@ -71,12 +72,18 @@
         (email  . "guix-devel@gnu.org"))
       #:readers (list sxml-reader)
       #:builders
-      `(,@(map (match-lambda
-                 ((file-name contents)
-                  (lambda (site posts)
-                    (with-url-parameters
-                      (make-page file-name (contents) sxml->html)))))
-               %web-pages)
+      `(,(lambda (site posts)                     ;the main page
+           (with-url-parameters
+            (make-page "guix.html" (main-page site posts)
+                       sxml->html)))
+        ,@(filter-map (match-lambda
+                        (("guix.html" _)          ;handled above
+                         #f)
+                        ((file-name contents)
+                         (lambda (site posts)
+                           (with-url-parameters
+                            (make-page file-name (contents) sxml->html)))))
+                      %web-pages)
         ,(blog #:theme (parameterized-theme %news-haunt-theme)
                #:prefix "news")
         ,(atom-feed #:file-name "news/feed.xml"

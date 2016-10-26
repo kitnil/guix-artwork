@@ -22,16 +22,15 @@
 (define-module (www)
   #:use-module (www utils)
   #:use-module (www shared)
-  #:use-module (www packages)
   #:use-module (www download)
   #:use-module (www donate)
   #:use-module (www about)
   #:use-module (www contribute)
   #:use-module (www help)
   #:use-module (www security)
+  #:use-module (www news)
+  #:use-module (haunt post)
   #:use-module (sxml simple)
-  #:use-module (sxml match)
-  #:use-module (web client)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-9)
   #:use-module (srfi srfi-19)
@@ -42,56 +41,6 @@
             %web-pages
             export-web-page
             export-web-site))
-
-(define %atom-url
-  ;; The web site's news feed.
-  "http://savannah.gnu.org/news/atom.php?group=guix")
-
-(define (fetch-news)
-  "Return the SXML tree of the Atom news feed."
-  (call-with-values
-      (lambda ()
-        (http-get %atom-url))
-    (lambda (response contents)
-      (call-with-input-string contents
-        (lambda (port)
-          (xml->sxml port
-                     #:namespaces '((atom . "http://www.w3.org/2005/Atom")
-                                    (xhtml . "http://www.w3.org/1999/xhtml"))
-                     #:trim-whitespace? #t))))))
-
-(define-record-type <news-entry>
-  (news-entry url title date author content)
-  news-entry?
-  (url      news-entry-url)                       ;string
-  (title    news-entry-title)                     ;string
-  (date     news-entry-date)                      ;SRFI-19 date
-  (author   news-entry-author)                    ;sxml
-  (content  news-entry-content))                  ;sxml
-
-(define (news-items)
-  "Return the list of <news-entry> taken from the web site's RSS feed."
-  (sxml-match (fetch-news)
-    ((*TOP* (*PI* ,pi ...)
-            (atom:feed
-             (atom:id ,feed-id)
-             (atom:link)
-             (atom:title ,feed-title)
-             (atom:updated ,feed-updated)
-             (atom:entry
-              (atom:id ,id)
-              (atom:link (@ (href ,link)))
-              (atom:title ,title)
-              (atom:updated ,updated)
-              (atom:author (atom:name ,author))
-              (atom:content ,content)
-              ,rest ...)
-             ...
-             ))
-     (map news-entry
-          link title
-          (map (cut string->date <> "~Y-~m-~d") updated)
-          author content))))
 
 (define %video-url
   ;; Note: No "http:" so that people viewing the parent page via HTTPS get
@@ -120,15 +69,16 @@ character."
       (let ((space (string-index str #\space n)))
         (string-take str (or space n)))))
 
-(define (news-entry->sxml entry)
-  "Return the an SXML tree representing ENTRY, a <news-entry>."
-  `(a (@ (href ,(news-entry-url entry))
+(define (post->summary-sxml post url)
+  "Return the an SXML tree representing POST, a Haunt blog post, with a link
+to URL."
+  `(a (@ (href ,url)
          (class "news-entry"))
-      (h4 ,(news-entry-title entry))
+      (h4 ,(post-ref post 'title))
       (p (@ (class "news-date"))
-         ,(date->string (news-entry-date entry) "~B ~e, ~Y"))
+         ,(date->string (post-date post) "~B ~e, ~Y"))
       (p (@ (class "news-summary"))
-         ,(summarize-string (sxml->string* (news-entry-content entry))
+         ,(summarize-string (sxml->string* (post-sxml post))
                             170)
          "…")))
 
@@ -141,7 +91,9 @@ character."
               (class "screenshot-thumb")
               (alt ,alt)))))
 
-(define (main-page)
+(define* (main-page #:optional site (posts '()))
+  "Produce the main page showing a subset of POSTS, a list of Haunt blog
+posts."
   `(html (@ (lang "en"))
 	 ,(html-page-header
            "GNU's advanced distro and transactional package manager"
@@ -260,8 +212,12 @@ packaging API. ")
 
 	       (div (@ (id "news-box"))
 		    (h2 "News")
-		    ,@(map news-entry->sxml (take (news-items) 3))
-		    (p (a (@ (href "https://savannah.gnu.org/news/?group=guix")
+		    ,@(map (lambda (post)
+                             (post->summary-sxml post
+                                                 (post-url post site)))
+                           (take (posts/reverse-chronological posts)
+                                 (min 3 (length posts))))
+		    (p (a (@ (href ,(base-url "news"))
 			     (class "hlink-more-dark"))
 			  "More news")))
 
@@ -368,7 +324,3 @@ Distribution.")
                                                file-name-separator-string
                                                filename))))
             %web-pages))
-
-;; Local Variables:
-;; eval: (put 'sxml-match 'scheme-indent-function 1)
-;; End:
