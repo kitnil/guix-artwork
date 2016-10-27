@@ -1,0 +1,62 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "GNU\xa0Guix welcomes four students for GSoC")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 24 4 2016 7200))
+    (content
+      div
+      (p "We are glad to announce that four students will join GNU\xa0Guix for the 2016 Google Summer of Code (GSoC):"
+         (br))
+      (ul (li "Efraim will hack a "
+              (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016#Write_a_Bourne-shell_compiler_front-end_for_Guile"))
+                 "Bourne-shell compiler front-end for Guile")
+              ".  While this may sound a bit crazy (and rather fun :-)), the motivation behind this is to help reduce "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Bootstrapping.html"))
+                 "the set of binaries GNU\xa0Guix relies on for bootstrapping")
+              ".\n")
+          (li "Jelle will work on an npm "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+                 "importer")
+              " and "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Build-Systems.html"))
+                 "build system")
+              " for "
+              (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016#NPM_package_importer_and_builder"))
+                 "npm")
+              ".  This will allow users to deploy JavaScript programming environments "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+                 "in a controlled fashion")
+              ", integrated with the rest of the system.\n")
+          (li "Manolis, who contributed a GNU/Hurd port of Guix "
+              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8318"))
+                 "last year")
+              ", will work on "
+              (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016#Port_GuixSD_to_GNU.2FHurd"))
+                 "porting GuixSD to GNU/Hurd")
+              ".\n")
+          (li "Mathieu "
+              (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016#Rewrite_Hydra_to_be_more_integrated_with_Guix"))
+                 "will write")
+              " a continuous integration tool à la "
+              (a (@ (href "https://nixos.org/hydra/")) "Hydra")
+              ".  This will improve integration with Guix and will power continuous builds of our packages.\n"))
+      (p "All four projects sound exciting to us and we are happy to see progress on these fronts.  Happy hacking!"
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a transactional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

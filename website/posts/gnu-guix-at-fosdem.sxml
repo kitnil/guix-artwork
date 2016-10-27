@@ -1,0 +1,15 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix at FOSDEM")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 27 1 2015 3600))
+    (content
+      div
+      (p "Guix will be present at FOSDEM in Brussels, Belgium, with a talk entitled "
+         (a (@ (href "https://fosdem.org/2015/schedule/event/the_emacs_of_distros/"))
+            "\"The Emacs of Distros\"")
+         " this Saturday, at 3PM, in room H.1302."
+         (br))
+      (p "The talk will give an update on developments in Guix and the Guix System Distribution since last year, and will explain and demo the overall philosophy behind its design---how Guix seeks to empower users."
+         (br))
+      (p "Hope to see you there!" (br)))))

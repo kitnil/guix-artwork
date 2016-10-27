@@ -1,0 +1,31 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.3 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 17 7 2013 7200))
+    (content
+      div
+      (p "The third alpha release of "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is available.  The highlights are:"
+         (br))
+      (ul (li "Binary packages are now "
+              (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
+                 "continuously built")
+              " for both x86_64 and i686.\n")
+          (li (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#index-cross_002dcompilation-1"))
+                 "Cross-")
+              (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#index-cross_002dcompilation"))
+                 "compilation")
+              " support has been added.\n")
+          (li "33 packages were added to the distro, notably GTK+ and related libraries, and 25 were upgraded.\n")
+          (li "Many bug fixes and "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/"))
+                 "improvements to the manual")
+              ".\n"))
+      (p "See "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2013-07/msg00046.html"))
+            "the original announcement")
+         " for details."
+         (br)))))

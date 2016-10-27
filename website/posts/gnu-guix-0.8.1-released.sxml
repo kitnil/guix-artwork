@@ -1,0 +1,65 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.8.1 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 29 1 2015 3600))
+    (content
+      div
+      (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.1."
+         (br))
+      (p "The release comes both with a source tarball, which allows you to install it "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Installation.html"))
+            "on top of a running GNU/Linux system")
+         ", and a USB installation image to install the standalone "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+            "Guix System Distribution")
+         "."
+         (br))
+      (p "The highlights for this release include:"
+         (br))
+      (ul (li "A new "
+              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8175"))
+                 "port to ARMv7")
+              ".\n")
+          (li "New "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+                 "guix system vm")
+              " options to share file systems with the host.\n")
+          (li "New configuration interfaces for "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Locales.html"))
+                 "locale definitions")
+              " and for "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Base-Services.html"))
+                 "nscd")
+              ".\n")
+          (li "The addition of a CPAN importer to "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+                 "guix import")
+              ", and more checkers for "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-lint.html"))
+                 "guix lint")
+              ".\n")
+          (li "164 new packages and 222 package updates.\n")
+          (li "Many "
+              (a (@ (href "http://bugs.gnu.org/guix"))
+                 "bug fixes")
+              " and usability improvements.\n"))
+      (p "See the "
+         (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-01/msg00443.html"))
+            "original announcement")
+         " for details."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution is an advanced distribution of the GNU system."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  It also offers a declarative approach to operating system configuration management.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language."
+         (br))
+      (p "At this stage the Guix System Distribution can be used on an i686 or x86_64 machine. It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

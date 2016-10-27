@@ -1,0 +1,29 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Guix at the 2014 GNU Hackers Meeting")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 11 10 2014 7200))
+    (content
+      div
+      (p "The Guix talk of this summer's GNU Hackers Meeting is now "
+         (a (@ (href "http://www.gnu.org/software/guix/#talks"))
+            "available on-line")
+         "."
+         (br))
+      (p "It gives an introduction to Guix from a user's viewpoint, and covers topics such as features for GNU maintainers, programming interfaces, declarative operating system configuration, status of the GNU/Hurd port, and the new Emacs and Web interfaces---with a bunch of demos."
+         (br))
+      (p "Do not miss "
+         (a (@ (href "http://audio-video.gnu.org/video/ghm2014/"))
+            "other fine talks from the GHM")
+         ".  Many thanks to everyone who took care of the video recordings."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is the functional package manager for the GNU system, and a distribution thereof."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  It also offers a declarative approach to operating system configuration management.  Guix uses low-level mechanisms from the Nix package manager, with Guile Scheme programming interfaces."
+         (br))
+      (p "At this stage the distribution can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el."
+         (br)))))

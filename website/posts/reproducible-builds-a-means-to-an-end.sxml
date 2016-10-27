@@ -1,0 +1,115 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "Reproducible builds: a means to an end")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 11 11 2015 3600))
+    (content
+      div
+      (h4 "What we stand for")
+      (p "GNU Guix is committed to improving the freedom and autonomy of computer users.  This obviously manifests in the fact that GuixSD is a "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "fully free distro")
+         ", and this is what GNU stands for.  All the packages in Guix are built from source, including things like firmware where there is an unfortunate tendency to use pre-built binaries; that way, users can know what software they run.  On the technical side, Guix also tries hard to empower users by making the whole system as hackable as possible, in a uniform way\x97making "
+         (a (@ (href "https://www.gnu.org/philosophy/free-sw.html"))
+            "Freedom #1")
+         " practical, à la Emacs."
+         (br))
+      (p "Guix provides pre-compiled binaries of software packages as a service to its users\x97these are "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+            "substitutes")
+         " for local builds.  This is a convenient way to save time, but it could become a threat to users if they cannot establish that those substitutes are authentic\x97that their "
+         (a (@ (href "http://www.gnu.org/licenses/gpl.html#section1"))
+            "Corresponding Source")
+         " really is what it claims to be."
+         (br))
+      (h4 "Reproducible builds")
+      (p "We view \x93reproducible builds\x94 as a technical means to an end: that of guaranteeing user autonomy and safety.  What matters here is that, if package build processes are reproducible, then users actually have a chance to "
+         (em "verify")
+         " that the substitutes (pre-compiled binaries) they download correspond to the source code that supposedly produced them."
+         (br))
+      (p "Guix builds packages in a "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Features.html"))
+            "fully isolated environment")
+         " to maximize reproducibility\x97a crucial feature inherited from "
+         (a (@ (href "http://nixos.org/nix/")) "Nix")
+         ".  Thus, by construction, very few variations are possible between separate instances of a build environment; the set of files accessible in the environment, the host name, environment variables, locale, and so on are fully under control and cannot change.  This eliminates a "
+         (a (@ (href "https://reproducible-builds.org/docs/test-bench/"))
+            "whole class of possible discrepancies")
+         " between independent builds."
+         (br))
+      (p "The only things that may vary are the kernel, and the hardware.  The most prominent example of how \x91hardware\x92 details can leak into a build process are timestamps: it\x92s unfortunately quite common for build processes to query the system clock and record it in build outputs. Eelco Dolstra, Andres Löh, and Nicolas Pierron described sources of non-determinism in their "
+         (a (@ (href "https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf"))
+            "2010 JFP paper about NixOS")
+         ", along with a study on how this affects packages of the distribution in practice.  The "
+         (a (@ (href "https://wiki.debian.org/ReproducibleBuilds"))
+            "Reproducible Debian")
+         " project has since made a similar evaluation but at a larger scale, and with a larger number of independent builds, thereby providing more insight."
+         (br))
+      (p "Reproducible Debian has demonstrated one thing: contrary to what one might expect, sources of non-determinism are common in build processes. To eliminate the sources of non-determinism that remain in spite of the isolation techniques used in Nix and Guix, the most viable approach appears to be to fix upstream projects that suffer from these problems\x97one by one."
+         (br))
+      (p "The "
+         (a (@ (href "http://reproducible-builds.org"))
+            "reproducible-builds.org")
+         " project is a great effort to try and address that collectively.  We are glad Guix hackers were invited to participate in the first "
+         (a (@ (href "https://reproducible-builds.org/events/athens2015/"))
+            "Reproducible Build Summit")
+         " organized by the project, which will take place in December."
+         (br))
+      (h4 "Going further")
+      (p "How can we take advantage of the fact that builds are reproducible, when they are, to actually empower users?  There are several things we can do."
+         (br))
+      (p "First, users must be able to build software locally in the same way distribution developers would do it.  This possibility is an integral part of the transparent source/binary deployment model provided by functional package management; Guix users can use the --no-substitutes command-line option to force a local build."
+         (br))
+      (p "Second, we must make it easy for users to use the binary provider of their choice, and possibly to use several of them, something that Guix allows."
+         (br))
+      (p "Third, it must be equally simple for any user to publish their locally-built binaries as a way to improve diversity and avoid any single point of failure or trust.  The "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
+            "guix publish")
+         " command is a simple way to serve signed binaries over HTTP.  A fully peer-to-peer approach based on GNUnet was tackled as part of "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8318"))
+            "GSoC 2015")
+         "; the code needs more work before it can be integrated into Guix, but the approach is promising."
+         (br))
+      (p "Last but not least, users must be able to challenge binary providers "
+         (em "by themselves")
+         ".  The ability to verify binaries should not be the privilege of power developers.  To address that, the "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8398"))
+            "just-released")
+         " 0.9.0 version of GNU Guix provides a new command called "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
+            "guix challenge")
+         ".  The command allows users to automatically compare the build results of their local builds against those served by one or more binary providers.  It allows both to find out about non-reproducible builds\x97and indeed, has already "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-10/msg00728.html"))
+            "proved")
+         " to be "
+         (a (@ (href "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=21803"))
+            "fruitful")
+         ", and possibly to find out about compromised servers."
+         (br))
+      (p "This and other matters were discussed in a "
+         (a (@ (href "https://gnunet.org/guix2015video"))
+            "Guix talk earlier this week")
+         " ("
+         (a (@ (href "https://www.gnu.org/software/guix/guix-rennes-20151109.pdf"))
+            "slides")
+         "). We strongly believe in a future where the ability to authenticate distribution-provided binaries will be commonplace.  Let\x92s build it!"
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

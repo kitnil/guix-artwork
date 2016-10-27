@@ -1,0 +1,41 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "Chris Webber talks about Guix in Chicago, September 30th")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 18 9 2015 7200))
+    (content
+      div
+      (p (a (@ (href "http://dustycloud.org/"))
+            "Chris Webber")
+         " of "
+         (a (@ (href "http://mediagoblin.org/"))
+            "MediaGoblin")
+         " fame "
+         (a (@ (href "https://chicagolug.org/meetings/2015-09-30.html"))
+            "will be giving two talks")
+         " for the Chicago GNU/Linux User Group meeting on September 30th.  The first talk will discuss the state of federation on the Web, while the second one is entitled "
+         (em "Functional Package Management and Deployment with Guix")
+         ":"
+         (br))
+      (p (em "Tired of being stuck after an upgrade? Wish your operating system could roll forward and backwards in time, more like Git? Want a way to get really reproducible software? Or just want a better alternative to $YOUR_LANGUAGE's stressful packaging ecosystem you can run on an existing distro? And why on earth would you want something called a \"symlink forest\" anyway? Discover all this and more in this exciting talk about the GNU Guix project!")
+         (br))
+      (p "If you're in the Chicago area, do not miss Chris!"
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

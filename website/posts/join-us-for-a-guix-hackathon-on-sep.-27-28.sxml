@@ -1,0 +1,35 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "Join us for a Guix hackathon on Sep. 27-28!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 16 9 2014 7200))
+    (content
+      div
+      (p "The GNU Guix project is organizing a hackathon on September 27th and 28th, 2014.  The hackathon will take place primarily on-line, on the #guix IRC channel on Freenode.  We have started collecting a "
+         (a (@ (href "http://libreplanet.org/wiki/Group:Guix/Hackathon-09-2014"))
+            "list of hacking ideas")
+         ".  Feel free to "
+         (a (@ (href "http://www.gnu.org/software/guix/#contact"))
+            "stop by")
+         " and make more suggestions!"
+         (br))
+      (p "The hackathon is accessible to anyone with experience in GNU/Linux packaging or systems hacking.  Scheme programmers will find additional things to work on in the tool set.  Finally, we will also be welcoming newcomers and helping them get started."
+         (br))
+      (p "This is a followup to "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7720"))
+            "last year's hackathon")
+         ", organized for "
+         (a (@ (href "http://www.gnu.org/gnu/initial-announcement.html"))
+            "GNU's 30th anniversary")
+         "."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is the functional package manager for the GNU system, and a distribution thereof."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  It also offers a declarative approach to operating system configuration management.  Guix uses low-level mechanisms from the Nix package manager, with Guile Scheme programming interfaces."
+         (br))
+      (p "At this stage the distribution can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el."
+         (br)))))

@@ -1,0 +1,32 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.2 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 12 5 2013 7200))
+    (content
+      div
+      (p "The second alpha release of "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is available.  It comes with a number of new features, notably:"
+         (br))
+      (ul (li "The "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html"))
+                 "\"guix package\"")
+              " command supports upgrades of user profiles and full-text package searches.\n")
+          (li "Binary packages are "
+              (a (@ (href "http://hydra.gnu.org:3000/jobset/gnu/master"))
+                 "continuously built")
+              " and may be transparently downloaded as \"substitutes\" to the result of a local build.\n")
+          (li "The new "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-pull.html"))
+                 "\"guix pull\"")
+              " command updates the user's copy of Guix and its distro from Git.\n")
+          (li "New Scheme interfaces are available to facilitate package management in various ways.\n"))
+      (p "The distribution has grown to more than 400 packages; noteworthy additions include Xorg and TeXLive."
+         (br))
+      (p "See the "
+         (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-05/msg00034.html"))
+            "original announcement")
+         " for more information."
+         (br)))))

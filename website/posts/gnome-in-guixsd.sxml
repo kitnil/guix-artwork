@@ -1,0 +1,126 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNOME in GuixSD")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 23 3 2016 3600))
+    (content
+      div
+      (p "It\x92s a feature that many users were waiting for: proper "
+         (a (@ (href "https://www.gnome.org/")) "GNOME")
+         " support in GuixSD.  Good news: the forthcoming Guix and GuixSD release will give you exactly that!  Don\x92t miss the obligatory "
+         (a (@ (href "https://www.gnu.org/software/guix/screenshots/0.9.1/gnome-totem-epiphany.png"))
+            "screenshot")
+         "!"
+         (br))
+      (p "You would think adding GNOME is routine distro work involving a lot of packaging and bits of plumbing that\x92s already been done a hundred times, which is probably true!  Yet, adding GNOME support turned out to be interesting in many ways: it\x92s a good test for GuixSD\x92s declarative operating system configuration framework, it\x92s a way to formalize how this whole software stack fits together, and it\x92s been an insightful journey into GNU/Linux desktop plumbing!"
+         (br))
+      (p "Of course, a lot of software needs to be packaged to begin with.  This had been on-going for some time, culminating with the addition of a "
+         (a (@ (href "https://www.gnu.org/software/guix/packages/#gnome"))
+            "gnome meta-package")
+         " thanks to the hard work of ??? (Sou Bunnbu) and other hackers.  On the way, we added "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-12/msg00173.html"))
+            "an auto-updater for GNOME packages")
+         ", because all these package recipes need love."
+         (br))
+      (p "The more interesting parts were system integration.  Modern GNOME/Freedesktop environments rely on a number of daemons, most of which talk over "
+         (a (@ (href "https://www.freedesktop.org/wiki/Software/dbus/"))
+            "D-Bus")
+         ", and extending each other\x92s functionality: udev, udisks, upower, colord, geoclue, and polkit, to name a few.  Being able to "
+         (em "compose")
+         " all these system services was one of the driving use cases behind "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8412"))
+            "the design of GuixSD\x92s new service composition framework")
+         ".  With this design, we knew we were able to have fine control over the "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+            "service composition graph")
+         ".  Challenge #1 overcome!"
+         (br))
+      (p "Since GuixSD uses the "
+         (a (@ (href "https://www.gnu.org/software/shepherd/"))
+            "GNU Shepherd")
+         " and not systemd as its init system, we needed a way to provide the "
+         (a (@ (href "https://freedesktop.org/wiki/Software/systemd/logind/"))
+            "\x93logind\x94")
+         " functionality that systemd implements, and which allows GNOME to know about "
+         (a (@ (href "https://www.freedesktop.org/wiki/Software/systemd/multiseat/"))
+            "users, sessions, and seats")
+         "."
+         (br))
+      (p "So Andy Wingo courageously started by "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-04/msg00352.html"))
+            "extracting")
+         " logind from systemd, leading to "
+         (a (@ (href "https://github.com/wingo/elogind"))
+            "\x93elogind\x94")
+         ".  At this point, we had this daemon that could keep track of logged-in users and active sessions, and which GNOME could talk to over D-Bus\x85 provided all the relevant "
+         (a (@ (href "http://www.linux-pam.org/"))
+            "PAM services")
+         " would use the pam_elogind module so that elogind knows when a user logs in and out, as Andy "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-08/msg00439.html"))
+            "nicely explained it")
+         "."
+         (br))
+      (p "This pam_elogind thing is a typical example of a cross-cutting concern: "
+         (em "if")
+         " you use elogind, "
+         (em "then")
+         " you want all the relevant login-related PAM services (mingetty, the X login manager, commands such as su, the SSH daemon, etc.) to use pam_elogind.  To achieve that, we "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/commit/?id=12c00bca92e3eef2b86565924bbefc39397b5497"))
+            "updated")
+         " our PAM service such that it could be "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-02/msg00163.html"))
+            "extended")
+         " with such "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/commit/?id=e7ad0d586251383a4c8b00222e8dec61d491f03b"))
+            "cross-cutting modules")
+         ".  At last, we had proper logind support! "
+         (br))
+      (p "At this point, the brave could start using GNOME on GuixSD but would soon realize that, for example, the \x93power off\x94 button wouldn\x92t have the desired effect, or that changing a laptop\x92s backlight wouldn\x92t work because "
+         (a (@ (href "https://www.freedesktop.org/wiki/Software/polkit/"))
+            "polkit")
+         ", the daemon that allows unprivileged users to perform privileged operations like that one, was "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-02/msg01000.html"))
+            "missing essential policy files")
+         "."
+         (br))
+      (p "You would think you can finally change the brightness of your screen, but no!  Turns out that polkit would "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-02/msg01170.html"))
+            "refuse to run gnome-setting-daemon\x92s backlight helper program")
+         " because "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00247.html"))
+            "elogind happened to fail to map PIDs to sessions")
+         ".  Whatever."
+         (br))
+      (p "Of course there were still a bunch of embarrassing glitches such as "
+         (a (@ (href "http://debbugs.gnu.org/cgi/bugreport.cgi?bug=22666"))
+            "GNOME suspending right after it wakes up from suspend")
+         ", failure to start in QEMU, or "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00690.html"))
+            "the lack of GNOME\x92s favorite font")
+         ".  Well, it seems that all these are gone now!"
+         (br))
+      (p "GuixSD users can now enable GNOME by adding "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00639.html"))
+            "one line")
+         " in their "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+            "operating system configuration")
+         ".  Overall, this has been a nice experience involving a variety of areas."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

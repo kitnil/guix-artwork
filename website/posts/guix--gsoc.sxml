@@ -1,0 +1,29 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Guix & GSoC")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 12 4 2013 7200))
+    (content
+      div
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "Guix")
+         " participates in the Google Summer of Code under GNU's umbrella.  If you are "
+         (a (@ (href "https://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page"))
+            "an eligible student")
+         ", your contributions to GNU's package manager and distribution are welcome!"
+         (br))
+      (p "We have collected "
+         (a (@ (href "http://www.gnu.org/software/soc-projects/ideas-2013.html#guix"))
+            "project ideas")
+         ", some connected with other projects such as GNUnet and Emacs.  Come and discuss them on "
+         (a (@ (href "http://www.gnu.org/software/guix/#mail"))
+            "the mailing list")
+         " and on the #guix channel of the Freenode IRC network."
+         (br))
+      (p "The project list if far from exhaustive, so feel free to bring your own!"
+         (br))
+      (p "Make sure to "
+         (a (@ (href "https://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2013/help_page#8._When_can_I_apply_for_Google_Summer_of"))
+            "send your application to Google by May 3rd")
+         "."
+         (br)))))

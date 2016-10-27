@@ -1,0 +1,78 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.8.2 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 14 5 2015 7200))
+    (content
+      div
+      (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.2."
+         (br))
+      (p "The release comes both with tarballs, which allow you to install it on top of a running GNU/Linux system, either "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+            "from source")
+         " or "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+            "from a binaries")
+         ", and a USB installation image to install the standalone "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+            "Guix System Distribution")
+         " (GuixSD)."
+         (br))
+      (p "The highlights for this release include:"
+         (br))
+      (ul (li "The "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+                 "new method")
+              " to install Guix on a running system from binaries, which can greatly simplify installation.\n")
+          (li "GuixSD has new configuration interfaces for things like the "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Name-Service-Switch.html"))
+                 "name service switch")
+              ", new "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Services.html"))
+                 "service definitions")
+              ", easier "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+                 "desktop-style configuration")
+              ", and many tweaks and fixes.\n")
+          (li "A new "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
+                 "guix publish command")
+              " allowing everyone to publish their own binaries.\n")
+          (li "718 new "
+              (a (@ (href "http://www.gnu.org/software/guix/package-list.html"))
+                 "packages")
+              " (including \"big ones\" like GnuCash, IcedTea, and GHC) and 189 package updates\n")
+          (li "Countless "
+              (a (@ (href "http://bugs.gnu.org/guix"))
+                 "bug fixes")
+              " and usability improvements.\n"))
+      (p "See "
+         (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-05/msg00195.html"))
+            "http://lists.gnu.org/archive/html/guix-devel/2015-05/msg00195.html")
+         " for details."
+         (br))
+      (p "Special thanks go to "
+         (a (@ (href "http://sirgazil.bitbucket.org/"))
+            "Luis Felipe López Acevedo")
+         ", the incredible designer of the "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "new web site")
+         " and GuixSD logo!"
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

@@ -1,0 +1,149 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Service composition in GuixSD")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 19 11 2015 3600))
+    (content
+      div
+      (p "GuixSD provides a declarative, stateless approach to operating system configuration management.  In this context, the mechanism offered to select and compose system services is a crucial one.  This post presents the new service framework introduced in the "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8398"))
+            "0.9.0 version")
+         " of GNU\xa0Guix."
+         (br))
+      (h4 "Declarative Configuration Management")
+      (p "GuixSD is not like your parents\x92 distro.  Instead of fiddling with configuration files all around, or running commands that do so as a side effect, the system administrator "
+         (em "declares")
+         " what the system will be like.  This takes the form of an "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+            "operating-system declaration")
+         ", which specifies all the details: file systems, user accounts, locale, timezone, system services, etc."
+         (br))
+      (p "If you\x92re familiar with it, this may remind you of what deployment tools like Ansible and Puppet provide.  There is an important difference though: GuixSD takes a stateless\x97or \x93purely functional\x94\x97approach.  This means that instantiating the system with "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+            "guix system")
+         " always produces the same result, without modifying the current system state.  This is what makes it possible to test new system configurations, roll-back to previous ones, and so on.  The "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+            "guix system")
+         " command allows system configurations to be instantiated on the bare metal, in virtual machines, or in "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+            "containers")
+         ", which makes it easy to test them."
+         (br))
+      (p "In GuixSD, operating-system declarations are first-class objects in the "
+         (a (@ (href "https://www.gnu.org/software/guile/"))
+            "host language")
+         ".  They can be inspected at the REPL:"
+         (br))
+      (div (@ (class "example"))
+           (pre "scheme@(guile-user)> ,use (gnu)\nscheme@(guile-user)> (define os (load \"os-config.scm\"))\nscheme@(guile-user)> (operating-system-kernel os)\n$1 = #<package linux-libre-4.2.6 gnu/packages/linux.scm:279 2ea90c0>\nscheme@(guile-user)> (length (operating-system-user-services os))\n$2 = 30\nscheme@(guile-user)> (map user-account-name (operating-system-users os))\n$3 = (\"alice\" \"nobody\" \"root\")\n"))
+      (p "It is also possible to write functions that take or return OS configurations.  For instance, the "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/system/vm.scm#n382"))
+            "virtualized-operating-system function")
+         " returns a variant of the given OS where the set of file systems and the initrd are changed so that the resulting OS can be used in a lightweight virtual machine environment. Likewise for "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/system/linux-container.scm#n50"))
+            "containerized-operating-system")
+         "."
+         (br))
+      (h4 "Services Beyond Daemons")
+      (p "System services are specified in the services field of operating-system declarations, which is a list of service objects.  As a user, we want to be able to ideally add one line specifying the "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Services.html"))
+            "system service")
+         " we want to add, possibly with several instances of a service, and have GuixSD do the right thing."
+         (br))
+      (p "Before 0.9.0, GuixSD had a narrow definition of what a \x93system service\x94 is.  Each service in the operating-system configuration had to map to exactly one dmd service\x97"
+         (a (@ (href "https://www.gnu.org/software/dmd"))
+            "GNU dmd")
+         " is the init system of GuixSD.  This would work well in many cases: an SSH server or a log-in daemon is indeed a service that dmd has to take care of, even a file system mount is an operation that can be usefully inserted into dmd\x92s service dependency graph."
+         (br))
+      (p "However, this simple mapping failed to capture more complex service composition patterns.  A striking example is \x93super-daemons\x94\x97daemons that can spawn other daemons, such as dbus-daemon or inetd.  From the user viewpoint, it does not matter whether a daemon is started by dmd, or by dbus-daemon, or by inetd; this should be transparent.  If it\x92s a D-Bus service, then dbus-daemon\x92s configuration file should be told about the service; if it\x92s an inetd service, then inetd.conf should be augmented accordingly; if it\x92s a dmd service, information on how to start and stop it should go to dmd\x92s configuration file.  Unfortunately, the pre-0.9.0 services could not express such things."
+         (br))
+      (p "Worse, this approach did not capture the more general pattern of "
+         (em "service extension")
+         ".  In the examples above, the super-daemons are effectively "
+         (em "extended")
+         " by other services that rely on them.  But there are many cases where services are similarly extended: "
+         (a (@ (href "https://wiki.gentoo.org/wiki/Project:Eudev"))
+            "eudev")
+         " can be passed new device rules, "
+         (a (@ (href "http://www.freedesktop.org/wiki/Software/polkit/"))
+            "polkit")
+         " can be extended with new rules and actions, the "
+         (a (@ (href "http://www.linux-pam.org/"))
+            "Pluggable authentication module system (PAM)")
+         " can be extended with new services, and so on.  At that point it was clear that GuixSD\x92s naive approach wouldn\x92t scale."
+         (br))
+      (h4 "Composing System Services")
+      (p "The lesson learned from these observations is that system services "
+         (em "extend")
+         " each other in various way.  The new "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+            "service composition framework")
+         " is built around this model: \x93system services\x94, broadly defined, can extend each other, and services and their \x93extends\x94 relationships form a graph.  The root of the graph is the operating system itself."
+         (br))
+      (p "We can see that this pattern applies to services that are not daemons. PAM is one such example.  Accounts are another example: GuixSD provides an \x93account service\x94 that can be extended with new user accounts or groups; for example, the "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html#index-ntp_002dservice"))
+            "Network time protocol (NTP) daemon")
+         " needs to run under the unprivileged \x93ntp\x94 user, so the NTP service extends the account service with an \x93ntp\x94 user account.  Likewise, the \x93/etc\x94 service can be extended with new files to be added to /etc; the \x93setuid\x94 service can be extended with new programs to be made setuid-root. "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Reference.html"))
+            "See the manual")
+         " for more examples."
+         (br))
+      (p "The nice thing is that composition of services is made "
+         (em "explicit")
+         ": extensions can only happen where explicit extension relationships have been "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Types-and-Services.html"))
+            "declared")
+         ".  By looking at the extension graph, users can see how services fit together.  The "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html#system_002dextension_002dgraph"))
+            "guix system extension-graph")
+         " command, for instance, takes an operating-system declaration and renders the extension graph in the Graphviz format, making it easy to inspect the OS configuration structure."
+         (br))
+      (p "The API makes it easy to see how services contributed to a specific service\x92s configuration.  For instance, the following expression shows the PAM service as extended by other declared services:"
+         (br))
+      (div (@ (class "example"))
+           (pre "(fold-services (operating-system-services os) \n               #:target-type pam-root-service-type)\n"))
+      (p "The result is a service object whose value is a list of pam-service objects.  Likewise, the following expression returns the /etc service, whose value is a list of entries to be added to /etc:"
+         (br))
+      (div (@ (class "example"))
+           (pre "(fold-services (operating-system-services os) \n               #:target-type etc-service-type)\n"))
+      (p "This contrasts with the approach taken by "
+         (a (@ (href "http://nixos.org/")) "NixOS")
+         ", GuixSD\x92s cousin, and described in this "
+         (a (@ (href "https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf"))
+            "2010 paper")
+         ".  In NixOS, the whole system configuration is described in an \x93attribute set\x94\x97a list of key/value associations, similar to JavaScript objects or Python dictionaries.  Each NixOS service is passed the whole system configuration, allowing it to inspect and change any part of it."
+         (br))
+      (p "This form of "
+         (a (@ (href "https://en.wikipedia.org/wiki/Ambient_authority"))
+            "ambient authority")
+         " gives a lot of flexibility, but it makes it harder to reason about service composition\x97all a service implementation does is inspect, add, or modify attributes of the global configuration, which may or may not affect other services.  The use of a loose key/value dictionary also prevents good error reporting; for instance, a typo in a service name may go undetected.  Lastly, NixOS services are enabled by writing service.enable\xa0=\xa0true stanzas, which leads to complications for services that may have several instances, each with its own configuration."
+         (br))
+      (h4 "Wrapping Up")
+      (p "The new "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+            "service composition framework")
+         " in GuixSD 0.9.0 addresses shortcomings found in previous versions of GuixSD.  It simplifies operating-system declarations for users, and provides a highly extensible framework that clearly exposes the way services are composed."
+         (br))
+      (p "This new framework has already allowed us to integrate "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html"))
+            "Freedesktop and GNOME services")
+         " in a convenient way.  We hope it will prove fruitful as we address other types of services, such as Web services."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

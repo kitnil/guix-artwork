@@ -1,0 +1,41 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.6 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 9 4 2014 7200))
+    (content
+      div
+      (p "We are pleased to announce the sixth alpha release of "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         "."
+         (br))
+      (p "This release provides a bunch of new features, among other things:"
+         (br))
+      (ul (li (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#Substitutes"))
+                 "\"Substitutes\"")
+              " (pre-built binaries) must now be signed and authorized to be installed;\n")
+          (li "Builds can be "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#Daemon-Offload-Setup"))
+                 "offloaded")
+              " to other build machines over SSH; we use this facility for our "
+              (a (@ (href "http://hydra.gnu.org"))
+                 "build farm")
+              ".\n")
+          (li "The +guix build+ command has a "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#Invoking-guix-build"))
+                 "new --with-source option")
+              " that allows a package to be built from a tarball other than that specified in the source.  This is notably useful for maintainers who want to test pre-releases of their package.\n")
+          (li (a (@ (href "http://www.gnu.org/software/guix/package-list.html"))
+                 "91 new packages")
+              ", including GNU Octave, and many upgrades, notably GNU libc 2.19.\n"))
+      (p "An updated QEMU x86_64 image is provided, featuring Guix 0.6 and "
+         (a (@ (href "http://www.gnu.org/software/dmd"))
+            "dmd")
+         " 0.1.  It starts an X server with WindowMaker."
+         (br))
+      (p "See the "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2014-04/msg00160.html"))
+            "original announcement")
+         " for details."
+         (br)))))

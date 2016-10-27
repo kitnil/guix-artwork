@@ -1,0 +1,66 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Meet Guix at FOSDEM!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 22 1 2016 3600))
+    (content
+      div
+      (p "One week to "
+         (a (@ (href "https://fosdem.org/2016")) "FOSDEM")
+         "!  This year, there will be no less than six Guix-related talks.  This and the fact that we are addressing different communities is exciting."
+         (br))
+      (p "First, on Saturday morning, in the "
+         (a (@ (href "https://fosdem.org/2016/schedule/track/gnu_guile/"))
+            "GNU Guile track")
+         " (room K.3.201):"
+         (br))
+      (ul (li (a (@ (href "https://fosdem.org/2016/schedule/event/guixhurd/"))
+                 "Adding GNU/Hurd support to GNU Guix")
+              " (Manolis Ragkousis)\n")
+          (li (a (@ (href "https://fosdem.org/2016/schedule/event/guix/"))
+                 "A gentle introduction to functional package management with GNU Guix")
+              " (Ricardo Wurmus)\n")
+          (li (a (@ (href "https://fosdem.org/2016/schedule/event/guixdistro/"))
+                 "Your distro is a Scheme library")
+              " (Ludovic Courtès)\n")
+          (li (a (@ (href "https://fosdem.org/2016/schedule/event/guixmodules/"))
+                 "Foreign packages in GNU Guix")
+              " (Pjotr Prins)\n"))
+      (p "On Saturday afternoon:" (br))
+      (ul (li (a (@ (href "https://fosdem.org/2016/schedule/event/deployments_with_gnu_guix/"))
+                 "Reproducible and Customizable Deployments with GNU Guix")
+              " (Ludovic Courtès, "
+              (a (@ (href "https://fosdem.org/2016/schedule/track/distributions/"))
+                 "distributions track")
+              ", room K.4.201)\n")
+          (li (a (@ (href "https://fosdem.org/2016/schedule/event/guix_tox/"))
+                 "Guix-tox, a functional version of tox")
+              " (Cyril Roelandt, "
+              (a (@ (href "https://fosdem.org/2016/schedule/track/python/"))
+                 "Python track")
+              ", room UD2.218A)\n"))
+      (p "On Sunday noon:" (br))
+      (ul (li (a (@ (href "https://fosdem.org/2016/schedule/event/hpc_bigdata_gnu_guix/"))
+                 "Reproducible and User-Controlled Package Management in HPC with GNU Guix")
+              " (Ricardo Wurmus, "
+              (a (@ (href "https://fosdem.org/2016/schedule/track/hpc,_big_data_and_data_science/"))
+                 "HPC track")
+              ", room AW1.126)\n"))
+      (p "See you there!" (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

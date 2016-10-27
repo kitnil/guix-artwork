@@ -1,0 +1,45 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "GNU Guix welcomes three students for GSoC")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 2 5 2015 7200))
+    (content
+      div
+      (p "GNU Guix got 3 slots for the Google Summer of Code (GSoC), as part of GNU, which participates as an organization.  So we are pleased to welcome three students this summer:"
+         (br))
+      (ul (li "Rohan "
+              (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-04/msg00559.html"))
+                 "will work on a DHCP client")
+              " written in Guile Scheme, with the goal of making it easy to integrate it with "
+              (a (@ (href "http://www.gnu.org/software/dmd/"))
+                 "GNU dmd")
+              ";\n")
+          (li "Manolis will be able to "
+              (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-04/msg00560.html"))
+                 "keep working on porting Guix to GNU/Hurd")
+              ", with the eventual goal of being able to run GuixSD on "
+              (a (@ (href "http://hurd.gnu.org")) "GNU/Hurd")
+              ";\n")
+          (li "Rémi "
+              (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-04/msg00562.html"))
+                 "will work on peer-to-peer software distribution")
+              " over "
+              (a (@ (href "http://gnunet.org/")) "GNUnet")
+              ".\n"))
+      (p "All three projects have very exciting prospects and we are thrilled to get them started!  We are also glad that this allows us to strengthen ties with several other GNU packages."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution (GuixSD) is an advanced distribution of the GNU system that relies on GNU Guix."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  It also offers a declarative approach to operating system configuration management.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language."
+         (br))
+      (p "At this stage the Guix System Distribution can be used on an i686 or x86_64 machine. It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

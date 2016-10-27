@@ -1,0 +1,72 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.8.3 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 22 7 2015 7200))
+    (content
+      div
+      (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.3."
+         (br))
+      (p "The release comes with USB installation images to install the standalone "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+            "Guix System Distribution")
+         " (GuixSD), and with tarballs to install the package manager on top of a running GNU/Linux system, either "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+            "from source")
+         " or "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+            "from binaries")
+         "."
+         (br))
+      (p "The highlights for this release include:"
+         (br))
+      (ul (li "The ability to "
+              (em "declare")
+              " the packages that must be present in your profile, and to pass that to "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html#profile_002dmanifest"))
+                 "guix package's new --manifest option")
+              ".\n")
+          (li (a (@ (href "http://www.gnu.org/software/guix//manual/html_node/Invoking-guix-environment.html"))
+                 "guix environment")
+              " has a new --ad-hoc option to quickly spawn "
+              (em "ad hoc")
+              " development environments.\n")
+          (li "New tools: "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-edit.html"))
+                 "guix edit")
+              " to open a package recipe, "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-size.html"))
+                 "guix size")
+              " to profile the disk usage of a package and its dependencies, "
+              (a (@ (href "http://www.gnu.org/software/guix//manual/html_node/Invoking-guix-gc.html"))
+                 "guix gc --verify")
+              " to check the integrity of the store.\n")
+          (li (a (@ (href "http://www.gnu.org/software/guix/packages/"))
+                 "179 new packages")
+              ", notably LibreOffice, Coq, and a Guile-Emacs snapshot.\n")
+          (li "Many "
+              (a (@ (href "http://bugs.gnu.org/guix"))
+                 "bug fixes")
+              " and assorted improvements!\n"))
+      (p "See "
+         (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2015-07/msg00585.html"))
+            "http://lists.gnu.org/archive/html/guix-devel/2015-07/msg00585.html")
+         " for details."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

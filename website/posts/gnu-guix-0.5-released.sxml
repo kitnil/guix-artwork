@@ -1,0 +1,40 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.5 released")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 11 12 2013 3600))
+    (content
+      div
+      (p "We are pleased to announce the fifth alpha release of "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         "."
+         (br))
+      (p "The highlights are:" (br))
+      (ul (li "Port to the Loongson MIPS64 processors, using the n32 ABI.\n")
+          (li "New "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#The-Store-Monad"))
+                 "monad interface")
+              " to handle operations on the store.\n")
+          (li "New "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#System-Configuration"))
+                 "whole-system configuration API")
+              ", allowing users to declare and instantiate a machine's settings.\n")
+          (li "110 new packages, including \"big ones\" such as "
+              (a (@ (href "http://www.gnu.org/software/gnuzilla/"))
+                 "GNU IceCat")
+              " and hacker's favorites such as "
+              (a (@ (href "http://www.markwitmer.com/guile-xcb/guile-wm.html"))
+                 "Guile-WM")
+              ".  ;-)\n"))
+      (p "An updated QEMU virtual machine is provided, featuring Guix 0.5 and "
+         (a (@ (href "http://www.gnu.org/software/dmd"))
+            "dmd")
+         " 0.1."
+         (br))
+      (p "See "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2013-12/msg00061.html"))
+            "the original announcement")
+         " for details."
+         (br)))))

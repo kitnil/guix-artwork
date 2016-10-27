@@ -1,0 +1,93 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix & GuixSD 0.10.0 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 29 3 2016 7200))
+    (content
+      div
+      (p "We are pleased to announce the new beta release of GNU\xa0Guix and GuixSD, version 0.10.0!"
+         (br))
+      (p "The release comes with USB installation images to install the standalone "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+            "GuixSD")
+         ", and with tarballs to install the package manager on top of a running GNU/Linux system, either "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+            "from source")
+         " or "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+            "from binaries")
+         "."
+         (br))
+      (p "It\x92s been almost 5 months since the previous release, and many things happened!  The highlights include:"
+         (br))
+      (ul (li "Our \x93grafting\x94 mechanism for "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
+                 "security updates")
+              " has been fixed to be generally applicable.  Read "
+              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8470"))
+                 "this post")
+              " for more information on the challenges behind this.\n")
+          (li (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+                 "Substitutes")
+              " are now fetched by default over HTTPS and from a faster mirror.\n")
+          (li "A number of packages have been made "
+              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8407"))
+                 "bit-for-bit reproducible")
+              ", including glibc, Perl, Emacs packages, and Python packages.  This work was simplified by "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
+                 "guix challenge")
+              " and by the new "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Additional-Build-Options.html#Additional-Build-Options"))
+                 "--check")
+              " and "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Common-Build-Options.html#Common-Build-Options"))
+                 "--rounds")
+              " build options, and also by the insight gathered from "
+              (a (@ (href "https://reproducible-builds.org/"))
+                 "other reproducible builds efforts")
+              ".\n")
+          (li "GNOME is "
+              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8491"))
+                 "now available")
+              ", via the "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html"))
+                 "gnome-desktop-service procedure")
+              ".\n")
+          (li (a (@ (href "https://www.gnu.org/software/guix/packages/"))
+                 "639 new packages")
+              ", about as many package updates, greatly simplified by the addition of new "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+                 "importers")
+              " and "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-refresh.html"))
+                 "auto-updaters")
+              ".\n")
+          (li "A wealth of "
+              (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5"))
+                 "bug fixes")
+              ", documentation improvements, "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Emacs-Interface.html"))
+                 "Emacs niceties")
+              ", and more!\n"))
+      (p "See "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg01241.html"))
+            "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg01241.html")
+         " for details."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

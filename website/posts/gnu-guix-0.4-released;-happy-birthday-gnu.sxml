@@ -1,0 +1,35 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "GNU Guix 0.4 released; happy birthday, GNU!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 27 9 2013 7200))
+    (content
+      div
+      (p "We are pleased to celebrate "
+         (a (@ (href "http://www.gnu.org/gnu30"))
+            "GNU's 30th anniversary")
+         " with the fourth alpha release of "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         "."
+         (br))
+      (p "The highlights are:" (br))
+      (ul (li "New APIs for the instantiation of the global system environment, and for the creation of QEMU images of the system.\n")
+          (li "New --list-generations and --delete-generations command-line options.\n")
+          (li "60 packages were added to the distro, and 27 were upgraded, notably glibc.\n"))
+      (p "In addition, we provide a virtual machine image showing preliminary work toward getting a stand-alone GNU system.  It features "
+         (a (@ (href "http://www.gnu.org/software/dmd"))
+            "GNU dmd")
+         ", a dependency-based init system written in Guile Scheme, and of course it comes with Guix installed.  The image is self-reproducible in that the recipe to build it is part of Guix."
+         (br))
+      (p "See the "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2013-09/msg00235.html"))
+            "original announcement")
+         " for details."
+         (br))
+      (p "Join us on-line in the next couple of days for a "
+         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7720"))
+            "hackathon")
+         " to celebrate GNU's birthday!"
+         (br)))))

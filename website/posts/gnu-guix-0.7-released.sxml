@@ -1,0 +1,37 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.7 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 25 7 2014 7200))
+    (content
+      div
+      (p "We are pleased to announce the next alpha release of GNU Guix, version 0.7."
+         (br))
+      (p "This release is an important milestone for the project since it is the first to provide an image to install the GNU system from a USB stick."
+         (br))
+      (p "Noteworthy features for the release are:"
+         (br))
+      (ul (li "The GNU operating system can now be "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+                 "installed")
+              ".  Try it out!\n")
+          (li "To make it possible the "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system"))
+                 "guix system")
+              " command has been augmented with new options, and support for 'operating-system' "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+                 "declarations")
+              " has been vastly improved.\n")
+          (li "Programming has been simplified with the introduction of "
+              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html"))
+                 "\"G-expressions\"")
+              ", which capture dependencies used by build-side expressions.\n")
+          (li "More than 130 "
+              (a (@ (href "http://www.gnu.org/software/guix/package-list.html"))
+                 "packages")
+              " have been added, including \"big ones\" like the GIMP and Maxima.\n"))
+      (p "See the "
+         (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2014-07/msg00292.html"))
+            "original announcement")
+         " for details."
+         (br)))))

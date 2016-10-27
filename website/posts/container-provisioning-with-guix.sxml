@@ -1,0 +1,55 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Container provisioning with Guix")
+    (author . "David Thompson")
+    (date unquote
+          (make-date 0 0 0 0 27 10 2015 3600))
+    (content
+      div
+      (p "The upcoming release of GNU Guix will feature an implementation of Linux containers named, following Scheme conventions, "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/build/linux-container.scm#n215"))
+            "call-with-container")
+         ".  Containers are a lightweight virtualization technique used to isolate processes sharing the same host machine.  A container has its own separate global kernel resources such as mount points, networking interfaces, users, hostname, and processes."
+         (br))
+      (p "Containers are a hot topic, and there are many implementations available, but Guix containers are built differently.  Compared to other container implementations such as Docker, the most notable difference is that disk images and layered file systems are not used. Instead, the necessary software packages are inserted into containers via simple bind mounts.  A pleasant consequence of this structure is that software is deduplicated system-wide.  A package used in any number of containers is only on disk in a single place.  Additionally, some containers may be created by unprivileged users, allowing any Guix user to create isolated sandboxes for their applications to play in."
+         (br))
+      (p "One of the programs that uses call-with-container is "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+            "'guix environment'")
+         ", the generic virtual development environment creation tool.  A --container flag has been introduced that will, as the name suggests, spawn the environment inside of a container.  The container only has file system access to the directory from which 'guix environment' was invoked and the read-only store directories of the dependencies.  Additional directories and files may be shared from the host using the --expose and --share flags.  For example, a \"containerized\" development environment that is capable of building Guix from source may be created like so:"
+         (br))
+      (div (@ (class "example"))
+           (pre "guix environment --container guix "))
+      (p "Likewise, the "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+            "'guix system'")
+         " tool has been extended with a 'container' action for creating scripts that launch full-blown GuixSD containers:"
+         (br))
+      (div (@ (class "example"))
+           (pre "guix system container my-system.scm "))
+      (p "Please note, however, that GuixSD containers may only be created by the root user at this time."
+         (br))
+      (p "In order to use call-with-container, a kernel with support for user namespaces is required.  User namespaces were introduced in Linux 3.8, but several distributions disable them by default."
+         (br))
+      (p "There is still much work to be done in order to make call-with-container a robust container platform.  For example, control groups could be used to arbitrarily limit the resources a container can consume, and virtual network interfaces could be used to give containers access to the net without sharing the host system's network interfaces.  If you would like to help improve call-with-container, or any other part of the Guix codebase, please "
+         (a (@ (href "http://www.gnu.org/software/guix/contribute/"))
+            "join the fun")
+         "!"
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

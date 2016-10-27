@@ -1,0 +1,16 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU dmd 0.1 released")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 2 12 2013 3600))
+    (content
+      div
+      (p (a (@ (href "http://www.gnu.org/software/dmd"))
+            "GNU dmd")
+         " 0.1 has been "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2013-12/msg00014.html"))
+            "released")
+         ", providing many improvements and bug fixes."
+         (br))
+      (p "GNU dmd is a dependency-based service manager meant to be used as the init system in GNU.  It is written in Guile Scheme."
+         (br)))))

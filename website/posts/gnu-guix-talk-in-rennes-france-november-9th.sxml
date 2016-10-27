@@ -1,0 +1,47 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "GNU Guix talk in Rennes, France, November 9th")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 2 11 2015 3600))
+    (content
+      div
+      (p "Ludovic Courtès will be giving a talk about GNU Guix and GuixSD "
+         (a (@ (href "http://www.agendadulibre.org/events/10182"))
+            "in Rennes, France, on November 9th")
+         ".  The event is organized by the three local free software and hacker organizations:"
+         (br))
+      (p (em " \x93It used to work perfectly, then I upgraded something, and somehow\x85\x94 Sounds like a déjà vu?  Sometimes feel like software deployment is unpredictable?  Dissatisfied with Dockerfiles, Vagrantfiles, and co?  Ever wondered if you can trust your compiler or the integrity of those binary packages you have downloaded?")
+         (br))
+      (p (em "This talk introduces GNU Guix, a package manager that implements the functional package management paradigm pioneered by "
+             (a (@ (href "http://nixos.org/nix")) "Nix")
+             " to address these issues.  Guix supports transactional upgrades and rollbacks, as well as support for multiple software profiles.  In this talk, I will introduce functional package management and demonstrate Guix on practical use cases.  I will discuss the implications on (bit-)reproducible packages and environments, and how this can lead to verifiable binaries.  Lastly, we will see how this extends to whole-system deployments with GuixSD, the Guix System Distribution.")
+         (br))
+      (p "Earlier on that day, a similar talk with a focus on security and reproducibility issues will be given at "
+         (a (@ (href "http://www.inria.fr/en/centre/rennes"))
+            "Inria")
+         ", thanks to the support of "
+         (a (@ (href "http://grothoff.org/christian/"))
+            "Christian Grothoff")
+         " and the "
+         (a (@ (href "http://sed.bordeaux.inria.fr/"))
+            "software development department")
+         " in Bordeaux."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a functional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))

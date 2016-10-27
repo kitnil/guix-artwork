@@ -1,0 +1,26 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix 0.1 released!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 18 1 2013 3600))
+    (content
+      div
+      (p "Version 0.1 of the GNU Guix functional package manager and its baby distribution of user-land software has been released.  See "
+         (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-01/msg00191.html"))
+            "http://lists.gnu.org/archive/html/bug-guix/2013-01/msg00191.html")
+         " for the original announcement."
+         (br))
+      (p "In addition to standard package management features, Guix supports"
+         (br)
+         "\ntransactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection (more details "
+         (a (@ (href "http://www.gnu.org/software/guix/manual"))
+            "in the manual")
+         ".)"
+         (br))
+      (p "The distro is not a bootable distro yet, but rather one to be installed on top of a running GNU/Linux system.  It includes GNU libc 2.17, GCC 4.7.2, GNU Emacs 24.2, GNU Guile 2.0.7, and more."
+         (br))
+      (p "Building the distribution is a cooperative effort, and you are invited to "
+         (a (@ (href "http://www.gnu.org/software/guix/#contribute"))
+            "join")
+         "!"
+         (br)))))

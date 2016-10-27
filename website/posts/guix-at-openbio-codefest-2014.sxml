@@ -1,0 +1,17 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Guix at OpenBio Codefest 2014")
+    (author . "David Thompson")
+    (date unquote (make-date 0 0 0 0 13 7 2014 7200))
+    (content
+      div
+      (p "On Wednesday, July 9th, David Thompson gave a brief introduction to GNU Guix at the "
+         (a (@ (href "http://www.open-bio.org/wiki/Codefest_2014"))
+            "Open Bioinformatics Codefest 2014 hackathon")
+         ".  The objective of the Codefest is to give developers of bioinformatics software a chance to be fully focused on their projects for a few days and work in person.  These developers are concerned with the reliability and reproducibility of their operating systems, and the limitations of their package management utilities."
+         (br))
+      (p "See the "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix/maintenance.git/plain/talks/codefest-2014/guix-codefest-2014.pdf"))
+            "slides on-line")
+         "."
+         (br)))))

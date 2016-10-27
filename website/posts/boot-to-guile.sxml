@@ -1,0 +1,23 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Boot-to-Guile!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 16 2 2013 3600))
+    (content
+      div
+      (p "As a contribution to "
+         (a (@ (href "http://lists.gnu.org/archive/html/guile-user/2013-01/msg00007.html"))
+            "Guile's birthday potluck")
+         ", Guix has been extended with the infrastructure to build "
+         (a (@ (href "http://lists.gnu.org/archive/html/guile-user/2013-02/msg00131.html"))
+            "a Boot-to-Guile QEMU disk image")
+         "."
+         (br))
+      (p "The image has GRUB to boot Linux-Libre, which in turn runs directly Guile and an init script in Scheme from its initrd.  To put it differently, it boots Guile and its device driver environment known as Linux-Libre.  :-)"
+         (br))
+      (p "In addition to being fun, it actually has a practical impact.  First, Guix now has infrastructure to create bootable GNU/Linux-Libre QEMU images."
+         (br))
+      (p "Second, using Guile in the initrd proves to be very convenient: all the expressivity and power of Guile and Scheme, without the complexity and code duplication associated with specific tool suites like klibc, Ash, and BusyBox."
+         (br))
+      (p "Happy birthday Guile 2.0, and happy hacking!"
+         (br)))))

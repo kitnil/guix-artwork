@@ -1,0 +1,17 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "One week to FOSDEM!")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 25 1 2014 3600))
+    (content
+      div
+      (p (a (@ (href "https://fosdem.org/2014/"))
+            "FOSDEM")
+         " takes place next week.  We'll be giving a "
+         (a (@ (href "https://fosdem.org/2014/schedule/event/gnuguix/"))
+            "talk")
+         " about Guix and the GNU system on Sunday at noon, in the "
+         (a (@ (href "https://fosdem.org/2014/schedule/track/distributions/"))
+            "distributions devroom")
+         ".  Interested parties, freedom supporters, GNU hackers, and Schemers all alike are welcome to join in!"
+         (br)))))

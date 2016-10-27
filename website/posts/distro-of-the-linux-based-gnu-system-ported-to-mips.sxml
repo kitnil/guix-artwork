@@ -1,0 +1,30 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "Distro of the Linux-based GNU system ported to MIPS")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 28 10 2013 3600))
+    (content
+      div
+      (p "The Guix-based distro "
+         (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2013-10/msg00174.html"))
+            "has been ported to MIPS64")
+         ", specifically to the "
+         (a (@ (href "http://en.wikipedia.org/wiki/Loongson"))
+            "Loongson")
+         " processors notably found in the free-software-friendly "
+         (a (@ (href "http://en.wikipedia.org/wiki/Lemote#Netbook_computers"))
+            "Yeeloong laptops")
+         "."
+         (br))
+      (p "Technically, "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#Porting"))
+            "\"porting\"")
+         " here means that the \"bootstrap binaries\" were cross-compiled to +mips64el-linux-gnu+, and then used as an input to the "
+         (a (@ (href "http://www.gnu.org/software/guix/manual/guix.html#Bootstrapping"))
+            "distro's bootstrapping process")
+         "---a purely functional, and trackable, process."
+         (br))
+      (p "Thanks to Mark and Nikita for their tireless work to make this happen!"
+         (br)))))

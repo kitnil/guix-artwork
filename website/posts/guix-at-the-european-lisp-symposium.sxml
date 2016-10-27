@@ -1,0 +1,15 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Guix at the European Lisp Symposium")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 21 5 2013 7200))
+    (content
+      div
+      (p "A "
+         (a (@ (href "http://arxiv.org/abs/1305.4584"))
+            "paper")
+         " presenting the design of Guix's Scheme API and packaging language has been accepted for the "
+         (a (@ (href "http://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
+            "2013 European Lisp Symposium (ELS)")
+         ".  ELS will take place in Madrid on June 3-4."
+         (br)))))

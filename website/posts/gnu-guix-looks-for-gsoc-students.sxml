@@ -1,0 +1,32 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "GNU Guix looks for GSoC students")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 27 2 2014 3600))
+    (content
+      div
+      (p "This year again "
+         (a (@ (href "http://www.gnu.org/software/guix"))
+            "Guix")
+         " participates in the Google Summer of Code under the umbrella of the GNU Project."
+         (br))
+      (p "If you are an "
+         (a (@ (href "https://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2014/help_page#2._Whos_eligible_to_participate_as_a"))
+            "eligible student")
+         ", your contributions to GNU's package manager and to the GNU system are welcome!"
+         (br))
+      (p "We have collected "
+         (a (@ (href "http://www.gnu.org/software/soc-projects/ideas-2014.html#guix"))
+            "project ideas")
+         " touching a variety of topics.  If you are a free software hacker passionate about GNU/Linux packaging, Scheme, functional programming, Emacs, or peer-to-peer networking, check out the proposed projects.  The list is far from exhaustive, so feel free to bring your own!"
+         (br))
+      (p "Get in touch with us on "
+         (a (@ (href "http://www.gnu.org/software/guix/#mail"))
+            "the mailing list")
+         " and on the #guix IRC channel."
+         (br))
+      (p "Make sure to send your application to Google "
+         (a (@ (href "https://www.google-melange.com/gsoc/document/show/gsoc_program/google/gsoc2014/help_page#8._When_can_I_apply_for_Google_Summer_of"))
+            "by March 24th")
+         "."
+         (br)))))

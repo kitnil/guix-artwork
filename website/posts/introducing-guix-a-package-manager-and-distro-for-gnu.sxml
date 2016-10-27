@@ -1,0 +1,22 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "Introducing Guix, a package manager and distro for GNU")
+    (author . "Ludovic Courtès")
+    (date unquote
+          (make-date 0 0 0 0 22 11 2012 3600))
+    (content
+      div
+      (p (a (@ (href "http://www.gnu.org/software/guix/"))
+            "GNU Guix")
+         " is an on-going project to build a purely functional package manager and free software distribution of the GNU system."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection."
+         (br))
+      (p "Guix is approaching its first alpha release.  It comes with a small and growing, self-contained user-land software distribution."
+         (br))
+      (p "The "
+         (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/ROADMAP"))
+            "road map")
+         " details the current plan.  Let us know what you think, and join the fun!"
+         (br)))))

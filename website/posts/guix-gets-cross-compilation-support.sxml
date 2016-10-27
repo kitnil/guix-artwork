@@ -1,0 +1,21 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Guix gets cross-compilation support")
+    (author . "Ludovic Courtès")
+    (date unquote (make-date 0 0 0 0 26 6 2013 7200))
+    (content
+      div
+      (p (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-05/msg00114.html"))
+            "Recently")
+         ", "
+         (a (@ (href "http://www.gnu.org/software/guix/"))
+            "Guix")
+         " gained cross-compilation support.  What this means is that existing package definitions can be reused to cross compile packages.  So for instance one can cross-compile Guile and its dependencies for MIPS with:"
+         (br))
+      (div (@ (class "example"))
+           (pre "guix build --target=mips64el-linux-gnu guile "))
+      (p "This may sound like an unexpected feature for a \"package manager\".  In fact, it is particularly useful when porting the GNU system distribution to new platforms.  The distribution being self-contained, it is bootstrapped from a small set of pre-built binaries.  With cross-compilation support, porting to a new platform boils down to "
+         (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-06/msg00147.html"))
+            "cross-compiling the bootstrap binaries")
+         " for that platform."
+         (br)))))
