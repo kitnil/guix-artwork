@@ -86,6 +86,10 @@
                       %web-pages)
         ,(blog #:theme (parameterized-theme %news-haunt-theme)
                #:prefix "news")
+
+        ;; Apparently the <link> tags of Atom entries must be absolute URLs,
+        ;; hence this #:blog-prefix.
         ,(atom-feed #:file-name "news/feed.xml"
-                    #:blog-prefix "news")
+                    #:blog-prefix "https://www.gnu.org/software/guix/news")
+
         ,(static-directory "static")))
