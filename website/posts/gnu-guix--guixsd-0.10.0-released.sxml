@@ -18,9 +18,9 @@
             "from binaries")
          "."
          (br))
-      (p "It\x92s been almost 5 months since the previous release, and many things happened!  The highlights include:"
+      (p "It’s been almost 5 months since the previous release, and many things happened!  The highlights include:"
          (br))
-      (ul (li "Our \x93grafting\x94 mechanism for "
+      (ul (li "Our “grafting” mechanism for "
               (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
                  "security updates")
               " has been fixed to be generally applicable.  Read "

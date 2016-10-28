@@ -24,7 +24,7 @@
          ", the beloved Guile/Emacs interface and development environment, to communicate with the underlying Guile process.  That Guile process, in turn, simply uses Guix and "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Package-Modules.html"))
             "the whole distribution")
-         " as libraries\x97the goodness of embedding the "
+         " as libraries—the goodness of embedding the "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Defining-Packages.html"))
             "packaging DSL")
          " in a general-purpose language."

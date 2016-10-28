@@ -5,14 +5,14 @@
     (date unquote (make-date 0 0 0 0 28 6 2016 7200))
     (content
       div
-      (p "From its inception, Guix has had a thorough test suite\x97something that\x92s not only reassuring, but also the thing that allows for fearless evolution of the code.  That we didn\x92t have this safety net when hacking on the whole operating system, GuixSD, made it uncomfortable and more risky.  We are now addressing the problem with the introduction of "
+      (p "From its inception, Guix has had a thorough test suite—something that’s not only reassuring, but also the thing that allows for fearless evolution of the code.  That we didn’t have this safety net when hacking on the whole operating system, GuixSD, made it uncomfortable and more risky.  We are now addressing the problem with the introduction of "
          (em "system tests")
          ", closing one of the major roadblocks towards 1.0."
          (br))
       (p "Before going into details, let me recap the sorts of testing that already occurred in Guix land."
          (br))
       (h4 "Unit tests")
-      (p "Guix\x92s "
+      (p "Guix’s "
          (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/tests"))
             "test suite")
          " currently contains almost 600 "
@@ -27,7 +27,7 @@
          (br))
       (p "Since Guix provides Scheme modules for use "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html"))
-            "both in the package management front-end and on the \x93build side\x94")
+            "both in the package management front-end and on the “build side”")
          ", the latter is also tested.  This includes part of the "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Build-Systems.html"))
             "build systems")
@@ -50,7 +50,7 @@
             "functional packaging model")
          "."
          (br))
-      (p "Additionally, our policy is to always run each package\x92s test suite (typically \x93make check\x94) as part of its build process, unless there is a serious technical obstacle to doing that.  That way, we can, and do catch integration issues, incompatibilities, and plain bugs before they hit users."
+      (p "Additionally, our policy is to always run each package’s test suite (typically “make check”) as part of its build process, unless there is a serious technical obstacle to doing that.  That way, we can, and do catch integration issues, incompatibilities, and plain bugs before they hit users."
          (br))
       (h4 "System tests")
       (p "So far, so good.  Now, what about GuixSD itself?  GuixSD did not have an automated test suite until now.  What it did have, though, is the ability to instantiate an operating system in a virtual machine (VM) or in a container.  You would write your "
@@ -63,23 +63,23 @@
       (p "This "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html#Invoking-guix-system"))
             "gives you a script to launch a VM")
-         " running an instance of the OS declared in \x91my-config.scm\x92.  Already pretty convenient!  And indeed, even more so back in the days when we were eating a fair amount of dog food.  In fact, that\x92s how we ate our "
+         " running an instance of the OS declared in ‘my-config.scm’.  Already pretty convenient!  And indeed, even more so back in the days when we were eating a fair amount of dog food.  In fact, that’s how we ate our "
          (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7506"))
             "first")
          (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7737"))
             "dog food dishes")
          ", and the VM infrastructure was the fork and knife that made it more tolerable."
          (br))
-      (p "So what could we test exactly?  Roughly, we want to test that the instantiated system behaves according to the source \x91operating-system\x92 declaration: that user accounts are all there, that system services are running as expected, that all of the configuration is taken into account."
+      (p "So what could we test exactly?  Roughly, we want to test that the instantiated system behaves according to the source ‘operating-system’ declaration: that user accounts are all there, that system services are running as expected, that all of the configuration is taken into account."
          (br))
       (p "To do that, we need to run the system under test in a VM, but we also need to instrument it.  We use "
          (a (@ (href "http://qemu.org")) "QEMU")
          " to run our VMs, and QEMU along with the Linux virtio-serial module nicely supports communication between the guest operating system and the host, a strategy also used by "
          (a (@ (href "https://github.com/NixOS/nixpkgs/blob/master/nixos/lib/test-driver/Machine.pm"))
-            "NixOS\x92 test driver")
+            "NixOS’ test driver")
          ".  Concretely, we define a "
          (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/build/marionette.scm"))
-            "\x93marionette\x94")
+            "“marionette”")
          (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/tests.scm#n129"))
             "service")
          ", which hooks a Guile "
@@ -89,22 +89,22 @@
          (br))
       (p "Now we can write build processes ("
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Derivations.html"))
-            "aka. \x93derivations\x94")
+            "aka. “derivations”")
          ") that will:"
          (br))
       (ol (li "instantiate an instrumented variant of the operating system configuration we want to test in a VM image;\n")
           (li "spawn the VM, run a series of tests on the guest OS, and return the test results.\n"))
       (p "Thus, a system test to make sure the "
          (a (@ (href "https://www.gnu.org/software/guile/manual/html_node/System-Identification.html#index-scm_005funame"))
-            "\x91uname\x92")
+            "‘uname’")
          " system call returns something that matches the OS declaration looks like this:"
          (br))
       (div (@ (class "example"))
-           (pre "(define (run-test)\n  (define os\n    ;; The declaration of the OS we want to instantiate and test.\n    ;; Calling 'marionette-operating-system' instruments it.\n    (marionette-operating-system\n     (operating-system\n       (host-name \"komputilo\")\n       (timezone \"Europe/Berlin\")\n       (locale \"en_US.UTF-8\")\n\n       (bootloader (grub-configuration (device \"/dev/sdX\")))\n       (file-systems %base-file-systems))))\n\n  ;; Compute the script to run OS in a VM.\n  (mlet %store-monad ((run (system-qemu-image/shared-store-script\n                            os #:graphic? #f)))\n    (define test\n      ;; The actual test.  Here \x93#~\x94 is like \x93quote\x94, allowing us\n      ;; to describe code to run in the build environment; it\x92s a\n      ;; \x93g-expression.\x94\n      #~(begin\n          (use-modules (gnu build marionette)\n                       (srfi srfi-64)\n                       (ice-9 match))\n\n          (define marionette\n\t    ;; Spawn the VM that runs the declared OS.\n            (make-marionette (list #$run)))\n\n          (mkdir #$output)\n          (chdir #$output)\n\n          (test-begin \"basic\")\n\n          (test-assert \"uname\"\n\t    ;; Call the \x91uname\x92 Scheme function in the guest.\n\t    ;; In the host, make sure its result (a vector) matches\n\t    ;; our OS declaration above.\n            (match (marionette-eval '(uname) marionette)\n              (#(\"Linux\" host-name version _ architecture)\n               (and (string=? host-name\n                              #$(operating-system-host-name os))\n                    (string-prefix? #$(package-version\n                                       (operating-system-kernel os))\n                                    version)\n                    (string-prefix? architecture %host-type)))))\n\n          (test-end)\n          (exit (= (test-runner-fail-count (test-runner-current)) 0))))\n\n    ;; Turn the test into a buildable \x93derivation\x94.\n    (gexp->derivation \"simple-test\" test\n                      #:modules '((gnu build marionette)))))\n"))
-      (p "There are interesting things going on here.  First, while this is all Scheme code, there are in fact three tiers or strata of code at play here: the code that produces the OS declaration and the derivation, the build code of that derivation\x97the test\x97embodied in a "
+           (pre "(define (run-test)\n  (define os\n    ;; The declaration of the OS we want to instantiate and test.\n    ;; Calling 'marionette-operating-system' instruments it.\n    (marionette-operating-system\n     (operating-system\n       (host-name \"komputilo\")\n       (timezone \"Europe/Berlin\")\n       (locale \"en_US.UTF-8\")\n\n       (bootloader (grub-configuration (device \"/dev/sdX\")))\n       (file-systems %base-file-systems))))\n\n  ;; Compute the script to run OS in a VM.\n  (mlet %store-monad ((run (system-qemu-image/shared-store-script\n                            os #:graphic? #f)))\n    (define test\n      ;; The actual test.  Here “#~” is like “quote”, allowing us\n      ;; to describe code to run in the build environment; it’s a\n      ;; “g-expression.”\n      #~(begin\n          (use-modules (gnu build marionette)\n                       (srfi srfi-64)\n                       (ice-9 match))\n\n          (define marionette\n\t    ;; Spawn the VM that runs the declared OS.\n            (make-marionette (list #$run)))\n\n          (mkdir #$output)\n          (chdir #$output)\n\n          (test-begin \"basic\")\n\n          (test-assert \"uname\"\n\t    ;; Call the ‘uname’ Scheme function in the guest.\n\t    ;; In the host, make sure its result (a vector) matches\n\t    ;; our OS declaration above.\n            (match (marionette-eval '(uname) marionette)\n              (#(\"Linux\" host-name version _ architecture)\n               (and (string=? host-name\n                              #$(operating-system-host-name os))\n                    (string-prefix? #$(package-version\n                                       (operating-system-kernel os))\n                                    version)\n                    (string-prefix? architecture %host-type)))))\n\n          (test-end)\n          (exit (= (test-runner-fail-count (test-runner-current)) 0))))\n\n    ;; Turn the test into a buildable “derivation”.\n    (gexp->derivation \"simple-test\" test\n                      #:modules '((gnu build marionette)))))\n"))
+      (p "There are interesting things going on here.  First, while this is all Scheme code, there are in fact three tiers or strata of code at play here: the code that produces the OS declaration and the derivation, the build code of that derivation—the test—embodied in a "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html"))
             "g-expression")
-         ", and code sent from the host to the guest VM via \x91marionette-eval\x92."
+         ", and code sent from the host to the guest VM via ‘marionette-eval’."
          (br))
       (p "Using Scheme all the way means we can share code, use the right tools such as the "
          (a (@ (href "http://srfi.schemers.org/srfi-64/srfi-64.html"))
@@ -118,13 +118,13 @@
          ", which is often useful in system tests."
          (br))
       (h4 "Status")
-      (p "Guix now includes the test infrastructure described above; running \x93make check-system\x94 runs all the currently defined tests.  Currently we have "
+      (p "Guix now includes the test infrastructure described above; running “make check-system” runs all the currently defined tests.  Currently we have "
          (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/tests/base.scm"))
             "tests for basic functionality")
          ".  This includes making sure that all the system services declared are available and running.  We have tests for specific system services such as the "
          (a (@ (href "https://www.gnu.org/software/mcron/"))
             "mcron")
-         " job scheduling daemon\x97inspired by your parents\x92 cron, but with a powerful Scheme interface\x97and "
+         " job scheduling daemon—inspired by your parents’ cron, but with a powerful Scheme interface—and "
          (a (@ (href "http://avahi.org/")) "Avahi")
          " and its "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Name-Service-Switch.html"))

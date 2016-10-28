@@ -8,7 +8,7 @@
       (p "The "
          (a (@ (href "http://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
             "European Lisp Symposium")
-         " (ELS) is over now, and it\x92s been pleasant experience: thoughtful discussions, beautiful city, and parentheses all around.  Thanks to all the Lispers and Schemers who made it to ELS for the friendly atmosphere!"
+         " (ELS) is over now, and it’s been pleasant experience: thoughtful discussions, beautiful city, and parentheses all around.  Thanks to all the Lispers and Schemers who made it to ELS for the friendly atmosphere!"
          (br))
       (p "The slides of the talk I gave on the design and implementation of Guix are "
          (a (@ (href "http://www.gnu.org/software/guix/guix-els-20130603.pdf"))

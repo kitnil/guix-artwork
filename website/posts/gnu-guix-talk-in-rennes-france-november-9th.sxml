@@ -11,7 +11,7 @@
             "in Rennes, France, on November 9th")
          ".  The event is organized by the three local free software and hacker organizations:"
          (br))
-      (p (em " \x93It used to work perfectly, then I upgraded something, and somehow\x85\x94 Sounds like a déjà vu?  Sometimes feel like software deployment is unpredictable?  Dissatisfied with Dockerfiles, Vagrantfiles, and co?  Ever wondered if you can trust your compiler or the integrity of those binary packages you have downloaded?")
+      (p (em " “It used to work perfectly, then I upgraded something, and somehow…” Sounds like a déjà vu?  Sometimes feel like software deployment is unpredictable?  Dissatisfied with Dockerfiles, Vagrantfiles, and co?  Ever wondered if you can trust your compiler or the integrity of those binary packages you have downloaded?")
          (br))
       (p (em "This talk introduces GNU Guix, a package manager that implements the functional package management paradigm pioneered by "
              (a (@ (href "http://nixos.org/nix")) "Nix")

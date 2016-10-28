@@ -12,14 +12,14 @@
          " of GNU\xa0Guix."
          (br))
       (h4 "Declarative Configuration Management")
-      (p "GuixSD is not like your parents\x92 distro.  Instead of fiddling with configuration files all around, or running commands that do so as a side effect, the system administrator "
+      (p "GuixSD is not like your parents’ distro.  Instead of fiddling with configuration files all around, or running commands that do so as a side effect, the system administrator "
          (em "declares")
          " what the system will be like.  This takes the form of an "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
             "operating-system declaration")
          ", which specifies all the details: file systems, user accounts, locale, timezone, system services, etc."
          (br))
-      (p "If you\x92re familiar with it, this may remind you of what deployment tools like Ansible and Puppet provide.  There is an important difference though: GuixSD takes a stateless\x97or \x93purely functional\x94\x97approach.  This means that instantiating the system with "
+      (p "If you’re familiar with it, this may remind you of what deployment tools like Ansible and Puppet provide.  There is an important difference though: GuixSD takes a stateless—or “purely functional”—approach.  This means that instantiating the system with "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
             "guix system")
          " always produces the same result, without modifying the current system state.  This is what makes it possible to test new system configurations, roll-back to previous ones, and so on.  The "
@@ -51,12 +51,12 @@
             "system service")
          " we want to add, possibly with several instances of a service, and have GuixSD do the right thing."
          (br))
-      (p "Before 0.9.0, GuixSD had a narrow definition of what a \x93system service\x94 is.  Each service in the operating-system configuration had to map to exactly one dmd service\x97"
+      (p "Before 0.9.0, GuixSD had a narrow definition of what a “system service” is.  Each service in the operating-system configuration had to map to exactly one dmd service—"
          (a (@ (href "https://www.gnu.org/software/dmd"))
             "GNU dmd")
-         " is the init system of GuixSD.  This would work well in many cases: an SSH server or a log-in daemon is indeed a service that dmd has to take care of, even a file system mount is an operation that can be usefully inserted into dmd\x92s service dependency graph."
+         " is the init system of GuixSD.  This would work well in many cases: an SSH server or a log-in daemon is indeed a service that dmd has to take care of, even a file system mount is an operation that can be usefully inserted into dmd’s service dependency graph."
          (br))
-      (p "However, this simple mapping failed to capture more complex service composition patterns.  A striking example is \x93super-daemons\x94\x97daemons that can spawn other daemons, such as dbus-daemon or inetd.  From the user viewpoint, it does not matter whether a daemon is started by dmd, or by dbus-daemon, or by inetd; this should be transparent.  If it\x92s a D-Bus service, then dbus-daemon\x92s configuration file should be told about the service; if it\x92s an inetd service, then inetd.conf should be augmented accordingly; if it\x92s a dmd service, information on how to start and stop it should go to dmd\x92s configuration file.  Unfortunately, the pre-0.9.0 services could not express such things."
+      (p "However, this simple mapping failed to capture more complex service composition patterns.  A striking example is “super-daemons”—daemons that can spawn other daemons, such as dbus-daemon or inetd.  From the user viewpoint, it does not matter whether a daemon is started by dmd, or by dbus-daemon, or by inetd; this should be transparent.  If it’s a D-Bus service, then dbus-daemon’s configuration file should be told about the service; if it’s an inetd service, then inetd.conf should be augmented accordingly; if it’s a dmd service, information on how to start and stop it should go to dmd’s configuration file.  Unfortunately, the pre-0.9.0 services could not express such things."
          (br))
       (p "Worse, this approach did not capture the more general pattern of "
          (em "service extension")
@@ -71,7 +71,7 @@
          " can be extended with new rules and actions, the "
          (a (@ (href "http://www.linux-pam.org/"))
             "Pluggable authentication module system (PAM)")
-         " can be extended with new services, and so on.  At that point it was clear that GuixSD\x92s naive approach wouldn\x92t scale."
+         " can be extended with new services, and so on.  At that point it was clear that GuixSD’s naive approach wouldn’t scale."
          (br))
       (h4 "Composing System Services")
       (p "The lesson learned from these observations is that system services "
@@ -79,12 +79,12 @@
          " each other in various way.  The new "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
             "service composition framework")
-         " is built around this model: \x93system services\x94, broadly defined, can extend each other, and services and their \x93extends\x94 relationships form a graph.  The root of the graph is the operating system itself."
+         " is built around this model: “system services”, broadly defined, can extend each other, and services and their “extends” relationships form a graph.  The root of the graph is the operating system itself."
          (br))
-      (p "We can see that this pattern applies to services that are not daemons. PAM is one such example.  Accounts are another example: GuixSD provides an \x93account service\x94 that can be extended with new user accounts or groups; for example, the "
+      (p "We can see that this pattern applies to services that are not daemons. PAM is one such example.  Accounts are another example: GuixSD provides an “account service” that can be extended with new user accounts or groups; for example, the "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html#index-ntp_002dservice"))
             "Network time protocol (NTP) daemon")
-         " needs to run under the unprivileged \x93ntp\x94 user, so the NTP service extends the account service with an \x93ntp\x94 user account.  Likewise, the \x93/etc\x94 service can be extended with new files to be added to /etc; the \x93setuid\x94 service can be extended with new programs to be made setuid-root. "
+         " needs to run under the unprivileged “ntp” user, so the NTP service extends the account service with an “ntp” user account.  Likewise, the “/etc” service can be extended with new files to be added to /etc; the “setuid” service can be extended with new programs to be made setuid-root. "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Reference.html"))
             "See the manual")
          " for more examples."
@@ -99,7 +99,7 @@
             "guix system extension-graph")
          " command, for instance, takes an operating-system declaration and renders the extension graph in the Graphviz format, making it easy to inspect the OS configuration structure."
          (br))
-      (p "The API makes it easy to see how services contributed to a specific service\x92s configuration.  For instance, the following expression shows the PAM service as extended by other declared services:"
+      (p "The API makes it easy to see how services contributed to a specific service’s configuration.  For instance, the following expression shows the PAM service as extended by other declared services:"
          (br))
       (div (@ (class "example"))
            (pre "(fold-services (operating-system-services os) \n               #:target-type pam-root-service-type)\n"))
@@ -109,15 +109,15 @@
            (pre "(fold-services (operating-system-services os) \n               #:target-type etc-service-type)\n"))
       (p "This contrasts with the approach taken by "
          (a (@ (href "http://nixos.org/")) "NixOS")
-         ", GuixSD\x92s cousin, and described in this "
+         ", GuixSD’s cousin, and described in this "
          (a (@ (href "https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf"))
             "2010 paper")
-         ".  In NixOS, the whole system configuration is described in an \x93attribute set\x94\x97a list of key/value associations, similar to JavaScript objects or Python dictionaries.  Each NixOS service is passed the whole system configuration, allowing it to inspect and change any part of it."
+         ".  In NixOS, the whole system configuration is described in an “attribute set”—a list of key/value associations, similar to JavaScript objects or Python dictionaries.  Each NixOS service is passed the whole system configuration, allowing it to inspect and change any part of it."
          (br))
       (p "This form of "
          (a (@ (href "https://en.wikipedia.org/wiki/Ambient_authority"))
             "ambient authority")
-         " gives a lot of flexibility, but it makes it harder to reason about service composition\x97all a service implementation does is inspect, add, or modify attributes of the global configuration, which may or may not affect other services.  The use of a loose key/value dictionary also prevents good error reporting; for instance, a typo in a service name may go undetected.  Lastly, NixOS services are enabled by writing service.enable\xa0=\xa0true stanzas, which leads to complications for services that may have several instances, each with its own configuration."
+         " gives a lot of flexibility, but it makes it harder to reason about service composition—all a service implementation does is inspect, add, or modify attributes of the global configuration, which may or may not affect other services.  The use of a loose key/value dictionary also prevents good error reporting; for instance, a typo in a service name may go undetected.  Lastly, NixOS services are enabled by writing service.enable\xa0=\xa0true stanzas, which leads to complications for services that may have several instances, each with its own configuration."
          (br))
       (h4 "Wrapping Up")
       (p "The new "

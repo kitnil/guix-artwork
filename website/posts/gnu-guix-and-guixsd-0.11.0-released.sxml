@@ -19,7 +19,7 @@
             "from binaries")
          ". "
          (br))
-      (p "It\x92s been 4 months since the previous release, during which 70 people contributed code and packages.  The highlights include:"
+      (p "It’s been 4 months since the previous release, during which 70 people contributed code and packages.  The highlights include:"
          (br))
       (ul (li "New GuixSD system services, including an "
               (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Scheduled-Job-Execution.html"))

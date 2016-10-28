@@ -14,7 +14,7 @@
          " (GSoC), and "
          (a (@ (href "https://www.gnu.org/software/guix"))
             "Guix")
-         " is participating under GNU\x92s umbrella."
+         " is participating under GNU’s umbrella."
          (br))
       (p "We have collected project ideas for "
          (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016"))

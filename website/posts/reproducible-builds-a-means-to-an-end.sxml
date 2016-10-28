@@ -11,35 +11,35 @@
       (p "GNU Guix is committed to improving the freedom and autonomy of computer users.  This obviously manifests in the fact that GuixSD is a "
          (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
             "fully free distro")
-         ", and this is what GNU stands for.  All the packages in Guix are built from source, including things like firmware where there is an unfortunate tendency to use pre-built binaries; that way, users can know what software they run.  On the technical side, Guix also tries hard to empower users by making the whole system as hackable as possible, in a uniform way\x97making "
+         ", and this is what GNU stands for.  All the packages in Guix are built from source, including things like firmware where there is an unfortunate tendency to use pre-built binaries; that way, users can know what software they run.  On the technical side, Guix also tries hard to empower users by making the whole system as hackable as possible, in a uniform way—making "
          (a (@ (href "https://www.gnu.org/philosophy/free-sw.html"))
             "Freedom #1")
          " practical, à la Emacs."
          (br))
-      (p "Guix provides pre-compiled binaries of software packages as a service to its users\x97these are "
+      (p "Guix provides pre-compiled binaries of software packages as a service to its users—these are "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
             "substitutes")
-         " for local builds.  This is a convenient way to save time, but it could become a threat to users if they cannot establish that those substitutes are authentic\x97that their "
+         " for local builds.  This is a convenient way to save time, but it could become a threat to users if they cannot establish that those substitutes are authentic—that their "
          (a (@ (href "http://www.gnu.org/licenses/gpl.html#section1"))
             "Corresponding Source")
          " really is what it claims to be."
          (br))
       (h4 "Reproducible builds")
-      (p "We view \x93reproducible builds\x94 as a technical means to an end: that of guaranteeing user autonomy and safety.  What matters here is that, if package build processes are reproducible, then users actually have a chance to "
+      (p "We view “reproducible builds” as a technical means to an end: that of guaranteeing user autonomy and safety.  What matters here is that, if package build processes are reproducible, then users actually have a chance to "
          (em "verify")
          " that the substitutes (pre-compiled binaries) they download correspond to the source code that supposedly produced them."
          (br))
       (p "Guix builds packages in a "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Features.html"))
             "fully isolated environment")
-         " to maximize reproducibility\x97a crucial feature inherited from "
+         " to maximize reproducibility—a crucial feature inherited from "
          (a (@ (href "http://nixos.org/nix/")) "Nix")
          ".  Thus, by construction, very few variations are possible between separate instances of a build environment; the set of files accessible in the environment, the host name, environment variables, locale, and so on are fully under control and cannot change.  This eliminates a "
          (a (@ (href "https://reproducible-builds.org/docs/test-bench/"))
             "whole class of possible discrepancies")
          " between independent builds."
          (br))
-      (p "The only things that may vary are the kernel, and the hardware.  The most prominent example of how \x91hardware\x92 details can leak into a build process are timestamps: it\x92s unfortunately quite common for build processes to query the system clock and record it in build outputs. Eelco Dolstra, Andres Löh, and Nicolas Pierron described sources of non-determinism in their "
+      (p "The only things that may vary are the kernel, and the hardware.  The most prominent example of how ‘hardware’ details can leak into a build process are timestamps: it’s unfortunately quite common for build processes to query the system clock and record it in build outputs. Eelco Dolstra, Andres Löh, and Nicolas Pierron described sources of non-determinism in their "
          (a (@ (href "https://nixos.org/~eelco/pubs/nixos-jfp-final.pdf"))
             "2010 JFP paper about NixOS")
          ", along with a study on how this affects packages of the distribution in practice.  The "
@@ -47,7 +47,7 @@
             "Reproducible Debian")
          " project has since made a similar evaluation but at a larger scale, and with a larger number of independent builds, thereby providing more insight."
          (br))
-      (p "Reproducible Debian has demonstrated one thing: contrary to what one might expect, sources of non-determinism are common in build processes. To eliminate the sources of non-determinism that remain in spite of the isolation techniques used in Nix and Guix, the most viable approach appears to be to fix upstream projects that suffer from these problems\x97one by one."
+      (p "Reproducible Debian has demonstrated one thing: contrary to what one might expect, sources of non-determinism are common in build processes. To eliminate the sources of non-determinism that remain in spite of the isolation techniques used in Nix and Guix, the most viable approach appears to be to fix upstream projects that suffer from these problems—one by one."
          (br))
       (p "The "
          (a (@ (href "http://reproducible-builds.org"))
@@ -80,7 +80,7 @@
          " 0.9.0 version of GNU Guix provides a new command called "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
             "guix challenge")
-         ".  The command allows users to automatically compare the build results of their local builds against those served by one or more binary providers.  It allows both to find out about non-reproducible builds\x97and indeed, has already "
+         ".  The command allows users to automatically compare the build results of their local builds against those served by one or more binary providers.  It allows both to find out about non-reproducible builds—and indeed, has already "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-10/msg00728.html"))
             "proved")
          " to be "
@@ -94,7 +94,7 @@
          " ("
          (a (@ (href "https://www.gnu.org/software/guix/guix-rennes-20151109.pdf"))
             "slides")
-         "). We strongly believe in a future where the ability to authenticate distribution-provided binaries will be commonplace.  Let\x92s build it!"
+         "). We strongly believe in a future where the ability to authenticate distribution-provided binaries will be commonplace.  Let’s build it!"
          (br))
       (h4 "About GNU Guix")
       (p (a (@ (href "http://www.gnu.org/software/guix"))

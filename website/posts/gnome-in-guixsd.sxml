@@ -5,19 +5,19 @@
     (date unquote (make-date 0 0 0 0 23 3 2016 3600))
     (content
       div
-      (p "It\x92s a feature that many users were waiting for: proper "
+      (p "It’s a feature that many users were waiting for: proper "
          (a (@ (href "https://www.gnome.org/")) "GNOME")
-         " support in GuixSD.  Good news: the forthcoming Guix and GuixSD release will give you exactly that!  Don\x92t miss the obligatory "
+         " support in GuixSD.  Good news: the forthcoming Guix and GuixSD release will give you exactly that!  Don’t miss the obligatory "
          (a (@ (href "https://www.gnu.org/software/guix/screenshots/0.9.1/gnome-totem-epiphany.png"))
             "screenshot")
          "!"
          (br))
-      (p "You would think adding GNOME is routine distro work involving a lot of packaging and bits of plumbing that\x92s already been done a hundred times, which is probably true!  Yet, adding GNOME support turned out to be interesting in many ways: it\x92s a good test for GuixSD\x92s declarative operating system configuration framework, it\x92s a way to formalize how this whole software stack fits together, and it\x92s been an insightful journey into GNU/Linux desktop plumbing!"
+      (p "You would think adding GNOME is routine distro work involving a lot of packaging and bits of plumbing that’s already been done a hundred times, which is probably true!  Yet, adding GNOME support turned out to be interesting in many ways: it’s a good test for GuixSD’s declarative operating system configuration framework, it’s a way to formalize how this whole software stack fits together, and it’s been an insightful journey into GNU/Linux desktop plumbing!"
          (br))
       (p "Of course, a lot of software needs to be packaged to begin with.  This had been on-going for some time, culminating with the addition of a "
          (a (@ (href "https://www.gnu.org/software/guix/packages/#gnome"))
             "gnome meta-package")
-         " thanks to the hard work of ??? (Sou Bunnbu) and other hackers.  On the way, we added "
+         " thanks to the hard work of 宋文武 (Sou Bunnbu) and other hackers.  On the way, we added "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-12/msg00173.html"))
             "an auto-updater for GNOME packages")
          ", because all these package recipes need love."
@@ -25,11 +25,11 @@
       (p "The more interesting parts were system integration.  Modern GNOME/Freedesktop environments rely on a number of daemons, most of which talk over "
          (a (@ (href "https://www.freedesktop.org/wiki/Software/dbus/"))
             "D-Bus")
-         ", and extending each other\x92s functionality: udev, udisks, upower, colord, geoclue, and polkit, to name a few.  Being able to "
+         ", and extending each other’s functionality: udev, udisks, upower, colord, geoclue, and polkit, to name a few.  Being able to "
          (em "compose")
          " all these system services was one of the driving use cases behind "
          (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8412"))
-            "the design of GuixSD\x92s new service composition framework")
+            "the design of GuixSD’s new service composition framework")
          ".  With this design, we knew we were able to have fine control over the "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
             "service composition graph")
@@ -40,7 +40,7 @@
             "GNU Shepherd")
          " and not systemd as its init system, we needed a way to provide the "
          (a (@ (href "https://freedesktop.org/wiki/Software/systemd/logind/"))
-            "\x93logind\x94")
+            "“logind”")
          " functionality that systemd implements, and which allows GNOME to know about "
          (a (@ (href "https://www.freedesktop.org/wiki/Software/systemd/multiseat/"))
             "users, sessions, and seats")
@@ -51,8 +51,8 @@
             "extracting")
          " logind from systemd, leading to "
          (a (@ (href "https://github.com/wingo/elogind"))
-            "\x93elogind\x94")
-         ".  At this point, we had this daemon that could keep track of logged-in users and active sessions, and which GNOME could talk to over D-Bus\x85 provided all the relevant "
+            "“elogind”")
+         ".  At this point, we had this daemon that could keep track of logged-in users and active sessions, and which GNOME could talk to over D-Bus… provided all the relevant "
          (a (@ (href "http://www.linux-pam.org/"))
             "PAM services")
          " would use the pam_elogind module so that elogind knows when a user logs in and out, as Andy "
@@ -75,7 +75,7 @@
             "cross-cutting modules")
          ".  At last, we had proper logind support! "
          (br))
-      (p "At this point, the brave could start using GNOME on GuixSD but would soon realize that, for example, the \x93power off\x94 button wouldn\x92t have the desired effect, or that changing a laptop\x92s backlight wouldn\x92t work because "
+      (p "At this point, the brave could start using GNOME on GuixSD but would soon realize that, for example, the “power off” button wouldn’t have the desired effect, or that changing a laptop’s backlight wouldn’t work because "
          (a (@ (href "https://www.freedesktop.org/wiki/Software/polkit/"))
             "polkit")
          ", the daemon that allows unprivileged users to perform privileged operations like that one, was "
@@ -85,7 +85,7 @@
          (br))
       (p "You would think you can finally change the brightness of your screen, but no!  Turns out that polkit would "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-02/msg01170.html"))
-            "refuse to run gnome-setting-daemon\x92s backlight helper program")
+            "refuse to run gnome-setting-daemon’s backlight helper program")
          " because "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00247.html"))
             "elogind happened to fail to map PIDs to sessions")
@@ -96,7 +96,7 @@
             "GNOME suspending right after it wakes up from suspend")
          ", failure to start in QEMU, or "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00690.html"))
-            "the lack of GNOME\x92s favorite font")
+            "the lack of GNOME’s favorite font")
          ".  Well, it seems that all these are gone now!"
          (br))
       (p "GuixSD users can now enable GNOME by adding "
