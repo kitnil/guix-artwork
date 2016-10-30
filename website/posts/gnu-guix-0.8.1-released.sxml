@@ -18,7 +18,7 @@
       (p "The highlights for this release include:"
          (br))
       (ul (li "A new "
-              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8175"))
+              (a (@ (href "/software/guix/news/gnu-guix-ported-to-arm-and-other-niceties-of-the-new-year.html"))
                  "port to ARMv7")
               ".\n")
           (li "New "

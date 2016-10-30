@@ -7,7 +7,7 @@
     (content
       div
       (p "GuixSD provides a declarative, stateless approach to operating system configuration management.  In this context, the mechanism offered to select and compose system services is a crucial one.  This post presents the new service framework introduced in the "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8398"))
+         (a (@ (href "/software/guix/news/gnu-guix-090-released.html"))
             "0.9.0 version")
          " of GNU\xa0Guix."
          (br))
@@ -26,7 +26,7 @@
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
             "guix system")
          " command allows system configurations to be instantiated on the bare metal, in virtual machines, or in "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+         (a (@ (href "/software/guix/news/container-provisioning-with-guix.html"))
             "containers")
          ", which makes it easy to test them."
          (br))

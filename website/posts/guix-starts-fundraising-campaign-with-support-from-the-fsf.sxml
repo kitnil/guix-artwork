@@ -22,7 +22,7 @@
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
             "distributes binaries")
          ".  Next we want to add more build machines, with two goals in mind: being able to quickly test changes that trigger lots of rebuilds, and being able to identify "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8407"))
+         (a (@ (href "/software/guix/news/reproducible-builds-a-means-to-an-end.html"))
             "non-verifiable builds")
          "."
          (br))

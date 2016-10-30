@@ -68,14 +68,14 @@
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
             "guix publish")
          " command is a simple way to serve signed binaries over HTTP.  A fully peer-to-peer approach based on GNUnet was tackled as part of "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8318"))
+         (a (@ (href "/software/guix/news/gsoc-update.html"))
             "GSoC 2015")
          "; the code needs more work before it can be integrated into Guix, but the approach is promising."
          (br))
       (p "Last but not least, users must be able to challenge binary providers "
          (em "by themselves")
          ".  The ability to verify binaries should not be the privilege of power developers.  To address that, the "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8398"))
+         (a (@ (href "/software/guix/news/gnu-guix-090-released.html"))
             "just-released")
          " 0.9.0 version of GNU Guix provides a new command called "
          (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))

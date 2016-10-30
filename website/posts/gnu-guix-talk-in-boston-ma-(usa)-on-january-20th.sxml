@@ -20,7 +20,7 @@
       (p "The talk will take place in MIT building E-51, room 325."
          (br))
       (p "David is a GNU hacker who contributes to Guix and Guile; he implemented "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+         (a (@ (href "/software/guix/news/container-provisioning-with-guix.html"))
             "container support")
          " in Guix.  If you are in the Boston area, do not miss him!"
          (br))

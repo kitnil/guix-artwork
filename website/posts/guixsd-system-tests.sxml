@@ -64,9 +64,9 @@
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html#Invoking-guix-system"))
             "gives you a script to launch a VM")
          " running an instance of the OS declared in ‘my-config.scm’.  Already pretty convenient!  And indeed, even more so back in the days when we were eating a fair amount of dog food.  In fact, that’s how we ate our "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7506"))
+         (a (@ (href "/software/guix/news/boot-to-guile.html"))
             "first")
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7737"))
+         (a (@ (href "/software/guix/news/gnu-guix-04-released-happy-birthday-gnu.html"))
             "dog food dishes")
          ", and the VM infrastructure was the fork and knife that made it more tolerable."
          (br))

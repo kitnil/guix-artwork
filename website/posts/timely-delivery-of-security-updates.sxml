@@ -37,7 +37,7 @@
          ".  This is nice in many ways: all packages "
          (em "must")
          " build from source, there is no way we can be using binaries that cannot be "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8407"))
+         (a (@ (href "/software/guix/news/reproducible-builds-a-means-to-an-end.html"))
             "rebuilt from their Corresponding Source")
          ", breakage due to incompatible application binary interfaces (ABIs) is foreign to our users, we have a precise trail of the tools that produced binaries—that is, builds are "
          (a (@ (href "https://en.wikipedia.org/wiki/Referential_transparency"))
@@ -67,7 +67,7 @@
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
             "the infrastructure for grafted updates")
          " since "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8147"))
+         (a (@ (href "/software/guix/news/gnu-guix-08-released.html"))
             "version 0.8")
          " in 2014.  With Guix, package developers simply have to "
          (a (@ (href "http://git.savannah.gnu.org/cgit/guix.git/commit/?id=caeadfddb01d2cda19d2f761ba9906ef8f162173"))

@@ -21,7 +21,7 @@
       (p "The highlights for this release include:"
          (br))
       (ul (li "Support for "
-              (a (@ (href "http://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+              (a (@ (href "/software/guix/news/container-provisioning-with-guix.html"))
                  "automatic container provisioning")
               " in "
               (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))

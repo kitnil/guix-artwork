@@ -32,7 +32,7 @@
                  "Dico dictionary service")
               ".\n")
           (li "Infrastructure for "
-              (a (@ (href "http://savannah.gnu.org/forum/forum.php?forum_id=8605"))
+              (a (@ (href "/software/guix/news/guixsd-system-tests.html"))
                  "whole-system tests")
               ".\n")
           (li "Compression support for "

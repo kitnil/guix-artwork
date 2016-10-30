@@ -29,7 +29,7 @@
                  "in a controlled fashion")
               ", integrated with the rest of the system.\n")
           (li "Manolis, who contributed a GNU/Hurd port of Guix "
-              (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8318"))
+              (a (@ (href "/software/guix/news/gsoc-update.html"))
                  "last year")
               ", will work on "
               (a (@ (href "https://libreplanet.org/wiki/Group:Guix/GSoC-2016#Port_GuixSD_to_GNU.2FHurd"))

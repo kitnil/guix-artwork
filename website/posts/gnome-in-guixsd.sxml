@@ -28,7 +28,7 @@
          ", and extending each other’s functionality: udev, udisks, upower, colord, geoclue, and polkit, to name a few.  Being able to "
          (em "compose")
          " all these system services was one of the driving use cases behind "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8412"))
+         (a (@ (href "/software/guix/news/service-composition-in-guixsd.html"))
             "the design of GuixSD’s new service composition framework")
          ".  With this design, we knew we were able to have fine control over the "
          (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))

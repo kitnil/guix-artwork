@@ -16,7 +16,7 @@
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-08/msg00500.html"))
             "posted")
          " a series of patches porting GuixSD to MIPS (Lemote Yeeloong), making it the first GuixSD port to non-Intel-compatible hardware (the package manager itself has supported mips64el "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=7766"))
+         (a (@ (href "/software/guix/news/distro-of-the-linux-based-gnu-system-ported-to-mips.html"))
             "for two years")
          " already.)  By removing several platform-specific assumptions, this work paves the way for future ports."
          (br))
@@ -27,7 +27,7 @@
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-09/msg00134.html"))
             "two ARM machines")
          " for our build farm.  They will allow us to continuously test the ARM port, which was completed "
-         (a (@ (href "https://savannah.gnu.org/forum/forum.php?forum_id=8175"))
+         (a (@ (href "/software/guix/news/gnu-guix-ported-to-arm-and-other-niceties-of-the-new-year.html"))
             "earlier this year")
          ", and to publish pre-built binaries on our "
          (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
