@@ -155,31 +155,30 @@ about the Nix package manager, which "
                 ;; For posts other than announcements, things that complement
                 ;; the manual.
                 (ul (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8605"))
+                               ,(base-url "news/guixsd-system-tests.html")))
                            (i "GuixSD system tests"))
                         ", June 2016")
                     (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8491"))
+                               ,(base-url "news/gnome-in-guixsd.html")))
                            (i "GNOME in GuixSD"))
                         ", March 2016")
                     (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8470"))
+                               ,(base-url "news/timely-delivery-of-security-updates.html")))
                            (i "Timely delivery of security updates"))
                         ", March 2016")
                     (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8412"))
+                               ,(base-url "news/service-composition-in-guixsd.html")))
                            (i "Service composition in GuixSD"))
                         ", November 2015")
                     (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8407"))
+                               ,(base-url "news/reproducible-builds-a-means-to-an-end.html")))
                            (i "Reproducible builds: a means to an end"))
                         ", November 2015")
                     (li (a (@ (href
-                               "https://savannah.gnu.org/forum/forum.php?forum_id=8386"))
+                               ,(base-url "news/container-provisioning-with-guix.html")))
                            (i "Container provisioning with Guix"))
                         ", October 2015")
-                    (li (a (@ (href
-                               "https://savannah.gnu.org/news/?group=guix"))
+                    (li (a (@ (href ,(base-url "news")))
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
