@@ -70,7 +70,7 @@
       #:default-metadata
       '((author . "GuixSD Contributors")
         (email  . "guix-devel@gnu.org"))
-      #:readers (list sxml-reader)
+      #:readers (list sxml-reader html-reader)
       #:builders
       `(,(lambda (site posts)                     ;the main page
            (with-url-parameters
