@@ -1,0 +1,128 @@
+title: Growing Our Build Farm
+date: 2016-11-10 11:30
+author: Andreas Enge
+---
+<div> <!-- needed to placate Haunt's 'html-reader' -->
+<p>
+  We have received our new server for continuous builds of the GNU Guix
+  system, and are putting the finishing touches on its installation.
+  The machine is intended as an eventual replacement
+  for <a href="https://hydra.gnu.org/">hydra.gnu.org</a>, a virtual
+  machine kindly hosted by
+  the <a href="https://www.fsf.org/">FSF</a>.
+  The new machine will drive
+  <a href="https://www.gnu.org/software/guix/donate/#hardware-donors">our
+  build farm</a>, which continuously compiles the GNU system, and it
+  will feed the mirror
+  with <a href="https://www.gnu.org/software/guix/manual/html_node/Substitutes.html">binary
+  packages</a>, so that end users who do not wish to compile packages by
+  themselves can easily keep up-to-date.  Time to report on the
+  adventure! This first part covers the hardware.
+</p>
+<p>
+  Buying the new machine has been made possible through a very generous
+  donation by <a href="https://www.igalia.com/">Igalia</a>
+  to <a href="http://enge.fr/blog/2016/03/foundation-of-guix-europe/">Guix
+  Europe</a>. Igalia is a free software consultancy well known for its
+  involvement in the development of the GNOME stack, GStreamer, the
+  JavaScript compilers of Web
+  browsers, <a href="https://www.igalia.com/areas/">and more</a>,
+  promoting <a href="https://www.igalia.com/nc/about-us/">values</a>
+  close to the GNU Guix project.  It is heartening that the company is
+  helping us towards our goal of creating a free system that liberates
+  its users to take their computing and data processing needs into their
+  own hands!
+</p>
+<p>
+  Of course, we wanted to buy the best for the money — but it turned out
+  the best did not exist yet! Our goal was a system that would be as
+  free as possible, starting from the BIOS, without backdoors
+  of <a href="https://libreboot.org/faq/#intel">one kind</a>
+  or <a href="https://libreboot.org/faq/#amd">another</a>; of course it
+  also needed to be powerful enough to pilot our build farm, which is
+  expected to grow with an ever increasing number of packages and maybe
+  new architectures.  The <a href="https://libreboot.org/">Libreboot</a>
+  project provides a free BIOS, which was in the process of being ported
+  to the ASUS KGPE-D16 mainboard. Timothy Pearson from
+  the <a href="https://www.coreboot.org/">Coreboot</a> project (on which
+  Libreboot is based) worked hard to make the port a reality. We bought
+  the machine from Thomas Umbach, owner
+  of <a href="https://vikings.net/">VIKINGS</a>, a company selling
+  complete servers based on this board and planning to provide hosting
+  services on this platform. Thomas made us a very generous offer of
+  only billing the parts, so we are grateful to VIKINGS as a second
+  sponsor for this machine; independently, the close interaction with
+  Thomas and his fast and helpful replies to our questions meant a very
+  pleasant experience for a first-time buyer of a server machine!
+  Hopefully, this will not be the last time either.
+</p>
+<p>
+  The machine arrived carefully packaged in styrofoam and cardboard
+  packaging with a power cable and the rails for mounting it in the rack
+  of the hosting facility (for the time being, however, it is still
+  sitting on a Moroccan pouffe in my living room, waiting for its
+  installation to be finished).  It is 1U high to save hosting fees.  At
+  the <a href="https://www.gnu.org/software/guix/static/base/img/blog/20161110-server-front.jpg">front</a>, two USB
+  ports, a power and a reset button.  At
+  the <a href="https://www.gnu.org/software/guix/static/base/img/blog/20161110-server-back.jpg">back</a>, more USB
+  ports, Ethernet ports, a VGA and a serial port; apart from the latter,
+  it does not look more exotic than my laptop.
+</p>
+<p>
+  <img src="https://www.gnu.org/software/guix/static/base/img/blog/20161110-server-interior.jpg"
+       alt="Interior of the server." />
+
+  The interior looks very tidy to my untrained eyes.  This is not only a
+  good sign for the vendor's professionalism, but according to Thomas
+  also a necessity for ensuring sufficient air flow in the 1U case! This
+  air flow is created by the array of five case fans on the right, in
+  their orange housing. At the left, one can distinguish the two
+  processors. We opted for the AMD Opteron 6262HE, which is free of
+  backdoors to the best of our knowledge and power saving. Each of the
+  processors has 16 cores, which should be amply enough for our needs
+  (remember that the compilation of packages will take place on the
+  build farm and not on this machine). Actually, only the processor fans
+  and their big copper heatpipes are visible. There are 16 slots for
+  memory, of which only four are used so far, each with a 16GB module
+  for 64GB of total RAM — I do not think we will need to make use of our
+  extension possibilities any time soon!  Two hard disks of 4TB each are
+  hidden <a href="https://www.gnu.org/software/guix/static/base/img/blog/20161110-server-closeup.jpg">under
+  the metal cover to the right</a>.
+</p>
+<p>
+  So the hardware looks very neat, and in the next installment, we will
+  have a look at the installation of GuixSD on it.
+</p>
+<p>
+  Thanks again to all who made this adventure possible through their
+  hard work and dedication, in
+  particular <a href="https://www.igalia.com/">Igalia</a>, Thomas
+  of <a href="https://vikings.net/">VIKINGS</a>, and Timothy of Coreboot
+  and <a href="https://www.raptorengineering.com/">Raptor
+  Engineering</a>!
+</p>
+
+<h4>About GNU Guix</h4>
+<p>
+  <a href="https://www.gnu.org/software/guix">GNU Guix</a> is a
+  transactional package manager for the GNU system.  The Guix System
+  Distribution or GuixSD is an advanced distribution of the GNU system
+  that relies on GNU Guix
+  and <a href="https://www.gnu.org/distros/free-system-distribution-guidelines.html">respects
+  the user's freedom</a>.<br /></p><p>In addition to standard package
+  management features, Guix supports transactional upgrades and
+  roll-backs, unprivileged package management, per-user profiles, and
+  garbage collection.  Guix uses low-level mechanisms from the Nix
+  package manager, except that packages are defined as
+  native <a href="https://www.gnu.org/software/guile">Guile</a> modules,
+  using extensions to the <a href="http://schemers.org">Scheme</a>
+  language.  GuixSD offers a declarative approach to operating system
+  configuration management, and is highly customizable and
+  hackable.<br />
+</p>
+<p>
+  GuixSD can be used on an i686 or x86_64 machine.  It is also possible
+  to use Guix on top of an already installed GNU/Linux system, including
+  on mips64el and armv7.
+</p>
+</div>
