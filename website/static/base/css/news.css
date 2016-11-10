@@ -30,14 +30,14 @@ p {
     hyphens: auto;
 }
 
-img {
+.inline-image {
     display: block;
     margin: auto;
     padding: 20px;
 }
 
 @media screen and (min-width: 1024px) {
-    img {
+    .inline-image {
 	float: right;
 	margin-left: 20px;
 	padding: 0px;
