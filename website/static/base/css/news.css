@@ -21,3 +21,11 @@
     color: #4D4D4D;
     font-size: 0.9em;
 }
+
+.post-body {
+    text-align: justify;
+}
+
+p {
+    hyphens: auto;
+}
