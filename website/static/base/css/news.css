@@ -29,3 +29,17 @@
 p {
     hyphens: auto;
 }
+
+img {
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+    img {
+	float: right;
+	margin-left: 20px;
+	padding: 0px;
+    }
+}
