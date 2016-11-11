@@ -2,6 +2,12 @@
 
 @import url("article.css");
 
+li.package-index-link {
+    list-style: none;
+    display: inline;
+    margin: 0 0.3em;
+}
+
 a {
     transition: all 0.3s;
 }

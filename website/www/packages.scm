@@ -44,7 +44,9 @@
   #:use-module (srfi srfi-26)
   #:use-module (texinfo)
   #:use-module (texinfo html)
-  #:export (packages-page
+  #:export (%groups
+            packages-page
+            paginated-packages-page
             issues-page))
 
 (define lookup-gnu-package
@@ -441,6 +443,21 @@ PACKAGES."
 ;;; Pages.
 ;;;
 
+(define %groups
+  ;; List of package groups.
+  (cons "0-9"
+        (map string
+             '(#\a #\b #\c #\d #\e #\f #\g #\h
+               #\i #\j #\k #\l #\m #\n #\o #\p
+               #\q #\r #\s #\t #\u #\v #\w #\x
+               #\y #\z))))
+
+(define (group-file-name group)
+  (string-append "/packages/" group ".html"))
+
+(define (group-name group)
+  (string-upcase group))
+
 (define (all-packages)
   "Return the list of all package objects, sorted by name."
   (sort (fold-packages (lambda (package lst)
@@ -452,29 +469,66 @@ PACKAGES."
           (string<? (package-name p1)
                     (package-name p2)))))
 
-(define (packages-page)
-  `(html (@ (lang "en"))
-	 ,(html-page-header "Packages" #:css "packages.css" #:js "packages.js")
-	 (body
-	  ,(html-page-description)
-	  ,(html-page-links)
+(define packages-by-grouping
+  (lambda* (#:optional (grouping 'all))
+    "Return an alphabetically sorted list of Guix packages, limited
+to those matching GROUPING.  GROUPING can be 'all for all packages,
+the string '0-9' for all packages starting with digits, or a string of
+a single, lower-case letter for a list of all packages starting with
+that letter."
+    (match grouping
+      ('all (all-packages))
+      ("0-9" (filter (compose (cut char-set-contains? char-set:digit <>)
+                              first string->list package-name)
+                     (all-packages)))
+      (letter (filter (lambda (package)
+                        (string=? (string-take (package-name package) 1)
+                                  letter))
+                      (all-packages))))))
 
-	  (div (@ (id "content-box"))
-	       (article
-		(h1 "Packages")
-		(p "GNU Guix provides "
+(define (paginated-packages-page grouping)
+  "Return a packages page that contains only content for the packages
+that match GROUPING (either the string '0-9' or a string of one
+letter)."
+  (lambda ()
+    (packages-page (string-upcase grouping) (packages-by-grouping grouping))))
+
+(define* (packages-page #:optional (grouping "All")
+                        (packages (all-packages)))
+  `(html (@ (lang "en"))
+         ,(html-page-header "Packages" #:css "packages.css" #:js "packages.js")
+         (body
+          ,(html-page-description)
+          ,(html-page-links)
+
+          (div (@ (id "content-box"))
+               (article
+                (h1 ,(string-append "Packages [" grouping "]"))
+                (p "GNU Guix provides "
                    ,(number* (fold-packages (lambda (p n) (+ 1 n)) 0))
                    " packages transparently "
-		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
-		      "available as pre-built binaries")
-		   ". This is a complete list of the packages.  Our "
-		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
-		      "continuous integration system")
-		   " shows their current build status "
-		   "(Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
-		,(packages->sxml (all-packages))))
+                   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
+                      "available as pre-built binaries")
+                   ". These pages provide a complete list of the packages.
+  Our "
+                   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
+                      "continuous integration system")
+                   " shows their current build status "
+                   "(Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
+                (p "You can browse packages indexed by their first letter, or
+you can view "
+                   (a (@ (href "/packages/all.html"))
+                      "all packages on a single page."))
+                (ul
+                 ,@(map (lambda (group)
+                          `(li (@ (id ,(string-append group "-link"))
+                                  (class "package-index-link"))
+                               (a (@ (href ,(group-file-name group)))
+                                  ,(group-name group))))
+                        %groups))
+                ,(packages->sxml packages)))
 
-	  ,(html-page-footer))))
+          ,(html-page-footer))))
 
 (define* (issues-page #:key (checkers %issue-checkers))
   `(html
