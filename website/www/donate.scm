@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2016 Andreas Enge <andreas@enge.fr>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
@@ -86,6 +86,11 @@ reality.")
 		       (tbody (tr (td "hydra.gnu.org")
 				  (td "build farm front-end")
 				  (td (ul (li ,fsf))))
+                              (tr (td "bayfront.guixsd.org")
+                                  (td "new build farm front-end (WIP)")
+                                  (td (ul (li (a (@ (href
+                                                     "news/growing-our-build-farm.html"))
+                                                 "Igalia")))))
 			      (tr (td "hydra.gnunet.org")
 				  (td "x86_64-linux, i686-linux")
 				  (td (ul (li (a (@ (href "https://gnunet.org/fsnsg"))
