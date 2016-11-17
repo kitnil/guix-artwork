@@ -90,7 +90,7 @@ reality.")
                                   (td "new build farm front-end (WIP)")
                                   (td (ul (li (a (@ (href
                                                      ,(base-url
-                                                       "news/growing-our-nbuild-farm.html")))
+                                                       "news/growing-our-build-farm.html")))
                                                  "Igalia")))))
 			      (tr (td "hydra.gnunet.org")
 				  (td "x86_64-linux, i686-linux")
