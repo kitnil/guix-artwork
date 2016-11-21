@@ -2,26 +2,42 @@
 
 #+TITLE: GuixSD website
 
-The files in this directory are intended to be used as assets for the [[https://www.gnu.org/software/guix][GuixSD
-website]] which is implemented in [[https://www.gnu.org/software/guile][Guile]] Scheme.
+This directory contains the source files for the GuixSD website,
+available at https://www.gnu.org/software/guix/.
 
-  - =www.scm= and =www= provides ‘(www)’ guile module which offers services for
-    building the website locally.
+  - =www.scm= and =www= provide the =(www)= guile module which
+    offers services for building the website locally.
   - =static= contains images and css for the website.
-  - =mockup.svg= illustrates a homepage aimed at average users.  This is for use
-    when GuixSD is getting closer to a production-ready system.
-  - =mockup-techie.svg= illustrates a homepage aimed at skilled devs and
-    sysadmins.  This is for use during the alpha phase of development.
+  - =mockup.svg= illustrates a homepage aimed at average users.
+    This is for use when GuixSD is getting closer to a
+    production-ready system.
+  - =mockup-techie.svg= illustrates a homepage aimed at
+    skilled devs and sysadmins.  This is for use during the
+    alpha phase of development.
 
-* Building
+* Dependencies
 
-Building the website depends on the static site generator:
+To be able to work on the website, you need the following software:
 
-  - [[http://haunt.dthompson.us/][Haunt]]
+  - [[https://www.gnu.org/software/guile/][GNU Guile]] (programming language)
+  - [[http://haunt.dthompson.us/][Haunt]] (static site generator)
 
-To build the site, run ‘haunt build’ to compile all of the HTML pages.
-To view the results, run ‘haunt serve’ and visit <http://localhost:8080>
-in a web browser.
+* Building and running
+
+To try out the website locally while you work on it, run the following
+commands:
+
+#+BEGIN_EXAMPLE
+$ cd path/to/guix-artwork/website
+$ GUIX_WEB_SITE_LOCAL=yes haunt build
+$ haunt serve
+#+END_EXAMPLE
+
+Then, visit http://localhost:8080/ in a web browser.
+
+* Deploying
+
+Pending...
 
 * Copying
 
