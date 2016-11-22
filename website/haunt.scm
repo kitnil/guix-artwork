@@ -74,7 +74,7 @@
       #:builders
       `(,(lambda (site posts)                     ;the main page
            (with-url-parameters
-            (make-page "guix.html" (main-page site posts)
+            (make-page "guix.html" `((doctype "html") ,(main-page site posts))
                        sxml->html)))
         ,@(filter-map (match-lambda
                         (("guix.html" _)          ;handled above
@@ -82,7 +82,9 @@
                         ((file-name contents)
                          (lambda (site posts)
                            (with-url-parameters
-                            (make-page file-name (contents) sxml->html)))))
+                            (make-page file-name
+				       `((doctype "html") ,(contents))
+				       sxml->html)))))
                       %web-pages)
         ,(blog #:theme (parameterized-theme %news-haunt-theme)
                #:prefix "news")

@@ -56,17 +56,18 @@
                 posts))))
 
 (define (base-layout body)
-  `(html (@ (lang "en"))
-	 ,(html-page-header "News" #:css "news.css")
+  `((doctype "html")
+    (html (@ (lang "en"))
+	  ,(html-page-header "News" #:css "news.css")
 
-	 (body
-	  ,(html-page-description)
-	  ,(html-page-links)
+	  (body
+	   ,(html-page-description)
+	   ,(html-page-links)
 
-	  (div (@ (id "content-box"))
-               (article ,body))
+	   (div (@ (id "content-box"))
+		(article ,body))
 
-	  ,(html-page-footer))))
+	   ,(html-page-footer)))))
 
 (define %news-haunt-theme
   ;; Theme for the rendering of the news pages.
