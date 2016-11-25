@@ -1,7 +1,7 @@
 /*
     Public domain 2015 Luis Felipe López Acevedo. All rights waived.
     <felipe.lopez@openmailbox.org>
-   
+
     NOTE  The default style is targeted at screens with a width less than
           1024 pixels.
 */
@@ -32,6 +32,13 @@ body {
     font-size: 16px;
     margin: 0px;
 }
+
+h1:hover > a.anchor-link,
+h2:hover > a.anchor-link,
+h3:hover > a.anchor-link,
+h4:hover > a.anchor-link {
+    visibility: visible;
+}
 /* END NATIVE ELEMENTS */
 
 
@@ -43,6 +50,11 @@ body {
 
 
 /* CLASSES */
+a.anchor-link {
+    visibility: hidden;
+    padding: 0 0.5em;
+}
+
 a.button:link, a.button:visited {
     background-position: bottom;
     background-repeat: repeat-x;
@@ -125,6 +137,17 @@ a.hlink-yellow-boxed:hover {
     width: 100%;
 }
 
+pre {
+    background-color: #F2EFE4;
+    border-style: solid;
+    border-color: #D4CBB6;
+    border-radius: .3em;
+    border-width: thin;
+    font-size: 85%;
+    overflow: auto;
+    padding: 3em;
+}
+
 .text-center {
     text-align: center;
 }
@@ -151,9 +174,9 @@ a.hlink-yellow-boxed:hover {
     .h-separator {
         width: auto;
     }
-    
-    
-    /* GENERIC CONTAINERS */    
+
+
+    /* GENERIC CONTAINERS */
     .summary-box {
         color: #4D4D4D;
         display: inline-block;

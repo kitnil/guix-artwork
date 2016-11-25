@@ -65,3 +65,21 @@ a#top:hover, a#top:focus {
 img.status-icon {
     padding-right: 1em;
 }
+
+
+/* PACKAGE ISSUES */
+
+.issue {
+    position: relative;
+}
+
+.issue-type {
+    background-color: #D4CBB6;
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-size: 90%;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
