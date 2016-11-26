@@ -20,7 +20,17 @@ available at https://www.gnu.org/software/guix/.
 To be able to work on the website, you need the following software:
 
   - [[https://www.gnu.org/software/guile/][GNU Guile]] (programming language)
+  - [[https://gnutls.org/][GnuTLS]] (Transport Layer Security Library)
   - [[http://haunt.dthompson.us/][Haunt]] (static site generator)
+
+Additionally, [[https://www.gnu.org/software/guix/][GNU Guix]] source code is needed to generate the
+package-related pages of the website. You can clone the latest source
+as follows:
+
+#+BEGIN_EXAMPLE
+$ cd path/to/directory/of/your/choice
+$ git clone git://git.savannah.gnu.org/guix.git
+#+END_EXAMPLE
 
 * Building and running
 
@@ -34,6 +44,50 @@ $ haunt serve
 #+END_EXAMPLE
 
 Then, visit http://localhost:8080/ in a web browser.
+
+* Building and running special pages
+
+Currently, there are two pages, [[https://www.gnu.org/software/guix/packages][packages]] and [[https://www.gnu.org/software/guix/packages/issues.html][issues]], that are not
+built using *Haunt*. To build them, and try them out locally, do the
+following:
+
+1. Add the directory containing the source code of GNU Guix to the
+   ~PATH~ environment variable.
+2. Build the part of the website that builds with *Haunt*:
+
+   #+BEGIN_EXAMPLE
+   $ cd path/to/guix-artwork/website
+   $ GUIX_WEB_SITE_LOCAL=yes haunt build
+   #+END_EXAMPLE
+
+3. Copy the ~static~ directory to the build directory:
+
+   #+BEGIN_EXAMPLE
+   $ mkdir -p site/software/guix
+   $ cp -avr static site/software/guix
+   #+END_EXAMPLE
+
+4. Open the [[https://www.gnu.org/software/guile/manual/html_node/The-REPL.html#The-REPL][Guile REPL]] to import the ~packages~ module and build
+   Packages and Issues pages:
+
+   #+BEGIN_EXAMPLE
+   $ guile
+   scheme@(guile-user)> (use-modules (www) (www packages))
+   scheme@(guile-user)> (export-web-page (packages-page) "site/packages/index.html")
+   scheme@(guile-user)> (export-web-page (issues-page) "site/packages/issues.html")
+   scheme@(guile-user)> ,q
+   #+END_EXAMPLE
+
+5. Serve the whole website with *Haunt*:
+
+   #+BEGIN_EXAMPLE
+   $ haunt serve
+   #+END_EXAMPLE
+
+Now you can try the special pages out:
+
+  - http://localhost:8080/packages/
+  - http://localhost:8080/packages/issues.html
 
 * Deploying
 
