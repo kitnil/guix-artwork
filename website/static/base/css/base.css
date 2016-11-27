@@ -137,6 +137,12 @@ a.hlink-yellow-boxed:hover {
     width: 100%;
 }
 
+.img-responsive {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
 pre {
     background-color: #F2EFE4;
     border-style: solid;

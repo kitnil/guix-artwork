@@ -122,7 +122,8 @@ h3 {
 #screens-box a {
     border-style: none;
     color: white;
-    display: inline-block;
+    display: block;
+    margin: 10px;
 }
 
 .screenshot-thumb {
@@ -131,9 +132,7 @@ h3 {
     border-style: solid;
     border-width: thin;
     box-shadow: 0 0 4px gray;
-    display: inline-block;
-    margin: 10px;
-    width: 300px;
+    margin: auto;
 }
 
 .screenshot-thumb:hover {
@@ -191,6 +190,10 @@ h3 {
     .action, .action:link, .action:visited {
 	display: inline-block;
 	width: 196px;
+    }
+
+    #screens-box a {
+	display: inline-block;
     }
 }
 

@@ -88,7 +88,7 @@ to URL."
                      (alt ""))
   `(a (@ (href ,(screenshot-url directory image)))
       (img (@ (src ,(thumb-url image))
-              (class "screenshot-thumb")
+              (class "screenshot-thumb img-responsive")
               (alt ,alt)))))
 
 (define* (main-page #:optional site (posts '()))
