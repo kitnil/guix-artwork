@@ -1,7 +1,7 @@
 /*
     Public domain 2015 Luis Felipe López Acevedo. All rights waived.
     <felipe.lopez@openmailbox.org>
-   
+
     NOTE  The default style is targeted at screens with a width less than
           1024 pixels.
 */
@@ -63,13 +63,13 @@ h3 {
     border-style: solid;
     border-width: thin;
     color: white;
-    display: inline-block;
+    display: block;
     font-size: 14px;
     height: 47px;
     line-height: 47px;
+    margin: 10px;
     text-align: center;
     vertical-align: middle;
-    width: 196px;
 }
 
 .action:active, .action:focus, .action:hover {
@@ -81,7 +81,6 @@ h3 {
     background-image: url("../img/download-btn-bg.png");
     background-position: bottom;
     background-repeat: repeat-x;
-    margin-right: 20px;
 }
 
 .contribute {
@@ -188,6 +187,14 @@ h3 {
 /* CONTACT BOX */
 
 
+@media screen and (min-width: 480px) {
+    .action, .action:link, .action:visited {
+	display: inline-block;
+	width: 196px;
+    }
+}
+
+
 @media screen and (min-width: 1024px) {
     .info-box {
         vertical-align: top;
@@ -208,7 +215,7 @@ h3 {
         margin: auto;
         width: 960px;
     }
-    
+
     .featured-actions {
         text-align: right;
     }
