@@ -215,13 +215,13 @@ description-ids as formal parameters."
                              (title "Part of GNU")))
                     ""))
            "\n"
-           (td (a (@ (href ,(source-url package))
+           (td (a (@ (id ,anchor)
+		     (href ,(source-url package))
                      (title "Link to the Guix package source code"))
                   ,(package-name package) " "
                   ,(package-version package)))
            "\n"
-           (td (span ,(package-synopsis package)
-                     (a (@ (name ,anchor))))
+           (td (span ,(package-synopsis package))
                (div (@ (id ,description-id))
                     ,(match (package-logo (package-name package))
                        ((? string? url)
@@ -231,7 +231,7 @@ description-ids as formal parameters."
                                  (alt ("Logo of " ,(package-name package))))))
                        (_ #f))
                     "\n"
-                    (p ,(package-description-shtml package))
+                    ,(package-description-shtml package)
                     "\n"
                     ,(license package)
                     (a (@ (href ,(package-home-page package))
@@ -470,11 +470,9 @@ PACKAGES."
 		   ". This is a complete list of the packages.  Our "
 		   (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
 		      "continuous integration system")
-		   " shows their current build status.")
-		,(packages->sxml (all-packages))
-
-                (p "Updated " ,(date->string (current-date) "~B ~e, ~Y")
-                   ".")))
+		   " shows their current build status "
+		   "(Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
+		,(packages->sxml (all-packages))))
 
 	  ,(html-page-footer))))
 

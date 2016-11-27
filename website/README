@@ -52,7 +52,7 @@ built using *Haunt*. To build them, and try them out locally, do the
 following:
 
 1. Add the directory containing the source code of GNU Guix to the
-   ~PATH~ environment variable.
+   ~GUILE_LOAD_PATH~ environment variable.
 2. Build the part of the website that builds with *Haunt*:
 
    #+BEGIN_EXAMPLE
