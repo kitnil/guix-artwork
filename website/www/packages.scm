@@ -172,8 +172,8 @@ decreasing, is 1."
       `(div (img (@ (src ,(image-url "status-icons/undefined.png"))
                     (id ,(string-append "icon-" (package-full-name package) "." system))
                     (class "status-icon")
-                    (alt "Unknown")
-                    (title "Unknown")))
+                    (alt "unknown")
+                    (title "unknown")))
             (a (@ (href ,(string-append "http://hydra.gnu.org/job/gnu/master/"
                                    (package-full-name package) "."
                                    system))
@@ -514,7 +514,7 @@ letter)."
                    (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
                       "continuous integration system")
                    " shows their current build status "
-                   "(Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
+                   "(updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
                 (p "You can browse packages indexed by their first letter, or
 you can view "
                    (a (@ (href "/packages/all.html"))
