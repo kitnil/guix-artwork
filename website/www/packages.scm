@@ -45,7 +45,7 @@
   #:use-module (texinfo)
   #:use-module (texinfo html)
   #:export (%groups
-            packages-page
+            package-pages
             paginated-packages-page
             issues-page))
 
@@ -529,6 +529,16 @@ you can view "
                 ,(packages->sxml packages)))
 
           ,(html-page-footer))))
+
+(define* (package-pages #:optional (packages (all-packages)))
+  "Return a list of (FILE PAGE) tuples, where each FILE is an HTML file name
+and PAGE is the corresponding SXML."
+  `(,@(map (lambda (group)
+             (list (string-append group ".html")
+                   (paginated-packages-page packages group)))
+           %groups)
+    ("index.html" ,(paginated-packages-page packages "0-9"))
+    ("all.html" ,(packages-page packages))))
 
 (define* (issues-page #:key (checkers %issue-checkers))
   `(html
