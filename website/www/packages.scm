@@ -515,10 +515,7 @@ letter)."
                       "continuous integration system")
                    " shows their current build status "
                    "(updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
-                (p "You can browse packages indexed by their first letter, or
-you can view "
-                   (a (@ (href "/packages/all.html"))
-                      "all packages on a single page."))
+                (p "You can browse packages indexed by their first letter.")
                 (ul
                  ,@(map (lambda (group)
                           `(li (@ (id ,(string-append group "-link"))
@@ -537,8 +534,10 @@ and PAGE is the corresponding SXML."
              (list (string-append group ".html")
                    (paginated-packages-page packages group)))
            %groups)
-    ("index.html" ,(paginated-packages-page packages "0-9"))
-    ("all.html" ,(packages-page packages))))
+    ;; Note: We do not build the page for grouping "All" because the poor CVS
+    ;; server at gnu.org runs out of memory when it encounters such a big
+    ;; page (!).
+    ("index.html" ,(paginated-packages-page packages "0-9"))))
 
 (define* (issues-page #:key (checkers %issue-checkers))
   `(html
