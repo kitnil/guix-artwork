@@ -470,8 +470,8 @@ PACKAGES."
                     (package-name p2)))))
 
 (define packages-by-grouping
-  (lambda* (#:optional (grouping 'all))
-    "Return an alphabetically sorted list of Guix packages, limited
+  (lambda* (packages #:optional (grouping 'all))
+    "Return an alphabetically sorted list of the subset of PACKAGES limited
 to those matching GROUPING.  GROUPING can be 'all for all packages,
 the string '0-9' for all packages starting with digits, or a string of
 a single, lower-case letter for a list of all packages starting with
@@ -480,21 +480,21 @@ that letter."
       ('all (all-packages))
       ("0-9" (filter (compose (cut char-set-contains? char-set:digit <>)
                               first string->list package-name)
-                     (all-packages)))
+                     packages))
       (letter (filter (lambda (package)
                         (string=? (string-take (package-name package) 1)
                                   letter))
-                      (all-packages))))))
+                      packages)))))
 
-(define (paginated-packages-page grouping)
-  "Return a packages page that contains only content for the packages
-that match GROUPING (either the string '0-9' or a string of one
+(define (paginated-packages-page packages grouping)
+  "Return a packages page that contains only content for the subset of
+PACKAGES that matches GROUPING (either the string '0-9' or a string of one
 letter)."
-  (lambda ()
-    (packages-page (string-upcase grouping) (packages-by-grouping grouping))))
+  (packages-page (packages-by-grouping packages grouping)
+                 (string-upcase grouping)))
 
-(define* (packages-page #:optional (grouping "All")
-                        (packages (all-packages)))
+(define* (packages-page #:optional (packages (all-packages))
+                        (grouping "All"))
   `(html (@ (lang "en"))
          ,(html-page-header "Packages" #:css "packages.css" #:js "packages.js")
          (body
