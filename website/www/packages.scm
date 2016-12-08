@@ -537,7 +537,7 @@ and PAGE is the corresponding SXML."
     ;; Note: We do not build the page for grouping "All" because the poor CVS
     ;; server at gnu.org runs out of memory when it encounters such a big
     ;; page (!).
-    ("index.html" ,(paginated-packages-page packages "0-9"))))
+    ("index.html" ,(paginated-packages-page packages "a"))))
 
 (define* (issues-page #:key (checkers %issue-checkers))
   `(html
