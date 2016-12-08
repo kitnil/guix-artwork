@@ -453,7 +453,7 @@ PACKAGES."
                #\y #\z))))
 
 (define (group-file-name group)
-  (string-append "/packages/" group ".html"))
+  (guix-url (string-append "packages/" group ".html")))
 
 (define (group-name group)
   (string-upcase group))
