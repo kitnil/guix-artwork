@@ -22,6 +22,7 @@ To be able to work on the website, you need the following software:
   - [[https://www.gnu.org/software/guile/][GNU Guile]] (programming language)
   - [[https://gnutls.org/][GnuTLS]] (Transport Layer Security Library)
   - [[http://haunt.dthompson.us/][Haunt]] (static site generator)
+  - [[http://savannah.nongnu.org/projects/guile-json/][Guile-JSON]] (to produce the =packages.json= file)
 
 Additionally, [[https://www.gnu.org/software/guix/][GNU Guix]] source code is needed to generate the
 package-related pages of the website. You can clone the latest source

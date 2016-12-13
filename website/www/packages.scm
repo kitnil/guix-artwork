@@ -34,6 +34,7 @@
   #:use-module (gnu packages)
   #:use-module (sxml simple)
   #:use-module (sxml fold)
+  #:use-module (json)
   #:use-module (web uri)
   #:use-module (ice-9 match)
   #:use-module (ice-9 vlist)
@@ -47,7 +48,8 @@
   #:export (%groups
             package-pages
             paginated-packages-page
-            issues-page))
+            issues-page
+            packages->json))
 
 (define lookup-gnu-package
   (let ((gnu (delay (official-gnu-packages))))
@@ -331,6 +333,21 @@ of the form \"PACKAGE-X.Y.Z\"."
           (title "Back to top.")
           (id "top"))
        "^")))
+
+(define* (packages->json #:optional (packages (all-packages)))
+  "Return a JSON string representing PACKAGES."
+  (define (package->alist package)
+    `((name . ,(package-name package))
+      (version . ,(package-version package))
+      (cpe-name . ,(or (assoc-ref (package-properties package) 'cpe-name)
+                       (package-name package)))
+      (cpe-version . ,(or (assoc-ref (package-properties package)
+                                     'cpe-version)
+                          (package-version package)))
+      (home-page . ,(package-home-page package))))
+
+  (scm->json-string (map package->alist packages)
+                    #:pretty #t))
 
 (define (number* number)
   "Return NUMBER correctly formatting according to English conventions."
