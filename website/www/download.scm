@@ -26,7 +26,15 @@
   #:export (download-page))
 
 (define %usb-image-description
-  "USB installer of the Guix System Distribution.")
+  `(div (div (@ (class "message-box msg-info"))
+             (span (@ (class "msg-label")) "Note ")
+             "The Guix System Distribution (GuixSD) is beta software, "
+             "which means it is "
+             (a (@ (href ,(base-url "manual/html_node/Limitations.html")))
+                "not production-ready")
+             ".  But you can "
+             (a (@ (href ,(base-url "contribute"))) "help") "!")
+        (p "USB installer of the Guix System Distribution.")))
 
 (define %usb-image-manual
   "manual/html_node/System-Installation.html")

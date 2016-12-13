@@ -63,14 +63,6 @@ Functional package management,")))
 
 (define (html-page-description)
   `(div
-    (div (@ (class "message-box msg-info"))
-         (span (@ (class "msg-label")) "Note ")
-         "The Guix System Distribution (GuixSD) is beta software, "
-         "which means it is "
-         (a (@ (href ,(base-url "manual/html_node/Limitations.html")))
-            "not production-ready")
-         ".  But you can "
-         (a (@ (href ,(base-url "contribute"))) "help") "!")
     ;; (div (@ (class "message-box donate-info"))
     ;;      (span (@ (class "msg-label")) "Donate ")
     ;;      "For Guix to grow we need to upgrade our hardware. Please consider "
