@@ -92,7 +92,9 @@ Now you can try the special pages out:
 
 * Deploying
 
-Pending...
+Like the pages of many GNU websites, this website is managed through Savannah CVS.  To deploy the website it should be copied to the CVS tree and then checked in.  The website will be updated automatically once the files have been checked into CVS.
+
+See https://savannah.gnu.org/cvs/?group=guix for information on how to access Savannah CVS.
 
 * Copying
 
