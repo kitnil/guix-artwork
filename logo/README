@@ -1,45 +1,55 @@
-LOGOTYPES
-=========
+#+TITLE: Guix and GuixSD Logotypes
 
-The SVG files in this directory are the original logotypes of the GNU Guix
-package manager and the Guix System Distribution (GuixSD).  The logos are
-available for different media: screen, print, etc. For example, the
-"GuixSD.svg" file contains the logo with colors in a range appropriate for
-computer screens (RGB); "GuixSD-print.svg" contains the logo with colors in a
-range appropriate for printing.
+* Introduction
 
+The SVG files in this directory are the original logotypes of the GNU
+Guix package manager and the Guix System Distribution (GuixSD).
 
+Each file contains color, black and white, and other variants of a
+logo.  Open the SVG files with Inkscape to see which variant is better
+for your needs.
 
-Copying
--------
-
-The logotype of GNU Guix was designed by Nikita Karetnikov. It is available
-under the following terms:
-
-    Copyright © 2013 Nikita Karetnikov <nikita@karetnikov.org>
-
-    Permission is granted to copy, distribute and/or modify this work under the
-    terms of:
-
-    * the GNU General Public License as published by the Free Software
-      Foundation, either version 3 of the License, or (at your option) any
-      later version;
-    * or the GNU Free Documentation License, Version 1.3 or any later version
-      published by the Free Software Foundation; with no Invariant Sections, no
-      Front-Cover Texts and no Back-Cover Texts.
+The logos may be available for different media: screen, print,
+etc. For example, the "GuixSD.svg" file contains the logo with colors
+in a range appropriate for computer screens (RGB); "GuixSD-print.svg"
+contains the logo with colors in a range generally appropriate for
+printing. For other media, the logos may need to be prepared according
+to the limitations of the printing device.
 
 
-The logotype of the Guix System Distribution was designed by Luis Felipe López
-Acevedo. It is available under the following terms:
+* Copying
 
-    Copyright © 2015 Luis Felipe López Acevedo <felipe.lopez@opmbx.org>
+The now [[https://debbugs.gnu.org/cgi/bugreport.cgi?bug%3D25205][superseded]] logotype of GNU Guix was designed by Nikita
+Karetnikov. It is available under the following terms:
 
-    Permission is granted to copy, distribute and/or modify this work under the
-    terms of the Creative Commons Attribution-ShareAlike 4.0 International
-    License.
+#+BEGIN_QUOTE
+Copyright © 2013 Nikita Karetnikov <nikita@karetnikov.org>
+
+Permission is granted to copy, distribute and/or modify this work
+under the terms of:
+
+- the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any
+  later version;
+- or the GNU Free Documentation License, Version 1.3 or any later version
+  published by the Free Software Foundation; with no Invariant
+  Sections, no Front-Cover Texts and no Back-Cover Texts.
+#+END_QUOTE
+
+The current GNU Guix and Guix System Distribution logotypes were
+designed by Luis Felipe López Acevedo. They are available under the
+following terms:
+
+#+BEGIN_QUOTE
+Copyright © 2015 Luis Felipe López Acevedo <felipe.lopez@opmbx.org>
+
+Permission is granted to copy, distribute and/or modify this work
+under the terms of the Creative Commons Attribution-ShareAlike 4.0
+International License.
+#+END_QUOTE
 
 
 Note that the SVG files in this directory may have metadata with more
-information about authors and copyright. If you are using Inkscape, you can
-access the Document metadata from the File menu or from the document
-properties.
+information about authors and copyright. If you are using Inkscape,
+you can access the Document metadata from the File menu or from the
+document properties.

@@ -58,6 +58,9 @@ dependencies.")
 (define %guix-image
   "Guix-package.png")
 
+(define %guix-src-image
+  "src-package.png")
+
 (define (ftp-url file)
   (string-append "ftp://alpha.gnu.org/gnu/guix/" file))
 
@@ -143,7 +146,7 @@ Linux-based system.")
                             #:files (guix-source-files '("tarball"))
                             #:description %source-tarball-description
                             #:manual %source-tarball-manual
-                            #:image %guix-image))
+                            #:image %guix-src-image))
 
 		(p "Source code for the Guix System Distribution USB
 installation images as well as GNU Guix can be found on the GNU ftp server for "
