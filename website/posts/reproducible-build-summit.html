@@ -1,0 +1,166 @@
+title: Reproducible Build Summit, 2nd Edition
+date: 2016-12-16 18:00
+author: Ludovic Courtès, John Darrington, Ricardo Wurmus
+---
+<div> <!-- needed to placate Haunt's 'html-reader' -->
+  <p>
+    GNU Guix was present this week at
+    the <a href="https://reproducible-builds.org/events/berlin2016/">second
+    Reproducible Build Summit</a> in Berlin.  Three of us were there.
+    We happily joined a dozen of other free software projects, mostly
+    distros, to discuss cross-cutting reproducibility issues going from
+    outreach to hacking on a specific piece of software.  This attempts
+    to summarize important points that were discussed in some of the
+    sessions we attended, and how Guix fits into that.
+  </p>
+
+  <h4>On reproducibility</h4>
+  <p>
+    What does it mean for a build process to be <i>reproducible</i>?
+    That sounded obvious to many attendants, but experience has shown
+    that many outside of the community needed clarifications.  A group
+    led by Ed Maste of FreeBSD worked hard to come up with a definition
+    that is both concise, accurate, and generic.  Impressive and useful
+    work!
+  </p>
+  <p>
+    At the same time, another group worked on the other thankless task
+    that consists in
+    improving <a href="https://reproducible-builds.org/docs/">the
+      reproducible build documentation</a>.  A big thanks to them!
+  </p>
+
+  <h4>Testing reproducibility</h4>
+  <p>
+    For a couple of years, Debian has had
+    a <a href="https://tests.reproducible-builds.org/debian/reproducible.html">
+    dashboard</a> that shows the progress that has been made.  The
+    result is impressive: 92% of its binary packages are now bit-for-bit
+    reproducible!  During the meeting, Eelco Dolstra reported first
+    results for NixOS, obtained thanks to an extension to
+    the <a href="https://nixos.org/hydra/">Hydra</a> continuous
+    integration tool:
+    <a href="http://permalink.gmane.org/gmane.linux.distributions.nixos/22247">77%
+      of the packages</a> are currently reproducible.
+  </p>
+  <p>
+    Our build farm in Guix doesn't yet have the resources to perform
+    independent rebuilds of packages.  We plan to use the shared
+    resources
+    at <a href="https://tests.reproducible-builds.org/">tests.reproducible-builds.org</a>
+    to achieve that soon.  Since last year's summit,
+    our <a href="https://www.gnu.org/software/guix/manual/html_node/Submitting-Patches.html">patch
+    submission guidelines</a> require submitters to check for
+    reproducibility issues using <tt>guix build --rounds=<i>N</i></tt>.
+    This has already allowed us to fix lots of reproducibility issues in
+    packages.
+  </p>
+
+  <h4>User-facing interfaces to reproducible builds</h4>
+  <p>
+    Reproducible builds should allow users to verify builds, and
+    distributors to no longer be single points of failure.  But how
+    can we actually <emph>empower</emph> users with reproducible builds?
+    Last
+    year, <a href="https://www.gnu.org/software/guix/news/reproducible-builds-a-means-to-an-end.html">we
+    outlined</a> that reproducible builds are a means to user
+    empowerment.  Thus it was great to brainstorm these issues with
+    brilliant minds!
+  </p>
+  <p>
+    dkg of Debian and ACLU led a couple of sessions on this topic.
+    Tools
+    like <a href="https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"><tt>guix
+    challenge</tt></a> are one way to help users check whether their
+    binaries are trustworthy, provided independent package builds are
+    available.  Some suggested that this could be used as an input for a
+    more general kind of “system health” monitoring tool.
+  </p>
+  <p>
+    A large part of the discussion then focused on <emph>policies</emph>
+    that users could select.  For example, assuming several independent
+    organizations provide binaries for a given distro, users could
+    disallow installation of binaries for which providers disagree on
+    the output.  Worded like this, the policy could easily lead to
+    denial of service should one of the providers be unavailable.  A
+    refinement of this policy is to install only packages for
+    which <i>k</i> out of <i>n</i> known builders “agree” on what
+    the package contents are.
+  </p>
+  <p>
+    Guix currently allows users to specify multiple binary providers
+    through
+    the <a href="https://www.gnu.org/software/guix/manual/html_node/Substitutes.html"><tt>--substitute-urls</tt></a> option.
+    We hope we can extend it to support this “<i>k</i> out of <i>n</i>”
+    policy by the next Reproducible Build Summit!
+  </p>
+
+  <h4>Bootstrapping</h4>
+  <p>
+    The Summit focuses on reproducible <emph>builds</emph>, but
+    unfortunately, there are more and more situations where software is
+    not built from source.  In most cases, this is due
+    to <emph>bootstrapping issues</emph>: a compiler is written in the
+    language it compiles, and thus distributors have no choice but to
+    start from an opaque pre-built binary provided by upstream.  The
+    problem also comes up
+    when <a href="https://www.gnu.org/software/guix/manual/html_node/Bootstrapping.html">building
+    a complete system “from nothing”</a>.  This situation prevents users
+    from knowing what code they’re running, and it makes them vulnerable
+    to <a href="https://www.win.tue.nl/~aeb/linux/hh/thompson/trust.html"><i>trusting
+    trust</i> attacks</a>.
+  </p>
+  <p>
+    In Guix, the debate came up every time we added one of these
+    self-hosted compilers—Rust, OCaml, GHC, etc.  This is not a
+    comfortable situation.  We led sessions on this topic with two
+    goals: to try and make a specific package “bootstrappable”, and to
+    raise awareness and come up with guidelines for compiler and tool
+    writers.  Together with other hackers, we drafted a manifesto that
+    we hope to publish soon.  Stay tuned!
+  </p>
+
+  <h4>Hacks!</h4>
+  <p>
+    During the hacking sessions, while Ricardo was busy working on the
+    bootstrapping manifesto, John together with Pierre Pronchery of NetBSD
+    tackled <a href="https://savannah.gnu.org/bugs/?49654">gettext reproducibility issues</a>, and
+    Ludovic picked up the work of others on fixing
+    a <a href="https://debbugs.gnu.org/cgi/bugreport.cgi?bug=20272">longstanding
+    reproducibility issue in Guile</a>, the Scheme implementation used
+    by Guix—“the shoemaker’s child always goes barefoot”, they say.
+  </p>
+
+  <h4>Thanks!</h4>
+  <p>
+    We would like to thank the sponsors who helped make the Reproducible
+    Build Summit possible: Debian, Google, Linux Foundation, and Open
+    Tech Fund.  Special thanks to Beatrice and Gunner of Aspiration and
+    to Holger of Debian for the perfect organization, and for the
+    productive and friendly atmosphere they created!
+  </p>
+
+  <h4>About GNU Guix</h4>
+  <p>
+    <a href="https://www.gnu.org/software/guix">GNU Guix</a> is a
+    transactional package manager for the GNU system.  The Guix System
+    Distribution or GuixSD is an advanced distribution of the GNU system
+    that relies on GNU Guix
+    and <a href="https://www.gnu.org/distros/free-system-distribution-guidelines.html">respects
+      the user's freedom</a>.<br /></p><p>In addition to standard package
+    management features, Guix supports transactional upgrades and
+    roll-backs, unprivileged package management, per-user profiles, and
+    garbage collection.  Guix uses low-level mechanisms from the Nix
+    package manager, except that packages are defined as
+    native <a href="https://www.gnu.org/software/guile">Guile</a> modules,
+    using extensions to the <a href="http://schemers.org">Scheme</a>
+    language.  GuixSD offers a declarative approach to operating system
+    configuration management, and is highly customizable and
+    hackable.<br />
+  </p>
+  <p>
+    GuixSD can be used on an i686 or x86_64 machine.  It is also possible
+    to use Guix on top of an already installed GNU/Linux system, including
+    on mips64el and armv7.
+  </p>
+</div>
