@@ -48,8 +48,15 @@ volunteers around the world under the umbrella of the "
 		      "GNU Project") ".  "
                       " This is the official web site for both projects. ")
 
-                (p "GuixSD is a GNU/Linux distribution committed to
-respecting and enhancing "
+                (p "GuixSD (Guix System Distribution) is a distribution of the "
+                   (a (@ (href ,(gnu-url ""))) "GNU operating system")
+                   " centered on the GNU Guix package manager.  It uses the "
+                   (a (@ (href ,(gnu-url "software/linux-libre")))
+                      "Linux-libre")
+                   " kernel, and support for "
+                   (a (@ (href ,(gnu-url "software/hurd"))) "the Hurd")
+                   " is being worked on.  As a GNU
+distribution, it is committed to respecting and enhancing "
                    (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
                       "the freedom of its users")
                    ".  As such, it adheres to the "
