@@ -1,0 +1,84 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title .
+           "GNU\xa0Guix and GuixSD\xa00.12.0 released")
+    (author . "Ricardo Wurmus")
+    (date unquote (make-date 0 0 0 0 21 12 2016 7200))
+    (content
+      div
+      (p "We are pleased to announce the new release of GNU\xa0Guix and GuixSD, version 0.12.0!"
+         (br))
+      (p "The release comes with USB installation images to install the standalone "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+            "GuixSD")
+         ", and with tarballs to install the package manager on top of your GNU/Linux distro, either "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+            "from source")
+         " or "
+         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+            "from binaries")
+         ". "
+         (br))
+      (p "It’s been a little over 4 months since the previous release, during which 76 people contributed code and packages.  The highlights include:"
+         (br))
+      (ul (li "New GuixSD system services, including a "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Log-Rotation.html"))
+                 "log rotation service")
+              ", a "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Printing-Services.html"))
+                 "CUPS printing service")
+              ", "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Network-File-System.html"))
+                 "NFS related services")
+              ", and an "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Mail-Services.html#OpenSMTPD-Service"))
+                 "OpenSMTPD service")
+              ".\n")
+          (li (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Daemon-Offload-Setup.html"))
+                 "Guix daemon offloading support")
+              " now uses "
+              (a (@ (href "https://github.com/artyom-poptsov/guile-ssh"))
+                 "Guile-SSH")
+              ".\n")
+          (li "GuixSD can now be installed to a "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Mapped-Devices.html#index-LUKS"))
+                 "LUKS-encrypted root")
+              ".\n")
+          (li "New cross-compiler toolchains for i686-w64-mingw32 and arm-none-eabi.\n")
+          (li "A new d3.js backend for "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-graph.html"))
+                 "guix graph")
+              ".\n")
+          (li (a (@ (href "https://www.gnu.org/software/guix/packages/"))
+                 "853 new packages")
+              ", 864 package updates notably glibc\xa02.24 and linux-libre\xa04.8.15"
+              ".\n")
+          (li "Assorted improvements to all the "
+              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Utilities.html"))
+                 "tool set")
+              ", many "
+              (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5"))
+                 "bug fixes")
+              " and improvements to the manual!\n"))
+      (p "See "
+         (a (@ (href "http://lists.gnu.org/archive/html/guix-devel/2016-12/msg00857.html"))
+            "the release announcement")
+         " for details."
+         (br))
+      (h4 "About GNU Guix")
+      (p (a (@ (href "http://www.gnu.org/software/guix"))
+            "GNU Guix")
+         " is a transactional package manager for the GNU system.  The Guix System Distribution or GuixSD is an advanced distribution of the GNU system that relies on GNU Guix and "
+         (a (@ (href "http://www.gnu.org/distros/free-system-distribution-guidelines.html"))
+            "respects the user's freedom")
+         "."
+         (br))
+      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
+         (a (@ (href "http://www.gnu.org/software/guile"))
+            "Guile")
+         " modules, using extensions to the "
+         (a (@ (href "http://schemers.org")) "Scheme")
+         " language.  GuixSD offers a declarative approach to operating system configuration management, and is highly customizable and hackable."
+         (br))
+      (p "GuixSD can be used on an i686 or x86_64 machine.  It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
+         (br)))))
