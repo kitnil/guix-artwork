@@ -476,25 +476,27 @@ PACKAGES."
   (string-append "https://mirror.hydra.gnu.org/nar/"
                  (basename item)))
 
-(define (discrepancy->sxml discrepancy)
-  "Return the HTML for DISCREPANCY."
-  (let ((item (discrepancy-item discrepancy)))
+(define (comparison-report->sxml report)
+  "Return the HTML for REPORT."
+  (let ((item (comparison-report-item report)))
     `(li (tt ,item)
          (ol
-          (li (a (@ (href ,(local-nar-url item))))
-              (tt ,(bytevector->base32-string
-                    (discrepancy-local-sha256 discrepancy))))
-          ,@(map (lambda (narinfo)
-                   `(li (a (@ (href ,(uri->string
-                                      (narinfo-uri narinfo)))))
-                        (tt ,(bytevector->base32-string
-                              (narinfo-hash->sha256
-                               (narinfo-hash narinfo))))))
-                 (discrepancy-narinfos discrepancy))))))
+          ,(if (comparison-report-inconclusive? report)
+               "No idea if this one is reproducible."
+               `(li (a (@ (href ,(local-nar-url item))))
+                    (tt ,(bytevector->base32-string
+                          (comparison-report-local-sha256 report)))
+                    ,@(map (lambda (narinfo)
+                             `(li (a (@ (href ,(uri->string
+                                                (narinfo-uri narinfo)))))
+                                  (tt ,(bytevector->base32-string
+                                        (narinfo-hash->sha256
+                                         (narinfo-hash narinfo))))))
+                           (comparison-report-narinfos report))))))))
 
-(define* (package->reproducibility-sxml package discrepancies
+(define* (package->reproducibility-sxml package reports
                                         #:key anchor)
-  "Return an SXML representation of DISCREPANCIES for PACKAGE."
+  "Return an SXML representation of REPORTS for PACKAGE."
   (let ((name (string-append (package-name package) " "
                              (package-version package))))
     `(div
@@ -507,16 +509,17 @@ PACKAGES."
            (title "Link to this section"))
         "§"))
       (p
-       ;; Issue count
-       ,@(if discrepancies
-             (list (issue-count->sxml (length discrepancies)) ". ")
-             '("No idea if it's reproducible.  "))
+       ,@(if (every comparison-report-inconclusive? reports)
+             '("No idea if it's reproducible.  ")
+             (list (issue-count->sxml
+                    (count comparison-report-mismatch? reports))
+                   ". "))
        "See " (a (@ (href ,(source-url package))) "package definition")
        " in Guix source code.")
 
-      ,(and discrepancies
+      ,(and (any comparison-report-mismatch? reports)
             `(div (@ (class "issue"))
-                  (ul ,@(map discrepancy->sxml discrepancies)))))))
+                  (pre (ul ,@(map comparison-report->sxml reports))))))))
 
 (define* (packages->reproducibility-sxml packages
                                          #:key (servers %substitute-servers))
@@ -527,12 +530,9 @@ PACKAGES on SERVERS."
   (define package-anchor
     (packages->anchors packages))
 
-  (define valid?
-    (store-lift valid-path?))
-
   (define (one-of lst)
-    (lambda (discrepancy)
-      (member (discrepancy-item discrepancy) lst)))
+    (lambda (report)
+      (member (comparison-report-item report) lst)))
 
   (define (add-package-outputs package mapping)
     ;; Add PACKAGE to MAPPING, a vhash that maps packages to outputs.
@@ -541,11 +541,7 @@ PACKAGES on SERVERS."
                                         (((_ . outputs) ...)
                                          outputs))))
       (foldm %store-monad
-             (lambda (output result)
-               (mlet %store-monad ((valid? (valid? output)))
-                 (return (if valid?
-                             (vhash-consq package output mapping)
-                             result))))
+             (lift2 (cut vhash-consq package <> <>) %store-monad)
              mapping
              outputs)))
 
@@ -557,26 +553,25 @@ PACKAGES on SERVERS."
                                                   (cons output result))))
                                              '()
                                              mapping))
-                       (result   (discrepancies items %substitute-servers)))
+                       (reports  (compare-contents items
+                                                   %substitute-servers)))
     (define (->sxml package)
-      (let* ((outputs       (vhash-foldq* cons '() package mapping))
-             (discrepancies (and (not (null? outputs))
-                                 (filter (one-of outputs) result))))
-        (package->reproducibility-sxml package
-                                       discrepancies
+      (let* ((outputs (vhash-foldq* cons '() package mapping))
+             (reports (filter (one-of outputs) reports)))
+        (package->reproducibility-sxml package reports
                                        #:anchor
                                        (package-anchor package))))
 
-    (let ((considered (vlist-length mapping)))
-      (return `(div "Considered " ,considered
-                    " packages out of " ,total
-                    ", corresponding to " ,(length items) " "
+    (let ((mismatches (count comparison-report-mismatch? reports)))
+      (return `(div "Considered " ,total
+                    " packages, corresponding to "
+                    ,(length items) " "
                     (tt "/gnu/store") " items.\n"
                     "Out of these, "
-                    ,(issue-count->sxml (length result))
+                    ,(issue-count->sxml mismatches)
                     " were found ("
                     ,(inexact->exact
-                      (round (* 100. (/ (length result) (length items)))))
+                      (round (* 100. (/ mismatches (length items)))))
                     "%).\n\n"
 
                     ,@(map ->sxml packages))))))
