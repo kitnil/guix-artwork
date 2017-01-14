@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -182,7 +182,12 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "September 2016, "
+		(ul (li "December 2016 (recorded in Dec. 2015), "
+                        (a (@ (href
+                               "http://hackerpublicradio.org/eps.php?id=2198"))
+                           "interview with Chris Webber at Hacker Public Radio")
+                        " (1h 25mn)")
+                    (li "September 2016, "
                         (a (@ (href "http://cufp.org/2016/"))
                            "Commercial Users of Functional Programming (CUFP)")
                         ", "
