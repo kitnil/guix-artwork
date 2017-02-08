@@ -562,17 +562,25 @@ PACKAGES on SERVERS."
                                        #:anchor
                                        (package-anchor package))))
 
-    (let ((mismatches (count comparison-report-mismatch? reports)))
+    (let ((total-items  (length items))
+          (mismatches   (count comparison-report-mismatch? reports))
+          (inconclusive (count comparison-report-inconclusive? reports)))
       (return `(div "Considered " ,total
                     " packages, corresponding to "
-                    ,(length items) " "
-                    (tt "/gnu/store") " items.\n"
+                    ,total-items
+                    " " (tt "/gnu/store") " items, for "
+                    (tt ,(%current-system)) ".\n"
+
                     "Out of these, "
                     ,(issue-count->sxml mismatches)
                     " were found ("
                     ,(inexact->exact
-                      (round (* 100. (/ mismatches (length items)))))
-                    "%).\n\n"
+                      (round (* 100. (/ mismatches total-items))))
+                    "%).  There are "
+                    ,inconclusive " items ("
+                    ,(inexact->exact
+                      (round (* 100. (/ inconclusive total-items))))
+                    "%) for which we could not conclude.\n\n"
 
                     ,@(map ->sxml packages))))))
 
