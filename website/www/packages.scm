@@ -701,7 +701,7 @@ and PAGE is the corresponding SXML."
 	  (a
 	   (@ (href ,(base-url "manual/html_node/Invoking-guix-lint.html")))
 	   (code "guix lint")) " ("
-	   "Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
+	   "updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
 
        ,(packages->issue-sxml (all-packages) #:checkers checkers)))
 
@@ -727,7 +727,7 @@ and PAGE is the corresponding SXML."
 	   (@ (href ,(base-url "manual/html_node/Invoking-guix-challenge.html")))
 	   (code "guix challenge")) " comparing two independent "
            "build machines ("
-           "Updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
+           "updated " ,(date->string (current-date) "~B ~e, ~Y") ").")
 
        ,(parameterize ((%graft? #f))
           (with-store store
