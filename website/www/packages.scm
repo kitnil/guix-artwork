@@ -2,6 +2,7 @@
 ;;; Copyright © 2013, 2014, 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
+;;; Copyright © 2017 Eric Bavier <bavier@member.fsf.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
 ;;;
@@ -35,6 +36,7 @@
   #:use-module (guix base32)
   #:use-module ((guix download) #:select (%mirrors))
   #:use-module ((guix build download) #:select (maybe-expand-mirrors))
+  #:use-module (guix build utils)
   #:use-module (guix scripts lint)
   #:use-module (guix scripts challenge)
   #:use-module (guix scripts substitute)
@@ -47,6 +49,8 @@
   #:use-module (ice-9 vlist)
   #:use-module (ice-9 i18n)
   #:use-module (ice-9 format)
+  #:use-module (ice-9 popen)
+  #:use-module (ice-9 rdelim)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-19)
   #:use-module (srfi srfi-26)
@@ -82,10 +86,24 @@
        (loop tail
              (cons* head item result))))))
 
+(define git-description
+  (delay
+   (let* ((guix (find (lambda (p)
+                        (file-exists? (string-append p "/guix/config.scm")))
+                      %load-path))
+          (pipe (with-directory-excursion guix
+                  (open-pipe* OPEN_READ "git" "describe")))
+          (desc (read-line pipe))
+          (git? (close-pipe pipe)))
+     (and git? desc))))
+
 (define (location-url loc)
   (string-append "http://git.savannah.gnu.org/cgit/guix.git/tree/"
-                 (location-file loc) "#n"
-                 (number->string (location-line loc))))
+                 (location-file loc)
+                 (or (and=> (force git-description)
+                            (cut string-append "?id=" <>))
+                     "")
+                 "#n" (number->string (location-line loc))))
 
 (define (source-url package)
   (let ((loc (package-location package)))
