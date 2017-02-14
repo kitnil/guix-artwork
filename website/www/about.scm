@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2015 David Thompson <davet@gnu.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
@@ -141,6 +141,24 @@ System Distribution (GuixSD). "
 		   (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-07/msg00039.html"))
 		      " Until July 2013")
 		   ", the bug-Guix mailing list filled that role. ")
+		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-patches"))
+		      (b "guix-patches"))
+		   (small " ("
+			  (a (@ (href "https://lists.gnu.org/archive/html/guix-patches"))
+			     "archive")
+			  ")")
+		   (br)
+		   "Submission of patches.  Every message sent to this "
+                   "mailing list leads to a new entry in our "
+                   (a (@ (href "//bugs.gnu.org/guix-patches"))
+                      "patch tracking tool") ".  See "
+                   (a (@ (href "//debbugs.gnu.org/Advanced.html"))
+                      "this page")
+                   " for more information on how to use it.  "
+		   (a (@ (href "//lists.gnu.org/archive/html/guix-devel/2017-02/msg00627.html"))
+		      "Until February 2017")
+		   ", the guix-devel mailing list filled that role.")
+
 		(p (a (@ (href "https://lists.gnu.org/mailman/listinfo/bug-guix"))
 		      (b "bug-guix"))
 		   (small " ("

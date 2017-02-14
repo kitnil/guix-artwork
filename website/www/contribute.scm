@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -103,7 +103,14 @@ distribution can be found "
 			     (a (@ (href ,(guix-url "manual/html_node/Packaging-Guidelines.html")))
 				"in the manual")
 			     ". ")
-			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
+                          (p "Check out the "
+                             (a (@ (href ,(base-url "packages")))
+                                "package database")
+                             " for a list of available packages, and the "
+                             (a (@ (href "//bugs.gnu.org/guix-patches"))
+                                "patch-tracking database")
+                             " for a list of pending submissions.")
+			  (a (@ (href "//lists.gnu.org/mailman/listinfo/guix-patches")
 				(class "hlink-more-dark"))
 			     "Send a new package"))
 		     (div (@ (class "summary-box"))
@@ -128,7 +135,7 @@ for the components of the system. ")
 				"Contributing")
 			     " section of the manual for more details on the development setup,
 as well as the coding and cooperation conventions used in the project. ")
-			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
+			  (a (@ (href "//lists.gnu.org/mailman/listinfo/guix-patches")
 				(class "hlink-more-dark"))
 			     "Send a new patch"))
 		     (div (@ (class "summary-box"))
