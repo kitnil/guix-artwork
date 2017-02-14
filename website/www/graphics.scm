@@ -55,7 +55,7 @@
 		(p "The source files for these logotypes, their variants, and "
 		   "other artwork used in the different components of the GNU "
 		   "Guix project are available in the "
-		   (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
+		   (a (@ (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
 		      "guix-artwork")
 		   " repository, including the previous GNU Guix logotype "
 		   "designed by Nikita Karetnikov in 2013 and "

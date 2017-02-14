@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -91,7 +91,7 @@ Functional package management,")))
 	" by humans and powered by "
 	(a (@ (href ,(gnu-url "software/guile")) (class "hlink-yellow"))
 	   "GNU Guile") ".  "
-        (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website")
+        (a (@ (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website")
               (class "hlink-yellow"))
            "Source code")
         " under the "

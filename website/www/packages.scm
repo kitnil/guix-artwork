@@ -98,7 +98,7 @@
      (and git? desc))))
 
 (define (location-url loc)
-  (string-append "http://git.savannah.gnu.org/cgit/guix.git/tree/"
+  (string-append "//git.savannah.gnu.org/cgit/guix.git/tree/"
                  (location-file loc)
                  (or (and=> (force git-description)
                             (cut string-append "?id=" <>))
@@ -143,7 +143,7 @@ decreasing, is 1."
       (match-lambda
        ((? string? patch)
         (string-append
-         "http://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/patches/"
+         "//git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/patches/"
          (basename patch)))
        ((? origin? patch)
         (uri->string

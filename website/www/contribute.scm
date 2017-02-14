@@ -69,7 +69,7 @@ design and improve user interfaces, and create multimedia material for
 documentation, presentations, and promotional items. ")
 			  (p "The artwork used in the different components of
 the project is available in the "
-			     (a (@ (href "http://git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
+			     (a (@ (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
 				"guix-artwork")
 			     " repository. ")
 			  (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel")
@@ -117,7 +117,7 @@ distribution can be found "
 			  (h2 (@ (id "programming")) "Programming")
 			  (p "Source code is in the "
                              (a (@ (href
-                                    "http://git.savannah.gnu.org/cgit/guix.git/"))
+                                    "//git.savannah.gnu.org/cgit/guix.git/"))
                                 "main Git repository") ".  "
                              "We use "
 			     (a (@ (href ,(gnu-url "software/guile")))
@@ -197,7 +197,7 @@ tools.  Visit their websites and help translate. ")
 		    "Other resources for contributors")
 		(p "Documents, supporting material of previous talks, and
 auxiliary information useful to hackers and maintainers is available at "
-		   (a (@ (href "http://git.savannah.gnu.org/cgit/guix/maintenance.git"))
+		   (a (@ (href "//git.savannah.gnu.org/cgit/guix/maintenance.git"))
 		      "git://git.sv.gnu.org/guix/maintenance.git")
 		   ".")))
 	  ,(html-page-footer))))
