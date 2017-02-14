@@ -182,7 +182,55 @@ about the Nix package manager, which "
                            "more posts")))
 
 		(h2 (@ (id "talks")) "Talks")
-		(ul (li "December 2016 (recorded in Dec. 2015), "
+                ;; TODO: Hi there!  This is terrible.  We should add a 'talk'
+                ;; procedure that would take a title, list of speakers, slide
+                ;; URL, and optional video URL, and DTRT.
+		(ul (li "February 2017, "
+                        (a (@ (href "https://fosdem.org/2017/")) "FOSDEM")
+                        (ul
+                         (li (i "An introduction to functional package
+management with GNU Guix")
+                             " (Ricardo Wurmus): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-intro-20170205.pdf")))
+                                "slides"))
+                         (li (i "Composing system services in GuixSD")
+                             " (Ludovic Courtès): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-composing-services-20170205.pdf")))
+                                "slides"))
+                         (li (i "Reproducible packaging and distribution of
+software with GNU Guix")
+                             " (Pjotr Prins): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-packaging-20170205.pdf")))
+                                "slides"))
+                         (li (i "Mes—Maxwell's Equations of Software")
+                             " (Jan Nieuwenhuizen): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-mes-20170205.pdf")))
+                                "slides"))
+                         (li (i "Adding GNU/Hurd support to GNU Guix and GuixSD")
+                             " (Manolis Ragkousis): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-hurd-20170205.pdf")))
+                                "slides"))
+                         (li (i "Workflow management with GNU Guix")
+                             " (Roel Janssen): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-workflow-management-20170205.pdf")))
+                                "slides"))
+                         (li (i "Optimized and reproducible HPC Software
+deployment")
+                             " (Pjotr Prins and Ludovic Courtès,
+high-performance computing track): "
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-hpc-part1-20170204.pdf")))
+                                "part 1") ", "
+                                (a (@ (href ,(slides-url
+                                              "guix-fosdem-hpc-part1-20170204.pdf")))
+                                   "part 2"))))
+                    (li "December 2016 (recorded in Dec. 2015), "
                         (a (@ (href
                                "http://hackerpublicradio.org/eps.php?id=2198"))
                            "interview with Chris Webber at Hacker Public Radio")
