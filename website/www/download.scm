@@ -1,6 +1,7 @@
 ;;; GuixSD website --- GNU's advanced distro website
 ;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
+;;; Copyright © 2017 ng0 <contact.ng0@cryptolab.net>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
 ;;;
@@ -64,22 +65,25 @@ dependencies.")
 (define (ftp-url file)
   (string-append "ftp://alpha.gnu.org/gnu/guix/" file))
 
+(define (https-url file)
+  (string-append "https://alpha.gnu.org/gnu/guix/" file))
+
 (define (guixsd-files archs)
   (map (lambda (arch)
-         (cons arch (ftp-url (string-append "guixsd-usb-install-"
+         (cons arch (https-url (string-append "guixsd-usb-install-"
                                             (latest-guix-version) "." arch
                                             "-linux.xz"))))
        archs))
 
 (define (guix-files archs)
   (map (lambda (arch)
-         (cons arch (ftp-url (string-append "guix-binary-" (latest-guix-version)
+         (cons arch (https-url (string-append "guix-binary-" (latest-guix-version)
                                             "." arch "-linux.tar.xz"))))
        archs))
 
 (define (guix-source-files variants)
   (map (lambda (variant)
-         (cons variant (ftp-url (string-append "guix-" (latest-guix-version)
+         (cons variant (https-url (string-append "guix-" (latest-guix-version)
                                                ".tar.gz"))))
        variants))
 
