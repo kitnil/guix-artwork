@@ -1,6 +1,6 @@
 ;;; GuixSD website --- GNU's advanced distro website
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@gnu.org>
-;;; Copyright © 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;;
 ;;; This file is part of GuixSD website.
 ;;;
@@ -21,6 +21,7 @@
 
 (use-modules (haunt site)
              (haunt reader)
+             (haunt reader commonmark)
              (haunt page)
              (haunt html)
              (haunt utils)
@@ -70,7 +71,7 @@
       #:default-metadata
       '((author . "GuixSD Contributors")
         (email  . "guix-devel@gnu.org"))
-      #:readers (list sxml-reader html-reader)
+      #:readers (list sxml-reader html-reader commonmark-reader)
       #:builders
       `(,(lambda (site posts)                     ;the main page
            (with-url-parameters

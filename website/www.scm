@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
@@ -59,7 +59,9 @@ string."
       (((? symbol?) body ...)
        (append-map sxml->strings body))
       ((? string?)
-       (list tree))))
+       (list tree))
+      ((lst ...)
+       (sxml->strings `(div ,@lst)))))
 
   (string-concatenate (sxml->strings tree)))
 
