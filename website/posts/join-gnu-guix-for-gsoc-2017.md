@@ -25,7 +25,7 @@ lists](https://www.gnu.org/software/guix/about/#contact) and on the
 `#guix` channel on the Freenode IRC network.
 
 If you are an [eligible
-student](https://developers.google.com/open-source/gsoc/faq#can_i_participate_in_gsoc_as_both_a_mentor_and_a_student),
+student](https://developers.google.com/open-source/gsoc/faq#students),
 make sure to apply [by April
 3rd](https://developers.google.com/open-source/gsoc/timeline).
 
