@@ -2,6 +2,7 @@
 ;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2017 ng0 <contact.ng0@cryptolab.net>
+;;; Copyright © 2017 Alex Vong <alexvong1995@gmail.com>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
 ;;; who waives all copyright interest on this file.
 ;;;
@@ -177,9 +178,9 @@ Linux-based system.")
 installation images as well as GNU Guix can be found on the GNU ftp server for "
 		   (em "alpha")
 		   " releases: "
-		   (a (@ (href "http://alpha.gnu.org/gnu/guix/"))
-		      "http://alpha.gnu.org/gnu/guix/")
-		   " (via HTTP) and "
+		   (a (@ (href "https://alpha.gnu.org/gnu/guix/"))
+		      "https://alpha.gnu.org/gnu/guix/")
+		   " (via HTTPS) and "
 		   (a (@ (href "ftp://alpha.gnu.org/gnu/guix/"))
 		      "ftp://alpha.gnu.org/gnu/guix/")
 		   " (via FTP). ")))
