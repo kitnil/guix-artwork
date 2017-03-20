@@ -210,7 +210,7 @@ wonders.
 Packs themselves are reproducible bit-by-bit.  If you know the Guix
 commit that was used to build a given pack, you can thus run the same
 `guix pack` command on another machine and verify that you get the exact
-same tarball.  Currently not 100% of the packages Guix provide are
+same tarball.  Currently not 100% of the packages Guix provides are
 reproducible bit-by-bit; we’re getting closer to that goal though, in
 part due to the fact that Guix builds are isolated by default, and also
 thanks to the efforts of everyone in the
