@@ -1,5 +1,5 @@
 title: Creating bundles with guix pack
-date: 2017-03-20 14:00
+date: 2017-03-20 14:45
 author: Ludovic Courtès
 tags: pack bundles
 ---
@@ -34,7 +34,7 @@ So how does it work?  The basic idea is simple: you type
 guix pack guile
 ```
 
-and you the command returns in `/gnu/store` a good old tarball that
+and the command returns in `/gnu/store` a good old tarball that
 contains binaries for Guile and all its dependencies.  If you run, say,
 
 ```
@@ -121,7 +121,8 @@ GNU/Linux on ARMv7:
 guix pack --target=arm-linux-gnueabihf guile
 ```
 
-… while the command below creates a pack with binaries for MinGW:
+… while the command below creates a pack with Windows binaries using the
+MinGW cross-compiler:
 
 ```
 guix pack --target=i686-w64-mingw32 guile
