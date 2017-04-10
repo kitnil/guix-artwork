@@ -186,6 +186,16 @@ about the Nix package manager, which "
                 ;; procedure that would take a title, list of speakers, slide
                 ;; URL, and optional video URL, and DTRT.
 		(ul (li "February 2017, "
+                        (a (@ (href "http://bobkonf.de/2017/en/"))
+                           "BOB Konferenz")
+                        ", "
+                        (i "Functional package management with GNU Guix for
+developers and power users")
+                        " (Ricardo Wurmus): "
+                        (a (@ (href ,(slides-url
+                                      "guix-bobkonf-20170224.pdf")))
+                           "slides"))
+                    (li "February 2017, "
                         (a (@ (href "https://fosdem.org/2017/")) "FOSDEM")
                         (ul
                          (li (i "An introduction to functional package
