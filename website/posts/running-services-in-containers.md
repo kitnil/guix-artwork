@@ -1,5 +1,5 @@
 title: Running system services in containers
-date: 2017-04-13 14:45
+date: 2017-04-14 14:45
 author: Ludovic Courtès
 tags: system services containers shepherd
 ---
@@ -15,7 +15,7 @@ feature.
 #### The problem
 
 Our computers run many programs that talk to the Internet, and the
-Internet is a unsafe place as we all know—with states and assorted
+Internet is an unsafe place as we all know—with states and assorted
 organizations
 [collecting “zero-day exploits”](https://www.wired.com/2014/04/obama-zero-day/)
 to exploit them as they see fit.  One of the big tasks of operating
@@ -37,18 +37,18 @@ languages, as is the case for Guix and GuixSD.  Projects that have been
 using C are even considering a complete rewrite,
 [as is the case for Tor](https://lists.torproject.org/pipermail/tor-dev/2017-March/012088.html).
 Of course the switch away from memory-unsafe languages won’t happen
-overnight, but it’s good to see this becoming more consensual.
+overnight, but it’s good to see a consensus emerging.
 
 The operating system side of things is less bright.  Although the
 [principle of least authority (POLA)](https://en.wikipedia.org/wiki/Principle_of_least_authority)
-has been well-known in operating system circles for a long time, it has
-remained foreign to Unix and GNU/Linux.  Processes run with the full
+has been well-known in operating system circles for a long time, it
+remains foreign to Unix and GNU/Linux.  Processes run with the full
 authority of their user.  On top of that, until recent changes to the
 Linux kernel, resources were global and there was essentially a unique
 view of the file system, of the process hierarchy, and so on.  So when a
 remote-code-execution vulnerability affects a system service—like
 [in the BitlBee instant messaging gateway (CVE-2016-10188)](https://bugs.bitlbee.org/ticket/1281)
-running on my laptop—an attacker can potentially do a lot on your
+running on my laptop—an attacker could potentially do a lot on your
 machine.
 
 Fortunately, many daemons have built-in mechanisms to work around this
@@ -92,7 +92,7 @@ term is sometimes used to denote much larger tooling and practices built
 around namespaces.)  Why not use that to better isolate system services?
 
 Apparently this idea has been floating around.  systemd has been
-[considering extending its “unit files”](https://lwn.net/Articles/706025/)
+[considering to extend its “unit files”](https://lwn.net/Articles/706025/)
 to include directives instructing systemd to run daemons in separate
 namespaces.  GuixSD uses
 [the Shepherd](https://www.gnu.org/software/shepherd) instead of
@@ -102,7 +102,7 @@ we had been considering for a while.
 In fact, adding the ability to run system services in containers was a
 low-hanging fruit: we already had
 [`call-with-container`](https://www.gnu.org/software/guix/news/container-provisioning-with-guix.html)
-to run code in containers, so all we needed to do
+to run code in containers, so all we needed to do was to
 [provide a containerized service starter](https://git.savannah.gnu.org/cgit/guix.git/commit/?id=63302a4e55241a41eab4c21d7af9fbd0d5817459)
 that uses `call-with-container`.
 
