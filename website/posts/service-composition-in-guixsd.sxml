@@ -101,12 +101,12 @@
          (br))
       (p "The API makes it easy to see how services contributed to a specific service’s configuration.  For instance, the following expression shows the PAM service as extended by other declared services:"
          (br))
-      (div (@ (class "example"))
-           (pre "(fold-services (operating-system-services os) \n               #:target-type pam-root-service-type)\n"))
+      (pre (code (@ (class "language-scheme"))
+                 "(fold-services (operating-system-services os) \n               #:target-type pam-root-service-type)\n"))
       (p "The result is a service object whose value is a list of pam-service objects.  Likewise, the following expression returns the /etc service, whose value is a list of entries to be added to /etc:"
          (br))
-      (div (@ (class "example"))
-           (pre "(fold-services (operating-system-services os) \n               #:target-type etc-service-type)\n"))
+      (pre (code (@ (class "language-scheme"))
+                 "(fold-services (operating-system-services os) \n               #:target-type etc-service-type)\n"))
       (p "This contrasts with the approach taken by "
          (a (@ (href "http://nixos.org/")) "NixOS")
          ", GuixSD’s cousin, and described in this "
