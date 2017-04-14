@@ -158,7 +158,7 @@ domain-specific languages (EDSLs) to "
 			 (div (@ (class "featured-actions"))
 			      (a (@ (href ,(base-url "download"))
 				    (class "action download"))
-				 "TEST v" ,(latest-guix-version) " (beta)")
+				 "DOWNLOAD v" ,(latest-guix-version))
 			      (a (@ (href ,(base-url "contribute"))
 				    (class "action contribute"))
 				 "CONTRIBUTE"))))
