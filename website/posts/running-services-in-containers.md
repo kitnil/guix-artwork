@@ -117,7 +117,7 @@ and
 [Tor](https://git.savannah.gnu.org/cgit/guix.git/commit/?id=ee295346ce81c276ffb4ee34cc6f5b134b415097)
 are minimal.  The end result, for Tor, looks like this:
 
-```
+```scheme
 (let ((torrc (tor-configuration->torrc config)))
   (with-imported-modules (source-module-closure
 						  '((gnu build shepherd)

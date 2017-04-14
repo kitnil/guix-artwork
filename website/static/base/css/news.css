@@ -4,6 +4,7 @@
 */
 
 @import url("article.css");
+@import url("code.css");
 
 .example {
     border-style: none;
