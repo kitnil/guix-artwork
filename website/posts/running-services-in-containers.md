@@ -44,7 +44,7 @@ The operating system side of things is less bright.  Although the
 has been well-known in operating system circles for a long time, it
 remains foreign to Unix and GNU/Linux.  Processes run with the full
 authority of their user.  On top of that, until recent changes to the
-Linux kernel, resources were global and there was essentially a unique
+Linux kernel, resources were global and there was essentially a single
 view of the file system, of the process hierarchy, and so on.  So when a
 remote-code-execution vulnerability affects a system service—like
 [in the BitlBee instant messaging gateway (CVE-2016-10188)](https://bugs.bitlbee.org/ticket/1281)
