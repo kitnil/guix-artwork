@@ -657,7 +657,8 @@ letter)."
   (packages-page (packages-by-grouping packages grouping)
                  (string-upcase grouping)))
 
-(define* (packages-page #:optional (packages (all-packages))
+(define* (packages-page #:optional
+                        (packages (remove package-superseded (all-packages)))
                         (grouping "All"))
   `(html (@ (lang "en"))
          ,(html-page-header "Packages" #:css "packages.css" #:js "packages.js")
@@ -691,7 +692,8 @@ letter)."
 
           ,(html-page-footer))))
 
-(define* (package-pages #:optional (packages (all-packages)))
+(define* (package-pages #:optional
+                        (packages (remove package-superseded (all-packages))))
   "Return a list of (FILE PAGE) tuples, where each FILE is an HTML file name
 and PAGE is the corresponding SXML."
   `(,@(map (lambda (group)
