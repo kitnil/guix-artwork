@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2015, 2016 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2017 ng0 <contact.ng0@cryptolab.net>
 ;;; Initially written by Luis Felipe López Acevedo <felipe.lopez@openmailbox.org>
@@ -140,8 +140,7 @@ Linux-based system.")
                             #:image %guixsd-image)
              ,(download-box (string-append "GNU Guix " (latest-guix-version)
                                            " Binary")
-                            #:files (guix-files '("x86_64" "i686" "mips64el"
-                                                  "armhf"))
+                            #:files (guix-files '("x86_64" "i686" "armhf"))
                             #:description %binary-tarball-description
                             #:manual %binary-tarball-manual
                             #:image %guix-image)
