@@ -1,5 +1,5 @@
 title: GNU Guix and GuixSD 0.13.0 released
-date: 2017-05-22 15:00
+date: 2017-05-22 15:30
 author: Ludovic Courtès
 slug: gnu-guix-and-guixsd-0.13.0-released
 tags: release
@@ -59,7 +59,10 @@ contribute code and packages.  The highlights include:
     and many updates, including glibc 2.25, Linux-libre 4.11, and GCC 7.
   - New
     [system services](https://www.gnu.org/software/guix/manual/html_node/Services.html)
-    for Redis, Exim, Open vSwitch, and more.  The interface of existing
+    for
+    [Redis](https://www.gnu.org/software/guix/manual/html_node/Database-Services.html#index-redis_002dservice_002dtype),
+    [Exim](https://www.gnu.org/software/guix/manual/html_node/Mail-Services.html#index-exim_002dservice_002dtype),
+    [Open vSwitch](https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html#index-openvswitch_002dservice_002dtype), and more.  The interface of existing
     services, notably that of the
     [NGINX service](https://www.gnu.org/software/guix/manual/html_node/Web-Services.html),
     has been greatly improved.
