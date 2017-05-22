@@ -68,7 +68,9 @@ contribute code and packages.  The highlights include:
     has been greatly improved.
   - Many [bug fixes](https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5)!
 
-See the release announcement for details.
+See the
+[release announcement](https://lists.gnu.org/archive/html/guix-devel/2017-05/msg00379.html)
+for details.
 
 #### About GNU Guix
 
