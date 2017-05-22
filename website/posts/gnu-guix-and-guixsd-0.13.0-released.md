@@ -34,7 +34,7 @@ contribute code and packages.  The highlights include:
   - The GuixSD installation image now supports UEFI.  GuixSD can also be
     installed on Btrfs now.
   - GuixSD has support to run system services (daemons) in isolated
-    containers as a way to mitigate the arm that can be done by
+    containers as a way to mitigate the harm that can be done by
     vulnerabilities in those daemons.  See
     [this article from April](https://www.gnu.org/software/guix/news/running-system-services-in-containers.html).
   - A new
