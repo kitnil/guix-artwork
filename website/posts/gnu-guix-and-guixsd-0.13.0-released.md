@@ -48,6 +48,10 @@ contribute code and packages.  The highlights include:
     Among other things though, the
     [noticeable performance improvement](https://lists.gnu.org/archive/html/guix-devel/2017-04/msg00427.html)
     that comes for free is welcome!
+  - [`guix publish`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html),
+    which is what we use to distribute binaries, has a new `--cache`
+    operation mode that improves performance when distributing binaries
+    to a large number of users, as is the case of our build farm.
   - Many reproducibility issues found in packages have been
     addressed—more on that in a future post.
   - 840 new packages, leading to
@@ -59,6 +63,7 @@ contribute code and packages.  The highlights include:
     services, notably that of the
     [NGINX service](https://www.gnu.org/software/guix/manual/html_node/Web-Services.html),
     has been greatly improved.
+  - Many [bug fixes](https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5)!
 
 See the release announcement for details.
 
