@@ -62,6 +62,15 @@ dependencies.")
 (define %guix-src-image
   "src-package.png")
 
+(define %vm-image-description
+  "Virtual machine (QEMU) image of GuixSD.")
+
+(define %vm-image-manual
+  "manual/html_node/Running-GuixSD-in-a-VM.html")
+
+(define %vm-image-image
+  "QEMU-package.png")
+
 (define (ftp-url file)
   (string-append "ftp://alpha.gnu.org/gnu/guix/" file))
 
@@ -73,6 +82,13 @@ dependencies.")
          (cons arch (https-url (string-append "guixsd-usb-install-"
                                             (latest-guix-version) "." arch
                                             "-linux.xz"))))
+       archs))
+
+(define (guixsd-vm-image-files archs)
+  (map (lambda (arch)
+         (cons arch (https-url (string-append "guixsd-vm-image-"
+                                              (latest-guix-version) "." arch
+                                              "-linux.xz"))))
        archs))
 
 (define (guix-files archs)
@@ -149,7 +165,13 @@ Linux-based system.")
                             #:files (guix-source-files '("tarball"))
                             #:description %source-tarball-description
                             #:manual %source-tarball-manual
-                            #:image %guix-src-image))
+                            #:image %guix-src-image)
+             ,(download-box (string-append "GuixSD " (latest-guix-version)
+                                           " Virtual Machine Image")
+                            #:files (guixsd-vm-image-files '("x86_64"))
+                            #:description %vm-image-description
+                            #:manual %vm-image-manual
+                            #:image %vm-image-image))
 
 		(p "Source code for the Guix System Distribution USB
 installation images as well as GNU Guix can be found on the GNU ftp server for "
