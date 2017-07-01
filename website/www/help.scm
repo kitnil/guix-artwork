@@ -238,7 +238,7 @@ high-performance computing track): "
                                            "guix-fosdem-hpc-part1-20170204.pdf")))
                                 "part 1") ", "
                                 (a (@ (href ,(slides-url
-                                              "guix-fosdem-hpc-part1-20170204.pdf")))
+                                              "guix-fosdem-hpc-part2-20170204.pdf")))
                                    "part 2"))))
                     (li "December 2016 (recorded in Dec. 2015), "
                         (a (@ (href
