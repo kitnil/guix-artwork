@@ -185,7 +185,19 @@ about the Nix package manager, which "
                 ;; TODO: Hi there!  This is terrible.  We should add a 'talk'
                 ;; procedure that would take a title, list of speakers, slide
                 ;; URL, and optional video URL, and DTRT.
-		(ul (li "February 2017, "
+		(ul (li "July 2017, "
+                        (a (@ (href
+                               "https://www.open-bio.org/wiki/BOSC_2017"))
+                           "BOSC")
+                        ", "
+                        (i "Reproducible and user-controlled software
+management in HPC with GNU Guix")
+                        " (Ricardo Wurmus, Pjotr Prins, Ben Woodcroft, Altuna
+Akalin): "
+                        (a (@ (href ,(slides-url
+                                      "guix-bosc-20170724.pdf")))
+                           "slides"))
+                    (li "February 2017, "
                         (a (@ (href "http://bobkonf.de/2017/en/"))
                            "BOB Konferenz")
                         ", "
