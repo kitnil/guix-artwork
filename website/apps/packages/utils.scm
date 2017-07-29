@@ -28,6 +28,8 @@
   #:use-module (guix packages)
   #:use-module (guix utils)
   #:use-module (guix build utils)
+  #:use-module (guix build download)
+  #:use-module (guix download)
   #:use-module (srfi srfi-1)
   #:use-module (srfi srfi-26)
   #:use-module (texinfo)
@@ -35,6 +37,7 @@
   #:use-module (ice-9 match)
   #:use-module (ice-9 rdelim)
   #:use-module (ice-9 popen)
+  #:use-module (web uri)
   #:export (package-description-shtml
             package-synopsis-shtml
 
@@ -140,8 +143,6 @@ vocabulary."
   (list))
 
 
-;;; TODO: Stub. Implement.
-;;; https://bitbucket.org/sirgazil/guixsd-website/issues/42/
 (define (package-patches package)
   "Return the list of patches for the given PACKAGE.
 
@@ -151,7 +152,53 @@ vocabulary."
    RETURN (list)
      A list of <link> objects as defined in (apps packages types)
      representing patches."
-  (list))
+  (define patch-url
+    (match-lambda
+      ((? string? patch)
+       (string-append
+        "//git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/patches/"
+        (basename patch)))
+      ((? origin? patch)
+       (uri->string
+        (first (maybe-expand-mirrors (string->uri
+                                      (match (origin-uri patch)
+                                        ((? string? uri) uri)
+                                        ((head . tail) head)))
+                                     %mirrors))))))
+
+  (define patch-name
+    (match-lambda
+      ((? string? patch)
+       (basename patch))
+      ((? origin? patch)
+       (match (origin-uri patch)
+         ((? string? uri) (basename uri))
+         ((head . tail) (basename head))))))
+
+  (define (snippet-link)
+    (let* ((loc  (or (package-field-location package 'source)
+                     (package-location package)))
+           (link (location->ilink loc)))
+      (ilink "snippet" (ilink-url link))))
+
+  (define patches
+    (map (lambda (patch)
+           (ilink `(tt ,(patch-name patch)) (patch-url patch)))
+         (match (package-source package)
+           (#f '())
+           ((? origin? o) (origin-patches o)))))
+
+  (define snippet
+    (match (package-source package)
+      (#f
+       #f)
+      ((? origin? o)
+       (and (origin-snippet o)
+                          (snippet-link)))))
+
+  (if snippet
+      (cons snippet patches)
+      patches))
 
 
 (define (package-url-path package)
