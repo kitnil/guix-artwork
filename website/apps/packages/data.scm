@@ -39,14 +39,18 @@
 
    If GUIX_WEB_SITE_LOCAL=yes, return only 300 packages for
    testing the website."
-  (let ((packages (sort (fold-packages (lambda (package lst)
-					 (cons (or (package-replacement package)
-						   package)
-					       lst))
-				       '())
-			(lambda (p1 p2)
-			  (string<? (package-name p1)
-				    (package-name p2))))))
+  ;; Note: Dismiss packages found in $GUIX_PACKAGE_PATH.
+  (let ((packages
+         (sort (parameterize ((%package-module-path (last-pair
+                                                     (%package-module-path))))
+                 (fold-packages (lambda (package lst)
+                                  (cons (or (package-replacement package)
+                                            package)
+                                        lst))
+                                '()))
+               (lambda (p1 p2)
+                 (string<? (package-name p1)
+                           (package-name p2))))))
     (cond ((null? packages) '())
 	  ((getenv "GUIX_WEB_SITE_LOCAL") (list-head packages 300))
 	  (else packages))))
