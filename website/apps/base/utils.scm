@@ -27,6 +27,7 @@
   #:use-module (apps base types)
   #:use-module (haunt page)
   #:use-module (ice-9 i18n)
+  #:use-module (ice-9 match)
   #:use-module (srfi srfi-1)
   #:export (gnu-url
 	    guix-git-tree-url
@@ -175,7 +176,11 @@
      (let* ((page-number (cons "page-number" 1))
 	    (path (path-join base-path "index.html"))
 	    (items
-	     (cons "items" (first grouped-data)))
+             (match grouped-data
+               (()
+                (cons "items" '()))
+               ((head _ ...)
+                (cons "items" head))))
 	    (new-context
 	     (append context
 		     (list items page-number total-pages))))
