@@ -150,8 +150,8 @@
       "None"
       (separate
        (map (lambda (patch)
-	      (link-subtle #:label (link-name patch)
-			   #:url (link-url patch)))
+	      (link-subtle #:label (ilink-name patch)
+			   #:url (ilink-url patch)))
 	    patches)
        ", ")))
 
