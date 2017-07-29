@@ -4,31 +4,21 @@
            "GNU Guix talk at OpenTechSummit, Berlin, May 14th")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 12 5 2015 7200))
+    (tags unquote (list "Talks"))
+
     (content
-      div
-      (p (a (@ (href "http://elephly.net/"))
-            "Ricardo Wurmus")
-         " will be giving a talk about GNU Guix and GuixSD at the "
-         (a (@ (href "http://opentechsummit.net/"))
-            "OpenTechSummit")
-         " in Berlin, Germany, on May 14th.  The talk will take place at "
-         (a (@ (href "http://opentechsummit.net/Programm.pdf"))
-            "3:15pm in track 2")
-         " and covers topics such as the fundamentals of functional package management, software management features with GNU Guix, and system description in GuixSD."
-         (br))
-      (p "Ricardo has been making major contributions to Guix over the last year and is a long-time free software contributor.  If you are in Berlin area, do not miss the talk!"
-         (br))
-      (h4 "About GNU Guix")
-      (p (a (@ (href "http://www.gnu.org/software/guix"))
-            "GNU Guix")
-         " is a functional package manager for the GNU system.  The Guix System Distribution (GuixSD) is an advanced distribution of the GNU system that relies on GNU Guix."
-         (br))
-      (p "In addition to standard package management features, Guix supports transactional upgrades and roll-backs, unprivileged package management, per-user profiles, and garbage collection.  It also offers a declarative approach to operating system configuration management.  Guix uses low-level mechanisms from the Nix package manager, except that packages are defined as native "
-         (a (@ (href "http://www.gnu.org/software/guile"))
-            "Guile")
-         " modules, using extensions to the "
-         (a (@ (href "http://schemers.org")) "Scheme")
-         " language."
-         (br))
-      (p "At this stage the Guix System Distribution can be used on an i686 or x86_64 machine. It is also possible to use Guix on top of an already installed GNU/Linux system, including on mips64el and armv7."
-         (br)))))
+     (p (a (@ (href "http://elephly.net/"))
+	   "Ricardo Wurmus")
+	" will be giving a talk about GNU Guix and GuixSD at the "
+	(a (@ (href "http://opentechsummit.net/"))
+	   "OpenTechSummit")
+	" in Berlin, Germany, on May 14th.  The talk will take place at "
+	(a (@ (href "http://opentechsummit.net/Programm.pdf"))
+	   "3:15pm in track 2")
+	" and covers topics such as the fundamentals of functional package management, software management features with GNU Guix, and system description in GuixSD.")
+     (p "Ricardo has been making major contributions to Guix over the last year and is a long-time free software contributor.  If you are in Berlin area, do not miss the talk!")
+
+     (p "UPDATE: Here are the "
+	(a (@ (href "https://www.gnu.org/software/guix/guix-opentechsummit-201505014.pdf"))
+	   "slides")
+	" from the talk."))))

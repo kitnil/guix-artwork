@@ -1,0 +1,61 @@
+/* Public domain 2017. All rights waived */
+
+.button-big,
+.button-big:link,
+.button-big:visited {
+    border-color: #F4BB15;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: thin;
+    color: black;
+    display: inline-block;
+    font-size: 0.8em;
+    height: 47px;
+    line-height: 47px;
+    margin: 10px;
+    padding: 0px 30px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.button-big:active,
+.button-big:focus,
+.button-big:hover {
+    border-color: black;
+}
+
+.button-light,
+.button-light:link,
+.button-light:visited {
+    color: white;
+}
+
+.button-light:active,
+.button-light:focus,
+.button-light:hover {
+    border-color: white;
+}
+
+
+.button-little:link,
+.button-little:visited {
+    border-color: #C0C0C0;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: thin;
+    color: #525252;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 5px;
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+.button-little-active:link,
+.button-little-active:visited,
+.button-little:active,
+.button-little:focus,
+.button-little:hover {
+    background-color: #FFCC00;
+    border-color: #D4AA00;
+}

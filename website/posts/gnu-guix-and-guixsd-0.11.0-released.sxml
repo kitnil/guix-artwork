@@ -4,6 +4,7 @@
            "GNU\xa0Guix and GuixSD\xa00.11.0 released")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 3 8 2016 7200))
+    (tags unquote (list "Releases"))
     (content
       div
       (p "It is a pleasure to announce the new beta release of GNU\xa0Guix and GuixSD, version 0.11.0!"

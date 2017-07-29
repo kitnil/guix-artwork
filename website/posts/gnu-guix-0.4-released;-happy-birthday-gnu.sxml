@@ -4,6 +4,7 @@
            "GNU Guix 0.4 released; happy birthday, GNU!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 27 9 2013 7200))
+    (tags unquote (list "Releases"))
     (content
       div
       (p "We are pleased to celebrate "

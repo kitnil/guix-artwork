@@ -1,33 +1,50 @@
 (begin
-  (use-modules (srfi srfi-19))
+  (use-modules (apps base templates components)
+	       (srfi srfi-19))
   `((title .
            "GNU Guix talk in Rennes, France, November 9th")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 11 2015 3600))
+    (tags unquote (list "Functional package management"
+			"Software reproducibility"
+			"Software deployment"
+			"Talks"
+			"Transactional upgrades"))
     (content
-      div
-      (p "Ludovic Courtès will be giving a talk about GNU Guix and GuixSD "
-         (a (@ (href "http://www.agendadulibre.org/events/10182"))
-            "in Rennes, France, on November 9th")
-         ".  The event is organized by the three local free software and hacker organizations:"
-         (br))
-      (p (em " “It used to work perfectly, then I upgraded something, and somehow…” Sounds like a déjà vu?  Sometimes feel like software deployment is unpredictable?  Dissatisfied with Dockerfiles, Vagrantfiles, and co?  Ever wondered if you can trust your compiler or the integrity of those binary packages you have downloaded?")
-         (br))
-      (p (em "This talk introduces GNU Guix, a package manager that implements the functional package management paradigm pioneered by "
-             (a (@ (href "http://nixos.org/nix")) "Nix")
-             " to address these issues.  Guix supports transactional upgrades and rollbacks, as well as support for multiple software profiles.  In this talk, I will introduce functional package management and demonstrate Guix on practical use cases.  I will discuss the implications on (bit-)reproducible packages and environments, and how this can lead to verifiable binaries.  Lastly, we will see how this extends to whole-system deployments with GuixSD, the Guix System Distribution.")
-         (br))
-      (p "Earlier on that day, a similar talk with a focus on security and reproducibility issues will be given at "
-         (a (@ (href "http://www.inria.fr/en/centre/rennes"))
-            "Inria")
-         ", thanks to the support of "
-         (a (@ (href "http://grothoff.org/christian/"))
-            "Christian Grothoff")
-         " and the "
-         (a (@ (href "http://sed.bordeaux.inria.fr/"))
-            "software development department")
-         " in Bordeaux."
-         (br))
+     (p "Ludovic Courtès will be giving a talk about GNU Guix and GuixSD "
+	(a (@ (href "http://www.agendadulibre.org/events/10182"))
+	   "in Rennes, France, on November 9th")
+	".  The event is organized by the three local free software and hacker organizations:")
+     (p (em " “It used to work perfectly, then I upgraded something, and somehow…” Sounds like a déjà vu?  Sometimes feel like software deployment is unpredictable?  Dissatisfied with Dockerfiles, Vagrantfiles, and co?  Ever wondered if you can trust your compiler or the integrity of those binary packages you have downloaded?"))
+     (p (em "This talk introduces GNU Guix, a package manager that implements the functional package management paradigm pioneered by "
+	    (a (@ (href "http://nixos.org/nix")) "Nix")
+	    " to address these issues.  Guix supports transactional upgrades and rollbacks, as well as support for multiple software profiles.  In this talk, I will introduce functional package management and demonstrate Guix on practical use cases.  I will discuss the implications on (bit-)reproducible packages and environments, and how this can lead to verifiable binaries.  Lastly, we will see how this extends to whole-system deployments with GuixSD, the Guix System Distribution."))
+     (p "Earlier on that day, a similar talk with a focus on security and reproducibility issues will be given at "
+	(a (@ (href "http://www.inria.fr/en/centre/rennes")) "Inria")
+	", thanks to the support of "
+	(a (@ (href "http://grothoff.org/christian/"))
+	   "Christian Grothoff")
+	" and the "
+	(a (@ (href "http://sed.bordeaux.inria.fr/"))
+	   "software development department")
+	" in Bordeaux.")
+
+     (p "UPDATE: Here is the video recording and "
+	(a (@ (href "https://www.gnu.org/software/guix/guix-rennes-20151109.pdf"))
+	   "slides")
+	" from the talk.")
+
+     (video
+      (@ (src "https://gnunet.org/sites/default/files/ludo2015guix.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://gnunet.org/sites/default/files/ludo2015guix.webm")
+       (p "(WebM, 73 minutes)")))
+
       (h4 "About GNU Guix")
       (p (a (@ (href "http://www.gnu.org/software/guix"))
             "GNU Guix")

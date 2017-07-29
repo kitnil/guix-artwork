@@ -1,0 +1,31 @@
+#+TITLE: Web site test suite
+
+
+* Introduction
+
+Guile comes with support for [[https://www.gnu.org/software/guile/manual/html_node/SRFI_002d64.html#SRFI_002d64][SRFI-64]], which is a Scheme API for test
+suites. That's what it's used in this directory for testing.
+
+
+* Running the test suite
+
+To run the complete test suite:
+
+#+BEGIN_EXAMPLE
+$ cd path/to/project
+$ export GUILE_LOAD_PATH="$GUILE_LOAD_PATH:$PWD"
+$ guile tests/all.scm
+#+END_EXAMPLE
+
+
+To run the test suite for a particular module:
+
+#+BEGIN_EXAMPLE
+$ cd path/to/project
+$ export GUILE_LOAD_PATH="$GUILE_LOAD_PATH:$PWD"
+$ guile tests/MODULE_NAME.scm
+#+END_EXAMPLE
+
+Note that running tests will generate log files named
+~SUITE_NAME.log~.  These files will be written in the current working
+directory, and give more details about the tests.

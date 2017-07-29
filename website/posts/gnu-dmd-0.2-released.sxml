@@ -3,6 +3,7 @@
   `((title . "GNU dmd 0.2 released")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 8 7 2014 7200))
+    (tags unquote (list "Init system" "System services"))
     (content
       div
       (p (a (@ (href "http://www.gnu.org/software/dmd"))

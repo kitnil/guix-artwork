@@ -1,7 +1,7 @@
 title: Creating bundles with guix pack
 date: 2017-03-20 14:45
 author: Ludovic Courtès
-tags: pack bundles
+tags: Software bundles
 ---
 Guix just got a new command,
 [dubbed `guix pack`](https://lists.gnu.org/archive/html/guix-devel/2017-03/msg00322.html),
@@ -179,7 +179,7 @@ number of reasons:
      that—you may or may not be able to find the corresponding source
      code, and you’d have a hard time fiddling with one of the
      components of the software stack.
-  
+
 We pride ourselves with having a tool set that caters to some of the use
 cases that “app bundles” and “containerization” try to address while
 having none of these drawbacks.  So how do Guix packs fit into that

@@ -1,0 +1,43 @@
+/* Public domain 2017. All rights waived. */
+
+.package-info {
+    font-size: 0.8em;
+    list-style-type: none;
+    margin-top: 10px;
+    padding: 0px;
+}
+
+.package-info li {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.package-name {
+    font-size: 1em;
+    margin-top: 0px;
+}
+
+.package-preview {
+    border-bottom-style: solid;
+    border-color: #CCC;
+    border-width: thin;
+    color: #4D4D4D;
+    padding: 20px 10px;
+}
+
+.package-preview:nth-child(even) {
+    background-color: #F5F5F5;
+}
+
+.package-synopsis {
+    font-size: 1em;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+.red-tag {
+    background-image: url("../img/red-tag.png");
+    display: inline-block;
+    height: 13px;
+    width: 22px;
+}

@@ -4,6 +4,7 @@
            "GNU Guix welcomes three students for GSoC")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 5 2015 7200))
+    (tags unquote (list "GNU/Hurd" "GSoC"))
     (content
       div
       (p "GNU Guix got 3 slots for the Google Summer of Code (GSoC), as part of GNU, which participates as an organization.  So we are pleased to welcome three students this summer:"

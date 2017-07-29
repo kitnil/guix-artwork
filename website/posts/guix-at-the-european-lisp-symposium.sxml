@@ -3,6 +3,10 @@
   `((title . "Guix at the European Lisp Symposium")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 21 5 2013 7200))
+    (tags unquote (list "Papers"
+			"Programming interfaces"
+			"Scheme API"
+			"Talks"))
     (content
       div
       (p "A "

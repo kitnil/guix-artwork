@@ -3,6 +3,7 @@
   `((title . "GNU Guix looks for GSoC students")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 27 2 2014 3600))
+    (tags unquote (list "GSoC"))
     (content
       div
       (p "This year again "

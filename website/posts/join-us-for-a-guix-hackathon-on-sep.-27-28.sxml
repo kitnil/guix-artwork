@@ -4,6 +4,7 @@
            "Join us for a Guix hackathon on Sep. 27-28!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 16 9 2014 7200))
+    (tags unquote (list "Guix Hackathon"))
     (content
       div
       (p "The GNU Guix project is organizing a hackathon on September 27th and 28th, 2014.  The hackathon will take place primarily on-line, on the #guix IRC channel on Freenode.  We have started collecting a "

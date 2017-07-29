@@ -1,0 +1,8 @@
+/* Public domain 2017. All rights waived. */
+
+.chat-widget {
+    border-style: none;
+    height: 600px;
+    margin: 30px auto;
+    width: 100%;
+}

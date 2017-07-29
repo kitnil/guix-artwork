@@ -2,7 +2,7 @@ title: Join GNU Guix for GSoC
 date: 2017-03-09 14:00
 author: Ludovic Courtès
 slug: join-gnu-guix-for-gsoc-2017
-tags: gsoc
+tags: GSoC
 ---
 As in
 [previous](https://www.gnu.org/software/guix/news/gnu-guix-welcomes-four-students-for-gsoc.html)

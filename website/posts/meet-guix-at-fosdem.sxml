@@ -3,6 +3,11 @@
   `((title . "Meet Guix at FOSDEM!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 22 1 2016 3600))
+    (tags unquote (list "FOSDEM"
+			"GNU/Hurd"
+			"High-performance computing"
+			"Software reproducibility"
+			"Talks"))
     (content
       div
       (p "One week to "

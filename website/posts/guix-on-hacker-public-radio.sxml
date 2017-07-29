@@ -1,0 +1,25 @@
+(begin
+  (use-modules (apps base templates components)
+	       (srfi srfi-19))
+  `((title . "GNU Guix on Hacker Public Radio")
+    (author . "sirgazil")
+    (date unquote (make-date 0 0 0 0 1 12 2016 7200))
+    (tags unquote (list "Interviews"))
+    (content
+     (p "An interview with "
+	(a (@ (href "http://dustycloud.org/")) "Chris Webber")
+	" at "
+	(a (@ (href "http://hackerpublicradio.org/eps.php?id=2198"))
+	   "Hacker Public Radio")
+	" (2015-12-01) on \"How awesome is Guix and why will it take over the world\".")
+
+     (audio
+      (@ (src "http://hackerpublicradio.org/eps/hpr2198.ogg")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD AUDIO"
+	 #:url "http://hackerpublicradio.org/eps/hpr2198.ogg")
+       (p "(OGG, 1 hour and 25 minutes)"))))))

@@ -1,7 +1,7 @@
 title: Running system services in containers
 date: 2017-04-14 14:45
 author: Ludovic Courtès
-tags: system services containers shepherd
+tags: System services, Software containers, shepherd
 ---
 
 At FOSDEM, in the awesome

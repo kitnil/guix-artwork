@@ -1,0 +1,36 @@
+/* Public domain 2017. All rights waived */
+
+.breadcrumbs {
+    background-color: white;
+    background-image: url("../img/breadcrumbs-bg.png");
+    color: #E6E6E6;
+    font-size: 0.8em;
+    padding: 0px 15px;
+}
+
+.breadcrumbs span {
+    display: inline-block;
+    font-size: 0.7em;
+    line-height: 2em;
+    padding: 0px 5px;
+}
+
+.crumb:link,
+.crumb:visited {
+    border-style: none;
+    color: #E6E6E6;
+    display: inline-block;
+    line-height: 2em;
+    padding: 0px 5px;
+}
+
+.crumb:active,
+.crumb:focus,
+.crumb:hover {
+    color: #FADE8B;
+}
+
+.crumb-active:link,
+.crumb-active:visited {
+    color: #FADE8B;
+}

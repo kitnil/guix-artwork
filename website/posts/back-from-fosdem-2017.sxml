@@ -1,0 +1,186 @@
+(begin
+  (use-modules (apps base templates components)
+	       (srfi srfi-19))
+  `((title . "Back from FOSDEM 2017")
+    (author . "sirgazil")
+    (date unquote (make-date 0 0 0 0 6 2 2017 7200))
+    (tags unquote (list "Case studies"
+			"FOSDEM"
+			"GNU/Hurd"
+			"High-performance computing"
+			"Software development"
+			"Software packaging"
+			"Software repoducibility"
+			"Systems programming"
+			"Workflow management"
+			"Talks"))
+    (content
+     (p (a (@ (href "https://fosdem.org/2017/"))
+	   "FOSDEM 2017")
+	" concluded.  This time, the GNU Guix community participated with 8 talks.")
+
+     (h3 "An introduction to functional package management with GNU Guix")
+
+     (video
+      (@ (src "https://video.fosdem.org/2017/K.4.601/guixintroduction.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://video.fosdem.org/2017/K.4.601/guixintroduction.vp8.webm")
+       (p "(WebM, 26 minutes)")))
+
+     (ul
+      (li "Speaker: Ricardo Wurmus")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-intro-20170205.pdf"))
+	     "guix-fosdem-intro-20170205.pdf")))
+
+
+
+     (h3 "Composing system services in GuixSD")
+
+     (video
+      (@ (src "https://video.fosdem.org/2017/K.4.601/composingsystemservicesinguixsd.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://video.fosdem.org/2017/K.4.601/composingsystemservicesinguixsd.vp8.webm")
+       (p "(WebM, 43 minutes)")))
+
+     (ul
+      (li "Speaker: Ludovic Courtès")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-composing-services-20170205.pdf"))
+	     "guix-fosdem-composing-services-20170205.pdf")))
+
+
+
+     (h3 "Reproducible packaging and distribution of software with GNU Guix")
+
+     (video
+      (@ (src "https://video.fosdem.org/2017/K.4.601/guixpackages.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://video.fosdem.org/2017/K.4.601/guixpackages.vp8.webm")
+       (p "(WebM, 29 minutes)")))
+
+     (ul
+      (li "Speaker: Pjotr Prins")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-packaging-20170205.pdf"))
+	     "guix-fosdem-packaging-20170205.pdf")))
+
+
+
+     (h3 "Mes—Maxwell's Equations of Software")
+
+     (video
+      (@ (src "https://mirrors.dotsrc.org/fosdem/2017/K.4.601/guixsdbootstrap.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://mirrors.dotsrc.org/fosdem/2017/K.4.601/guixsdbootstrap.vp8.webm")
+       (p "(WebM, 28 minutes)")))
+
+     (ul
+      (li "Speaker: Jan Nieuwenhuizen")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-mes-20170205.pdf"))
+	     "guix-fosdem-mes-20170205.pdf")))
+
+
+
+     (h3 "Adding GNU/Hurd support to GNU Guix and GuixSD")
+
+     (video
+      (@ (src "http://mirror.onet.pl/pub/mirrors/video.fosdem.org/2017/K.4.601/guixhurd.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "http://mirror.onet.pl/pub/mirrors/video.fosdem.org/2017/K.4.601/guixhurd.vp8.webm")
+       (p "(WebM, 30 minutes)")))
+
+     (ul
+      (li "Speaker: Manolis Ragkousis")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-hurd-20170205.pdf"))
+	     "guix-fosdem-hurd-20170205.pdf")))
+
+
+
+     (h3 "Workflow management with GNU Guix")
+
+     (video
+      (@ (src "https://mirrors.dotsrc.org/fosdem/2017/K.4.601/guixworkflowmanagement.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://mirrors.dotsrc.org/fosdem/2017/K.4.601/guixworkflowmanagement.vp8.webm")
+       (p "(WebM, 20 minutes)")))
+
+     (ul
+      (li "Speaker: Roel Janssen")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-workflow-management-20170205.pdf"))
+	     "guix-fosdem-workflow-management-20170205.pdf")))
+
+
+
+     (h3 "Optimized and reproducible HPC Software deployment")
+
+     (video
+      (@ (src "https://video.fosdem.org/2017/H.2213/hpc_deployment_guix.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://video.fosdem.org/2017/H.2213/hpc_deployment_guix.vp8.webm")
+       (p "(WebM, 26 minutes)")))
+
+     (ul
+      (li "Speakers: Pjotr Prins and Ludovic Courtès")
+      (li "Slides: "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-hpc-part1-20170204.pdf"))
+	     "guix-fosdem-hpc-part1-20170204.pdf")
+	  ", "
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-fosdem-hpc-part2-20170204.pdf"))
+	     "guix-fosdem-hpc-part2-20170204.pdf")))
+
+
+
+     (h3 "The future of Guix")
+
+     (video
+      (@ (src "http://bofh.nikhef.nl/events/FOSDEM/2017/K.4.601/futureofguix.vp8.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "http://bofh.nikhef.nl/events/FOSDEM/2017/K.4.601/futureofguix.vp8.webm")
+       (p "(WebM, 48 minutes)")))
+
+     (ul
+      (li "Speakers: Christopher Webber, Ludovic Courtès, Pjotr Prins, Ricardo Wurmus")))))

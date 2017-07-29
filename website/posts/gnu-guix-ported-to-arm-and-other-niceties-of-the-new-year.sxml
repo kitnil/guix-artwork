@@ -4,6 +4,7 @@
            "GNU Guix ported to ARM and other niceties of the new year")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 9 1 2015 3600))
+    (tags unquote (list "ARM"))
     (content
       div
       (p "A new port of GNU Guix to ARM using the \"hard float\" ABI "

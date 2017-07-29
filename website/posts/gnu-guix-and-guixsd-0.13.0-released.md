@@ -2,7 +2,7 @@ title: GNU Guix and GuixSD 0.13.0 released
 date: 2017-05-22 15:30
 author: Ludovic Courtès
 slug: gnu-guix-and-guixsd-0.13.0-released
-tags: release
+tags: Releases
 ---
 We are pleased to announce the new release of GNU Guix and GuixSD,
 version 0.13.0!
@@ -92,4 +92,3 @@ management, and is highly customizable and hackable.
 GuixSD can be used on an i686 or x86_64 machine.  It is also possible to
 use Guix on top of an already installed GNU/Linux system, including on
 mips64el, armv7, and aarch64.
-

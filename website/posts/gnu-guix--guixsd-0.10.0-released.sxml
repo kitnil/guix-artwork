@@ -3,6 +3,7 @@
   `((title . "GNU Guix & GuixSD 0.10.0 released")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 29 3 2016 7200))
+    (tags unquote (list "Releases"))
     (content
       div
       (p "We are pleased to announce the new beta release of GNU\xa0Guix and GuixSD, version 0.10.0!"

@@ -1,0 +1,37 @@
+(begin
+  (use-modules (apps base templates components)
+	       (apps base utils)
+	       (srfi srfi-19))
+  `((title . "Functional Package Management for the People")
+    (author . "sirgazil")
+    (date unquote
+          (make-date 0 0 0 0 20 07 2012 3600))
+    (tags unquote (list "Functional package management"
+			"Software packaging"
+			"Talks"
+			"Transactional upgrades"))
+    (content
+     (p
+      (a (@ (href "https://www.gnu.org/ghm/2012/ddorf"))
+	 "GNU Hackers Meeting in Düsseldorf")
+      ", 2012. The following is the video of the presentation \"Guix, functional package management for the people, and for GNU?\", by Ludovic Courtès (get the "
+      (a (@ (href "https://www.gnu.org/software/guix/guix-ghm-20120721.pdf"))
+	 "slides")
+      ").")
+
+     (video
+      (@ (src "https://audio-video.gnu.org/video/ghm2012/guix.ogv")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "https://audio-video.gnu.org/video/ghm2012/guix.ogv")
+       (p "(Ogg/Theora, 84 minutes, 88.1 MiB)")))
+
+     (p "Guix is a purely functional package manager written in Guile Scheme, and building on the Nix package manager. It implements purely functional package build and composition: a build process is a Scheme function that returns the path of its result in the \"store\"-the /nix/store directory. The store acts as a build cache, subject to garbage collection. Changing a bit in the build process's inputs (dependencies, environment variables, etc.) changes the result. ")
+
+     (p " This approach provides users with features such as transactional upgrades and rollback, unprivileged package installation, coexistence of variants or versions of packages, etc. By construction, it allows users to track down all the packages involved in a build, down to the initial bootstrapping binaries. ")
+
+     (p " This talk will present Guix, detail this incredible feature set, and show what it's like to package software with it. We will discuss whether and how it could fit in the Grand Plan of making a \"GNU Distro\""))))

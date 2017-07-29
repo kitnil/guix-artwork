@@ -1,0 +1,16 @@
+;;; Packages required to develop the website.
+;;; (See guix package --manifest option for more details on this file).
+
+(use-modules (guix profiles)
+	     (gnu packages))
+
+
+(define dev-packages
+  (list "glibc-locales"
+	"guile@2.2"
+	"guile-syntax-highlight"
+	"guix"
+	"haunt"))
+
+
+(map specification->package dev-packages)

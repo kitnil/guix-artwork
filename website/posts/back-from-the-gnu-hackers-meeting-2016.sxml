@@ -1,0 +1,39 @@
+(begin
+  (use-modules (apps base templates components)
+	       (srfi srfi-19))
+  `((title . "Back from the GNU Hackers Meeting 2016")
+    (author . "sirgazil")
+    (date unquote (make-date 0 0 0 0 22 8 2016 7200))
+    (tags unquote (list "Software packaging"
+			"Talks"))
+    (content
+     (p "The "
+	(a (@ (href "http://www.gnu.org/ghm/2016/"))
+	   "GNU Hackers Meeting 2016")
+	" took place in "
+	(a (@ (href "https://en.wikipedia.org/wiki/Rennes")) "Rennes")
+	" (Brittany, France) from August 18-20 hosted by "
+	(a (@ (href "https://www.inria.fr/en/")) "Inria")
+	". GNU Guix maintainer, Ludovic Courtès, participated with three presentations:")
+
+     (ul
+      (li "GNU Guix is 4 years old! ("
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-ghm-20160818.pdf")) "slides")
+	  ").")
+      (li "Using Guix and Emacs in perfect harmony (demo)")
+      (li "Navigating the Guix subsystems ("
+	  (a (@ (href "https://www.gnu.org/software/guix/guix-ghm-20160819.pdf")) "slides")
+	  ")."))
+
+     (p "Here is the video recording of the first talk:")
+
+     (video
+      (@ (src "http://videos.rennes.inria.fr/Workshop-GNUHackersMeetings2016/expose-GNULudovicCourtes18aout2016.mp4")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "http://videos.rennes.inria.fr/Workshop-GNUHackersMeetings2016/expose-GNULudovicCourtes18aout2016.mp4")
+       (p "(MP4, 50 minutes)"))))))

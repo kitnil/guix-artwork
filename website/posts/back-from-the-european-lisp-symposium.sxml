@@ -1,20 +1,36 @@
 (begin
-  (use-modules (srfi srfi-19))
+  (use-modules (apps base templates components)
+	       (apps base utils)
+	       (srfi srfi-19))
   `((title . "Back from the European Lisp Symposium")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 5 6 2013 7200))
+    (tags unquote (list "Functional package management"
+			"Software packaging"
+			"Talks"
+			"Transactional upgrades"))
+
     (content
-      div
-      (p "The "
-         (a (@ (href "http://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
-            "European Lisp Symposium")
-         " (ELS) is over now, and it’s been pleasant experience: thoughtful discussions, beautiful city, and parentheses all around.  Thanks to all the Lispers and Schemers who made it to ELS for the friendly atmosphere!"
-         (br))
-      (p "The slides of the talk I gave on the design and implementation of Guix are "
-         (a (@ (href "http://www.gnu.org/software/guix/guix-els-20130603.pdf"))
-            "available on-line")
-         ".  Nick Levine also published "
-         (a (@ (href "http://www.nicklevine.org/els2013/"))
-            "audio recordings")
-         " of most of the talks (thanks!)."
-         (br)))))
+     (p "The "
+	(a (@ (href "http://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
+	   "European Lisp Symposium")
+	" (ELS) is over now, and it’s been pleasant experience: thoughtful discussions, beautiful city, and parentheses all around.  Thanks to all the Lispers and Schemers who made it to ELS for the friendly atmosphere!")
+
+     (p "The slides of the talk I gave on the design and implementation of Guix are "
+	(a (@ (href "http://www.gnu.org/software/guix/guix-els-20130603.pdf"))
+	   "available on-line")
+	".  Nick Levine also published "
+	(a (@ (href "http://www.nicklevine.org/els2013/"))
+	   "audio recordings")
+	" of most of the talks (thanks!).")
+
+     (audio
+      (@ (src "http://www.nicklevine.org/els2013/ludovic-courtes.mp3")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD AUDIO"
+	 #:url "http://www.nicklevine.org/els2013/ludovic-courtes.mp3")
+       (p "(MP3, 40 minutes, 38 MiB)"))))))

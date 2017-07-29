@@ -4,6 +4,7 @@
            "GNU\xa0Guix welcomes four students for GSoC")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 24 4 2016 7200))
+    (tags unquote (list "GSoC"))
     (content
       div
       (p "We are glad to announce that four students will join GNU\xa0Guix for the 2016 Google Summer of Code (GSoC):"

@@ -1,0 +1,162 @@
+/* Public domain 2017. All rights waived */
+
+
+/* Offset element (A11Y)
+
+   - Hide the element in graphic Web browsers.
+   - But display it in text-based browsers.
+*/
+.a11y-offset {
+    position: absolute;
+    left: -50000px;
+}
+/* END Offset element */
+
+.bold {
+    font-weight: bold;
+}
+
+.centered-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.fineprint {
+    font-size: small;
+}
+
+.float-cleaner {
+    clear: both;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.justify-left {
+    text-align: left;
+}
+
+.justify-right {
+    text-align: right;
+}
+
+.light-text {
+    color: #E6E6E6;
+}
+
+.limit-width {
+    max-width: 960px;
+}
+
+.link-more:link,
+.link-more:visited {
+    background-image: url("../img/more-info-bg.png");
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    border-style: none;
+    color: #333;
+    display: inline-block;
+    font-size: 1.2em;
+    line-height: 20px;
+    margin: 20px 0px;
+    padding-right: 30px;
+}
+
+.link-more:active,
+.link-more:focus,
+.link-more:hover {
+    color: black;
+}
+
+.link-more-light:link,
+.link-more-light:visited {
+    color: #E6E6E6;
+}
+
+.link-subtle:link,
+.link-subtle:visited {
+    border-color: transparent;
+    color: #4D4D4D;
+}
+
+.link-subtle:active,
+.link-subtle:focus,
+.link-subtle:hover {
+    border-color: #4D4D4D;
+    color: black;
+}
+
+.link-yellow:link,
+.link-yellow:visited {
+    border-style: none;
+    color: #F4BB15;
+}
+
+.link-yellow:active,
+.link-yellow:focus,
+.link-yellow:hover {
+    color: #F49B15;
+}
+
+.noise-bg {
+    background-color: #333;
+    background-image: url("../img/noise-bg.png");
+}
+
+.page-number-indicator {
+    display: block;
+    font-size: 0.4em;
+    font-weight: normal;
+    padding: 10px 5px;
+}
+
+.page-selector {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.unpadded {
+    padding: 0px;
+}
+
+.responsive-image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+.sheet {
+    box-sizing: border-box;
+}
+
+.table-box {
+    overflow-x: auto;
+}
+
+.top-shadow-bg {
+    background-image: url("../img/top-shadow-bg.png");
+    background-repeat: repeat-x;
+}
+
+
+
+@media screen and (min-width: 1280px) {
+    .sheet {
+	display: inline-block;
+	vertical-align: top;
+        width: 75%;
+    }
+
+    .sheet-padded {
+	padding-right: 20px;
+    }
+}

@@ -3,6 +3,7 @@
   `((title . "GNOME in GuixSD")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 23 3 2016 3600))
+    (tags unquote (list "Desktop environments"))
     (content
       div
       (p "It’s a feature that many users were waiting for: proper "

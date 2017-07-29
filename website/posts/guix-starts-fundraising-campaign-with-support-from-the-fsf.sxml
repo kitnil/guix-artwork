@@ -5,6 +5,7 @@
     (author . "Ludovic Courtès")
     (date unquote
           (make-date 0 0 0 0 16 12 2015 3600))
+    (tags unquote (list "Fundraising"))
     (content
       div
       (p "The GNU\xa0Guix project is glad to announce its first fundraising campaign, supported by the Free Software Foundation (FSF).  As the FSF "

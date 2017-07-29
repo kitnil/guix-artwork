@@ -1,10 +1,4 @@
-/*
-    Public domain 2015 Luis Felipe López Acevedo. All rights waived.
-    <felipe.lopez@openmailbox.org>
-
-    NOTE  The default style is targeted at screens with a width less than
-          1024 pixels.
-*/
+/* Public domain 2017. All rights waived */
 
 h2 {
     color: #4D4D4D;
@@ -15,85 +9,49 @@ h2 {
 h3 {
     color: #4D4D4D;
     font-size: 2.0em;
+    font-weight: normal;
+    margin: 50px 0px;
 }
 
-.info-box {
-    display: inline-block;
-    margin: 0px 20px 20px 20px;
+.action-box {
+    padding: 40px 0px;
 }
 
-
-/* FEATURED BOX */
-#featured-box {
+.featured-content {
     background-color: #3D3D3D;
     background-image: url("../img/checkerboard-bg.png"),
                       url("../img/featured-box-bg.png");
     background-position: top, bottom;
     background-repeat: repeat, repeat-x;
-}
-
-.featured-content {
     color: white;
     font-size: 17px;
     padding: 40px 20px;
-}
-
-.featured-heading {
-    color: white;
-    font-size: 24px;
-    margin: 0px;
+    position: relative;
 }
 
 .featured-content > ul {
     list-style-image: url("../img/white-star.png");
-    padding-left: 20px;
+    margin: auto;
+    max-width: 960px;
 }
 
 .featured-content li {
     padding: 10px 0px;
 }
 
-.featured-actions {
-    text-align: center;
-}
-
-.action, .action:link, .action:visited {
-    border-color: black;
-    border-radius: 6px;
-    border-style: solid;
-    border-width: thin;
-    color: white;
+.h-separator {
     display: block;
-    font-size: 14px;
-    height: 47px;
-    line-height: 47px;
-    margin: 10px;
-    text-align: center;
-    vertical-align: middle;
+    margin: auto;
+    padding: 60px 0px 30px 0px;
+    width: 100%;
 }
 
-.action:active, .action:focus, .action:hover {
-    box-shadow: 0 0 4px gray;
+.button-big:link,
+.button-big:visited {
+    display: block;
 }
 
-.download {
-    background-color: #60B0DB;
-    background-image: url("../img/download-btn-bg.png");
-    background-position: bottom;
-    background-repeat: repeat-x;
-}
-
-.contribute {
-    background-color: #B060DB;
-    background-image: url("../img/contribute-btn-bg.png");
-    background-position: bottom;
-    background-repeat: repeat-x;
-}
-/* END FEATURED BOX */
-
-
-/* DISCOVERY BOX */
-#discovery-box {
+.discovery-box {
     background-color: #333;
     background-image: url("../img/discovery-box-shadow-bg.png"),
                       url("../img/discovery-box-bg.png");
@@ -103,8 +61,53 @@ h3 {
     text-align: center;
 }
 
-#discovery-box h2 {
+.discovery-box h2,
+.discovery-box h3 {
     color: #E6E6E6;
+}
+
+.screenshots-box {
+    padding: 40px 0px 0px 0px;
+}
+
+.screenshot-preview {
+    font-size: 0.7em;
+    margin: 40px auto;
+    max-width: 250px;
+    text-align: center;
+}
+
+.screenshot-preview a,
+.screenshot-preview img {
+    border-radius: 5px;
+    display: block;
+}
+
+.screenshot-preview a:link,
+.screenshot-preview a:visited {
+    border-color: transparent;
+    border-style: solid;
+    border-width: thin;
+    box-shadow: 0 0 4px gray;
+    color: white;
+    position: relative;
+}
+
+.screenshot-preview a:active,
+.screenshot-preview a:focus,
+.screenshot-preview a:hover {
+    border-color: black;
+    box-shadow: 0 0 4px black;
+}
+
+.fields-box {
+    padding: 40px 0px 0px 0px;
+}
+
+.info-box {
+    display: inline-block;
+    margin: 0px 20px 20px 20px;
+    vertical-align: top;
 }
 
 .video-preview {
@@ -115,134 +118,60 @@ h3 {
     width: 100%;
 }
 
-#screens-box {
-    padding: 30px 0px;
-}
-
-#screens-box a {
-    border-style: none;
-    color: white;
-    display: block;
-    margin: 10px;
-}
-
-.screenshot-thumb {
-    border-color: black;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: thin;
-    box-shadow: 0 0 4px gray;
-    margin: auto;
-}
-
-.screenshot-thumb:hover {
-    box-shadow: 0 0 4px black;
-}
-/* END DISCOVERY BOX */
-
-
-/* NEWS BOX */
-#news-box {
-    padding: 0px 10px;
-    text-align: center;
-}
-
-.news-entry:link, .news-entry:visited {
-    color: inherit;
-    display: block;
-    padding: 10px 15px;
-    text-align: left;
-}
-
-.news-entry:active, .news-entry:focus, .news-entry:hover {
-    background-color: #F4BB15;
-}
-
-.news-date {
-    color: #4D4D4D;
-    font-size: 0.9em;
-}
-
-.news-summary {
-    color: #4D4D4D;
-}
-/* END NEWS BOX */
-
-
-/* CONTACT BOX */
-#contact-box {
+.contact-box {
     background-color: #F5F5F5;
-    background-image: url("../img/h-separator.png"),
-                      url("../img/h-separator.png");
+    background-image: url("../img/h-separator-dark.png"),
+                      url("../img/h-separator-dark.png");
     background-position: top center, bottom center;
     background-repeat: no-repeat;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     color: #4D4D4D;
     padding: 10px;
-    text-align: center;
 }
-/* CONTACT BOX */
+
+
+
+@media screen and (min-width: 300px) {
+    .screenshot-inset-shadow {
+	border-radius: 5px;
+	box-shadow: inset 0 0 4px black;
+	display: block;
+	height: 156px;
+	position: absolute;
+	top: 0px;
+	width: 250px;
+    }
+
+    .screenshot-preview a:active .screenshot-inset-shadow,
+    .screenshot-preview a:focus .screenshot-inset-shadow,
+    .screenshot-preview a:hover .screenshot-inset-shadow {
+	box-shadow: none;
+    }
+}
+
 
 
 @media screen and (min-width: 480px) {
-    .action, .action:link, .action:visited {
+    .button-big:link,
+    .button-big:visited {
 	display: inline-block;
-	width: 196px;
     }
 
-    #screens-box a {
+    .screenshot-preview {
 	display: inline-block;
+	margin: 15px;
+	vertical-align: top;
     }
 }
+
 
 
 @media screen and (min-width: 1024px) {
     .info-box {
-        vertical-align: top;
         width: 420px;
     }
 
-
-    /* FEATURED BOX */
-    #featured-box {
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-        height: 445px;
-        padding-top: 40px;
+    .h-separator {
+	width: auto;
     }
-
-    .featured-content {
-        margin: auto;
-        width: 960px;
-    }
-
-    .featured-actions {
-        text-align: right;
-    }
-    /* END FEATURED BOX */
-
-
-    /* NEWS BOX */
-    #news-box {
-        text-align: center;
-        padding: 0px 10px;
-    }
-
-    .news-entry:link, .news-entry:visited {
-        background-color: transparent;
-        border-color: white;
-        border-style: solid;
-        display: inline-block;
-        margin: 10px 0px 15px 0px;
-        vertical-align: top;
-        width: 270px;
-    }
-
-    .news-entry:active, .news-entry:focus, .news-entry:hover {
-        border-color: #F4BB15;
-    }
-    /* END NEWS BOX */
 }

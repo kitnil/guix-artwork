@@ -4,6 +4,10 @@
            "Reproducible and User-Controlled Software Environments in HPC with Guix")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 1 7 2015 7200))
+    (tags unquote (list "Case studies"
+			"High-performance computing"
+			"Papers"
+			"Software reproducibility"))
     (content
       div
       (p "Our paper entitled "

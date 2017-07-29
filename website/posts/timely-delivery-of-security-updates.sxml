@@ -3,6 +3,7 @@
   `((title . "Timely delivery of security updates")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 3 2016 3600))
+    (tags unquote (list "Security updates"))
     (content
       div
       (p "Yesterday, a "

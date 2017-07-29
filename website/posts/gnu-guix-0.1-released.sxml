@@ -3,6 +3,7 @@
   `((title . "GNU Guix 0.1 released!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 18 1 2013 3600))
+    (tags unquote (list "Releases"))
     (content
       div
       (p "Version 0.1 of the GNU Guix functional package manager and its baby distribution of user-land software has been released.  See "

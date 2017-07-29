@@ -1,0 +1,122 @@
+/* Public domain 2017. All rights waived */
+
+.navbar {
+    background-color: #333;
+    border-color: #1A1A1A;
+    border-style: none none solid none;
+    border-width: thin;
+    color: white;
+    height: auto;
+}
+
+.navbar > h1 {
+    display: inline-block;
+    margin: 0px;
+}
+
+.branding {
+    position: relative;
+    overflow: hidden;
+}
+
+.branding:link,
+.branding:visited {
+    background-image: url("../img/back-btn-bg.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+}
+
+.branding:active,
+.branding:focus,
+.branding:hover {
+    background-image: url("../img/back-btn-bg.png");
+    background-position: top;
+}
+
+.menu {
+    display: block;
+    padding: 0px;
+    position: relative;
+}
+
+.menu ul {
+    background-color: transparent;
+    border-style: none;
+    box-shadow: none;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.menu > ul > li,
+.submenu > ul > li {
+    display: block;
+    padding: 0px;
+    position: relative;
+}
+
+.menu-item:link,
+.menu-item:visited {
+    background-color: transparent;
+    background-image: url("../img/link-arrow.png");
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+    border-color: #1A1A1A;
+    border-style: solid none none none;
+    border-width: thin;
+    color: white;
+    display: block;
+    line-height: 55px;
+    margin: 0px;
+    padding: 0px 0px 0px 10px;
+    text-align: left;
+}
+
+.menu-item:active,
+.menu-item:focus,
+.menu-item:hover,
+.menu-item-active:link,
+.menu-item-active:visited {
+    color: #F4BB15;
+}
+
+.submenu {
+    background-color: #434343;
+    display: block;
+    padding: 0px;
+    position: relative;
+}
+
+.submenu .menu-item:link,
+.submenu .menu-item:visited {
+    background-color: transparent;
+    display: block;
+    font-size: inherit;
+    line-height: 55px;
+    padding: 0px 25px;
+}
+
+.submenu .menu-item:active,
+.submenu .menu-item:focus,
+.submenu .menu-item:hover {
+    background-color: transparent;
+    background-image: url("../img/link-arrow.png");
+    background-position: 97% 50%;
+    background-repeat: no-repeat;
+    display: block;
+    font-size: inherit;
+    line-height: 55px;
+    padding: 0px 25px;
+}
+
+.submenu-triangle {
+    display: none;
+}
+
+.menu-btn:link {
+    display: none;
+}

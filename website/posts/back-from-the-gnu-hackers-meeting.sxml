@@ -1,21 +1,33 @@
 (begin
-  (use-modules (srfi srfi-19))
+  (use-modules (apps base templates components)
+	       (srfi srfi-19))
   `((title . "Back from the GNU Hackers Meeting")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 9 2013 7200))
+    (tags unquote (list "Software packaging"
+			"Talks"))
     (content
-      div
-      (p "The "
-         (a (@ (href "http://www.gnu.org/ghm/2013/paris"))
-            "GNU Hackers Meeting")
-         " took place last week in Paris.  As usual, it was a nice place to meet fellow hackers, grow new ideas, and to learn about what other projects are up to.  Thanks to "
-         (a (@ (href "http://www.irill.org")) "IRILL")
-         " for hosting the event, and a big thanks to "
-         (a (@ (href "http://ageinghacker.net/")) "Luca")
-         " for the very professional organization!"
-         (br))
-      (p "Several Guix hackers were present, with no less than "
-         (a (@ (href "http://www.gnu.org/software/guix/#talks"))
-            "two talks advertising Guix")
-         ".  The first talk demoed the package manager, both from a user's and from a hacker's perspective, and with a look forward.  The second talk delivered a \"packaging how-to\" that should be helpful to anyone willing to contribute to the GNU system distribution."
-         (br)))))
+     (p "The "
+	(a (@ (href "http://www.gnu.org/ghm/2013/paris"))
+	   "GNU Hackers Meeting")
+	" took place last week in Paris.  As usual, it was a nice place to meet fellow hackers, grow new ideas, and to learn about what other projects are up to.  Thanks to "
+	(a (@ (href "http://www.irill.org")) "IRILL")
+	" for hosting the event, and a big thanks to "
+	(a (@ (href "http://ageinghacker.net/")) "Luca")
+	" for the very professional organization!")
+     (p "Several Guix hackers were present, with no less than two talks advertising Guix.  The first talk, \"Guix, the Computing Freedom Deployment Tool\", demoed the package manager, both from a user's and from a hacker's perspective, and with a look forward (see the video recording below).")
+
+     (video
+      (@ (src "http://audio-video.gnu.org/video/ghm2013/Ludovic_Courtes-GNU_Guix_the_computing_freedom_deployment_tool_.webm")
+	 (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	 #:label "DOWNLOAD VIDEO"
+	 #:url "http://audio-video.gnu.org/video/ghm2013/Ludovic_Courtes-GNU_Guix_the_computing_freedom_deployment_tool_.webm")
+       (p "(WebM, 60 minutes, 127 MiB)")))
+
+     (p "The second talk, \"GNU Guix: Package without a scheme!\", delivered a \"packaging how-to\" that should be helpful to anyone willing to contribute to the GNU system distribution. There is no recording for this talk, but the "
+	(a (@ (href "https://www.gnu.org/software/guix/guix-ghm-andreas-20130823.pdf")) "slides")
+	" are available."))))

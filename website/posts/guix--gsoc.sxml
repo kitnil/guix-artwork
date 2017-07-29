@@ -3,6 +3,7 @@
   `((title . "Guix & GSoC")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 12 4 2013 7200))
+    (tags unquote (list "GSoC"))
     (content
       div
       (p (a (@ (href "http://www.gnu.org/software/guix"))

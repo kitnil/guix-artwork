@@ -5,6 +5,9 @@
     (author . "Ludovic Courtès")
     (date unquote
           (make-date 0 0 0 0 22 11 2012 3600))
+    (tags unquote (list "Functional package management"
+			"Transactional upgrades"
+			"Unprivileged package management"))
     (content
       div
       (p (a (@ (href "http://www.gnu.org/software/guix/"))

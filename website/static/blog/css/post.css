@@ -1,0 +1,31 @@
+/* Public domain 2017. All rights waived. */
+
+h4 {
+    font-size: 2em;
+}
+
+h5 {
+    font-size: 1.5em;
+}
+
+audio,
+img,
+video {
+    display: block;
+    margin: 50px auto;
+    max-width: 100%;
+}
+
+.post-metadata {
+    color: #4D4D4D;
+    margin-bottom: 50px;
+}
+
+.tag-list {
+    margin: 50px 0px;
+}
+
+.tag-list p {
+    font-weight: bold;
+    margin-bottom: 30px;
+}

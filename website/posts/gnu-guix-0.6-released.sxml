@@ -3,6 +3,7 @@
   `((title . "GNU Guix 0.6 released")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 9 4 2014 7200))
+    (tags unquote (list "Releases"))
     (content
       div
       (p "We are pleased to announce the sixth alpha release of "

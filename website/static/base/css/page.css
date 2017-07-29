@@ -1,0 +1,23 @@
+/* Public domain 2017. All rights waived */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #4D4D4D;
+}
+
+h2 {
+    font-size: 2.5em;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+.page {
+    background-color: white;
+    padding: 50px 20px;
+}

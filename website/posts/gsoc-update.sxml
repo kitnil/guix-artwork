@@ -3,6 +3,7 @@
   `((title . "GSoC update")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 19 7 2015 7200))
+    (tags unquote (list "GNU/Hurd" "GSoC"))
     (content
       div
       (p "This year Guix was lucky to have "

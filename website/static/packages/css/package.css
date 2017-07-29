@@ -1,0 +1,46 @@
+/* Public domain 2017. All rights waived. */
+
+h3 {
+    font-size: 2em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h3,
+h4 {
+    margin-top: 50px;
+}
+
+.lint-issue {
+    position: relative;
+}
+
+.lint-issue-type {
+    background-color: #D4CBB6;
+    border-radius: 2px;
+    padding: 2px 4px;
+    font-size: 90%;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.package-info {
+    font-size: 0.9em;
+    list-style-type: none;
+    padding: 0px;
+}
+
+.package-info li {
+    padding: 5px 0px;
+}
+
+.synopsis {
+    display: block;
+    font-size: 0.4em;
+    font-weight: normal;
+    padding: 10px 5px;
+}

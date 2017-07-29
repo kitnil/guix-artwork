@@ -1,0 +1,16 @@
+(begin
+  (use-modules (srfi srfi-19))
+  `((title . "Back from BOB Konferenz 2017")
+    (author . "sirgazil")
+    (date unquote (make-date 0 0 0 0 25 2 2017 7200))
+    (tags unquote (list "Software development"
+			"Software packaging"
+			"Software repoducibility"
+			"Talks"))
+    (content
+     (p "The "
+	(a (@ (href "http://bobkonf.de/2017/en/"))
+	   "BOB Konferenz 2017")
+	" concluded.  There is no video recording this time, but you can download the "
+	(a (@ (href "https://www.gnu.org/software/guix/guix-bobkonf-20170224.pdf")) "slides")
+	" from Ricardo Wurmus' talk, \"Functional package management with GNU Guix for developers and power users\"."))))

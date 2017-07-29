@@ -4,6 +4,7 @@
            "Join Guix for an on-line hackathon on Sep. 28-29!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 18 9 2013 7200))
+    (tags unquote (list "Guix Hackathon"))
     (content
       div
       (p "GNU Guix "

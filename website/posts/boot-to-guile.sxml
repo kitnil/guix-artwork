@@ -3,6 +3,7 @@
   `((title . "Boot-to-Guile!")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 16 2 2013 3600))
+    (tags unquote (list "Virtual machine images"))
     (content
       div
       (p "As a contribution to "
