@@ -9,6 +9,7 @@
   #:use-module (apps packages types)
   #:use-module (guix packages)
   #:use-module (guix utils)
+  #:use-module (ice-9 match)
   #:export (location->ilink
 	    package-build-issues
 	    package-issues?
@@ -100,8 +101,6 @@
 				(package-version package))))
 
 
-;;; TODO: Dummy. Implement it.
-;;; (https://bitbucket.org/sirgazil/guixsd-website/issues/38/)
 (define (packages/group-by-letter packages)
   "Return a list of alphabetically grouped packages.
 
@@ -111,6 +110,20 @@
   RETURN (list)
     A list of lists of packages where each list corresponds to the
     packages whose name starts with a specific letter."
-  (cond ((null? packages) '())
-	(else
-	 (map (lambda (letter) (cons letter packages)) alphabet))))
+  (define (starts-with-digit? package)
+    (char-set-contains? char-set:digit
+                        (string-ref (package-name package) 0)))
+
+  (define (starts-with-letter? letter)
+    (let ((letter (string-downcase letter)))
+      (lambda (package)
+        (string-prefix? letter (package-name package)))))
+
+  (map (lambda (letter)
+         (match letter
+           ("0-9"
+            (cons letter (filter starts-with-digit? packages)))
+           (_
+            (cons letter
+                  (filter (starts-with-letter? letter) packages)))))
+       alphabet))
