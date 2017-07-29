@@ -5,7 +5,7 @@
     (author . "Ludovic Courtès")
     (date unquote
           (make-date 0 0 0 0 11 11 2015 3600))
-    (tags unquote (list "Software reproducibility"))
+    (tags unquote (list "Reproducible builds"))
     (content
       div
       (h4 "What we stand for")

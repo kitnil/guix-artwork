@@ -6,7 +6,7 @@
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 11 2015 3600))
     (tags unquote (list "Functional package management"
-			"Software reproducibility"
+			"Reproducible builds"
 			"Software deployment"
 			"Talks"
 			"Transactional upgrades"))

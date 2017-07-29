@@ -6,7 +6,7 @@
     (tags unquote (list "FOSDEM"
 			"GNU/Hurd"
 			"High-performance computing"
-			"Software reproducibility"
+			"Reproducible builds"
 			"Talks"))
     (content
       div
