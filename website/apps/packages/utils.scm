@@ -1,6 +1,23 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Initially written by sirgazil who waves all
-;;; copyright interest on this file.
+;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
+;;;
+;;; Initially written by sirgazil
+;;; who waives all copyright interest on this file.
+;;;
+;;; This file is part of GuixSD website.
+;;;
+;;; GuixSD website is free software; you can redistribute it and/or modify it
+;;; under the terms of the GNU Affero General Public License as published by
+;;; the Free Software Foundation; either version 3 of the License, or (at
+;;; your option) any later version.
+;;;
+;;; GuixSD website is distributed in the hope that it will be useful, but
+;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;;; GNU Affero General Public License for more details.
+;;;
+;;; You should have received a copy of the GNU Affero General Public License
+;;; along with GuixSD website.  If not, see <http://www.gnu.org/licenses/>.
 
 (define-module (apps packages utils)
   #:use-module (apps aux web)
@@ -9,8 +26,13 @@
   #:use-module (apps packages types)
   #:use-module (guix packages)
   #:use-module (guix utils)
+  #:use-module (texinfo)
+  #:use-module (texinfo html)
   #:use-module (ice-9 match)
-  #:export (location->ilink
+  #:export (package-description-shtml
+            package-synopsis-shtml
+
+            location->ilink
 	    package-build-issues
 	    package-issues?
 	    package-lint-issues
@@ -22,6 +44,29 @@
 ;;;
 ;;; Helper procedures.
 ;;;
+
+(define (texinfo->shtml texi)
+  "Parse TEXI, a string, and return the corresponding SHTML."
+  ;; 'texi-fragment->stexi' uses 'call-with-input-string', so make sure
+  ;; those string ports are Unicode-capable.
+  (with-fluids ((%default-port-encoding "UTF-8"))
+    (stexi->shtml (texi-fragment->stexi texi))))
+
+(define (package-description-shtml package)
+  "Return a SXML representation of PACKAGE description field with HTML
+vocabulary."
+  (and=> (package-description package) texinfo->shtml))
+
+(define (package-synopsis-shtml package)
+  "Return a SXML representation of PACKAGE synopsis field with HTML
+vocabulary."
+  (and=> (package-synopsis package)
+         (lambda (synopsis)
+           ;; Strip the paragraph that 'texinfo->shtml' adds.
+           (match (texinfo->shtml synopsis)
+             (('div ('p text ...))
+              text)))))
+
 
 (define (location->ilink loc)
   "Convert the given location LOC into an Ilink.

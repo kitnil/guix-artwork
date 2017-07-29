@@ -38,10 +38,10 @@
      (span
       (@ (class "package-synopsis"))
       " — "
-      ,(package-synopsis package)))
+      ,(package-synopsis-shtml package)))
     (p
      (@ (class "package-description"))
-     ,(package-description package))
+     ,(package-description-shtml package))
 
     (ul
      (@ (class "package-info"))

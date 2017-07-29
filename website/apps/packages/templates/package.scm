@@ -23,7 +23,7 @@
 	 (lint-issues (package-lint-issues package)))
     (theme
      #:title (list package-id "Packages")
-     #:description (package-synopsis package)
+     #:description (package-synopsis-shtml package)
      #:keywords
      '("GNU" "Linux" "Unix" "Free software" "Libre software"
        "Operating system" "GNU Hurd" "GNU Guix package manager"
@@ -44,9 +44,9 @@
 	(h2 ,package-id " "
 	    (span
 	     (@ (class "synopsis"))
-	     ,(package-synopsis package)))
+	     ,(package-synopsis-shtml package)))
 
-	(p ,(package-description package))
+	(p ,(package-description-shtml package))
 
 	(ul
 	 (@ (class "package-info"))
