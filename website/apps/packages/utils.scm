@@ -1,5 +1,6 @@
 ;;; GuixSD website --- GNU's advanced distro website
 ;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2017 Eric Bavier <bavier@member.fsf.org>
 ;;;
 ;;; Initially written by sirgazil
 ;;; who waives all copyright interest on this file.
@@ -26,9 +27,14 @@
   #:use-module (apps packages types)
   #:use-module (guix packages)
   #:use-module (guix utils)
+  #:use-module (guix build utils)
+  #:use-module (srfi srfi-1)
+  #:use-module (srfi srfi-26)
   #:use-module (texinfo)
   #:use-module (texinfo html)
   #:use-module (ice-9 match)
+  #:use-module (ice-9 rdelim)
+  #:use-module (ice-9 popen)
   #:export (package-description-shtml
             package-synopsis-shtml
 
@@ -67,6 +73,16 @@ vocabulary."
              (('div ('p text ...))
               text)))))
 
+(define git-description
+  (delay
+   (let* ((guix (find (lambda (p)
+                        (file-exists? (string-append p "/guix/config.scm")))
+                      %load-path))
+          (pipe (with-directory-excursion guix
+                  (open-pipe* OPEN_READ "git" "describe")))
+          (desc (read-line pipe))
+          (git? (close-pipe pipe)))
+     (and (zero? git?) desc))))
 
 (define (location->ilink loc)
   "Convert the given location LOC into an Ilink.
@@ -78,9 +94,12 @@ vocabulary."
      An Ilink object as defined in (apps packages types)."
   (ilink (basename (location-file loc))
 	 (guix-git-tree-url
-	  (url-path-join (location-file loc)
-			 (string-append "#n"
-					(number->string (location-line loc)))))))
+	  (string-append (location-file loc)
+                         (or (and=> (force git-description)
+                                    (cut string-append "?id=" <>))
+                             "")
+                         "#n"
+                         (number->string (location-line loc))))))
 
 
 ;;; TODO: Stub. Implement.
