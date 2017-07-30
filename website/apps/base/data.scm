@@ -142,43 +142,36 @@
 (define screenshots
   (list
    (screenshot
-    #:title "GNOME 3 Desktop"
-    #:slug "gnome-3-desktop"
-    #:image (guix-url "static/media/img/gnome3.jpg")
-    #:preview (guix-url "static/media/img/gnome3-mini.jpg")
-    #:caption "Control your computer with the GNOME Desktop Environment")
+    #:title "Graphical log-in"
+    #:slug "slim"
+    #:image (guix-url "static/media/img/slim.png")
+    #:preview (guix-url "static/media/img/guixsd-slim.mini.png")
+    #:caption "Graphical log-in screen")
 
    (screenshot
-    #:title "GNU IceCat"
-    #:slug "gnu-icecat"
-    #:image (guix-url "static/media/img/gnu-icecat.jpg")
-    #:preview (guix-url "static/media/img/gnu-icecat-mini.jpg")
-    #:caption "Browse the Web with GNU IceCat")
+    #:title "GNOME"
+    #:slug "gnome"
+    #:image (guix-url "static/media/img/gnome-totem-epiphany.png")
+    #:preview (guix-url "static/media/img/gnome-totem-epiphany.mini.png")
+    #:caption "Control your computer with the GNOME desktop environment")
 
    (screenshot
-    #:title "GNOME Maps"
-    #:slug "gnome-maps"
-    #:image (guix-url "static/media/img/gnome-maps.jpg")
-    #:preview (guix-url "static/media/img/gnome-maps-mini.jpg")
-    #:caption "Explore the Earth with GNOME Maps")
+    #:title "Xfce"
+    #:slug "xfce"
+    #:image (guix-url "static/media/img/guixsd-xfce-icecat-emacs.png")
+    #:preview (guix-url "static/media/img/guixsd-xfce-icecat-emacs.mini.png")
+    #:caption "The Xfce desktop environment with GNU Emacs and IceCat")
 
    (screenshot
-    #:title "Inkscape"
-    #:slug "inkscape"
-    #:image (guix-url "static/media/img/inkscape.jpg")
-    #:preview (guix-url "static/media/img/inkscape-mini.jpg")
-    #:caption "Draw freely with Inkscape, a professional vector graphics editor")
+    #:title "Virtual machine"
+    #:slug "virtual-machine"
+    #:image (guix-url "static/media/img/guix-system-vm.png")
+    #:preview (guix-url "static/media/img/guix-system-vm.mini.png")
+    #:caption "Virtual machine started with 'guix system vm'")
 
    (screenshot
-    #:title "GNOME Video"
-    #:slug "gnome-video"
-    #:image (guix-url "static/media/img/gnome-video.jpg")
-    #:preview (guix-url "static/media/img/gnome-video-mini.jpg")
-    #:caption "Watch movies with GNOME Video")
-
-   (screenshot
-    #:title "GNU Emacs"
-    #:slug "gnu-emacs"
-    #:image (guix-url "static/media/img/gnu-emac.jpg")
-    #:preview (guix-url "static/media/img/gnu-emacs-mini.jpg")
-    #:caption "Hack the universe with GNU Emacs, an extensible, and customizable text editor")))
+    #:title "Enlightenment"
+    #:slug "enlightenment"
+    #:image (guix-url "static/media/img/enlightenment-inkscape.png")
+    #:preview (guix-url "static/media/img/enlightenment-inkscape.mini.png")
+    #:caption "Enlightenment, Inkscape, and Serbian text")))
