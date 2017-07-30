@@ -87,7 +87,7 @@
       (div
        (@ (class "action-box centered-text"))
        ,(button-big
-	 #:label (string-append "TEST v" (latest-guix-version))
+	 #:label (string-append "DOWNLOAD v" (latest-guix-version))
 	 #:url (guix-url "download/")
 	 #:light #true)
        " " ; A space for readability in non-CSS browsers.
