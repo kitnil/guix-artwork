@@ -488,7 +488,8 @@ PACKAGES."
 
 (define %substitute-servers
   ;; List of remote substitute servers against which we are comparing.
-  '("https://bayfront.guixsd.org"))
+  '("https://berlin.guixsd.org"
+    "https://bayfront.guixsd.org"))
 
 (define (local-nar-url item)
   (string-append "https://mirror.hydra.gnu.org/nar/"
