@@ -14,6 +14,7 @@
   #:use-module (guix licenses)
   #:use-module (guix packages)
   #:use-module (guix gnu-maintenance)
+  #:use-module (srfi srfi-1)
   #:export (detailed-package-preview
 	    issue-count->shtml
 	    lint-issue->shtml
@@ -209,7 +210,10 @@
 	(package-id (string-append (package-name package)
 				   "-"
 				   (package-version package)))
-	(systems (package-supported-systems package)))
+	(systems (lset-intersection
+                  string=?
+                  %hydra-supported-systems
+                  (package-transitive-supported-systems package))))
     (if (null? systems)
 	"None"
 	(separate
