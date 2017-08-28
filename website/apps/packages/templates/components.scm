@@ -13,6 +13,7 @@
   #:use-module (apps packages utils)
   #:use-module (guix licenses)
   #:use-module (guix packages)
+  #:use-module (guix gnu-maintenance)
   #:export (detailed-package-preview
 	    issue-count->shtml
 	    lint-issue->shtml
@@ -41,6 +42,9 @@
       ,(package-synopsis-shtml package)))
     (p
      (@ (class "package-description"))
+     ,(if (gnu-package? package)
+          '(i "This is a GNU package.  ")
+          "")
      ,(package-description-shtml package))
 
     (ul

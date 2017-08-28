@@ -11,6 +11,7 @@
   #:use-module (apps packages templates components)
   #:use-module (apps packages types)
   #:use-module (apps packages utils)
+  #:use-module (guix gnu-maintenance)
   #:export (package-t))
 
 
@@ -46,7 +47,10 @@
 	     (@ (class "synopsis"))
 	     ,(package-synopsis-shtml package)))
 
-	(p ,(package-description-shtml package))
+	(p ,(if (gnu-package? package)
+                '(it "This is a GNU package.  ")
+                "")
+           ,(package-description-shtml package))
 
 	(ul
 	 (@ (class "package-info"))
