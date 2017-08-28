@@ -76,7 +76,8 @@
      	 		   #:url (guix-url "packages/issues/")))
      	 ".")
 
-     (li (b "Builds:") " " ,(supported-systems->shtml package) "."))))
+     (li (b "Builds:") " " ,(supported-systems->shtml package) ".")
+     "\n")))
 
 
 (define (issue-count->shtml count)
