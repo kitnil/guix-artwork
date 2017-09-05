@@ -23,7 +23,7 @@ feature articles with HPC “howtos” and stories about our achievements.
 We are thrilled by the opportunities this new effort offers!
 
 To learn more, visit
-the [Guix-HPC Web site](https://guix-hpc.bordeaux.inria.fr/about.html).
+the [Guix-HPC Web site](https://guix-hpc.bordeaux.inria.fr/).
 
 #### About GNU Guix
 
