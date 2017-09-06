@@ -8,7 +8,8 @@ Today, Inria, the Max Delbrück Center for Molecular Medicine (MDC), and
 the Utrecht Bioinformatics Center (UBC)
 are
 [announcing](https://www.inria.fr/en/centre/bordeaux/news/towards-reproducible-software-environments-in-hpc-with-guix) 
-[a joint effort](https://www.mdc-berlin.de/47864296/en/news/2017/20170905-wissenschaftliches-rechnen-erfolgreich-reproduzieren)
+[a joint](https://www.mdc-berlin.de/47864296/en/news/2017/20170905-wissenschaftliches-rechnen-erfolgreich-reproduzieren)
+[effort](https://ubc.uu.nl/reproducible-software-environments-in-hpc-with-guix/)
 to
 consolidate GNU Guix for reproducible scientific workflows in
 high-performance computing (HPC).  The three research institutes have
