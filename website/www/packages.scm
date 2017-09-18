@@ -42,6 +42,7 @@
   #:use-module (guix scripts substitute)
   #:use-module (gnu packages)
   #:use-module (sxml simple)
+  #:use-module (sxml match)
   #:use-module (sxml fold)
   #:use-module (json)
   #:use-module (web uri)
@@ -108,6 +109,13 @@
 (define (source-url package)
   (let ((loc (package-location package)))
     (and loc (location-url loc))))
+
+(define (texi->shtml str)
+  "Return a SXML representation of STR with HTML vocabulary."
+  ;; 'texi-fragment->stexi' uses 'call-with-input-string', so make sure
+  ;; those string ports are Unicode-capable.
+  (with-fluids ((%default-port-encoding "UTF-8"))
+    (and=> str (compose stexi->shtml texi-fragment->stexi))))
 
 (define (package->sxml package+anchor previous description-ids remaining)
   "Return 3 values: the SXML for PACKAGE added to all previously collected
@@ -215,15 +223,6 @@ decreasing, is 1."
                             (package-transitive-supported-systems package)))
                       " ")))
 
-  (define (package-description-shtml package)
-    "Return a SXML representation of PACKAGE description field with HTML
-vocabulary."
-    ;; 'texi-fragment->stexi' uses 'call-with-input-string', so make sure
-    ;; those string ports are Unicode-capable.
-    (with-fluids ((%default-port-encoding "UTF-8"))
-      (and=> (package-description package)
-             (compose stexi->shtml texi-fragment->stexi))))
-
   (define (package-logo name)
     (and=> (lookup-gnu-package name)
            gnu-package-logo))
@@ -251,7 +250,10 @@ description-ids as formal parameters."
                   ,(package-name package) " "
                   ,(package-version package)))
            "\n"
-           (td (span ,(package-synopsis package))
+           (td (span ,(sxml-match
+                       (texi->shtml (package-synopsis package))
+                       ((div (p ,body ...)) body) ;strip <p>
+                       (,x x)))
                (div (@ (id ,description-id))
                     ,(match (package-logo (package-name package))
                        ((? string? url)
@@ -261,7 +263,7 @@ description-ids as formal parameters."
                                  (alt ("Logo of " ,(package-name package))))))
                        (_ #f))
                     "\n"
-                    ,(package-description-shtml package)
+                    ,(texi->shtml (package-description package))
                     "\n"
                     ,(license package)
                     (a (@ (href ,(package-home-page package))
