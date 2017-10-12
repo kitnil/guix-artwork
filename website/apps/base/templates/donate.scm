@@ -34,7 +34,7 @@
 
       (p
        "The "
-       (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
+       (a (@ (href "https://hydra.gnu.org/jobset/gnu/master"))
 	  "build farm")
        " of the Guix System Distribution runs on donated hardware and"
        " hosting. As the distribution grows (see the "
@@ -86,7 +86,7 @@
 
       (p
        "The table below summarizes hardware and hosting donations that
-        make the " (a (@ (href "http://hydra.gnu.org")) "build farm")
+        make the " (a (@ (href "https://hydra.gnu.org")) "build farm")
 	" for the Guix System Distribution a reality.")
 
       (div
