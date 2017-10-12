@@ -45,10 +45,10 @@
 	 (@ (class "limit-width centered-block"))
 	 "GNU Guix provides " ,(number* (length packages))
 	 " packages transparently "
-	 (a (@ (href "http://hydra.gnu.org/jobset/gnu/master#tabs-status"))
+	 (a (@ (href "https://hydra.gnu.org/jobset/gnu/master#tabs-status"))
 	    "available as pre-built binaries")
 	 ". These pages provide a complete list of the packages.  Our "
-	 (a (@ (href "http://hydra.gnu.org/jobset/gnu/master"))
+	 (a (@ (href "https://hydra.gnu.org/jobset/gnu/master"))
 	    "continuous integration system")
 	 " shows their current build status "
 	 "(updated " ,(date->string (current-date) "~B ~e, ~Y") ").")

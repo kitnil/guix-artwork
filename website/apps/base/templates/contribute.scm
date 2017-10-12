@@ -212,7 +212,7 @@
 	(h3 (@ (id "translation")) "Translation")
 	(p
 	 "You can help translate the "
-	 (a (@ (href "http://translationproject.org/domain/guix.html"))
+	 (a (@ (href "https://translationproject.org/domain/guix.html"))
 	    "software")
 	 " and the "
 	 (a (@ (href "https://translationproject.org/domain/guix-packages.html"))

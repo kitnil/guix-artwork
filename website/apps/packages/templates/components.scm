@@ -207,7 +207,7 @@
      If the list of supported systems of the package is empty, return
      the string 'None'. Otherwise, return a list of links to systems
      builds in hydra."
-  (let ((build-url "http://hydra.gnu.org/job/gnu/master/")
+  (let ((build-url "https://hydra.gnu.org/job/gnu/master/")
 	(package-id (string-append (package-name package)
 				   "-"
 				   (package-version package)))

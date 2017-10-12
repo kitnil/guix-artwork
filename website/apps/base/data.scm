@@ -121,7 +121,7 @@
     #:description
     '(p "Discussion about the development of the broader GNU system.")
     #:url "https://lists.gnu.org/mailman/listinfo/gnu-system-discuss"
-    #:log "http://lists.gnu.org/archive/html/gnu-system-discuss/")
+    #:log "https://lists.gnu.org/archive/html/gnu-system-discuss/")
 
    (contact
     #:name "GNU/Linux Libre Mailing List"
