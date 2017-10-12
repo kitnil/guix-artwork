@@ -37,10 +37,10 @@
        "The Guix System Distribution is a large project developed
        mostly by volunteers from all around the world. You are welcome
        to join us in the "
-       (a (@ (href "http://lists.gnu.org/mailman/listinfo/guix-devel"))
+       (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
 	  "development mailing list")
        " or in the "
-       (a (@ (href "http://webchat.freenode.net/?channels=%23guix"))
+       (a (@ (href "https://webchat.freenode.net/?channels=%23guix"))
 	  "#guix channel")
        " in IRC Freenode. Tell us how would you like to help, and we
        will do our best to guide you. ")
@@ -84,7 +84,7 @@
 	(p
 	 ,(link-more
 	   #:label "Contribute"
-	   #:url "http://lists.gnu.org/mailman/listinfo/guix-devel")))
+	   #:url "https://lists.gnu.org/mailman/listinfo/guix-devel")))
 
 
        (div
@@ -104,7 +104,7 @@
 	(p
 	 ,(link-more
 	   #:label "Start writing"
-	   #:url "http://lists.gnu.org/mailman/listinfo/guix-devel")))
+	   #:url "https://lists.gnu.org/mailman/listinfo/guix-devel")))
 
 
        (div
@@ -132,7 +132,7 @@
 	(p
 	 ,(link-more
 	   #:label "Send a new package"
-	   #:url "//lists.gnu.org/mailman/listinfo/guix-patches")))
+	   #:url "https://lists.gnu.org/mailman/listinfo/guix-patches")))
 
 
        (div
@@ -163,7 +163,7 @@
 	(p
 	 ,(link-more
 	   #:label "Send a patch"
-	   #:url "//lists.gnu.org/mailman/listinfo/guix-patches")))
+	   #:url "https://lists.gnu.org/mailman/listinfo/guix-patches")))
 
 
        (div
@@ -179,11 +179,11 @@
 	 (a (@ (href ,(guix-url "donate/")))
 	    "donate hardware or hosting")
 	 " for our "
-	 (a (@ (href "http://hydra.gnu.org")) "build farm") ".  ")
+	 (a (@ (href "https://hydra.gnu.org")) "build farm") ".  ")
 	(p
 	 ,(link-more
 	   #:label "Contribute"
-	   #:url "http://lists.gnu.org/mailman/listinfo/guix-devel")))
+	   #:url "https://lists.gnu.org/mailman/listinfo/guix-devel")))
 
 
        (div
@@ -215,7 +215,7 @@
 	 (a (@ (href "http://translationproject.org/domain/guix.html"))
 	    "software")
 	 " and the "
-	 (a (@ (href "http://translationproject.org/domain/guix-packages.html"))
+	 (a (@ (href "https://translationproject.org/domain/guix-packages.html"))
 	    "package descriptions")
 	 " to your language.  See the "
 	 (a (@ (href "https://translationproject.org/html/translators.html"))
