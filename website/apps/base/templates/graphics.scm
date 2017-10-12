@@ -52,7 +52,7 @@
        (p
 	"Permission is granted to copy, distribute and/or modify this
         work under the terms of the "
-	(a (@ (href "http://creativecommons.org/licenses/by-sa/4.0/"))
+	(a (@ (href "https://creativecommons.org/licenses/by-sa/4.0/"))
 	   "Creative Commons Attribution-ShareAlike 4.0 International License")
 	"."))
       (p
