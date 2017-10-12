@@ -1,6 +1,22 @@
 ;;; GuixSD website --- GNU's advanced distro website
+;; Copyright © 2017 ng0 <ng0@infotropique.org>
 ;;; Initially written by sirgazil who waves all
 ;;; copyright interest on this file.
+;;;
+;;; This file is part of GuixSD website.
+;;;
+;;; GuixSD website is free software; you can redistribute it and/or modify it
+;;; under the terms of the GNU Affero General Public License as published by
+;;; the Free Software Foundation; either version 3 of the License, or (at
+;;; your option) any later version.
+;;;
+;;; GuixSD website is distributed in the hope that it will be useful, but
+;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;;; GNU Affero General Public License for more details.
+;;;
+;;; You should have received a copy of the GNU Affero General Public License
+;;; along with GuixSD website.  If not, see <http://www.gnu.org/licenses/>.
 
 (define-module (apps download templates download)
   #:use-module (apps base templates theme)
@@ -57,8 +73,8 @@
        "Source code for the Guix System Distribution USB installation
        images as well as GNU Guix can be found on the GNU ftp server
        for " (em "alpha") " releases: "
-       (a (@ (href "http://alpha.gnu.org/gnu/guix/"))
-	  "http://alpha.gnu.org/gnu/guix/")
+       (a (@ (href "https://alpha.gnu.org/gnu/guix/"))
+	  "https://alpha.gnu.org/gnu/guix/")
        " (via HTTP) and "
        (a (@ (href "ftp://alpha.gnu.org/gnu/guix/"))
 	  "ftp://alpha.gnu.org/gnu/guix/")
