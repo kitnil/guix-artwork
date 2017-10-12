@@ -49,7 +49,7 @@
 	 "bug database")
       ". If it is not, please report it.")
     #:url "mailto:bug-guix@gnu.org"
-    #:log "http://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix")
+    #:log "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix")
 
    (contact
     #:name "Development Mailing List"
@@ -57,7 +57,7 @@
     '(p
       "Discussion about the development of GNU Guix and the Guix
       System Distribution (GuixSD). "
-      (a (@ (href "http://lists.gnu.org/archive/html/bug-guix/2013-07/msg00039.html"))
+      (a (@ (href "https://lists.gnu.org/archive/html/bug-guix/2013-07/msg00039.html"))
 	 " Until July 2013")
       ", the bug-Guix mailing list filled that role. ")
     #:url "https://lists.gnu.org/mailman/listinfo/guix-devel"
@@ -69,12 +69,12 @@
     '(p
       "Submission of patches.  Every message sent to this mailing list
       leads to a new entry in our "
-      (a (@ (href "//bugs.gnu.org/guix-patches"))
+      (a (@ (href "https://bugs.gnu.org/guix-patches"))
 	 "patch tracking tool")
       ".  See "
-      (a (@ (href "//debbugs.gnu.org/Advanced.html")) "this page")
+      (a (@ (href "https://debbugs.gnu.org/Advanced.html")) "this page")
       " for more information on how to use it.  "
-      (a (@ (href "//lists.gnu.org/archive/html/guix-devel/2017-02/msg00627.html"))
+      (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2017-02/msg00627.html"))
 	 "Until February 2017")
       ", the guix-devel mailing list filled that role.")
     #:url "https://lists.gnu.org/mailman/listinfo/guix-patches"
@@ -128,14 +128,14 @@
     #:description
     '(p "Workgroup for fully free GNU/Linux distributions.")
     #:url "https://lists.nongnu.org/mailman/listinfo/gnu-linux-libre"
-    #:log "http://lists.nongnu.org/archive/html/gnu-linux-libre/")
+    #:log "https://lists.nongnu.org/archive/html/gnu-linux-libre/")
 
    (contact
     #:name "GNU Info Mailing List"
     #:description
     '(p "GNU software announcements.")
     #:url "https://lists.gnu.org/mailman/listinfo/info-gnu"
-    #:log "http://lists.gnu.org/archive/html/info-gnu/")))
+    #:log "https://lists.gnu.org/archive/html/info-gnu/")))
 
 
 
