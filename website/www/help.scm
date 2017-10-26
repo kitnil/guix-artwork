@@ -124,7 +124,18 @@ Distribution.  Messages sent to this list populate the "
 
 		(h2 (@ (id "papers")) "Papers")
 
-		(ul (li (a (@ (href "https://arxiv.org/abs/1305.4584"))
+		(ul (li (a (@ (href "https://hal.inria.fr/hal-01580582/en"))
+                           (i "Code Staging in GNU Guix"))
+                        ", presented at "
+                        (a (@ (href
+                               "https://conf.researchr.org/track/gpce-2017/gpce-2017-GPCE-2017"))
+                           "GPCE 2017")
+                        ", discusses the motivation for and genesis of "
+                        (a (@ (href
+                               "/software/guix/manual/html_node/G_002dExpressions.html"))
+                           "G-expressions")
+                        ", as well as recent improvements.")
+                    (li (a (@ (href "https://arxiv.org/abs/1305.4584"))
                            (i "Functional Package Management with Guix"))
 			", presented at the "
 			(a (@ (href "https://www-sop.inria.fr/members/Manuel.Serrano/conferences/els13.html"))
@@ -185,7 +196,16 @@ about the Nix package manager, which "
                 ;; TODO: Hi there!  This is terrible.  We should add a 'talk'
                 ;; procedure that would take a title, list of speakers, slide
                 ;; URL, and optional video URL, and DTRT.
-		(ul (li "July 2017, "
+		(ul (li "October 2017, "
+                        (a (@ (href
+                               "https://conf.researchr.org/track/gpce-2017/gpce-2017-GPCE-2017"))
+                           "GPCE")
+                        ", "
+                        (i "Code Staging in GNU Guix")
+                        " (Ludovic Courtès): "
+                        (a (@ (href ,(slides-url "guix-gpce-20171023.pdf")))
+                           "slides"))
+                    (li "July 2017, "
                         (a (@ (href
                                "https://www.open-bio.org/wiki/BOSC_2017"))
                            "BOSC")
@@ -249,9 +269,9 @@ high-performance computing track): "
                              (a (@ (href ,(slides-url
                                            "guix-fosdem-hpc-part1-20170204.pdf")))
                                 "part 1") ", "
-                                (a (@ (href ,(slides-url
-                                              "guix-fosdem-hpc-part2-20170204.pdf")))
-                                   "part 2"))))
+                             (a (@ (href ,(slides-url
+                                           "guix-fosdem-hpc-part2-20170204.pdf")))
+                                "part 2"))))
                     (li "December 2016 (recorded in Dec. 2015), "
                         (a (@ (href
                                "http://hackerpublicradio.org/eps.php?id=2198"))
