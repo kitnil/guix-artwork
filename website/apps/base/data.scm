@@ -21,7 +21,7 @@
     #:name "IRC Channel"
     #:description
     '(p
-      "Join the #guix channel on the Freenode IRC network to chat
+      "Join the " (code "#guix") " channel on the Freenode IRC network to chat
       with the community about GuixSD or GNU Guix or to get help in
       real-time.")
     #:url (guix-url "contact/irc/")
@@ -49,7 +49,7 @@
 	 "bug database")
       ". If it is not, please report it.")
     #:url "mailto:bug-guix@gnu.org"
-    #:log "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix")
+    #:log "https://bugs.gnu.org/guix")
 
    (contact
     #:name "Development Mailing List"
@@ -66,19 +66,22 @@
    (contact
     #:name "Patches Mailing List"
     #:description
-    '(p
+    `(p
       "Submission of patches.  Every message sent to this mailing list
       leads to a new entry in our "
       (a (@ (href "https://bugs.gnu.org/guix-patches"))
 	 "patch tracking tool")
       ".  See "
       (a (@ (href "https://debbugs.gnu.org/Advanced.html")) "this page")
-      " for more information on how to use it.  "
+      " for more information on how to use it; see "
+      (a (@ (href ,(manual-url "Submitting-Patches.html")))
+         "the manual")
+      " for more information on how to submit a patch.  "
       (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2017-02/msg00627.html"))
 	 "Until February 2017")
       ", the guix-devel mailing list filled that role.")
     #:url "https://lists.gnu.org/mailman/listinfo/guix-patches"
-    #:log "https://lists.gnu.org/archive/html/guix-patches")
+    #:log "https://bugs.gnu.org/guix-patches")
 
    (contact
     #:name "Commits Mailing List"
@@ -124,7 +127,7 @@
     #:log "https://lists.gnu.org/archive/html/gnu-system-discuss/")
 
    (contact
-    #:name "GNU/Linux Libre Mailing List"
+    #:name "GNU/Linux-libre Mailing List"
     #:description
     '(p "Workgroup for fully free GNU/Linux distributions.")
     #:url "https://lists.nongnu.org/mailman/listinfo/gnu-linux-libre"
