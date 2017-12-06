@@ -34,23 +34,27 @@
 	"N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z"))
 
 
+(define %package-list
+  (delay
+    ;; Note: Dismiss packages found in $GUIX_PACKAGE_PATH.
+    (let ((packages
+           (sort (parameterize ((%package-module-path (last-pair
+                                                       (%package-module-path))))
+                   (fold-packages (lambda (package lst)
+                                    (cons (or (package-replacement package)
+                                              package)
+                                          lst))
+                                  '()))
+                 (lambda (p1 p2)
+                   (string<? (package-name p1)
+                             (package-name p2))))))
+      (cond ((null? packages) '())
+            ((getenv "GUIX_WEB_SITE_LOCAL") (list-head packages 300))
+            (else packages)))))
+
 (define (all-packages)
   "Return the list of all Guix package objects, sorted by name.
 
    If GUIX_WEB_SITE_LOCAL=yes, return only 300 packages for
    testing the website."
-  ;; Note: Dismiss packages found in $GUIX_PACKAGE_PATH.
-  (let ((packages
-         (sort (parameterize ((%package-module-path (last-pair
-                                                     (%package-module-path))))
-                 (fold-packages (lambda (package lst)
-                                  (cons (or (package-replacement package)
-                                            package)
-                                        lst))
-                                '()))
-               (lambda (p1 p2)
-                 (string<? (package-name p1)
-                           (package-name p2))))))
-    (cond ((null? packages) '())
-	  ((getenv "GUIX_WEB_SITE_LOCAL") (list-head packages 300))
-	  (else packages))))
+  (force %package-list))
