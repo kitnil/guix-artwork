@@ -107,7 +107,7 @@
 	  (cons "screenshots" screenshots)
 	  (cons "posts" (posts/latest posts 3))
 	  (cons "contact-media" (list-head contact-media 3)))))
-    (make-page "index.html" (home-t context) sxml->html)))
+    (make-page "guix.html" (home-t context) sxml->html)))
 
 
 (define (menu-builder)
