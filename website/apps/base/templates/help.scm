@@ -76,12 +76,12 @@
 	(p
 	 "GuixSD is a distribution of the "
 	 (a (@ (href ,(gnu-url))) "GNU operating system")
-	 ". Most GNU software is documented and the documentation is
+	 ".  Documentation for GNU packages is
          available online in various formats. ")
 	(p
 	 ,(link-more
-	   #:label "Browse GNU manual"
-	   #:url (guix-url "manual/"))))
+	   #:label "Browse GNU manuals"
+	   #:url (gnu-url "manual"))))
 
 
        (div
