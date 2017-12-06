@@ -185,16 +185,19 @@
 	   " ")) ; NOTE: Force space for readability in non-CSS browsers.
 	alphabet))
 
-    (h4 (@ (class "bar-title")) "Packages Issues")
-    (ul
-     (@ (class "bar-list"))
-     (li (@ (class "bar-item"))
-	 (a (@ (class "bar-link")
-	       (href ,(guix-url "packages/issues/lint/"))) "Lint"))
-     (li (@ (class "bar-item"))
-	 (a (@ (class "bar-link")
-	       (href ,(guix-url "packages/issues/reproducibility/")))
-	    "Reproducibility")))))
+    ;; FIXME: This is currently too costly to produce so we just disable it.
+
+    ;; (h4 (@ (class "bar-title")) "Packages Issues")
+    ;; (ul
+    ;;  (@ (class "bar-list"))
+    ;;  (li (@ (class "bar-item"))
+    ;;      (a (@ (class "bar-link")
+    ;;            (href ,(guix-url "packages/issues/lint/"))) "Lint"))
+    ;;  (li (@ (class "bar-item"))
+    ;;      (a (@ (class "bar-link")
+    ;;            (href ,(guix-url "packages/issues/reproducibility/")))
+    ;;         "Reproducibility")))
+    ))
 
 
 (define (supported-systems->shtml package)
