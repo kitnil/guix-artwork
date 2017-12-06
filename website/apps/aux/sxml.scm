@@ -31,9 +31,9 @@ string."
   (define (sxml->strings tree)
     (match tree
       (((? symbol?) ('@ _ ...) body ...)
-       (append-map sxml->strings body))
+       (append-map sxml->strings `(" " ,@body " ")))
       (((? symbol?) body ...)
-       (append-map sxml->strings body))
+       (append-map sxml->strings `(" " ,@body " ")))
       ((? string?)
        (list tree))
       ((lst ...)
