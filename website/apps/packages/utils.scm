@@ -74,6 +74,8 @@ vocabulary."
            ;; Strip the paragraph that 'texinfo->shtml' adds.
            (match (texinfo->shtml synopsis)
              (('div ('p text ...))
+              text)
+             (text                                ;fishy description
               text)))))
 
 (define git-description
