@@ -38,7 +38,9 @@
   #:use-module (ice-9 rdelim)
   #:use-module (ice-9 popen)
   #:use-module (web uri)
-  #:export (package-description-shtml
+  #:export (take-at-most
+
+            package-description-shtml
             package-synopsis-shtml
 
             location->ilink
@@ -53,6 +55,19 @@
 ;;;
 ;;; Helper procedures.
 ;;;
+
+(define (take-at-most lst max)
+  "Take up to MAX elements from LST."
+  (let loop ((lst lst)
+             (result '())
+             (total 0))
+    (match lst
+      (()
+       (reverse result))
+      ((head . tail)
+       (if (>= total max)
+           (reverse result)
+           (loop tail (cons head result) (+ 1 total)))))))
 
 (define (texinfo->shtml texi)
   "Parse TEXI, a string, and return the corresponding SHTML."

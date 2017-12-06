@@ -1,6 +1,23 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Initially written by sirgazil who waives all
-;;; copyright interest on this file.
+;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
+;;;
+;;; Initially written by sirgazil
+;;; who waives all copyright interest on this file.
+;;;
+;;; This file is part of GuixSD website.
+;;;
+;;; GuixSD website is free software; you can redistribute it and/or modify it
+;;; under the terms of the GNU Affero General Public License as published by
+;;; the Free Software Foundation; either version 3 of the License, or (at
+;;; your option) any later version.
+;;;
+;;; GuixSD website is distributed in the hope that it will be useful, but
+;;; WITHOUT ANY WARRANTY; without even the implied warranty of
+;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;;; GNU Affero General Public License for more details.
+;;;
+;;; You should have received a copy of the GNU Affero General Public License
+;;; along with GuixSD website.  If not, see <http://www.gnu.org/licenses/>.
 
 (define-module (apps packages builder)
   #:use-module (apps aux lists)
@@ -66,18 +83,28 @@
 ;;; Helper builders.
 ;;;
 
+(define %max-packages-on-index
+  ;; Maximum number of packages shown on /packages.
+  30)
+
 (define (index-builder)
   "Return a Haunt page listing some random packages."
-  ;; TODO: Pass ~30 random Guix packages.
-  (let ((context (list (cons "packages" (all-packages)))))
+  ;; TODO: Pick random packages.
+  (let ((context (list (cons "packages"
+                             (take-at-most (all-packages)
+                                           %max-packages-on-index)))))
     (make-page "packages/index.html" (index-t context) sxml->html)))
 
 
 (define (detailed-index-builder)
   "Return a Haunt page listing some random packages."
   ;; TODO: Pass ~30 random Guix packages.
-  (let ((context (list (cons "packages" (all-packages)))))
-    (make-page "packages/index.html" (detailed-index-t context) sxml->html)))
+  (let ((context (list (cons "packages"
+                             (take-at-most (all-packages)
+                                           %max-packages-on-index)))))
+    (make-page "packages/index.html"
+               (detailed-index-t context (length (all-packages)))
+               sxml->html)))
 
 
 (define (detailed-package-list-builder)

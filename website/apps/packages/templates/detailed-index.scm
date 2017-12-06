@@ -13,8 +13,9 @@
   #:export (detailed-index-t))
 
 
-(define (detailed-index-t context)
-  "Return SHTML index page for the package app."
+(define* (detailed-index-t context #:optional total)
+  "Return SHTML index page for the package app.  TOTAL is the total number of
+packages to advertise."
   (let ((packages (context-datum context "packages")))
     (theme
      #:title (list "Packages")
@@ -43,7 +44,7 @@
 
 	(p
 	 (@ (class "limit-width centered-block"))
-	 "GNU Guix provides " ,(number* (length packages))
+	 "GNU Guix provides " ,(number* (or total (length packages)))
 	 " packages transparently "
 	 (a (@ (href "https://hydra.gnu.org/jobset/gnu/master#tabs-status"))
 	    "available as pre-built binaries")
