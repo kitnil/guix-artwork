@@ -137,7 +137,7 @@
 	      (list
 	       (cons "tag" (car tagged-posts))
 	       (cons "tags" (post-groups->tag-list post-groups)))))
-	 (paginate #:dataset (cdr tagged-posts)
+	 (paginate #:dataset (posts/reverse-chronological (cdr tagged-posts))
 		   #:base-path (tag-system-path (car tagged-posts))
 		   #:template tag-t
 		   #:context context
