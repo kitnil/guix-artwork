@@ -6,7 +6,6 @@
     (date unquote (make-date 0 0 0 0 18 9 2015 7200))
     (tags unquote (list "Functional package management"
 			"Talks"
-			"Software deployment"
 			"Federation"))
     (content
       div

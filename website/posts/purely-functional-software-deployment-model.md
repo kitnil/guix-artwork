@@ -2,7 +2,7 @@ title: The Purely Functional Software Deployment Model
 date: 2006-01-18 12:45
 author: sirgazil
 slug: purely-functional-software-deployment-model
-tags: Research, Software deployment
+tags: Research, Papers, Functional programming
 ---
 
 Eelco Dolstra's seminal PhD thesis about the Nix package manager,

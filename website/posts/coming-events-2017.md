@@ -1,7 +1,7 @@
 title: Coming events
 date: 2017-10-17 12:00
 author: Ludovic Courtès
-tags: Talks Reproducible Builds Research
+tags: Talks, Reproducible builds, Research, Papers
 ---
 
 Guix will be present on a few venues in the coming weeks:

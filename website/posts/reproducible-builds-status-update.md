@@ -1,7 +1,7 @@
 title: Reproducible builds: a status update
 date: 2017-10-31 11:30
 author: Ludovic Courtès
-tags: Reproducibility
+tags: Reproducible builds
 ---
 
 With the yearly [Reproducible Build

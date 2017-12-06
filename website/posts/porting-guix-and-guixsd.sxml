@@ -3,7 +3,7 @@
   `((title . "Porting Guix and GuixSD")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 7 9 2015 7200))
-    (tags unquote (list "GSoC" "GNU/Hurd" "MIPS"))
+    (tags unquote (list "GSoC" "GNU/Hurd" "MIPS" "Cross-compilation"))
     (content
       div
       (p "Quite a lot has happened lately when it comes to porting Guix and GuixSD to other systems."

@@ -4,8 +4,7 @@
   `((title . "Back from the GNU Hackers Meeting 2016")
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 22 8 2016 7200))
-    (tags unquote (list "Software packaging"
-			"Talks"))
+    (tags unquote (list "Talks"))
     (content
      (p "The "
 	(a (@ (href "http://www.gnu.org/ghm/2016/"))

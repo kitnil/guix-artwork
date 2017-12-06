@@ -5,6 +5,7 @@
     (date unquote (make-date 0 0 0 0 13 7 2014 7200))
     (tags unquote (list "Bioinformatics"
 			"Reproducible builds"
+			"Software development"
 			"Talks"))
     (content
       div

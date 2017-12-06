@@ -4,9 +4,8 @@
            "Guix-Tox talk at PyConFR, October 17th")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 9 10 2015 7200))
-    (tags unquote (list "Software development"
-			"Talks"
-			"Virtual environments"))
+    (tags unquote (list "Talks"
+			"Software development"))
     (content
       div
       (p "Bonjour ! Cyril Roelandt of Red Hat who works on OpenStack will be "

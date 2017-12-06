@@ -132,19 +132,11 @@
 
       (div
        (@ (class "fields-box"))
-       ,(button-big
-	 #:label "HOME COMPUTING"
-	 #:url (guix-url "blog/tags/home-computing/")
-	 #:light #true)
+
        " " ; A space for readability in non-CSS browsers (same below).
        ,(button-big
 	 #:label "SOFTWARE DEVELOPMENT"
 	 #:url (guix-url "blog/tags/software-development/")
-	 #:light #true)
-       " "
-       ,(button-big
-	 #:label "RESEARCH"
-	 #:url (guix-url "blog/tags/research/")
 	 #:light #true)
        " "
        ,(button-big
@@ -158,8 +150,13 @@
 	 #:light #true)
        " "
        ,(button-big
+	 #:label "RESEARCH"
+	 #:url (guix-url "blog/tags/research/")
+	 #:light #true)
+       " "
+       ,(button-big
 	 #:label "ALL FIELDS..."
-	 #:url (guix-url "blog/tags/case-studies/")
+	 #:url (guix-url "blog/")
 	 #:light #true))
 
       ,(horizontal-separator #:light #true)

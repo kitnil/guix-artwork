@@ -4,8 +4,7 @@
   `((title . "Back from the GNU Hackers Meeting")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 2 9 2013 7200))
-    (tags unquote (list "Software packaging"
-			"Talks"))
+    (tags unquote (list "Talks"))
     (content
      (p "The "
 	(a (@ (href "http://www.gnu.org/ghm/2013/paris"))

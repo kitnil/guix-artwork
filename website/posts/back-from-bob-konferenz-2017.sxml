@@ -3,10 +3,7 @@
   `((title . "Back from BOB Konferenz 2017")
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 25 2 2017 7200))
-    (tags unquote (list "Software development"
-			"Software packaging"
-			"Software repoducibility"
-			"Talks"))
+    (tags unquote (list "Talks"))
     (content
      (p "The "
 	(a (@ (href "http://bobkonf.de/2017/en/"))

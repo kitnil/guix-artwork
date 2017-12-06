@@ -3,7 +3,7 @@
   `((title . "Guix at LibrePlanet 2016")
     (author . "David Thompson")
     (date unquote (make-date 0 0 0 0 15 3 2016 3600))
-    (tags unquote (list "Software deployment" "Talks"))
+    (tags unquote (list "Talks" "Software development"))
 
     (content
      (p "GNU hackers Christopher Allan Webber (whom you may know from the "

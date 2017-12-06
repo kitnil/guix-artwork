@@ -4,7 +4,7 @@
     (author . "Ludovic Courtès")
     (date unquote
           (make-date 0 0 0 0 19 11 2015 3600))
-    (tags unquote (list "System services"))
+    (tags unquote (list "System services" "Functional programming"))
     (content
       div
       (p "GuixSD provides a declarative, stateless approach to operating system configuration management.  In this context, the mechanism offered to select and compose system services is a crucial one.  This post presents the new service framework introduced in the "

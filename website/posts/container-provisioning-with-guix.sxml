@@ -4,9 +4,7 @@
     (author . "David Thompson")
     (date unquote
           (make-date 0 0 0 0 27 10 2015 3600))
-    (tags unquote (list "Server virtualization"
-			"Software containers"
-			"Software deployment"))
+    (tags unquote (list "Containers" "Software development"))
     (content
       div
       (p "The upcoming release of GNU Guix will feature an implementation of Linux containers named, following Scheme conventions, "

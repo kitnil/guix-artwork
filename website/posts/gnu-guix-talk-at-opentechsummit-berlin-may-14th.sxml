@@ -4,7 +4,7 @@
            "GNU Guix talk at OpenTechSummit, Berlin, May 14th")
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 12 5 2015 7200))
-    (tags unquote (list "Talks"))
+    (tags unquote (list "Talks" "Software development"))
 
     (content
      (p (a (@ (href "http://elephly.net/"))

@@ -4,10 +4,7 @@
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 24 9 2016 7200))
     (tags unquote (list "Functional programming"
-			"Scheme API"
-			"Software development"
-			"Software packaging"
-			"Software repoducibility"
+                        "Research"
 			"Talks"))
     (content
      (p "The "

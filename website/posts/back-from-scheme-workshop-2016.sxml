@@ -1,13 +1,10 @@
 (begin
   (use-modules (srfi srfi-19))
-  `((title . "Back from the SFPW 2016")
+  `((title . "Back from the Scheme Workshop 2016")
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 18 9 2016 7200))
     (tags unquote (list "Functional programming"
-			"Scheme API"
-			"Software development"
-			"Software packaging"
-			"Software repoducibility"
+			"Research"
 			"Talks"))
     (content
      (p "The "

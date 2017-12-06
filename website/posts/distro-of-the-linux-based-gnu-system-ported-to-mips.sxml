@@ -5,7 +5,7 @@
     (author . "Ludovic Courtès")
     (date unquote
           (make-date 0 0 0 0 28 10 2013 3600))
-    (tags unquote (list "MIPS"))
+    (tags unquote (list "MIPS" "Cross-compilation"))
     (content
       div
       (p "The Guix-based distro "

@@ -7,7 +7,6 @@
     (date unquote
           (make-date 0 0 0 0 20 07 2012 3600))
     (tags unquote (list "Functional package management"
-			"Software packaging"
 			"Talks"
 			"Transactional upgrades"))
     (content

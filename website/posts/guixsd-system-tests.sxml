@@ -4,10 +4,8 @@
     (author . "Ludovic Courtès")
     (date unquote (make-date 0 0 0 0 28 6 2016 7200))
     (tags unquote (list "Continuous integration"
-			"Package tests"
-			"System tests"
-			"Test suite"
-			"Unit tests"))
+                        "Software development"
+			"System tests"))
     (content
       div
       (p "From its inception, Guix has had a thorough test suite—something that’s not only reassuring, but also the thing that allows for fearless evolution of the code.  That we didn’t have this safety net when hacking on the whole operating system, GuixSD, made it uncomfortable and more risky.  We are now addressing the problem with the introduction of "

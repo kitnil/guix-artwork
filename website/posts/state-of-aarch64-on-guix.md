@@ -1,7 +1,7 @@
 title: State of aarch64 on Guix
 date: 2017-07-24 15:30
 author: Efraim Flashner
-tags: architectures
+tags: ARM, Cross-compilation
 ---
 Since the recent 0.13.0 release, Guix supports building software for
 aarch64 (64-bit ARM architecture).  Here’s the current status.

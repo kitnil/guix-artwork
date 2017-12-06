@@ -4,15 +4,9 @@
   `((title . "Back from FOSDEM 2017")
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 6 2 2017 7200))
-    (tags unquote (list "Case studies"
-			"FOSDEM"
+    (tags unquote (list "FOSDEM"
 			"GNU/Hurd"
 			"High-performance computing"
-			"Software development"
-			"Software packaging"
-			"Software repoducibility"
-			"Systems programming"
-			"Workflow management"
 			"Talks"))
     (content
      (p (a (@ (href "https://fosdem.org/2017/"))

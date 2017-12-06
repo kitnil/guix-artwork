@@ -3,11 +3,7 @@
   `((title . "Back from DConf 2016")
     (author . "sirgazil")
     (date unquote (make-date 0 0 0 0 4 5 2016 7200))
-    (tags unquote (list "Software development"
-			"Software packaging"
-			"Software repoducibility"
-			"Systems programming"
-			"Talks"))
+    (tags unquote (list "Talks" "Software development"))
     (content
      (p "The "
 	(a (@ (href "http://dconf.org/2016/index.html"))

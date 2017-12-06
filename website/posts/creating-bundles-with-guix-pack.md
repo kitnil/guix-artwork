@@ -1,7 +1,7 @@
 title: Creating bundles with guix pack
 date: 2017-03-20 14:45
 author: Ludovic Courtès
-tags: Software bundles
+tags: Containers, Software development
 ---
 Guix just got a new command,
 [dubbed `guix pack`](https://lists.gnu.org/archive/html/guix-devel/2017-03/msg00322.html),
