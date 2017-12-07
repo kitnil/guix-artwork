@@ -188,9 +188,13 @@ vocabulary."
       ((? string? patch)
        (basename patch))
       ((? origin? patch)
-       (match (origin-uri patch)
-         ((? string? uri) (basename uri))
-         ((head . tail) (basename head))))))
+       (match (origin-file-name patch)
+         (#f
+          (match (origin-uri patch)
+            ((? string? uri) (basename uri))
+            ((head . tail) (basename head))))
+         (file
+          file)))))
 
   (define (snippet-link)
     (let* ((loc  (or (package-field-location package 'source)
