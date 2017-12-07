@@ -1,7 +1,7 @@
 title: Announcing Guix-HPC
 date: 2017-09-05 12:00
 author: Ludovic Courtès, Roel Janssen, Pjotr Prins, Ricardo Wurmus
-tags: High-performance computing, Research, Reproducibility, Containers
+tags: High-performance computing, Research, Reproducibility, Bioinformatics
 ---
 
 Today, Inria, the Max Delbrück Center for Molecular Medicine (MDC), and
