@@ -104,7 +104,17 @@
 	   (ul
 	    (li
 	     (a (@ (href "https://www.fsf.org/"))
-		"Free Software Foundation")))))
+            "Free Software Foundation")))))
+     (tr
+      (td "berlin.guixsd.org")
+      (td "build farm with 25 build nodes for x86_64-linux and
+i686-linux, and dedicated storage")
+      (td
+       (ul
+        (li
+         (a (@ (href "https://www.mdc-berlin.de/"))
+            "Max Delbrück Center for Molecular Medicine")
+         " (hardware and hosting)"))))
 	 (tr
 	  (td "bayfront.guixsd.org")
 	  (td "new build farm front-end (WIP)")
