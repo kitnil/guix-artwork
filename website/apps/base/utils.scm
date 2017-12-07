@@ -92,7 +92,7 @@
   ;; If we are trying out the website locally, use "/" as the root.
   ;; Otherwise use guix-root-url-path for deployment to gnu.org.
   (if (getenv "GUIX_WEB_SITE_LOCAL")
-      (string-append "file:///tmp/gnu/software/guix/" subpath)
+      (string-append "/" subpath)
       (string-append (guix-root-url-path) subpath)))
 
 
