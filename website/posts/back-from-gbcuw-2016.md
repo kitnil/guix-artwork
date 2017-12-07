@@ -1,6 +1,6 @@
 title: Back from GBCUW 2016
 author: Ricardo Wurmus
-tags: Talks, Bioinformatics, HPC
+tags: Talks, Bioinformatics, High-performance computing
 date: 2016-9-13 12:00:00
 ---
 

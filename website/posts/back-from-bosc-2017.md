@@ -1,6 +1,6 @@
 title: Back from BOSC 2017
 author: Ricardo Wurmus
-tags: Talks, Bioinformatics, HPC
+tags: Talks, Bioinformatics, High-performance computing
 date: 2017-7-25 12:00:00
 ---
 

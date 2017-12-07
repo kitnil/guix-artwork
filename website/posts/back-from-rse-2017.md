@@ -1,6 +1,6 @@
 title: Back from RSE 2017
 author: Ricardo Wurmus
-tags: Research, Talks, Bioinformatics, HPC
+tags: Research, Talks, Bioinformatics, High-performance computing
 date: 2017-9-11 12:00:00
 ---
 
