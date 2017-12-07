@@ -31,10 +31,10 @@
        (a (@ (href ,(guix-url "contribute"))) "help") "!")
       (p "USB/DVD ISO installer of the Guix System Distribution."))
     #:image (guix-url "static/base/img/GuixSD-package.png")
-    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-usb-install-"
+    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-install-"
 			      (latest-guix-version) ".")
-    #:variants (list (variant "x86_64" "x86_64-linux.xz")
-		     (variant "i686" "i686-linux.xz"))
+    #:variants (list (variant "x86_64" "x86_64-linux.iso.xz")
+		     (variant "i686" "i686-linux.iso.xz"))
     #:manual (manual-url "System-Installation.html"))
 
    (download
