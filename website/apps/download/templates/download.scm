@@ -70,12 +70,7 @@
 
       (p
        (@ (class "centered-block limit-width"))
-       "Source code for the Guix System Distribution USB installation
-       images as well as GNU Guix can be found on the GNU ftp server
-       for " (em "alpha") " releases: "
+       "Source code and binaries for the Guix System Distribution ISO
+       image as well as GNU Guix can be found on the GNU servers at "
        (a (@ (href "https://alpha.gnu.org/gnu/guix/"))
-	  "https://alpha.gnu.org/gnu/guix/")
-       " (via HTTP) and "
-       (a (@ (href "ftp://alpha.gnu.org/gnu/guix/"))
-	  "ftp://alpha.gnu.org/gnu/guix/")
-       " (via FTP). ")))))
+	  "https://alpha.gnu.org/gnu/guix/") ".")))))

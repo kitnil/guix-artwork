@@ -46,7 +46,7 @@
   (make-parameter "/software/guix/")) ; Path to GNU Guix site in gnu.org
 
 (define latest-guix-version
-  (make-parameter "0.13.0"))
+  (make-parameter "0.14.0"))
 
 
 

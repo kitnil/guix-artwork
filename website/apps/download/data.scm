@@ -29,7 +29,7 @@
 	"not production-ready")
        ".  But you can "
        (a (@ (href ,(guix-url "contribute"))) "help") "!")
-      (p "USB installer of the Guix System Distribution."))
+      (p "USB/DVD ISO installer of the Guix System Distribution."))
     #:image (guix-url "static/base/img/GuixSD-package.png")
     #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-usb-install-"
 			      (latest-guix-version) ".")
