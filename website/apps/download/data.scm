@@ -59,7 +59,8 @@
 			      (latest-guix-version) ".")
     #:variants (list (variant "x86_64" "x86_64-linux.tar.xz")
 		     (variant "i686" "i686-linux.tar.xz")
-		     (variant "armhf" "armhf-linux.tar.xz"))
+		     (variant "armhf" "armhf-linux.tar.xz")
+                     (variant "aarch64" "aarch64-linux.tar.xz"))
     #:manual (manual-url "Binary-Installation.html"))
 
    (download
