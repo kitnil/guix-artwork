@@ -28,7 +28,7 @@ contributed code and packages.  The highlights include:
     --file-system-type=iso9660`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html).
   - Several user interface improvements, notably: [`guix
     package`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html)
-    reports how much is going to be downloaded, warn if the user has
+    reports how much is going to be downloaded, warns if the user has
     insufficient disk space, [reports about package
     collisions](https://debbugs.gnu.org/cgi/bugreport.cgi?bug=27271)
     early on; `guix package --search` sorts results by relevance, and
@@ -42,7 +42,7 @@ contributed code and packages.  The highlights include:
     for unbound variables.
   - GuixSD has a new [bootloader
     API](https://www.gnu.org/software/guix/manual/html_node/Bootloader-Configuration.html#Bootloader-Configuration),
-    which has allow GuixSD to gain support not just for GRUB (UEFI and
+    which has allowed GuixSD to gain support not just for GRUB (UEFI and
     BIOS) but also U-Boot and Extlinux.  This paves the way to a GuixSD
     port to ARM-based devices, which fearless hackers are soon going to
     [make a
