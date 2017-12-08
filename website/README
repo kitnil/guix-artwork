@@ -2,38 +2,22 @@
 
 #+TITLE: GuixSD website
 
-This directory contains the source files for the GuixSD website,
-available at https://www.gnu.org/software/guix/.
+The GuixSD website available at https://www.gnu.org/software/guix/ is
+a static website built with [[https://haunt.dthompson.us/][Haunt]].  This directory contains the source
+files of the website.
 
-  - =www.scm= and =www= provide the =(www)= guile module which
-    offers services for building the website locally.
-  - =static= contains images and css for the website.
-  - =mockup.svg= illustrates a homepage aimed at average users.
-    This is for use when GuixSD is getting closer to a
-    production-ready system.
-  - =mockup-techie.svg= illustrates a homepage aimed at
-    skilled devs and sysadmins.  This is for use during the
-    alpha phase of development.
 
-* Dependencies
+* Development environment
 
-To be able to work on the website, you need the following software:
-
-  - [[https://www.gnu.org/software/guile/][GNU Guile]] (programming language)
-  - [[https://gnutls.org/][GnuTLS]] (Transport Layer Security Library)
-  - [[http://haunt.dthompson.us/][Haunt]] (static site generator)
-  - [[http://savannah.nongnu.org/projects/guile-json/][Guile-JSON]] (to produce the =packages.json= file)
-
-Additionally, [[https://www.gnu.org/software/guix/][GNU Guix]] source code is needed to generate the
-package-related pages of the website. You can clone the latest source
-as follows:
+This website is developed using the [[https://www.gnu.org/software/guix/download/][GNU Guix]] package manager. Run the
+following command to install all the software needed to build the
+website:
 
 #+BEGIN_EXAMPLE
-$ cd path/to/directory/of/your/choice
-$ git clone git://git.savannah.gnu.org/guix.git
+$ guix package -i git glibc-locales gnutls guile guile-json guile-syntax-highlight guix haunt
 #+END_EXAMPLE
 
-* Building and running
+* Running the website
 
 To try out the website locally while you work on it, run the following
 commands:
@@ -44,57 +28,19 @@ $ GUIX_WEB_SITE_LOCAL=yes haunt build
 $ haunt serve
 #+END_EXAMPLE
 
-Then, visit http://localhost:8080/ in a web browser.
+Then, visit http://localhost:8080/guix.html in a web browser.
 
-* Building and running special pages
-
-Currently, there are two pages, [[https://www.gnu.org/software/guix/packages][packages]] and [[https://www.gnu.org/software/guix/packages/issues.html][issues]], that are not
-built using *Haunt*. To build them, and try them out locally, do the
-following:
-
-1. Add the directory containing the source code of GNU Guix to the
-   ~GUILE_LOAD_PATH~ environment variable.
-2. Build the part of the website that builds with *Haunt*:
-
-   #+BEGIN_EXAMPLE
-   $ cd path/to/guix-artwork/website
-   $ GUIX_WEB_SITE_LOCAL=yes haunt build
-   #+END_EXAMPLE
-
-3. Copy the ~static~ directory to the build directory:
-
-   #+BEGIN_EXAMPLE
-   $ mkdir -p site/software/guix
-   $ cp -avr static site/software/guix
-   #+END_EXAMPLE
-
-4. Open the [[https://www.gnu.org/software/guile/manual/html_node/The-REPL.html#The-REPL][Guile REPL]] to import the ~packages~ module and build
-   Packages and Issues pages:
-
-   #+BEGIN_EXAMPLE
-   $ guile
-   scheme@(guile-user)> (use-modules (www) (www packages))
-   scheme@(guile-user)> (export-web-page (packages-page) "site/packages/index.html")
-   scheme@(guile-user)> (export-web-page (issues-page) "site/packages/issues.html")
-   scheme@(guile-user)> ,q
-   #+END_EXAMPLE
-
-5. Serve the whole website with *Haunt*:
-
-   #+BEGIN_EXAMPLE
-   $ haunt serve
-   #+END_EXAMPLE
-
-Now you can try the special pages out:
-
-  - http://localhost:8080/packages/
-  - http://localhost:8080/packages/issues.html
+You can stop the server pressing ~Ctrl + C~ twice.
 
 * Deploying
 
-Like the pages of many GNU websites, this website is managed through Savannah CVS.  To deploy the website it should be copied to the CVS tree and then checked in.  The website will be updated automatically once the files have been checked into CVS.
+Like the pages of many GNU websites, this website is managed through
+Savannah CVS.  To deploy the website it should be copied to the CVS
+tree and then checked in.  The website will be updated automatically
+once the files have been checked into CVS.
 
-See https://savannah.gnu.org/cvs/?group=guix for information on how to access Savannah CVS.
+See https://savannah.gnu.org/cvs/?group=guix for information on how to
+access Savannah CVS.
 
 * Copying
 
@@ -104,7 +50,7 @@ See [[file:COPYING][COPYING]].
 
 ** Graphics
 
-Public domain 2015 [[mailto:felipe.lopez@openmailbox.org][Luis Felipe López Acevedo]]
+Public domain 2015 Luis Felipe López Acevedo
 
 All the graphics in this directory are dedicated to the public domain, except
 for the Guix System Distribution logo, which can be used under the Creative
