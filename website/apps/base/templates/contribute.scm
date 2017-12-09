@@ -40,8 +40,7 @@
        (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))
 	  "development mailing list")
        " or in the "
-       (a (@ (href "https://webchat.freenode.net/?channels=%23guix"))
-	  "#guix channel")
+       (a (@ (href ,(guix-url "contact/irc/"))) "#guix channel")
        " in IRC Freenode. Tell us how would you like to help, and we
        will do our best to guide you. ")
 
