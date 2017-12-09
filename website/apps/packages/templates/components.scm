@@ -41,10 +41,11 @@
       (@ (class "package-synopsis"))
       " — "
       ,(package-synopsis-shtml package)))
-    (p
+
+    (div
      (@ (class "package-description"))
      ,(if (gnu-package? package)
-          '(i "This is a GNU package.  ")
+          '(p (i "This is a GNU package.  "))
           "")
      ,(package-description-shtml package))
 
