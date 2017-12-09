@@ -196,7 +196,7 @@
 
        (p
 	"GNU Guix won't interfere with the package manager that comes
-        with your distribution. They can leave together."))
+        with your distribution. They can live together."))
 
       (div
        (@ (class "action-box centered-text"))
