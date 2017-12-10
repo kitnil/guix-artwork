@@ -57,13 +57,18 @@
 (define (blog-feed-builder site posts)
   "Return a Haunt page representing the atom feed of the blog."
   (let* ((domain (site-domain site))
+	 (sorted-posts (posts/reverse-chronological posts))
+	 (max-posts 10) ; Number of posts to add to the feed.
 	 (context
 	  (list
 	   (cons "domain" domain)
 	   (cons "title" "GuixSD — Blog")
 	   (cons "id" (url-path-join domain "feeds" "blog.atom"))
 	   (cons "alternate" (url-path-join domain "blog" ""))
-	   (cons "posts" (posts/reverse-chronological posts)))))
+	   (cons "posts"
+		 (if (> (length sorted-posts) max-posts)
+		     (list-head sorted-posts max-posts)
+		     sorted-posts)))))
     (make-page (path-join "feeds" "blog.atom")
 	       (atom-feed-t context)
 	       sxml->xml)))
