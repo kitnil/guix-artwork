@@ -29,7 +29,7 @@
       (id ,id)
       (title ,title)
       (author (name "GuixSD") (uri ,domain))
-      (icon ,(guix-url "static/base/img/favicon.png"))
+      (icon ,(guix-url "static/base/img/icon.png"))
       (updated ,(date->string (current-date) "~4"))
       (link (@ (rel "alternate") (href ,alternate)))
 

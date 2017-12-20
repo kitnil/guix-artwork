@@ -94,7 +94,9 @@
 	       (title "GuixSD — Activity Feed")
 	       (href ,(guix-url "feeds/blog.atom"))))
       (link (@ (rel "icon") (type "image/png")
-	       (href ,(guix-url "static/base/img/favicon.png"))))
+	       (href ,(guix-url "static/base/img/icon.png"))))
+      (link (@ (rel "icon") (type "image/svg+xml") (sizes "any")
+	       (href ,(guix-url "static/base/img/icon.svg"))))
       ;; Additional scripts.
       ,@(map (lambda (script)
 	       `(script (@ (src ,script)) ""))
