@@ -42,7 +42,7 @@
 	(p
 	 (@ (class "post-metadata centered-text"))
 	 ,(post-ref post 'author) " — "
-	 ,(date->string (post-date post) "~B ~d, ~Y"))
+	 ,(date->string (post-date post) "~B ~e, ~Y"))
 
 	,(syntax-highlight (post-sxml post))
 
