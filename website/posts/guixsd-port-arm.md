@@ -66,7 +66,7 @@ You can now insert the microSD card into you BeagleBone Black, plug in a
 UART cable and power-on your device while pressing the "S2" button to
 force the boot from microSD instead of eMMC.
 
-![GuixSD installer on BeagleBone Black](/static/blog/img/guixsd-bbb1.jpg)
+![GuixSD installer on BeagleBone Black](https://www.gnu.org/software/guix/static/blog/img/guixsd-bbb1.jpg)
 
 Let's follow the [Guix documentation
 here](https://www.gnu.org/software/guix/manual/html_node/Preparing-for-Installation.html#Preparing-for-Installation)
