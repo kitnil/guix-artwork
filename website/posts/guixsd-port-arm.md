@@ -1,7 +1,7 @@
 title: Porting GuixSD to ARMv7
-date: 2017-12-22 11:00
+date: 2017-12-22 14:00
 author: Mathieu Othacehe
-tags: GuixSD, ARM, BeagleBone Black.
+tags: ARM, Cross-compilation
 ---
 
 GuixSD porting to ARMv7 is a difficult topic. There are plenty of
