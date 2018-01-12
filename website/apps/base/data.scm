@@ -86,8 +86,9 @@ het Nederlands.")
       already in the "
       (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
 	 "bug database")
-      ". If it is not, please report it.")
-    #:url "mailto:bug-guix@gnu.org"
+      ". If it is not, please "
+      (a (@ (href "mailto:bug-guix@gnu.org")) "report it."))
+    #:url "https://lists.gnu.org/mailman/listinfo/bug-guix"
     #:log "https://bugs.gnu.org/guix")
 
    (contact
