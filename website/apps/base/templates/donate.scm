@@ -116,6 +116,13 @@ i686-linux, and dedicated storage")
             "Max Delbrück Center for Molecular Medicine")
          " (hardware and hosting)"))))
 	 (tr
+	  (td "overdrive1.guixsd.org")
+	  (td "aarch64-linux")
+	  (td
+	   (ul
+	    (li (a (@ (href "https://www.arm.com/"))
+		   "ARM Holdings") " (hardware)"))))
+	 (tr
 	  (td "bayfront.guixsd.org")
 	  (td "new build farm front-end (WIP)")
 	  (td
