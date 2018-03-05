@@ -13,7 +13,6 @@
 ;;; Data.
 ;;;
 
-
 (define contact-media
   (list
    ;; The first three will be featured in the home page.
@@ -30,12 +29,41 @@
    (contact
     #:name "Help Mailing List"
     #:description
-    '(p
-      "Subscribe to the Help mailing list to get support from the
-      GuixSD and GNU Guix community via email. "
-      (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-12/msg00584.html"))
-	 "Until December 2015")
-      ", the Guix-devel mailing list filled that role.")
+    `(("de"
+       "Melden Sie sich bei der „Help“-Mailingliste an, um per E-Mail
+gemeinschaftlichen Rat zu GuixSD und Guix zu bekommen.  Sie können
+Nachrichten auch auf deutsch verfassen.")
+      ("en"
+       "Subscribe to the Help mailing list to get support from the GuixSD
+and GNU Guix community via email.  You can post messages in English though we
+also accept other languages.")
+      ("eo"
+       "Subskribu al la retmesaĝolisto \"Help\" por demandi helpon pri
+GuixSD kaj GNU Guix al la grupo.  Vi povas skribi esperantlingve.")
+      ("fr"
+       "Abonnez-vous à la liste de diffusion « Help » pour obtenir l'aide
+de la communauté sur GuixSD et GNU Guix par courrier électronique.  Vous
+pouvez envoyer des messages en français.")
+      ("hu"
+       "Iratkozzon fel a „Help“ levelezőlistára, hogy segítséget kaphasson
+e-mailben a GuixSD és a GNU Guix közösségtől. Magyarul is küldhet
+üzeneteket.")
+      ("it"
+       "Iscrivetevi alla mailing list 'Help' per essere aiutati da altri
+utenti di Guix e GuixSD.  Potete scrivere sulla mailing list anche in
+italiano.")
+      ("nb"
+       "Meld deg på diskusjonslisten «Help» for å få råd og tips fra
+andre GuixSD- og GNU Guix-brukere via e-post.  Du kan legge inn
+meldinger på norsk.")
+      ("nl"
+       "Abonneer je op de discussielijst \"Help\" om hulp te vragen
+van de GuixSD- en GNU Guix-gemeenschap.  Je kunt berichten sturen in
+het Nederlands.")
+      ("zh"
+       "訂閱「Help」郵件群組以電郵從GuixSD及GNU Guix社群取得支援。你可以使用
+正體、繁體中文發送訊息"))
+
     #:url "https://lists.gnu.org/mailman/listinfo/help-guix"
     #:log "https://lists.gnu.org/archive/html/help-guix")
 

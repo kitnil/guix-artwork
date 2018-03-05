@@ -13,6 +13,7 @@
   #:use-module (apps base types)
   #:use-module (apps base utils)
   #:use-module (srfi srfi-1)
+  #:use-module (ice-9 match)
   #:export (breadcrumbs
 	    button-big
 	    button-little
@@ -121,6 +122,11 @@
      "…")))
 
 
+(define (language-tag lang)
+  `(span (@ (class "button-little button-little-active")
+            (style "float: left; text-align: center; width: 20px; vertical-align: middle"))
+         ,lang))
+
 (define (contact->shtml contact)
   "Return an SHTML representation of the given contact object.
 
@@ -133,7 +139,18 @@
 	 ""
 	 `(small
 	   " (" (a (@ (href ,(contact-log contact))) "archive") ") "))
-    ,(contact-description contact)))
+
+    ;; The description can be a list of language/blurb pairs.
+    ,(match (contact-description contact)
+       ((((? string? languages) blurbs) ...)
+        `(p ,@(map (lambda (language blurb)
+                     `(div (@ (style "margin: 0 10px 10px 0"))
+                           ,(language-tag language)
+                           (div ,blurb)))
+                   languages
+                   blurbs)))
+       (blurb
+        blurb))))
 
 
 (define* (horizontal-separator #:key (light #false))

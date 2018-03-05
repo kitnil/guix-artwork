@@ -23,7 +23,8 @@
      "Community" "Mailing lists" "IRC channels" "Bug reports" "Help")
    #:active-menu-item "About"
    #:css (list
-	  (guix-url "static/base/css/page.css"))
+	  (guix-url "static/base/css/page.css")
+          (guix-url "static/base/css/buttons.css"))
    #:crumbs (list (crumb "Contact" "./"))
    #:content
    `(main
