@@ -146,7 +146,7 @@
         `(p ,@(map (lambda (language blurb)
                      `(div (@ (style "margin: 0 10px 10px 0"))
                            ,(language-tag language)
-                           (div ,blurb)))
+                           (div (@ (lang ,language)) ,blurb)))
                    languages
                    blurbs)))
        (blurb
