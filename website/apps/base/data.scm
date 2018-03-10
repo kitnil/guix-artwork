@@ -40,6 +40,9 @@ also accept other languages.")
       ("eo"
        "Subskribu al la retmesaĝolisto \"Help\" por demandi helpon pri
 GuixSD kaj GNU Guix al la grupo.  Vi povas skribi esperantlingve.")
+      ("es"
+       "Suscríbete a la lista de correo electrónico \"Help\" por pedir
+ayuda con Guix y GuixSD.  Puedes escribir mensajes en Español.")
       ("fr"
        "Abonnez-vous à la liste de diffusion « Help » pour obtenir l'aide
 de la communauté sur GuixSD et GNU Guix par courrier électronique.  Vous
@@ -60,6 +63,10 @@ meldinger på norsk.")
        "Abonneer je op de discussielijst \"Help\" om hulp te vragen
 van de GuixSD- en GNU Guix-gemeenschap.  Je kunt berichten sturen in
 het Nederlands.")
+      ("ru"
+       "Подпишитесь на список рассылки «Help», чтобы получить помощь от
+сообщества GuixSD и GNU Guix по электронной почте.  Вы можете писать на русском
+языке.")
       ("zh"
        "訂閱「Help」郵件群組以電郵從GuixSD及GNU Guix社群取得支援。你可以使用
 正體、繁體中文發送訊息"))
