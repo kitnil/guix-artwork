@@ -55,6 +55,10 @@ e-mailben a GuixSD és a GNU Guix közösségtől. Magyarul is küldhet
        "Iscrivetevi alla mailing list 'Help' per essere aiutati da altri
 utenti di Guix e GuixSD.  Potete scrivere sulla mailing list anche in
 italiano.")
+      ("ja"
+       "メールでGNU_GuixとGuixSDのコミュニティからサポートを受けるには、
+「Help」のメーリングリストに登録してください。
+メッセージ内容は日本語でも問題ございませんが、多言語でも受け付けております。")
       ("nb"
        "Meld deg på diskusjonslisten «Help» for å få råd og tips fra
 andre GuixSD- og GNU Guix-brukere via e-post.  Du kan legge inn
