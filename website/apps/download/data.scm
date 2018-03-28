@@ -46,7 +46,7 @@
     #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-vm-image-"
 			      (latest-guix-version) ".")
     #:variants (list (variant "x86_64" "x86_64-linux.xz"))
-    #:manual (manual-url "Installing-GuixSD-in-a-VM.html"))
+    #:manual (manual-url "Running-GuixSD-in-a-VM.html"))
 
    (download
     #:title (string-append "GNU Guix " (latest-guix-version) " Binary")
