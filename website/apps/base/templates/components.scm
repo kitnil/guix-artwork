@@ -118,7 +118,14 @@
     (h3 ,(contact-name contact))
     (p
      ,(string-summarize
-       (sxml->string* (contact-description contact)) 30)
+       (sxml->string*
+        (match (contact-description contact)
+          ((and multilingual (((? string?) (? string?)) ...))
+           (match (assoc "en" multilingual)
+             (("en" blurb) blurb)))
+          (blurb
+           blurb)))
+       30)
      "…")))
 
 
