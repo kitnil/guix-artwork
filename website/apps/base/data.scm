@@ -56,7 +56,7 @@ e-mailben a GuixSD és a GNU Guix közösségtől. Magyarul is küldhet
 utenti di Guix e GuixSD.  Potete scrivere sulla mailing list anche in
 italiano.")
       ("ja"
-       "メールでGNU_GuixとGuixSDのコミュニティからサポートを受けるには、
+       "メールでGNU GuixとGuixSDのコミュニティからサポートを受けるには、
 「Help」のメーリングリストに登録してください。
 メッセージ内容は日本語でも問題ございませんが、多言語でも受け付けております。")
       ("nb"
