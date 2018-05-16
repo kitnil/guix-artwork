@@ -1,7 +1,7 @@
 title: Paper on reproducible bioinformatics pipelines with Guix
 date: 2018-05-09 12:00
 author: Ricardo Wurmus
-tags: High-performance computing, Research, Reproducibility, Bioinformatics
+tags: High-performance computing, Research, Reproducibility, Bioinformatics, Reproducible builds
 ---
 I’m happy to announce that the bioinformatics group at the [Max
 Delbrück Center](https://www.mdc-berlin.de/) that I’m working with has
