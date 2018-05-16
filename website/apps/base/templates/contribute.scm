@@ -44,6 +44,16 @@
        " in IRC Freenode. Tell us how would you like to help, and we
        will do our best to guide you. ")
 
+      (p
+       "We want to provide a warm, friendly, and harassment-free environment,
+	so that anyone can contribute to the best of their abilities.  To this
+	end our project uses a “Contributor Covenant”, which was adapted from "
+       (a (@ (href "https://contributor-covenant.org/"))
+          "https://contributor-covenant.org/")
+       ".  You can find the full pledge in the "
+       (a (@ (href "//git.savannah.gnu.org/cgit/guix.git/tree/CODE-OF-CONDUCT"))
+          (tt "CODE-OF-CONDUCT")) " file.")
+
       (div
        (@ (class "centered-text"))
 
