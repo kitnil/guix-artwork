@@ -1,7 +1,7 @@
 title: Customize GuixSD: Use Stock SSH Agent Everywhere!
-date: 2018-05-25 23:46
+date: 2018-05-26 17:00
 author: Chris Marusich
-tags: desktop-environments, functional-package-management, programming-interfaces, scheme-api, system-services, transactional-upgrades, tutorial, ssh
+tags: Desktop environments, Functional package management, Programming interfaces, Scheme API, System services
 ---
 
 I frequently use SSH.  Since I don't like typing my password all the
@@ -408,3 +408,24 @@ published from: United States.
 The views expressed in this article are those of Chris Marusich and do
 not necessarily reflect the views of his past, present, or future
 employers.
+
+#### About GNU Guix
+
+[GNU Guix](https://www.gnu.org/software/guix) is a transactional package
+manager for the GNU system.  The Guix System Distribution or GuixSD is
+an advanced distribution of the GNU system that relies on GNU Guix and
+[respects the user's
+freedom](https://www.gnu.org/distros/free-system-distribution-guidelines.html).
+
+In addition to standard package management features, Guix supports
+transactional upgrades and roll-backs, unprivileged package management,
+per-user profiles, and garbage collection.  Guix uses low-level
+mechanisms from the Nix package manager, except that packages are
+defined as native [Guile](https://www.gnu.org/software/guile) modules,
+using extensions to the [Scheme](http://schemers.org) language.  GuixSD
+offers a declarative approach to operating system configuration
+management, and is highly customizable and hackable.
+
+GuixSD can be used on an i686, x86_64 and armv7 machines.  It is also
+possible to use Guix on top of an already installed GNU/Linux system,
+including on mips64el and aarch64.
