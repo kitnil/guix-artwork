@@ -136,7 +136,7 @@ feature of GNOME Keyring will override the environment variables set
 by OpenSSH's `ssh-agent`, so commands like `ssh-add` will wind up
 communicating with the GNOME Keyring instead of the `ssh-agent` you
 launched in your `~/.xsession`.  This is bad because, as previously
-mentioned, GNOME Keyring version 3.27 and earlier don't support as
+mentioned, GNOME Keyring version 3.27 or earlier doesn't support as
 many uses cases as OpenSSH's `ssh-agent`.
 
 How can we work around this problem?
@@ -253,7 +253,7 @@ refer to the [the Guile
 manual](https://www.gnu.org/software/guile/manual/html_node/List-Constructors.html#index-cons_002a).
 
 Now the question is: what should `my-gnome-desktop-configuration` be?
-Well, if we examine [the docstring for this record type in the Guix
+Well, if we examine [the definition of this record type in the Guix
 source](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/services/desktop.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n799),
 we see the following:
 
