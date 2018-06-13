@@ -229,10 +229,10 @@ https://www.gnu.org/software/guix/manual/html_node/Services.html).  To
 make GNOME use our custom GNOME Keyring package, we must somehow
 customize the `gnome-desktop-service` ([defined in the file
 gnu/services/desktop.scm](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/services/desktop.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n795))
-to use our custom package.  How do we do customize a service?
-Generally, the answer depends on the service.  Thankfully, many of
-GuixSD's services, including the `gnome-desktop-service`, follow a
-similar pattern.  In this case, we "just" need to pass a custom
+to use our custom package.  How do we customize a service?  Generally,
+the answer depends on the service.  Thankfully, many of GuixSD's
+services, including the `gnome-desktop-service`, follow a similar
+pattern.  In this case, we "just" need to pass a custom
 `<gnome-desktop-configuration>` record to the `gnome-desktop-service`
 procedure in our operating system declaration, like this:
 
@@ -249,7 +249,7 @@ procedure in our operating system declaration, like this:
 
 Here, the `cons*` procedure just adds the GNOME desktop service to the
 `%desktop-services` list, returning the new list.  For details, please
-refer to the [the Guile
+refer to [the Guile
 manual](https://www.gnu.org/software/guile/manual/html_node/List-Constructors.html#index-cons_002a).
 
 Now the question is: what should `my-gnome-desktop-configuration` be?
