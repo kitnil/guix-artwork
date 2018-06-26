@@ -8,6 +8,8 @@
   #:use-module (apps base utils)
   #:export (security-t))
 
+(define ludovics-key
+  "3CE4 6455 8A84 FDC6 9DB4 0CFB 090B 1199 3D9A EBB5")
 
 (define (security-t)
   "Return the Security page in SHTML."
@@ -38,12 +40,30 @@
        (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-security"))
 	  ("guix-security@gnu.org")) ".  This list is monitored by a
         small team of Guix developers.")
+      (p
+       "If you prefer to send your report using OpenPGP encrypted email,
+        please send it to one of the following Guix developers using their
+        respective OpenPGP key:")
+      (ul
+        (li "Leo Famulari"
+          (ul
+            (li "4F71 6F9A 8FA2 C80E F1B5 E1BA 5E35 F231 DE1A C5E0")))
+        (li "Ludovic Courtès"
+          (ul
+            (li ,ludovics-key)))
+        (li "Mark Weaver"
+          (ul
+            (li "D919 0965 CE03 199E AF28 B3BE 7CEF 2984 7562 C516")))
+        (li "Ricardo Wurmus"
+          (ul
+            (li "BCA6 89B6 3655 3801 C3C6 2150 197A 5888 235F ACAC"))))
 
       (h3 "Release signatures")
       (p
        "Releases of Guix and GuixSD are signed using the OpenPGP "
        "key with the fingerprint "
-       "3CE4 6455 8A84 FDC6 9DB4  0CFB 090B 1199 3D9A EBB5.  "
+       ,ludovics-key
+       ".  "
        "Users should "
        (a (@ (href ,(manual-url "Binary-Installation.html"))) "verify")
        " their downloads before extracting or running them.")
