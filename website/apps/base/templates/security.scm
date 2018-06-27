@@ -47,22 +47,22 @@
       (ul
         (li "Leo Famulari"
           (ul
-            (li "4F71 6F9A 8FA2 C80E F1B5 E1BA 5E35 F231 DE1A C5E0")))
+            (li (tt "4F71 6F9A 8FA2 C80E F1B5 E1BA 5E35 F231 DE1A C5E0"))))
         (li "Ludovic Courtès"
           (ul
-            (li ,ludovics-key)))
-        (li "Mark Weaver"
+            (li (tt ,ludovics-key))))
+        (li "Mark H Weaver"
           (ul
-            (li "D919 0965 CE03 199E AF28 B3BE 7CEF 2984 7562 C516")))
+            (li (tt "D919 0965 CE03 199E AF28 B3BE 7CEF 2984 7562 C516"))))
         (li "Ricardo Wurmus"
           (ul
-            (li "BCA6 89B6 3655 3801 C3C6 2150 197A 5888 235F ACAC"))))
+            (li (tt "BCA6 89B6 3655 3801 C3C6 2150 197A 5888 235F ACAC")))))
 
       (h3 "Release signatures")
       (p
        "Releases of Guix and GuixSD are signed using the OpenPGP "
        "key with the fingerprint "
-       ,ludovics-key
+       (tt ,ludovics-key)
        ".  "
        "Users should "
        (a (@ (href ,(manual-url "Binary-Installation.html"))) "verify")
@@ -75,6 +75,6 @@
        (a (@ (href ,(manual-url "Security-Updates.html"))) "security updates")
        " quickly and with minimal disruption for users.")
       (p
-       "Guix uses a \"rolling release\" model.  All security "
+       "Guix uses a “rolling release” model.  All security "
        "bug-fixes are pushed directly to the master branch.  There"
-       " is no \"stable\" branch that only receives security fixes.")))))
+       " is no “stable” branch that only receives security fixes.")))))
