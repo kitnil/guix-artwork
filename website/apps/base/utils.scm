@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2013, 2014, 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2013, 2014, 2015, 2016, 2017, 2018 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
 ;;; Copyright © 2017 Eric Bavier <bavier@member.fsf.org>
@@ -46,7 +46,7 @@
   (make-parameter "/software/guix/")) ; Path to GNU Guix site in gnu.org
 
 (define latest-guix-version
-  (make-parameter "0.14.0"))
+  (make-parameter "0.15.0"))
 
 
 
