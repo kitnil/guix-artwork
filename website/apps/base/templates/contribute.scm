@@ -223,10 +223,13 @@
 	 "You can help translate the "
 	 (a (@ (href "https://translationproject.org/domain/guix.html"))
 	    "software")
-	 " and the "
+	 ", the "
 	 (a (@ (href "https://translationproject.org/domain/guix-packages.html"))
 	    "package descriptions")
-	 " to your language.  See the "
+         ", and the "
+            (a (@ (href "https://translationproject.org/domain/guix-manual.html"))
+	       "manual")
+	 " into your language.  See the "
 	 (a (@ (href "https://translationproject.org/html/translators.html"))
 	    "Translation Project")
 	 " for information on how you can help.")
