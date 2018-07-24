@@ -267,6 +267,10 @@ times.  Time will tell!
 
 ![Inside the cabin of the DeLorean time machine in “Back to the Future.”](https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-05.jpg/800px-TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-05.jpg)
 
+_[Picture](https://commons.wikimedia.org/wiki/File:TeamTimeCar.com-BTTF_DeLorean_Time_Machine-OtoGodfrey.com-JMortonPhoto.com-05.jpg)
+of a DeLorean cabin by Oto Godfrey and Justin Morton, under [CC-BY-SA
+4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.en)._
+
 That profile generations are kept around already gave users a time
 machine of sorts—you can always roll back to a previous state of your
 software environment.  With the addition of roll-back support for `guix
