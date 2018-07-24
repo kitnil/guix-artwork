@@ -92,7 +92,7 @@ between—e.g., the C library—are shared among all packages.
 # `guix pull` generations
 
 Like I wrote above, `guix pull` brings the latest set of package
-definitions from Git `master`.  The Guix package collection usually only
+definitions from Git `master`.  The Guix package collection usually
 contains only the latest version of each package; for example, current
 `master` only has version 26.1 of Emacs and version 2.10.4 of the GIMP
 (there are notable exceptions such as GCC or Python.)  Thus, `guix
