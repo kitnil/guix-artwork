@@ -38,7 +38,7 @@ concepts of the Cuirass internal state are:
   job name, repository URL, as well as the branch and a procedure
   `proc` that specifies how this is to be built.
 
-- **Evaluation**. An evaluation is a high-level build actcion
+- **Evaluation**. An evaluation is a high-level build action
   related to a certain revision of a repository of a given
   specification.  For each specification, Cuirass continuously
   produces new evaluations which build different versions of the
