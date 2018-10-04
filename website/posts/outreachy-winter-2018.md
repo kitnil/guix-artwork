@@ -1,5 +1,5 @@
 title: Join GNU Guix through Outreachy
-date: 2018-10-03 11:03
+date: 2018-10-04 10:00
 author: Gábor Boskovits
 tags: Outreachy, Documentation
 ---
