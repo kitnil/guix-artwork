@@ -281,7 +281,7 @@ the REPL.
         (2 a 5 7)
 
 -   The *quasiquote* disables evaluation of a parenthesized expression until a
-    colon re-enables it.  Thus it provides us with fine-grained control over what
+    comma re-enables it.  Thus it provides us with fine-grained control over what
     is evaluated and what is not.
 
         > `(2 a 5 7 (2 ,a 5 ,(+ a 4)))
