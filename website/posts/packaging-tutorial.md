@@ -1,5 +1,5 @@
 title: A packaging tutorial for Guix
-date: 2018-10-09
+date: 2018-10-10 16:00
 author: Pierre Neidhardt
 tags: Software development, Programming interfaces, Scheme API
 ---
@@ -37,7 +37,7 @@ basic programming knowledge.
 
 # A "Hello World" package
 
-The [Defining Packages section of the manual](https://www.gnu.org/software/guix/manual/en/html_node/Defining-Packages.html) introduces the basics of Guix
+The [“Defining Packages” section of the manual](https://www.gnu.org/software/guix/manual/en/html_node/Defining-Packages.html) introduces the basics of Guix
 packaging.  In the following section, we will partly go over those basics again.
 
 `GNU hello` is a dummy project that serves as an idiomatic example for
@@ -440,7 +440,7 @@ provides better integration and provenance tracking.  Channels are not
 necessarily local, they can be maintained as a public Git repository for
 instance.  Of course, several channels can be used at the same time.
 
-See the [Channel secion in the manual](http://guix.info/manual/en/Channels.html) for setup details.
+See the [“Channels” section in the manual](http://guix.info/manual/en/Channels.html) for setup details.
 
 
 ### Direct checkout hacking
@@ -1055,18 +1055,21 @@ contributions soon!
 
 # About GNU Guix
 
-[GNU Guix](https://www.gnu.org/software/guix) is a transactional package manager for the GNU system.  The Guix System
-Distribution or GuixSD is an advanced distribution of the GNU system that relies
-on GNU Guix and [respects the user's freedom](https://www.gnu.org/distros/free-system-distribution-guidelines.html).
+[GNU Guix](https://www.gnu.org/software/guix) is a transactional package
+manager for the GNU system.  The Guix System Distribution or GuixSD is
+an advanced distribution of the GNU system that relies on GNU Guix and
+[respects the user's
+freedom](https://www.gnu.org/distros/free-system-distribution-guidelines.html).
 
-In addition to standard package management features, Guix supports transactional
-upgrades and roll-backs, unprivileged package management, per-user profiles, and
-garbage collection.  Guix uses low-level mechanisms from the Nix package
-manager, except that packages are defined as native [Guile](https://www.gnu.org/software/guile) modules, using
-extensions to the [Scheme](http://schemers.org) language.  GuixSD offers a declarative approach to
-operating system configuration management, and is highly customizable and
-hackable.
+In addition to standard package management features, Guix supports
+transactional upgrades and roll-backs, unprivileged package management,
+per-user profiles, and garbage collection.  Guix uses low-level
+mechanisms from the Nix package manager, except that packages are
+defined as native [Guile](https://www.gnu.org/software/guile) modules,
+using extensions to the [Scheme](http://schemers.org) language.  GuixSD
+offers a declarative approach to operating system configuration
+management, and is highly customizable and hackable.
 
-GuixSD can be used on an i686, x86_64 and armv7 machines.  It is also possible
-to use Guix on top of an already installed GNU/Linux system, including on
-mips64el and aarch64.
+GuixSD can be used on an i686, x86_64, ARMv7, and AArch64 machines.  It
+is also possible to use Guix on top of an already installed GNU/Linux
+system, including on mips64el and aarch64.
