@@ -1071,8 +1071,9 @@ contributions soon!
 
 -   [Pjotr’s hacking guide to GNU Guix](https://gitlab.com/pjotrp/guix-notes/blob/master/HACKING.org)
 
--   "Guix Guix: Package without a scheme!", by Andreas Enge (in
-    `guix-maintenance.git/talks/ghm-2013/andreas/slides.pdf`)
+-   ["GNU Guix: Package without a
+    scheme!"](https://www.gnu.org/software/guix/guix-ghm-andreas-20130823.pdf),
+    by Andreas Enge
 
 
 # About GNU Guix
