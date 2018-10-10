@@ -158,10 +158,32 @@ URI:
     0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i
 ```
 
-Note in this specific case that the output tells us which mirror was chosen.
-
+In this specific case that the output tells us which mirror was chosen.
 If the result of the above command is not the same as in the above snippet,
 update your `my-hello` declaration accordingly.
+
+Note that GNU package tarballs come with an OpenPGP signature, so you
+should definitely check the signature of this tarball with `gpg` to
+authenticate it before going further:
+
+```sh
+	$ guix download mirror://gnu/hello/hello-2.10.tar.gz.sig
+
+	Starting download of /tmp/guix-file.03tFfb
+	From https://ftpmirror.gnu.org/gnu/hello/hello-2.10.tar.gz.sig...
+	following redirection to `https://ftp.igh.cnrs.fr/pub/gnu/hello/hello-2.10.tar.gz.sig'...
+	 ….tar.gz.sig  819B                                                                                                                       1.2MiB/s 00:00 [##################] 100.0%
+	/gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig
+	0q0v86n3y38z17rl146gdakw9xc4mcscpk8dscs412j22glrv9jf
+	$ gpg --verify /gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig /gnu/store/hbdalsf5lpf01x4dcknwx6xbn6n5km6k-hello-2.10.tar.gz
+	gpg: Signature made Sun 16 Nov 2014 01:08:37 PM CET
+	gpg:                using RSA key A9553245FDE9B739
+	gpg: Good signature from "Sami Kerola <kerolasa@iki.fi>" [unknown]
+	gpg:                 aka "Sami Kerola (http://www.iki.fi/kerolasa/) <kerolasa@iki.fi>" [unknown]
+	gpg: WARNING: This key is not certified with a trusted signature!
+	gpg:          There is no indication that the signature belongs to the owner.
+	Primary key fingerprint: 8ED3 96E3 7E38 D471 A005  30D3 A955 3245 FDE9 B739
+```
 
 Now you can happily run
 
