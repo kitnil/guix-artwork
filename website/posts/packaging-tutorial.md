@@ -47,25 +47,25 @@ with.  You can look up its declaration with `guix edit hello` from the
 command line.  Let's see how it looks:
 
 ```scheme
-    (define-public hello
-      (package
-        (name "hello")
-        (version "2.10")
-        (source (origin
-                  (method url-fetch)
-                  (uri (string-append "mirror://gnu/hello/hello-" version
-                                      ".tar.gz"))
-                  (sha256
-                   (base32
-                    "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
-        (build-system gnu-build-system)
-        (synopsis "Hello, GNU world: An example GNU package")
-        (description
-         "GNU Hello prints the message \"Hello, world!\" and then exits.  It
-    serves as an example of standard GNU coding practices.  As such, it supports
-    command-line arguments, multiple languages, and so on.")
-        (home-page "https://www.gnu.org/software/hello/")
-        (license gpl3+)))
+(define-public hello
+  (package
+    (name "hello")
+    (version "2.10")
+    (source (origin
+              (method url-fetch)
+              (uri (string-append "mirror://gnu/hello/hello-" version
+                                  ".tar.gz"))
+              (sha256
+               (base32
+                "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
+    (build-system gnu-build-system)
+    (synopsis "Hello, GNU world: An example GNU package")
+    (description
+     "GNU Hello prints the message \"Hello, world!\" and then exits.  It
+serves as an example of standard GNU coding practices.  As such, it supports
+command-line arguments, multiple languages, and so on.")
+    (home-page "https://www.gnu.org/software/hello/")
+    (license gpl3+)))
 ```
 
 As you can see, most of it is rather straightforward.  But let's review the
@@ -110,29 +110,29 @@ setup later; for now we will go the simplest route.
 Save the following to a file `my-hello.scm`.
 
 ```scheme
-    (use-modules (guix packages)
-                 (guix download)
-                 (guix build-system gnu)
-                 (guix licenses))
+(use-modules (guix packages)
+             (guix download)
+             (guix build-system gnu)
+             (guix licenses))
 
-    (package
-      (name "my-hello")
-      (version "2.10")
-      (source (origin
-                (method url-fetch)
-                (uri (string-append "mirror://gnu/hello/hello-" version
-                                    ".tar.gz"))
-                (sha256
-                 (base32
-                  "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
-      (build-system gnu-build-system)
-      (synopsis "Hello, Guix world: An example custom Guix package")
-      (description
-       "GNU Hello prints the message \"Hello, world!\" and then exits.  It
-    serves as an example of standard GNU coding practices.  As such, it supports
-    command-line arguments, multiple languages, and so on.")
-      (home-page "https://www.gnu.org/software/hello/")
-      (license gpl3+))
+(package
+  (name "my-hello")
+  (version "2.10")
+  (source (origin
+            (method url-fetch)
+            (uri (string-append "mirror://gnu/hello/hello-" version
+                                ".tar.gz"))
+            (sha256
+             (base32
+              "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
+  (build-system gnu-build-system)
+  (synopsis "Hello, Guix world: An example custom Guix package")
+  (description
+   "GNU Hello prints the message \"Hello, world!\" and then exits.  It
+serves as an example of standard GNU coding practices.  As such, it supports
+command-line arguments, multiple languages, and so on.")
+  (home-page "https://www.gnu.org/software/hello/")
+  (license gpl3+))
 ```
 
 We will explain the extra code in a moment.
@@ -148,14 +148,14 @@ Thankfully, Guix can automate this task for us; all we need is to provide the
 URI:
 
 ```sh
-    $ guix download mirror://gnu/hello/hello-2.10.tar.gz
+$ guix download mirror://gnu/hello/hello-2.10.tar.gz
 
-    Starting download of /tmp/guix-file.JLYgL7
-    From https://ftpmirror.gnu.org/gnu/hello/hello-2.10.tar.gz...
-    following redirection to `https://mirror.ibcp.fr/pub/gnu/hello/hello-2.10.tar.gz'...
-     …10.tar.gz  709KiB                                 2.5MiB/s 00:00 [##################] 100.0%
-    /gnu/store/hbdalsf5lpf01x4dcknwx6xbn6n5km6k-hello-2.10.tar.gz
-    0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i
+Starting download of /tmp/guix-file.JLYgL7
+From https://ftpmirror.gnu.org/gnu/hello/hello-2.10.tar.gz...
+following redirection to `https://mirror.ibcp.fr/pub/gnu/hello/hello-2.10.tar.gz'...
+ …10.tar.gz  709KiB                                 2.5MiB/s 00:00 [##################] 100.0%
+/gnu/store/hbdalsf5lpf01x4dcknwx6xbn6n5km6k-hello-2.10.tar.gz
+0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i
 ```
 
 In this specific case that the output tells us which mirror was chosen.
@@ -167,36 +167,36 @@ should definitely check the signature of this tarball with `gpg` to
 authenticate it before going further:
 
 ```sh
-	$ guix download mirror://gnu/hello/hello-2.10.tar.gz.sig
+$ guix download mirror://gnu/hello/hello-2.10.tar.gz.sig
 
-	Starting download of /tmp/guix-file.03tFfb
-	From https://ftpmirror.gnu.org/gnu/hello/hello-2.10.tar.gz.sig...
-	following redirection to `https://ftp.igh.cnrs.fr/pub/gnu/hello/hello-2.10.tar.gz.sig'...
-	 ….tar.gz.sig  819B                                                                                                                       1.2MiB/s 00:00 [##################] 100.0%
-	/gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig
-	0q0v86n3y38z17rl146gdakw9xc4mcscpk8dscs412j22glrv9jf
-	$ gpg --verify /gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig /gnu/store/hbdalsf5lpf01x4dcknwx6xbn6n5km6k-hello-2.10.tar.gz
-	gpg: Signature made Sun 16 Nov 2014 01:08:37 PM CET
-	gpg:                using RSA key A9553245FDE9B739
-	gpg: Good signature from "Sami Kerola <kerolasa@iki.fi>" [unknown]
-	gpg:                 aka "Sami Kerola (http://www.iki.fi/kerolasa/) <kerolasa@iki.fi>" [unknown]
-	gpg: WARNING: This key is not certified with a trusted signature!
-	gpg:          There is no indication that the signature belongs to the owner.
-	Primary key fingerprint: 8ED3 96E3 7E38 D471 A005  30D3 A955 3245 FDE9 B739
+Starting download of /tmp/guix-file.03tFfb
+From https://ftpmirror.gnu.org/gnu/hello/hello-2.10.tar.gz.sig...
+following redirection to `https://ftp.igh.cnrs.fr/pub/gnu/hello/hello-2.10.tar.gz.sig'...
+ ….tar.gz.sig  819B                                                                                                                       1.2MiB/s 00:00 [##################] 100.0%
+/gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig
+0q0v86n3y38z17rl146gdakw9xc4mcscpk8dscs412j22glrv9jf
+$ gpg --verify /gnu/store/rzs8wba9ka7grrmgcpfyxvs58mly0sx6-hello-2.10.tar.gz.sig /gnu/store/hbdalsf5lpf01x4dcknwx6xbn6n5km6k-hello-2.10.tar.gz
+gpg: Signature made Sun 16 Nov 2014 01:08:37 PM CET
+gpg:                using RSA key A9553245FDE9B739
+gpg: Good signature from "Sami Kerola <kerolasa@iki.fi>" [unknown]
+gpg:                 aka "Sami Kerola (http://www.iki.fi/kerolasa/) <kerolasa@iki.fi>" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 8ED3 96E3 7E38 D471 A005  30D3 A955 3245 FDE9 B739
 ```
 
 Now you can happily run
 
 ```sh
-    $ guix package --install-from-file=my-hello.scm
+$ guix package --install-from-file=my-hello.scm
 ```
 
 You should now have `my-hello` in your profile!
 
 ```sh
-    $ guix package --list-installed=my-hello
-    my-hello	2.10	out
-    /gnu/store/f1db2mfm8syb8qvc357c53slbvf1g9m9-my-hello-2.10
+$ guix package --list-installed=my-hello
+my-hello	2.10	out
+/gnu/store/f1db2mfm8syb8qvc357c53slbvf1g9m9-my-hello-2.10
 ```
 
 We've gone as far as we could without any knowledge of Scheme.  Now is the right
@@ -231,12 +231,14 @@ the REPL.
 
     Examples of valid expressions:
 
-        > "Hello World!"
-        "Hello World!"
-        > 17
-        17
-        > (display (string-append "Hello " "Guix" "\n"))
-        "Hello Guix!"
+    ```scheme
+    > "Hello World!"
+    "Hello World!"
+    > 17
+    17
+    > (display (string-append "Hello " "Guix" "\n"))
+    "Hello Guix!"
+    ```
 
 -   This last example is a function call embedded in another function call.  When
     a parenthesized expression is evaluated, the first term is the function and
@@ -245,70 +247,88 @@ the REPL.
 
 -   Anonymous functions are declared with the `lambda` term:
 
-        > (lambda (x) (* x x))
-        #<procedure 120e348 at <unknown port>:24:0 (x)>
+    ```scheme
+    > (lambda (x) (* x x))
+    #<procedure 120e348 at <unknown port>:24:0 (x)>
+    ```
 
     The above lambda returns the square of its argument.  Since everything is an
     expression, the `lambda` expression returns an anonymous function, which can
     in turn be applied to an argument:
 
-        > ((lambda (x) (* x x)) 3)
-        9
+    ```scheme
+    > ((lambda (x) (* x x)) 3)
+    9
+    ```
 
 -   Anything can be assigned a global name with `define`:
 
-        > (define a 3)
-        > (define square (lambda (x) (* x x)))
-        > (square a)
-        9
+    ```scheme
+    > (define a 3)
+    > (define square (lambda (x) (* x x)))
+    > (square a)
+    9
+    ```
 
 -   Procedures can be defined more concisely with the following syntax:
 
-        (define (square x) (* x x))
+    ```scheme
+    (define (square x) (* x x))
+    ```
 
 -   A list structure can be created with the `list` procedure:
 
-        > (list 2 a 5 7)
-        (2 3 5 7)
+    ```scheme
+    > (list 2 a 5 7)
+    (2 3 5 7)
+    ```
 
 -   The *quote* disables evaluation of a parenthesized expression: the first term
     is not called over the other terms.  Thus it effectively returns a list of
     terms.
 
-        > '(display (string-append "Hello " "Guix" "\n"))
-        (display (string-append "Hello " "Guix" "\n"))
-        > '(2 a 5 7)
-        (2 a 5 7)
+    ```scheme
+    > '(display (string-append "Hello " "Guix" "\n"))
+    (display (string-append "Hello " "Guix" "\n"))
+    > '(2 a 5 7)
+    (2 a 5 7)
+    ```
 
 -   The *quasiquote* disables evaluation of a parenthesized expression until a
     comma re-enables it.  Thus it provides us with fine-grained control over what
     is evaluated and what is not.
 
-        > `(2 a 5 7 (2 ,a 5 ,(+ a 4)))
-        (2 a 5 7 (2 3 5 7))
+    ```scheme
+    > `(2 a 5 7 (2 ,a 5 ,(+ a 4)))
+    (2 a 5 7 (2 3 5 7))
+    ```
 
     Note that the above result is a list of mixed elements: numbers, symbols (here
     `a`) and the last element is a list itself.
 
 -   Multiple variables can be named locally with `let`:
 
-        > (define x 10)
-        > (let ((x 2)
-                (y 3))
-            (list x y))
-        (2 3)
-        > x
-        10
-        > y
-        ERROR: In procedure module-lookup: Unbound variable: y
+    ```scheme
+    > (define x 10)
+    > (let ((x 2)
+            (y 3))
+        (list x y))
+    (2 3)
+    > x
+    10
+    > y
+    ERROR: In procedure module-lookup: Unbound variable: y
+    ```
 
     Use `let*` to allow later variable declarations to refer to earlier
     definitions.
 
-        > (let* ((x 2)
-                 (y (* x 3)))
-            (list x y))
-        (2 6)
+    ```scheme
+    > (let* ((x 2)
+             (y (* x 3)))
+        (list x y))
+    (2 6)
+    ```
 
 -   The keyword syntax is `#:`, it is used to create unique identifiers.  See also
     the [Keywords section in the Guile manual](https://www.gnu.org/software/guile/manual/html_node/Keywords.html).
@@ -319,10 +339,12 @@ the REPL.
 
 -   Modules are created with `define-module`.  For instance
 
-        (define-module (guix build-system ruby)
-          #:use-module (guix store)
-          #:export (ruby-build
-                    ruby-build-system))
+    ```scheme
+    (define-module (guix build-system ruby)
+      #:use-module (guix store)
+      #:export (ruby-build
+                ruby-build-system))
+    ```
 
     defines the module `ruby` which must be located in
     `guix/build-system/ruby.scm` somewhere in `GUILE_LOAD_PATH`.  It depends on
@@ -360,10 +382,10 @@ But first, let's look at other possibilities.
 This is what we previously did with `my-hello`.  Now that we know more Scheme,
 let's explain the leading chunks.  As stated in `guix package --help`:
 
-```scheme
-    -f, --install-from-file=FILE
-                           install the package that the code within FILE
-                           evaluates to
+```sh
+-f, --install-from-file=FILE
+                       install the package that the code within FILE
+                       evaluates to
 ```
 
 Thus the last expression *must* return a package, which is the case in our
@@ -390,8 +412,8 @@ Create a directory, say `~./guix-packages` and add it to the `GUIX_PACKAGE_PATH`
 environment variable:
 
 ```sh
-    $ mkdir ~/guix-packages
-    $ export GUIX_PACKAGE_PATH=~/guix-packages
+$ mkdir ~/guix-packages
+$ export GUIX_PACKAGE_PATH=~/guix-packages
 ```
 
 To add several directories, separate them with a colon (`:`).
@@ -399,31 +421,31 @@ To add several directories, separate them with a colon (`:`).
 Our previous `my-hello` needs some adjustments though:
 
 ```scheme
-    (define-module (my-hello)
-      #:use-module (guix licenses)
-      #:use-module (guix packages)
-      #:use-module (guix build-system gnu)
-      #:use-module (guix download))
+(define-module (my-hello)
+  #:use-module (guix licenses)
+  #:use-module (guix packages)
+  #:use-module (guix build-system gnu)
+  #:use-module (guix download))
 
-    (define-public my-hello
-      (package
-        (name "my-hello")
-        (version "2.10")
-        (source (origin
-                  (method url-fetch)
-                  (uri (string-append "mirror://gnu/hello/hello-" version
-                                      ".tar.gz"))
-                  (sha256
-                   (base32
-                    "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
-        (build-system gnu-build-system)
-        (synopsis "Hello, Guix world: An example custom Guix package")
-        (description
-         "GNU Hello prints the message \"Hello, world!\" and then exits.  It
-    serves as an example of standard GNU coding practices.  As such, it supports
-    command-line arguments, multiple languages, and so on.")
-        (home-page "https://www.gnu.org/software/hello/")
-        (license gpl3+)))
+(define-public my-hello
+  (package
+    (name "my-hello")
+    (version "2.10")
+    (source (origin
+              (method url-fetch)
+              (uri (string-append "mirror://gnu/hello/hello-" version
+                                  ".tar.gz"))
+              (sha256
+               (base32
+                "0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i"))))
+    (build-system gnu-build-system)
+    (synopsis "Hello, Guix world: An example custom Guix package")
+    (description
+     "GNU Hello prints the message \"Hello, world!\" and then exits.  It
+serves as an example of standard GNU coding practices.  As such, it supports
+command-line arguments, multiple languages, and so on.")
+    (home-page "https://www.gnu.org/software/hello/")
+    (license gpl3+)))
 ```
 
 Note that we have assigned the package value to an exported variable name with
@@ -437,12 +459,12 @@ package.  If you want to use `define-public` in this use-case nonetheless, make
 sure the file ends with an evaluation of `my-hello`:
 
 ```scheme
-    ; ...
-    (define-public my-hello
-      ; ...
-      )
+; ...
+(define-public my-hello
+  ; ...
+  )
 
-    my-hello
+my-hello
 ```
 
 This last example is not very typical.
@@ -451,7 +473,7 @@ Now `my-hello` should be part of the package collection like all other official
 packages.  You can verify this with:
 
 ```sh
-    $ guix package --show=my-hello
+$ guix package --show=my-hello
 ```
 
 
@@ -480,7 +502,7 @@ development inertia.
 Check out the official [Git](https://git-scm.com/) repository:
 
 ```sh
-    $ git clone https://git.savannah.gnu.org/git/guix.git
+$ git clone https://git.savannah.gnu.org/git/guix.git
 ```
 
 In the rest of this article, we use `$GUIX_CHECKOUT` to refer to the location of
@@ -499,24 +521,32 @@ collection of the repository.
 
 -   Search packages, such as Ruby:
 
-        $ cd $GUIX_CHECKOUT
-        $ ./pre-inst-env guix package --list-available=ruby
-            ruby    1.8.7-p374      out     gnu/packages/ruby.scm:119:2
-            ruby    2.1.6   out     gnu/packages/ruby.scm:91:2
-            ruby    2.2.2   out     gnu/packages/ruby.scm:39:2
+    ```sh
+    $ cd $GUIX_CHECKOUT
+    $ ./pre-inst-env guix package --list-available=ruby
+        ruby    1.8.7-p374      out     gnu/packages/ruby.scm:119:2
+        ruby    2.1.6   out     gnu/packages/ruby.scm:91:2
+        ruby    2.2.2   out     gnu/packages/ruby.scm:39:2
+    ```
 
 -   Build a package, here Ruby version 2.1:
 
-        $ ./pre-inst-env guix build --keep-failed ruby@2.1
-        /gnu/store/c13v73jxmj2nir2xjqaz5259zywsa9zi-ruby-2.1.6
+    ```sh
+    $ ./pre-inst-env guix build --keep-failed ruby@2.1
+    /gnu/store/c13v73jxmj2nir2xjqaz5259zywsa9zi-ruby-2.1.6
+    ```
 
 -   Install it to your user profile:
 
-        $ ./pre-inst-env guix package --install ruby@2.1
+    ```sh
+    $ ./pre-inst-env guix package --install ruby@2.1
+    ```
 
 -   Check for common mistakes:
 
-        $ ./pre-inst-env guix lint ruby@2.1
+    ```sh
+    $ ./pre-inst-env guix lint ruby@2.1
+    ```
 
 Guix strives at maintaining a high packaging standard; when contributing to the
 Guix project, remember to
@@ -537,78 +567,78 @@ complex than that and Guix can handle more advanced scenarios.  Let's look at
 another, more sophisticated package (slightly modified from the source):
 
 ```scheme
-    (define-module (gnu packages version-control)
-      #:use-module ((guix licenses) #:prefix license:)
-      #:use-module (guix utils)
-      #:use-module (guix packages)
-      #:use-module (guix git-download)
-      #:use-module (guix build-system cmake)
-      #:use-module (gnu packages ssh)
-      #:use-module (gnu packages web)
-      #:use-module (gnu packages pkg-config)
-      #:use-module (gnu packages python)
-      #:use-module (gnu packages compression)
-      #:use-module (gnu packages tls))
+(define-module (gnu packages version-control)
+  #:use-module ((guix licenses) #:prefix license:)
+  #:use-module (guix utils)
+  #:use-module (guix packages)
+  #:use-module (guix git-download)
+  #:use-module (guix build-system cmake)
+  #:use-module (gnu packages ssh)
+  #:use-module (gnu packages web)
+  #:use-module (gnu packages pkg-config)
+  #:use-module (gnu packages python)
+  #:use-module (gnu packages compression)
+  #:use-module (gnu packages tls))
 
-    (define-public my-libgit2
-      (let ((commit "e98d0a37c93574d2c6107bf7f31140b548c6a7bf")
-            (revision "1"))
-        (package
-          (name "my-libgit2")
-          (version (git-version "0.26.6" revision commit))
-          (source (origin
-                    (method git-fetch)
-                    (uri (git-reference
-                          (url "https://github.com/libgit2/libgit2/")
-                          (commit commit)))
-                    (file-name (git-file-name name version))
-                    (sha256
-                     (base32
-                      "17pjvprmdrx4h6bb1hhc98w9qi6ki7yl57f090n9kbhswxqfs7s3"))
-                    (patches (search-patches "libgit2-mtime-0.patch"))
-                    (modules '((guix build utils)))
-                    (snippet '(begin
-                                ;; Remove bundled software.
-                                (delete-file-recursively "deps")
-                                #t))))
-          (build-system cmake-build-system)
-          (outputs '("out" "debug"))
-          (arguments
-           `(#:tests? #t                            ; Run the test suite (this is the default)
-             #:configure-flags '("-DUSE_SHA1DC=ON") ; SHA-1 collision detection
-             #:phases
-             (modify-phases %standard-phases
-               (add-after 'unpack 'fix-hardcoded-paths
-                 (lambda _
-                   (substitute* "tests/repo/init.c"
-                     (("#!/bin/sh") (string-append "#!" (which "sh"))))
-                   (substitute* "tests/clar/fs.h"
-                     (("/bin/cp") (which "cp"))
-                     (("/bin/rm") (which "rm")))
-                   #t))
-               ;; Run checks more verbosely.
-               (replace 'check
-                 (lambda _ (invoke "./libgit2_clar" "-v" "-Q")))
-               (add-after 'unpack 'make-files-writable-for-tests
-                   (lambda _ (for-each make-file-writable (find-files "." ".*")))))))
-          (inputs
-           `(("libssh2" ,libssh2)
-             ("http-parser" ,http-parser)
-             ("python" ,python-wrapper)))
-          (native-inputs
-           `(("pkg-config" ,pkg-config)))
-          (propagated-inputs
-           ;; These two libraries are in 'Requires.private' in libgit2.pc.
-           `(("openssl" ,openssl)
-             ("zlib" ,zlib)))
-          (home-page "https://libgit2.github.com/")
-          (synopsis "Library providing Git core methods")
-          (description
-           "Libgit2 is a portable, pure C implementation of the Git core methods
-    provided as a re-entrant linkable library with a solid API, allowing you to
-    write native speed custom Git applications in any language with bindings.")
-          ;; GPLv2 with linking exception
-          (license license:gpl2))))
+(define-public my-libgit2
+  (let ((commit "e98d0a37c93574d2c6107bf7f31140b548c6a7bf")
+        (revision "1"))
+    (package
+      (name "my-libgit2")
+      (version (git-version "0.26.6" revision commit))
+      (source (origin
+                (method git-fetch)
+                (uri (git-reference
+                      (url "https://github.com/libgit2/libgit2/")
+                      (commit commit)))
+                (file-name (git-file-name name version))
+                (sha256
+                 (base32
+                  "17pjvprmdrx4h6bb1hhc98w9qi6ki7yl57f090n9kbhswxqfs7s3"))
+                (patches (search-patches "libgit2-mtime-0.patch"))
+                (modules '((guix build utils)))
+                (snippet '(begin
+                            ;; Remove bundled software.
+                            (delete-file-recursively "deps")
+                            #t))))
+      (build-system cmake-build-system)
+      (outputs '("out" "debug"))
+      (arguments
+       `(#:tests? #t                            ; Run the test suite (this is the default)
+         #:configure-flags '("-DUSE_SHA1DC=ON") ; SHA-1 collision detection
+         #:phases
+         (modify-phases %standard-phases
+           (add-after 'unpack 'fix-hardcoded-paths
+             (lambda _
+               (substitute* "tests/repo/init.c"
+                 (("#!/bin/sh") (string-append "#!" (which "sh"))))
+               (substitute* "tests/clar/fs.h"
+                 (("/bin/cp") (which "cp"))
+                 (("/bin/rm") (which "rm")))
+               #t))
+           ;; Run checks more verbosely.
+           (replace 'check
+             (lambda _ (invoke "./libgit2_clar" "-v" "-Q")))
+           (add-after 'unpack 'make-files-writable-for-tests
+               (lambda _ (for-each make-file-writable (find-files "." ".*")))))))
+      (inputs
+       `(("libssh2" ,libssh2)
+         ("http-parser" ,http-parser)
+         ("python" ,python-wrapper)))
+      (native-inputs
+       `(("pkg-config" ,pkg-config)))
+      (propagated-inputs
+       ;; These two libraries are in 'Requires.private' in libgit2.pc.
+       `(("openssl" ,openssl)
+         ("zlib" ,zlib)))
+      (home-page "https://libgit2.github.com/")
+      (synopsis "Library providing Git core methods")
+      (description
+       "Libgit2 is a portable, pure C implementation of the Git core methods
+provided as a re-entrant linkable library with a solid API, allowing you to
+write native speed custom Git applications in any language with bindings.")
+      ;; GPLv2 with linking exception
+      (license license:gpl2))))
 ```
 
 (In those cases were you only want to tweak a few fields from a package
@@ -652,15 +682,15 @@ Snippets might need additional Guile modules which can be imported from the
 First, a syntactic comment: See the quasi-quote / comma syntax?
 
 ```scheme
-    (native-inputs
-     `(("pkg-config" ,pkg-config)))
+(native-inputs
+ `(("pkg-config" ,pkg-config)))
 ```
 
 is equivalent to
 
 ```scheme
-    (native-inputs
-     (list (list "pkg-config" pkg-config)))
+(native-inputs
+ (list (list "pkg-config" pkg-config)))
 ```
 
 You'll mostly see the former because it's shorter.
@@ -728,14 +758,14 @@ append when running make, as you would from the command line.  For instance, the
 following flags
 
 ```scheme
-    #:make-flags (list (string-append "prefix=" (assoc-ref %outputs "out"))
-                       "CC=gcc")
+#:make-flags (list (string-append "prefix=" (assoc-ref %outputs "out"))
+                   "CC=gcc")
 ```
 
 translate into
 
 ```sh
-    $ make CC=gcc prefix=/gnu/store/...-<out>
+$ make CC=gcc prefix=/gnu/store/...-<out>
 ```
 
 This sets the C compiler to `gcc` and the `prefix` variable (the installation
@@ -746,7 +776,7 @@ global variable pointing to the destination directory in the store (something li
 Similarly, it's possible to set the "configure" flags.
 
 ```scheme
-    #:configure-flags '("-DUSE_SHA1DC=ON")
+#:configure-flags '("-DUSE_SHA1DC=ON")
 ```
 
 The `%build-inputs` variable is also generated in scope.  It's an association
@@ -758,37 +788,37 @@ more about those phases, you need to work out the appropriate build system
 definition in `$GUIX_CHECKOUT/guix/build/gnu-build-system.scm`:
 
 ```scheme
-    (define %standard-phases
-      ;; Standard build phases, as a list of symbol/procedure pairs.
-      (let-syntax ((phases (syntax-rules ()
-                             ((_ p ...) `((p . ,p) ...)))))
-        (phases set-SOURCE-DATE-EPOCH set-paths install-locale unpack
-                bootstrap
-                patch-usr-bin-file
-                patch-source-shebangs configure patch-generated-file-shebangs
-                build check install
-                patch-shebangs strip
-                validate-runpath
-                validate-documentation-location
-                delete-info-dir-file
-                patch-dot-desktop-files
-                install-license-files
-                reset-gzip-timestamps
-                compress-documentation)))
+(define %standard-phases
+  ;; Standard build phases, as a list of symbol/procedure pairs.
+  (let-syntax ((phases (syntax-rules ()
+                         ((_ p ...) `((p . ,p) ...)))))
+    (phases set-SOURCE-DATE-EPOCH set-paths install-locale unpack
+            bootstrap
+            patch-usr-bin-file
+            patch-source-shebangs configure patch-generated-file-shebangs
+            build check install
+            patch-shebangs strip
+            validate-runpath
+            validate-documentation-location
+            delete-info-dir-file
+            patch-dot-desktop-files
+            install-license-files
+            reset-gzip-timestamps
+            compress-documentation)))
 ```
 
 Or from the REPL:
 
 ```scheme
-    > (add-to-load-path "/path/to/guix/checkout")
-    > ,module (guix build gnu-build-system)
-    > (map first %standard-phases)
-    (set-SOURCE-DATE-EPOCH set-paths install-locale unpack bootstrap
-	patch-usr-bin-file patch-source-shebangs configure
-	patch-generated-file-shebangs build check install patch-shebangs strip
-	validate-runpath validate-documentation-location delete-info-dir-file
-	patch-dot-desktop-files install-license-files reset-gzip-timestamps
-	compress-documentation)
+> (add-to-load-path "/path/to/guix/checkout")
+> ,module (guix build gnu-build-system)
+> (map first %standard-phases)
+(set-SOURCE-DATE-EPOCH set-paths install-locale unpack bootstrap
+patch-usr-bin-file patch-source-shebangs configure
+patch-generated-file-shebangs build check install patch-shebangs strip
+validate-runpath validate-documentation-location delete-info-dir-file
+patch-dot-desktop-files install-license-files reset-gzip-timestamps
+compress-documentation)
 ```
 
 If you want to know more about what happens during those phases, consult the
@@ -798,25 +828,25 @@ For instance, as of this writing the definition of `unpack` for the GNU build
 system is
 
 ```scheme
-    (define* (unpack #:key source #:allow-other-keys)
-      "Unpack SOURCE in the working directory, and change directory within the
-    source.  When SOURCE is a directory, copy it in a sub-directory of the current
-    working directory."
-      (if (file-is-directory? source)
-          (begin
-            (mkdir "source")
-            (chdir "source")
+(define* (unpack #:key source #:allow-other-keys)
+  "Unpack SOURCE in the working directory, and change directory within the
+source.  When SOURCE is a directory, copy it in a sub-directory of the current
+working directory."
+  (if (file-is-directory? source)
+      (begin
+        (mkdir "source")
+        (chdir "source")
 
-            ;; Preserve timestamps (set to the Epoch) on the copied tree so that
-            ;; things work deterministically.
-            (copy-recursively source "."
-                              #:keep-mtime? #t))
-          (begin
-            (if (string-suffix? ".zip" source)
-                (invoke "unzip" source)
-                (invoke "tar" "xvf" source))
-            (chdir (first-subdirectory "."))))
-      #t)
+        ;; Preserve timestamps (set to the Epoch) on the copied tree so that
+        ;; things work deterministically.
+        (copy-recursively source "."
+                          #:keep-mtime? #t))
+      (begin
+        (if (string-suffix? ".zip" source)
+            (invoke "unzip" source)
+            (invoke "tar" "xvf" source))
+        (chdir (first-subdirectory "."))))
+  #t)
 ```
 
 Note the `chdir` call: it changes the working directory to where the source was
@@ -842,12 +872,12 @@ directory of the main output of the package.  A phase procedure may look like
 this:
 
 ```scheme
-    (lambda* (#:key inputs outputs #:allow-other-keys)
-      (let (((bash-directory (assoc-ref inputs "bash"))
-             (output-directory (assoc-ref outputs "out"))
-             (doc-directory (assoc-ref outputs "doc"))
-      ; ...
-      #t)
+(lambda* (#:key inputs outputs #:allow-other-keys)
+  (let (((bash-directory (assoc-ref inputs "bash"))
+         (output-directory (assoc-ref outputs "out"))
+         (doc-directory (assoc-ref outputs "doc"))
+  ; ...
+  #t)
 ```
 
 The procedure must return `#t` on success.  It's brittle to rely on the return
@@ -940,42 +970,42 @@ boring tasks.  So let's tell Guix to do this for us and create the package
 definition of an R package from CRAN (the output is trimmed for conciseness):
 
 ```sh
-    $ guix import cran --recursive walrus
+$ guix import cran --recursive walrus
 
-    (define-public r-mc2d
-        ; ...
-        (license gpl2+)))
+(define-public r-mc2d
+    ; ...
+    (license gpl2+)))
 
-    (define-public r-jmvcore
-        ; ...
-        (license gpl2+)))
+(define-public r-jmvcore
+    ; ...
+    (license gpl2+)))
 
-    (define-public r-wrs2
-        ; ...
-        (license gpl3)))
+(define-public r-wrs2
+    ; ...
+    (license gpl3)))
 
-    (define-public r-walrus
-      (package
-        (name "r-walrus")
-        (version "1.0.3")
-        (source
-          (origin
-            (method url-fetch)
-            (uri (cran-uri "walrus" version))
-            (sha256
-              (base32
-                "1nk2glcvy4hyksl5ipq2mz8jy4fss90hx6cq98m3w96kzjni6jjj"))))
-        (build-system r-build-system)
-        (propagated-inputs
-          `(("r-ggplot2" ,r-ggplot2)
-            ("r-jmvcore" ,r-jmvcore)
-            ("r-r6" ,r-r6)
-            ("r-wrs2" ,r-wrs2)))
-        (home-page "https://github.com/jamovi/walrus")
-        (synopsis "Robust Statistical Methods")
-        (description
-          "This package provides a toolbox of common robust statistical tests, including robust descriptives, robust t-tests, and robust ANOVA.  It is also available as a module for 'jamovi' (see <https://www.jamovi.org> for more information).  Walrus is based on the WRS2 package by Patrick Mair, which is in turn based on the scripts and work of Rand Wilcox.  These analyses are described in depth in the book 'Introduction to Robust Estimation & Hypothesis Testing'.")
-        (license gpl3)))
+(define-public r-walrus
+  (package
+    (name "r-walrus")
+    (version "1.0.3")
+    (source
+      (origin
+        (method url-fetch)
+        (uri (cran-uri "walrus" version))
+        (sha256
+          (base32
+            "1nk2glcvy4hyksl5ipq2mz8jy4fss90hx6cq98m3w96kzjni6jjj"))))
+    (build-system r-build-system)
+    (propagated-inputs
+      `(("r-ggplot2" ,r-ggplot2)
+        ("r-jmvcore" ,r-jmvcore)
+        ("r-r6" ,r-r6)
+        ("r-wrs2" ,r-wrs2)))
+    (home-page "https://github.com/jamovi/walrus")
+    (synopsis "Robust Statistical Methods")
+    (description
+      "This package provides a toolbox of common robust statistical tests, including robust descriptives, robust t-tests, and robust ANOVA.  It is also available as a module for 'jamovi' (see <https://www.jamovi.org> for more information).  Walrus is based on the WRS2 package by Patrick Mair, which is in turn based on the scripts and work of Rand Wilcox.  These analyses are described in depth in the book 'Introduction to Robust Estimation & Hypothesis Testing'.")
+    (license gpl3)))
 ```
 
 The recursive importer won't import packages for which Guix already has package
@@ -992,7 +1022,7 @@ Guix can be smart enough to check for updates on systems it knows.  It can
 report outdated package definitions with
 
 ```sh
-    $ guix refresh hello
+$ guix refresh hello
 ```
 
 In most cases, updating a package to a newer version requires little more than
@@ -1000,7 +1030,7 @@ changing the version number and the checksum.  Guix can do that automatically as
 well:
 
 ```sh
-    $ guix refresh hello --update
+$ guix refresh hello --update
 ```
 
 
@@ -1010,20 +1040,20 @@ If you've started browsing the existing package definitions, you might have
 noticed that a significant number of them have a `inherit` field:
 
 ```scheme
-    (define-public adwaita-icon-theme
-      (package (inherit gnome-icon-theme)
-        (name "adwaita-icon-theme")
-        (version "3.26.1")
-        (source (origin
-                  (method url-fetch)
-                  (uri (string-append "mirror://gnome/sources/" name "/"
-                                      (version-major+minor version) "/"
-                                      name "-" version ".tar.xz"))
-                  (sha256
-                   (base32
-                    "17fpahgh5dyckgz7rwqvzgnhx53cx9kr2xw0szprc6bnqy977fi8"))))
-        (native-inputs
-         `(("gtk-encode-symbolic-svg" ,gtk+ "bin")))))
+(define-public adwaita-icon-theme
+  (package (inherit gnome-icon-theme)
+    (name "adwaita-icon-theme")
+    (version "3.26.1")
+    (source (origin
+              (method url-fetch)
+              (uri (string-append "mirror://gnome/sources/" name "/"
+                                  (version-major+minor version) "/"
+                                  name "-" version ".tar.xz"))
+              (sha256
+               (base32
+                "17fpahgh5dyckgz7rwqvzgnhx53cx9kr2xw0szprc6bnqy977fi8"))))
+    (native-inputs
+     `(("gtk-encode-symbolic-svg" ,gtk+ "bin")))))
 ```
 
 All unspecified fields are inherited from the parent package.  This is very
