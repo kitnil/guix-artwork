@@ -1089,10 +1089,10 @@ more advanced packaging techniques and edge cases.
 Other features worth exploring are the interactive editing and debugging
 capabilities of Guix provided by the Guile REPL.
 
-Those fancy features are no strict requirements and this is a good point to stop
-for now.  With what we've introduced here you should be well armed to package
-lots of programs.  You can get started right away and hopefully we will see your
-contributions soon!
+Those fancy features are completely optional and can wait; now is a good time
+to take a well-deserved break.  With what we've introduced here you should be
+well armed to package lots of programs.  You can get started right away and
+hopefully we will see your contributions soon!
 
 
 # References
