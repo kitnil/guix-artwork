@@ -648,7 +648,7 @@ See below.)
 Let's discuss those fields in depth.
 
 
-## `git-fetch` method
+### `git-fetch` method
 
 Unlike the `url-fetch` method, `git-fetch` expects a `git-reference` which takes
 a Git repository and a commit.  The commit can be any Git reference such as
@@ -664,7 +664,7 @@ Note that there is also a `git-version` procedure that can be used to derive the
 version when packaging programs for a specific commit.
 
 
-## Snippets
+### Snippets
 
 Snippets are quoted (i.e. non-evaluated) Scheme code that are a means of patching
 the source.  They are a Guix-y alternative to the traditional `.patch` files.
@@ -677,7 +677,7 @@ Snippets might need additional Guile modules which can be imported from the
 `modules` field.
 
 
-## Inputs
+### Inputs
 
 First, a syntactic comment: See the quasi-quote / comma syntax?
 
@@ -724,7 +724,7 @@ and *propagated inputs* will be fetched: the *native inputs* are not required to
 install a package from a substitute.
 
 
-## Outputs
+### Outputs
 
 Just like how a package can have multiple inputs, it can also produce multiple
 outputs.
@@ -744,7 +744,7 @@ output size is significant (compare with `guix size`) or in case the package is
 modular.
 
 
-## Build system arguments
+### Build system arguments
 
 The `arguments` is a keyword-value list used to configure the build process.
 
@@ -886,7 +886,7 @@ guarantee it would be a `#t`.  Hence the trailing `#t` to ensure the right value
 is returned on success.
 
 
-## Code staging
+### Code staging
 
 The astute reader may have noticed the quasi-quote and comma syntax in the
 argument field.  Indeed, the build code in the package declaration should not be
@@ -894,7 +894,7 @@ evaluated on the client side, but only when passed to the Guix daemon.  This
 mechanism of passing code around two running processes is called [code staging](https://arxiv.org/abs/1709.00833).
 
 
-## "Utils" functions
+### "Utils" functions
 
 When customizing `phases`, we often need to write code that mimics the
 equivalent system invocations (`make`, `mkdir`, `cp`, etc.) commonly used during
@@ -924,7 +924,7 @@ of the traditional Unix system commands:
 -   **substitute\*:** A "sed-like" function.
 
 
-## Module prefix
+### Module prefix
 
 The license in our last example needs a prefix: this is because of how the
 `license` module was imported in the package, as `#:use-module ((guix licenses)
@@ -961,7 +961,7 @@ empowers us in ways that reach far beyond traditional package management.
 Let's illustrate this with some awesome features of Guix!
 
 
-## Recursive importers
+### Recursive importers
 
 You might find some build systems good enough that there is little to do at all
 to write a package, to the point that it becomes repetitive and tedious after a
@@ -1016,7 +1016,7 @@ number of supported systems.  Read about the full list of importers in the [guix
 import section](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-import.html) of the manual.
 
 
-## Automatic update
+### Automatic update
 
 Guix can be smart enough to check for updates on systems it knows.  It can
 report outdated package definitions with
@@ -1034,7 +1034,7 @@ $ guix refresh hello --update
 ```
 
 
-## Inheritance
+### Inheritance
 
 If you've started browsing the existing package definitions, you might have
 noticed that a significant number of them have a `inherit` field:
@@ -1106,7 +1106,7 @@ contributions soon!
     by Andreas Enge
 
 
-# About GNU Guix
+#### About GNU Guix
 
 [GNU Guix](https://www.gnu.org/software/guix) is a transactional package
 manager for the GNU system.  The Guix System Distribution or GuixSD is
