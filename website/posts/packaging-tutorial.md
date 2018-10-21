@@ -158,7 +158,7 @@ following redirection to `https://mirror.ibcp.fr/pub/gnu/hello/hello-2.10.tar.gz
 0ssi1wpaf7plaswqqjwigppsg5fyh99vdlb9kzl7c9lng89ndq1i
 ```
 
-In this specific case that the output tells us which mirror was chosen.
+In this specific case the output tells us which mirror was chosen.
 If the result of the above command is not the same as in the above snippet,
 update your `my-hello` declaration accordingly.
 
@@ -205,7 +205,7 @@ time to introduce the minimum we need from the language before we can proceed.
 
 # A Scheme crash-course
 
-As we've seen above, basic packages don't require much Scheme knowledge, if none
+As we've seen above, basic packages don't require much Scheme knowledge, if
 at all.  But as you progress and your desire to write more and more complex
 packages grows, it will become both necessary and empowering to hone your Lisper
 skills.
