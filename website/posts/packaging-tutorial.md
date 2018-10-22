@@ -1106,6 +1106,15 @@ hopefully we will see your contributions soon!
     by Andreas Enge
 
 
+# Notices
+
+[![CC-BY-SA](https://i.creativecommons.org/l/by-sa/4.0/88x31.png "CC-BY-SA
+4.0")](http://creativecommons.org/licenses/by-sa/4.0/)
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0
+International License.
+
+
 #### About GNU Guix
 
 [GNU Guix](https://www.gnu.org/software/guix) is a transactional package
