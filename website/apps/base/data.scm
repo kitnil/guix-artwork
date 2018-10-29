@@ -27,6 +27,15 @@
     #:log "https://gnunet.org/bot/log/guix/")
 
    (contact
+    #:name "Info Mailing List"
+    #:description
+    '(p "Subscribe to the " (code "info-guix") " low-traffic mailing
+list to receive important announcements sent by the project maintainers (in
+English).")
+    #:url "https://lists.gnu.org/mailman/listinfo/info-guix"
+    #:log "https://lists.gnu.org/archive/html/info-guix")
+
+   (contact
     #:name "Help Mailing List"
     #:description
     `(("de"
