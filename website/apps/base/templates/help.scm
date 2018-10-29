@@ -65,7 +65,11 @@
 	(p
 	 ,(link-more
 	   #:label "Read Guix manual"
-	   #:url (guix-url "manual/"))))
+	   #:url (guix-url "manual/")))
+        (p
+         ,(link-more
+	   #:label "Get Guix reference card"
+	   #:url (guix-url "guix-refcard.pdf"))))
 
 
        (div
