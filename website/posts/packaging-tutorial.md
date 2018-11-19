@@ -185,7 +185,7 @@ gpg:          There is no indication that the signature belongs to the owner.
 Primary key fingerprint: 8ED3 96E3 7E38 D471 A005  30D3 A955 3245 FDE9 B739
 ```
 
-Now you can happily run
+You can then happily run
 
 ```sh
 $ guix package --install-from-file=my-hello.scm
@@ -225,7 +225,7 @@ is, the line reserved for user input.  See [the Guile manual](https://www.gnu.or
 the REPL.
 
 -   Scheme syntax boils down to a tree of expressions (or *s-expression* in Lisp
-    lingo).  An expression can be a literal such numbers and strings, or a
+    lingo).  An expression can be a literal such as numbers and strings, or a
     compound which is a parenthesized list of compounds and literals.  `#t` and
     `#f` stand for the booleans "true" and "false", respectively.
 
@@ -379,8 +379,9 @@ But first, let's look at other possibilities.
 
 ### Local file
 
-This is what we previously did with `my-hello`.  Now that we know more Scheme,
-let's explain the leading chunks.  As stated in `guix package --help`:
+This is what we previously did with `my-hello`.  With the Scheme basics we've
+covered, we are now able to explain the leading chunks.  As stated in `guix
+package --help`:
 
 ```sh
 -f, --install-from-file=FILE
@@ -1076,12 +1077,12 @@ See the [Guix homepage](https://www.gnu.org/software/guix/contact/) for informat
 
 # Conclusion
 
-This tutorial was an showcase of the sophisticated package management that Guix
+This tutorial was a showcase of the sophisticated package management that Guix
 boasts.  At this point we have mostly restricted this introduction to the
 `gnu-build-system` which is a core abstraction layer on which more advanced
 abstractions are based.
 
-Now where do we go from here?  Next we ought to dissect the innards of the build
+Where do we go from here?  Next we ought to dissect the innards of the build
 system by removing all abstractions, using the `trivial-build-system`: this
 should give us a thorough understanding of the process before investigating some
 more advanced packaging techniques and edge cases.
