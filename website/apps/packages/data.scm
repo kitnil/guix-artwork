@@ -1,5 +1,5 @@
 ;;; GuixSD website --- GNU's advanced distro website
-;;; Copyright © 2013, 2014, 2015, 2016, 2017 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2013, 2014, 2015, 2016, 2017, 2018 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
 ;;; Copyright © 2017 Eric Bavier <bavier@member.fsf.org>
@@ -41,9 +41,11 @@
            (sort (parameterize ((%package-module-path (last-pair
                                                        (%package-module-path))))
                    (fold-packages (lambda (package lst)
-                                    (cons (or (package-replacement package)
-                                              package)
-                                          lst))
+                                    (if (package-superseded package)
+                                        lst
+                                        (cons (or (package-replacement package)
+                                                  package)
+                                              lst)))
                                   '()))
                  (lambda (p1 p2)
                    (string<? (package-name p1)
