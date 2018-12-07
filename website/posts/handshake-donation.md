@@ -62,6 +62,6 @@ using extensions to the [Scheme](http://schemers.org) language.  GuixSD
 offers a declarative approach to operating system configuration
 management, and is highly customizable and hackable.
 
-GuixSD can be used on an i686, x86_64, ARMv7, and AArch64 machines.  It
+GuixSD can be used on i686, x86_64, ARMv7, and AArch64 machines.  It
 is also possible to use Guix on top of an already installed GNU/Linux
 system, including on mips64el and aarch64.
