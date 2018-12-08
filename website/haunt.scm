@@ -14,7 +14,9 @@
 
 
 (site #:title "GuixSD"
-      #:domain "https://gnu.org/software/guix"
+      #:domain (if (getenv "GUIX_WEB_SITE_INFO")
+                   "https://guix.info"
+                   "https://gnu.org/software/guix")
       ;; BUG: Can't use . in directory names (e.g. /tmp/gnu.org).
       #:build-directory "/tmp/gnu/software/guix"
       #:readers (list sxml-reader html-reader commonmark-reader)

@@ -65,10 +65,14 @@
 	(p
 	 ,(link-more
 	   #:label "Read Guix manual"
-	   #:url (guix-url "manual/"))
-         ,(link-more
+	   #:url (if (getenv "GUIX_WEB_SITE_INFO")
+                 (guix-url "manual/en/")
+                 (guix-url "manual/")))
+     ,(link-more
 	   #:label "Get Guix reference card"
-	   #:url (guix-url "guix-refcard.pdf"))))
+	   #:url (if (getenv "GUIX_WEB_SITE_INFO")
+                 "https://www.gnu.org/software/guix/guix-refcard.pdf"
+                 (guix-url "guix-refcard.pdf")))))
 
 
        (div

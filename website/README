@@ -32,6 +32,9 @@ Then, visit http://localhost:8080/guix.html in a web browser.
 
 You can stop the server pressing ~Ctrl + C~ twice.
 
+To build the website for guix.info set the environment variable
+=GUIX_WEB_SITE_INFO= first.
+
 * Deploying
 
 Like the pages of many GNU websites, this website is managed through

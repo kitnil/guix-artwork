@@ -43,7 +43,9 @@
 ;;;
 
 (define guix-root-url-path
-  (make-parameter "/software/guix/")) ; Path to GNU Guix site in gnu.org
+  (if (getenv "GUIX_WEB_SITE_INFO")
+      (make-parameter "/")
+      (make-parameter "/software/guix/"))) ; Path to GNU Guix site in gnu.org
 
 (define latest-guix-version
   (make-parameter "0.16.0"))
@@ -106,7 +108,10 @@
    RETURN VALUE (string)
      A URL path. For example:
      /software/guix/manual/html_node/System-installation.html."
-  (string-append (guix-url "manual/html_node/") subpath))
+  (string-append
+   (guix-url (if (getenv "GUIX_WEB_SITE_INFO")
+                 "manual/en/"
+                 "manual/html_node/")) subpath))
 
 
 
