@@ -17,10 +17,11 @@ It has been a long-standing tradition to develop a language far enough
 to be able to write the language's compiler in the same language, and
 Rust does the same.  Rust is nowadays written in Rust.
 
-We've tracked down the earlier Rust versions, which were written
-in OCaml, [1] and were planning to use these to bootstrap Rust.
-But in parallel, John Hudge (Mutabah) developed a Rust compiler,
-called "mrustc", written in C++ [2].
+We've tracked down the earlier Rust versions, [which were written in
+OCaml](https://github.com/rust-lang/rust/commit/ef75860a0a72f79f97216f8aaa5b388d98da6480),
+and were planning to use these to bootstrap Rust.  But in parallel, John
+Hudge (Mutabah) developed [a Rust compiler, called "mrustc", written in
+C++](https://github.com/thepowersgang/mrustc).
 
 mrustc is now good enough to compile rust 1.19.0.
 
@@ -80,6 +81,3 @@ people!
 * Each target we want to support has to have support in LLVM,
 AND mrustc needs to have a specification of the alignment and
 sizes of the base types.
-
-[1]: https://github.com/rust-lang/rust/commit/ef75860a0a72f79f97216f8aaa5b388d98da6480
-[2]: https://github.com/thepowersgang/mrustc
