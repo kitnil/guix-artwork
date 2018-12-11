@@ -1,0 +1,52 @@
+(begin
+  (use-modules (apps base templates components)
+	           (srfi srfi-19))
+  `((title . "Back from SeaGL 2018")
+    (author . "Chris Marusich")
+    (date . ,(make-date 0 0 0 0 10 12 2018 -28800))
+    (tags "Talks"
+          "Functional package management"
+          "Transactional upgrades")
+    (content
+     (p (a (@ (href "https://seagl.org/"))
+           "SeaGL 2018")
+	    " has concluded.  Thank you to everyone in the local Seattle
+community who came to participate!")
+     (p "As "
+        (a (@ (href ,(guix-url "blog/2018/upcoming-talk-everyday-use-of-gnu-guix")))
+           "previously announced")
+        ", Chris Marusich gave "
+        (a (@ (href "https://osem.seagl.org/conferences/seagl2018/program/proposals/526"))
+           "a talk introducing GNU Guix")
+        " to people of all experience levels.  Some very "
+        (em "Guixy")
+        " swag was handed out, including printed copies of "
+        (a (@ (href ,(guix-url "guix-refcard.pdf")))
+           "this handy Guix reference card")
+        ".  The room was packed, the audience asked great questions,
+and overall it was tons of fun!")
+     (p "If you weren't able to come to SeaGL this year, that's OK!
+You can watch a video of the talk below.  Happy hacking!")
+
+     (h3 "Everyday Use of GNU Guix")
+
+     (video
+      (@ (src "https://audio-video.gnu.org/video/misc/2018-11__Everyday_use_of_GNU_Guix__Chris_Marusich__SeaGL.webm")
+	     (controls "controls"))
+      ;; Fallback content.
+      (div
+       (@ (class "action-box centered-text"))
+       ,(button-big
+	     #:label "DOWNLOAD VIDEO"
+	     #:url "https://media.marusich.info/everyday-use-of-gnu-guix-chris-marusich-seagl-2018.webm")
+       (p "(WebM, 50 minutes)")))
+
+     (ul
+      (li "Speaker: Chris Marusich")
+      (li "Slides: "
+	      (a (@ (href "https://media.marusich.info/everyday-use-of-gnu-guix.odp"))
+	         "everyday-use-of-gnu-guix.odp"))
+      (li "License (for both slides and video): "
+          (a (@ (href "https://creativecommons.org/licenses/by-sa/4.0/"))
+             "CC-BY-SA 4.0"))
+      ))))
