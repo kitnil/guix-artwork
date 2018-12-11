@@ -56,6 +56,9 @@ We now got a bootstrap chain like this:
     rust@1.19.0
         ^
         |
+    mrustc@0.8.0
+        ^
+        |
        g++
 
 #### Limitations
