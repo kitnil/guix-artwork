@@ -64,8 +64,8 @@ We now got a bootstrap chain like this:
 #### Limitations
 
 * mrustc currently does no borrow checking -- so memory safety
-of our rust 1.19.0 is mostly guaranteed in the sense of "someone else
-built rust 1.19.0 using another Rust compiler and thus ran the borrow
+of our rust@1.19.0 is mostly guaranteed in the sense of "someone else
+built rust@1.19.0 using another Rust compiler and thus ran the borrow
 checker already".
 
 * The bootstrap chain is rather long.  There are plans to extend
