@@ -19,13 +19,15 @@ Rust does the same.  Rust is nowadays written in Rust.
 
 We've tracked down the earlier Rust versions, [which were written in
 OCaml](https://github.com/rust-lang/rust/commit/ef75860a0a72f79f97216f8aaa5b388d98da6480),
-and were planning to use these to bootstrap Rust.  But in parallel, John
+and were planning to use these to
+[bootstrap](https://bootstrappable.org) Rust.  But in parallel, John
 Hudge (Mutabah) developed [a Rust compiler, called "mrustc", written in
 C++](https://github.com/thepowersgang/mrustc).
 
-mrustc is now good enough to compile rust 1.19.0.
+mrustc is now good enough to compile Rust 1.19.0.
 
-We now got a bootstrap chain like this:
+Using mrustc, we were able to _build Rust entirely from source_ with a
+bootstrap chain like this:
 
     rust@1.28.0
         ^
@@ -81,3 +83,24 @@ people!
 * Each target we want to support has to have support in LLVM,
 AND mrustc needs to have a specification of the alignment and
 sizes of the base types.
+
+#### About GNU Guix
+
+[GNU Guix](https://www.gnu.org/software/guix) is a transactional package
+manager for the GNU system.  The Guix System Distribution or GuixSD is
+an advanced distribution of the GNU system that relies on GNU Guix and
+[respects the user's
+freedom](https://www.gnu.org/distros/free-system-distribution-guidelines.html).
+
+In addition to standard package management features, Guix supports
+transactional upgrades and roll-backs, unprivileged package management,
+per-user profiles, and garbage collection.  Guix uses low-level
+mechanisms from the Nix package manager, except that packages are
+defined as native [Guile](https://www.gnu.org/software/guile) modules,
+using extensions to the [Scheme](http://schemers.org) language.  GuixSD
+offers a declarative approach to operating system configuration
+management, and is highly customizable and hackable.
+
+GuixSD can be used on an i686, x86_64, ARMv7, and AArch64 machines.  It
+is also possible to use Guix on top of an already installed GNU/Linux
+system, including on mips64el and aarch64.
