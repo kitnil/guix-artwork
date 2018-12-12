@@ -21,7 +21,7 @@ We've tracked down the earlier Rust versions, [which were written in
 OCaml](https://github.com/rust-lang/rust/commit/ef75860a0a72f79f97216f8aaa5b388d98da6480),
 and were planning to use these to
 [bootstrap](https://bootstrappable.org) Rust.  But in parallel, John
-Hudge (Mutabah) developed [a Rust compiler, called "mrustc", written in
+Hodge (Mutabah) developed [a Rust compiler, called "mrustc", written in
 C++](https://github.com/thepowersgang/mrustc).
 
 mrustc is now good enough to compile Rust 1.19.0.
