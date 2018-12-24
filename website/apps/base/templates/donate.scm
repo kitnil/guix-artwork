@@ -168,6 +168,13 @@ i686-linux, and dedicated storage")
 	    (li (a (@ (href "http://josefsson.org"))
 		   "Simon Josefsson")))))
 	 (tr
+	  (td "x15.sjd.se")
+	  (td "armhf-linux")
+	  (td
+	   (ul
+	    (li (a (@ (href "http://josefsson.org"))
+		   "Simon Josefsson")))))
+	 (tr
 	  (td "hydra-slave1")
 	  (td "armhf-linux")
 	  (td
