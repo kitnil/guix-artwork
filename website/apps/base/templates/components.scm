@@ -283,7 +283,7 @@
     (h1
      (a
       (@ (class "branding") (href ,(guix-url)))
-      (span (@ (class "a11y-offset")) "GuixSD")))
+      (span (@ (class "a11y-offset")) "Guix")))
 
     ;; Menu.
     (nav (@ (class "menu"))

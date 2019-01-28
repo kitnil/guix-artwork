@@ -52,15 +52,15 @@
       (p
        (@ (class "centered-block limit-width"))
        "As of version " ,(latest-guix-version)
-       ", the Guix System Distribution "
+       ", the standalone Guix System "
        (a
 	(@ (href ,(manual-url "System-Installation.html")))
 	"can be installed")
-       " on an i686 or x86_64 machine. It uses the "
+       " on an i686, x86_64, ARMv7, or AArch64 machine.  It uses the "
        (a (@ (href ,(gnu-url "software/linux-libre"))) "Linux-Libre")
        " kernel and the "
        (a (@ (href ,(gnu-url "software/shepherd"))) "GNU Shepherd")
-       " init system. Alternately, its package manager, GNU Guix,
+       " init system. Alternately, GNU Guix
        can be installed as an additional package manager on top of an
        installed Linux-based system.")
 
@@ -70,7 +70,7 @@
 
       (p
        (@ (class "centered-block limit-width"))
-       "Source code and binaries for the Guix System Distribution ISO
+       "Source code and binaries for the Guix System distribution ISO
        image as well as GNU Guix can be found on the GNU servers at "
        (a (@ (href "https://alpha.gnu.org/gnu/guix/"))
 	  "https://alpha.gnu.org/gnu/guix/") ".")))))

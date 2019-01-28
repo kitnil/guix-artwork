@@ -16,8 +16,8 @@
   (theme
    #:title '("GNU's advanced distro and transactional package manager")
    #:description
-   "GuixSD is an advanced distribution of the GNU operating system.
-   GuixSD is technology that respects the freedom of computer users.
+   "Guix is an advanced distribution of the GNU operating system.
+   Guix is technology that respects the freedom of computer users.
    You are free to run the system for any purpose, study how it works,
    improve it, and share it with the whole world."
    #:keywords
@@ -38,7 +38,7 @@
       (ul
        (li
 	(b "Liberating.")
-	" The Guix System Distribution (GuixSD) is an advanced
+	" Guix is an advanced
         distribution of the "
 	,(link-yellow
 	  #:label "GNU operating system"
@@ -55,17 +55,20 @@
 
        (li
 	(b "Dependable.")
-	" It comes with the "
+        " Guix "
 	,(link-yellow
-	  #:label "GNU Guix package manager"
+	  #:label "supports"
 	  #:url (manual-url "Package-Management.html"))
-	", which in addition to standard package management features,
-        supports transactional upgrades and roll-backs, unprivileged
-        package management, per-user profiles, "
+        " transactional upgrades and roll-backs, unprivileged
+        package management, "
 	,(link-yellow
 	  #:label "and more"
 	  #:url (manual-url "Features.html"))
-	".")
+	".  When used as a standalone distribution, Guix supports "
+        ,(link-yellow
+          #:label "declarative system configuration"
+          #:url (manual-url "Using-the-Configuration-System.html"))
+        " for transparent and reproducible operating systems.")
 
        (li
 	(b "Hackable.")
@@ -96,14 +99,14 @@
 	 #:url (guix-url "contribute/")
 	 #:light #true)))
 
-     ;; Discover GuixSD.
+     ;; Discover Guix.
      (section
       (@ (class "discovery-box"))
-      (h2 "Discover GuixSD")
+      (h2 "Discover Guix")
 
       (p
        (@ (class "limit-width centered-block"))
-       "GuixSD comes with thousands of packages which include
+       "Guix comes with thousands of packages which include
        applications, system tools, documentation, fonts, and other
        digital goods readily available for installing with the "
        ,(link-yellow #:label "GNU Guix" #:url "#guix-in-other-distros")
@@ -122,13 +125,13 @@
 
       ,(horizontal-separator #:light #true)
 
-      ;; GuixSD in different fields.
-      (h3 "GuixSD and GNU Guix in your field")
+      ;; Guix in different fields.
+      (h3 "GNU Guix in your field")
 
       (p
        (@ (class "limit-width centered-block"))
-       "Read some stories about how people are using GuixSD and GNU
-       Guix in their daily lives.")
+       "Read some stories about how people are using GNU Guix in their daily
+       lives.")
 
       (div
        (@ (class "fields-box"))
@@ -183,19 +186,13 @@
       (div
        (@ (class "info-box justify-left"))
        (p
-	"If you don't use the "
-	,(link-yellow
-	  #:label "Guix System Distribution"
-	  #:url (guix-url))
-	" for a particular reason, you still can use the "
-	,(link-yellow
-	  #:label "GNU Guix"
-	  #:url (guix-url))
-	" package manager on top of any GNU/Linux distribution. This
+	"If you don't use GNU Guix as a standalone GNU/Linux distribution,
+        you still can use it as a
+	package manager on top of any GNU/Linux distribution. This
         way, you can benefit from all its conveniences.")
 
        (p
-	"GNU Guix won't interfere with the package manager that comes
+	"Guix won't interfere with the package manager that comes
         with your distribution. They can live together."))
 
       (div

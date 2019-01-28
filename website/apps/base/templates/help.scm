@@ -41,14 +41,14 @@
 	(img
 	 (@ (src ,(guix-url "static/base/img/guixsd-manual-icon.png"))
 	    (alt "")))
-	(h3 "GuixSD Manual")
+	(h3 "Guix System Manual")
 	(p
 	 "The documentation about the Guix System Distribution is
          available online as part of the GNU Guix package manager
          manual.")
 	(p
 	 ,(link-more
-	   #:label "Read GuixSD manual"
+	   #:label "Read Guix System manual"
 	   #:url (manual-url "GNU-Distribution.html"))))
 
 

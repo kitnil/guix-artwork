@@ -15,7 +15,7 @@
   (theme
    #:title '("Contact")
    #:description
-   "A list of channels to communicate with GuixSD and GNU Guix users
+   "A list of channels to communicate with GNU Guix users
    and developers about anything you want."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"

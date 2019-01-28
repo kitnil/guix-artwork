@@ -16,20 +16,20 @@
 (define system-downloads
   (list
    (download
-    #:title (string-append "GuixSD " (latest-guix-version))
+    #:title (string-append "GNU Guix System " (latest-guix-version))
     #:description
     `(div
       (div
        (@ (class "message-box msg-info"))
        (span (@ (class "msg-label")) "Note ")
-       "The Guix System Distribution (GuixSD) is beta software, "
+       "The Guix System distribution is beta software, "
        "which means it is "
        (a
 	(@ (href ,(manual-url "Limitations.html")))
 	"not production-ready")
        ".  But you can "
        (a (@ (href ,(guix-url "contribute"))) "help") "!")
-      (p "USB/DVD ISO installer of the Guix System Distribution."))
+      (p "USB/DVD ISO installer of the standalone Guix System."))
     #:image (guix-url "static/base/img/GuixSD-package.png")
     #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-install-"
 			      (latest-guix-version) ".")
@@ -38,7 +38,7 @@
     #:manual (manual-url "System-Installation.html"))
 
    (download
-    #:title (string-append "GuixSD " (latest-guix-version) " QEMU Image")
+    #:title (string-append "GNU Guix " (latest-guix-version) " QEMU Image")
     #:description
     `(div
       (p "QCOW2 virtual machine (VM) image."))
@@ -49,11 +49,11 @@
     #:manual (manual-url "Running-GuixSD-in-a-VM.html"))
 
    (download
-    #:title (string-append "GNU Guix " (latest-guix-version) " Binary")
+    #:title (string-append "GNU Guix " (latest-guix-version) " Binary")
     #:description
     '(p
-      "Self-contained tarball providing binaries for Guix and for
-       all its dependencies.")
+      "Self-contained tarball providing binaries for Guix and its
+      dependencies, to be installed on top of your Linux-based system.")
     #:image (guix-url "static/base/img/Guix-package.png")
     #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guix-binary-"
 			      (latest-guix-version) ".")
@@ -64,7 +64,7 @@
     #:manual (manual-url "Binary-Installation.html"))
 
    (download
-    #:title (string-append "GNU Guix " (latest-guix-version) " Source")
+    #:title (string-append "GNU Guix " (latest-guix-version) " Source")
     #:description '(p "Source code distribution.")
     #:image (guix-url "static/base/img/src-package.png")
     #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guix-"

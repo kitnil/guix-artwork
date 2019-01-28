@@ -21,7 +21,7 @@
     #:description
     '(p
       "Join the " (code "#guix") " channel on the Freenode IRC network to chat
-      with the community about GuixSD or GNU Guix or to get help in
+      with the community about GNU Guix or to get help in
       real-time.")
     #:url (guix-url "contact/irc/")
     #:log "https://gnunet.org/bot/log/guix/")
@@ -43,18 +43,18 @@ English).")
 gemeinschaftlichen Rat zu GuixSD und Guix zu bekommen.  Sie können
 Nachrichten auch auf deutsch verfassen.")
       ("en"
-       "Subscribe to the Help mailing list to get support from the GuixSD
-and GNU Guix community via email.  You can post messages in English though we
+       "Subscribe to the Help mailing list to get support from the
+GNU Guix community via email.  You can post messages in English though we
 also accept other languages.")
       ("eo"
        "Subskribu al la retmesaĝolisto \"Help\" por demandi helpon pri
-GuixSD kaj GNU Guix al la grupo.  Vi povas skribi esperantlingve.")
+GNU Guix al la grupo.  Vi povas skribi esperantlingve.")
       ("es"
        "Suscríbete a la lista de correo electrónico \"Help\" por pedir
-ayuda con Guix y GuixSD.  Puedes escribir mensajes en Español.")
+ayuda con Guix.  Puedes escribir mensajes en Español.")
       ("fr"
        "Abonnez-vous à la liste de diffusion « Help » pour obtenir l'aide
-de la communauté sur GuixSD et GNU Guix par courrier électronique.  Vous
+de la communauté sur GNU Guix par courrier électronique.  Vous
 pouvez envoyer des messages en français.")
       ("hu"
        "Iratkozzon fel a „Help“ levelezőlistára, hogy segítséget kaphasson
@@ -91,7 +91,7 @@ het Nederlands.")
     #:name "Bug Reporting"
     #:description
     '(p
-      "If you found a bug in GuixSD or Guix, check whether the bug is
+      "If you found a bug in Guix, check whether the bug is
       already in the "
       (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
 	 "bug database")
@@ -104,8 +104,7 @@ het Nederlands.")
     #:name "Development Mailing List"
     #:description
     '(p
-      "Discussion about the development of GNU Guix and the Guix
-      System Distribution (GuixSD). "
+      "Discussion about the development of GNU Guix. "
       (a (@ (href "https://lists.gnu.org/archive/html/bug-guix/2013-07/msg00039.html"))
 	 " Until July 2013")
       ", the bug-Guix mailing list filled that role. ")
