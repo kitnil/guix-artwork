@@ -49,6 +49,10 @@
     text-align: right;
 }
 
+.mono {
+    font-family: monospace;
+}
+
 .light-text {
     color: #E6E6E6;
 }

@@ -51,8 +51,9 @@
        (a (@ (href "https://contributor-covenant.org/"))
           "https://contributor-covenant.org/")
        ".  You can find the full pledge in the "
-       (a (@ (href "//git.savannah.gnu.org/cgit/guix.git/tree/CODE-OF-CONDUCT"))
-          (tt "CODE-OF-CONDUCT")) " file.")
+       (a (@ (href "//git.savannah.gnu.org/cgit/guix.git/tree/CODE-OF-CONDUCT")
+	     (class "mono"))
+          "CODE-OF-CONDUCT") " file.")
 
       (div
        (@ (class "centered-text"))

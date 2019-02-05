@@ -46,23 +46,23 @@
         respective OpenPGP key:")
       (ul
         (li "Leo Famulari"
-          (ul
-            (li (tt "4F71 6F9A 8FA2 C80E F1B5 E1BA 5E35 F231 DE1A C5E0"))))
+          (ul (@ (class "mono"))
+            (li "4F71 6F9A 8FA2 C80E F1B5 E1BA 5E35 F231 DE1A C5E0")))
         (li "Ludovic Courtès"
-          (ul
-            (li (tt ,ludovics-key))))
+          (ul (@ (class "mono"))
+            (li ,ludovics-key)))
         (li "Mark H Weaver"
-          (ul
-            (li (tt "D919 0965 CE03 199E AF28 B3BE 7CEF 2984 7562 C516"))))
+          (ul (@ (class "mono"))
+            (li "D919 0965 CE03 199E AF28 B3BE 7CEF 2984 7562 C516")))
         (li "Ricardo Wurmus"
-          (ul
-            (li (tt "BCA6 89B6 3655 3801 C3C6 2150 197A 5888 235F ACAC")))))
+          (ul (@ (class "mono"))
+            (li "BCA6 89B6 3655 3801 C3C6 2150 197A 5888 235F ACAC"))))
 
       (h3 "Release signatures")
       (p
        "Releases of Guix and GuixSD are signed using the OpenPGP "
        "key with the fingerprint "
-       (tt ,ludovics-key)
+       (span (@ (class "mono")) ,ludovics-key)
        ".  "
        "Users should "
        (a (@ (href ,(manual-url "Binary-Installation.html"))) "verify")
