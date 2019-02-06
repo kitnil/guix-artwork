@@ -59,18 +59,20 @@
      application. See Haunt <page> objects for more information."
   (flatten
    (list
-    ;; TODO: Remove these builders when the bug described below is fixed.
+    ;; TODO: These are provisional builders (reason below).
     (detailed-index-builder)
     (detailed-package-list-builder)
     ;; -----------------------------------------------------------------
-
-    ;; BUG: These builders are commented out because of a bug using dots
-    ;; in directory names:
     ;;
-    ;; https://bitbucket.org/sirgazil/guixsd-website/issues/47/
+    ;; These provisional builders are used because of a limitation of
+    ;; the CVS repository used for deploying the website. The idea is
+    ;; to have "package list" and "package detail" pages as proposed
+    ;; in Guix bug #25227. This, however, would generate thousands of
+    ;; pages that could choke the current CVS repository.
     ;;
-    ;; However, they build the pages that implement the latest design
-    ;; proposed for the website in Guix(SD) bug #26006.
+    ;; When this limitation is gone, the following builders should be
+    ;; used instead. They should generate pages as those described in
+    ;; the proposal.
     ;;
     ;;(index-builder)
     ;;(packages-builder)
