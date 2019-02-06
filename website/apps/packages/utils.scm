@@ -204,7 +204,8 @@ vocabulary."
 
   (define patches
     (map (lambda (patch)
-           (ilink `(tt ,(patch-name patch)) (patch-url patch)))
+           (ilink `(span (@ (class "mono")) ,(patch-name patch))
+		  (patch-url patch)))
          (match (package-source package)
            (#f '())
            ((? origin? o) (origin-patches o)))))
