@@ -150,7 +150,8 @@
     ;; The description can be a list of language/blurb pairs.
     ,(match (contact-description contact)
        ((((? string? languages) blurbs) ...)
-        `(p ,@(map (lambda (language blurb)
+        `(div (@ (id "help-guix-mailing-list-description"))
+	  ,@(map (lambda (language blurb)
                      `(div (@ (style "display: flex; align-items: center; margin: 0 10px 10px 0"))
                            ,(language-tag language)
                            (div (@ (lang ,language) (style "flex: 1")) ,blurb)))

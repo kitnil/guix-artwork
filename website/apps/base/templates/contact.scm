@@ -24,7 +24,8 @@
    #:active-menu-item "About"
    #:css (list
 	  (guix-url "static/base/css/page.css")
-          (guix-url "static/base/css/buttons.css"))
+          (guix-url "static/base/css/buttons.css")
+	  (guix-url "static/base/css/contact.css"))
    #:crumbs (list (crumb "Contact" "./"))
    #:content
    `(main
