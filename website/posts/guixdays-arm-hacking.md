@@ -1,7 +1,7 @@
 title: QA on non-Intel at Guix Days
-date: 2019-02-06 19:30
+date: 2019-02-07 09:30
 author: Efraim Flashner
-tags: ARM, Guix Hackathon, FOSDEM
+tags: ARM, Guix Days, FOSDEM
 ---
 
 During the second day of Guix Days (a FOSDEM [fringe
