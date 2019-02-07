@@ -9,7 +9,7 @@ event](https://fosdem.org/2019/fringe)) we split up into smaller working groups
 based on our areas of interest. I led a group which aimed to address some of
 the package issues which exist on non-Intel architectures. Of course not
 everyone has access to an ARM board, but with the
-[`qemu-binfmt-service`](http://guix.info/manual/en/Virtualization-Services.html#Virtualization-Services)
+[`qemu-binfmt-service`](https://www.gnu.org/software/guix/manual/en/html_node/Virtualization-Services.html#index-binfmt_005fmisc)
 service it is possible to use QEMU and the `binfmt_misc` functionality of the
 Linux kernel to emulate these systems. Many have reported that this system
 emulation is comparable in speed to many of the available ARM boards on the
