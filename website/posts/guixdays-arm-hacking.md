@@ -142,7 +142,7 @@ $(guix build --source binutils)` and started looking. There were many obvious
      `(("gcc:lib" ,gcc "lib")))))
 ```
 
-One more build cycle later and we did it! `/gnu/store/...-binutils-gold-2.31.1`
+One more build cycle later and we did it! `/gnu/store/…-binutils-gold-2.31.1`
 existed! We now did two things, we copied our patch over to an aarch64 build
 machine and we started cleaning up our package definition on our x86_64 build
 machine, where we knew we had a working package definition.
@@ -221,16 +221,16 @@ was added and our build started.
        ,@(package-native-inputs go-1.4)))
 ```
 
-First build, success! `/gnu/store/...-go-1.11.5` exists! OK, but does it
+First build, success! `/gnu/store/…-go-1.11.5` exists! OK, but does it
 actually work? `guix build syncthing --system=armhf-linux`.
-`/gnu/store/...-syncthing-1.0.0` exists too! A quick check of `guix refresh
+`/gnu/store/…-syncthing-1.0.0` exists too! A quick check of `guix refresh
 --list-dependent go@1.4` showed that we had unlocked 176 new packages for armhf.
 Even better, since they had all failed by default due to go@1.11 failing to
 build, for each package that did build meant one fewer package which failed to
 build which should take a big bite out of our build failures.
 
-Our next test was syncthing for aarch64. `/gnu/store/...-go-1.11.5` exists!
-`/gnu/store/..-syncthing-1.0.0` ... does not. "`unknown architecture 'armv7-a'`."
+Our next test was syncthing for aarch64. `/gnu/store/…-go-1.11.5` exists!
+`/gnu/store/…-syncthing-1.0.0` ... does not. "`unknown architecture 'armv7-a'`."
 It seems that Go is confused which architecture it is building for.
 Unfortunately we were reaching the end of our time for hacking, so that will
 have to wait for another day. All that was left now was the test failures on
