@@ -31,6 +31,7 @@
   #:use-module (srfi srfi-1)
   #:export (gnu-url
 	    guix-git-tree-url
+	    guix-irc-log-url
 	    guix-url
 	    latest-guix-version
 	    manual-url
@@ -41,6 +42,8 @@
 ;;;
 ;;; Guix variables.
 ;;;
+
+(define guix-irc-log-url "https://bayfront.guixsd.org/.well-known/logs/")
 
 (define guix-root-url-path
   (if (getenv "GUIX_WEB_SITE_INFO")

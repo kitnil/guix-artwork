@@ -45,7 +45,7 @@
 	  "IRC client")
        " of your preference. Note that the conversations that happen
        on the " (code "#guix") " channel are logged ("
-       (a (@ (href "https://gnunet.org/bot/log/guix")) "browse the log")
+       (a (@ (href ,guix-irc-log-url)) "browse the log")
        ").")
 
       (iframe

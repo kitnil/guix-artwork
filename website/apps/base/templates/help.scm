@@ -104,9 +104,7 @@
 	(p
 	 "The " (code "#guix") " channel is logged. Previous
          conversations can be browsed online. See the "
-	 (a (@ (href "https://gnunet.org/bot/log/guix/"))
-	    "channel logs")
-	 ". ")
+	 (a (@ (href ,guix-irc-log-url)) "channel logs") ". ")
 	(p
 	 ,(link-more
 	   #:label "Connect"

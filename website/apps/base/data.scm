@@ -24,7 +24,7 @@
       with the community about GNU Guix or to get help in
       real-time.")
     #:url (guix-url "contact/irc/")
-    #:log "https://gnunet.org/bot/log/guix/")
+    #:log guix-irc-log-url)
 
    (contact
     #:name "Info Mailing List"
