@@ -12,6 +12,7 @@
   #:use-module (apps packages types)
   #:use-module (apps packages utils)
   #:use-module (guix gnu-maintenance)
+  #:use-module (guix packages)
   #:export (package-t))
 
 
