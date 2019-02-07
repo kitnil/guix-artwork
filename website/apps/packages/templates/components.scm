@@ -17,9 +17,13 @@
   #:use-module (srfi srfi-1)
   #:export (detailed-package-preview
 	    issue-count->shtml
+	    license->shtml
 	    lint-issue->shtml
+	    location->shtml
 	    package-preview
-	    sidebar))
+	    patches->shtml
+	    sidebar
+	    supported-systems->shtml))
 
 
 ;;;
@@ -126,6 +130,16 @@
     (@ (class "lint-issue"))
     (p (@ (class "lint-issue-type")) ,(lint-issue-type issue) ":")
     (pre ,(lint-issue-description issue))))
+
+
+(define (location->shtml loc)
+  "Return an SHTML a element representing the given location LOC.
+
+   LOC (<location>)
+     A location object as defined in the GNU Guix API reference."
+  (let ((ilink (location->ilink loc)))
+    (link-subtle #:label (ilink-name ilink)
+		 #:url (ilink-url ilink))))
 
 
 (define (package-preview package)

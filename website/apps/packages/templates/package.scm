@@ -58,10 +58,14 @@
 	 (li (b "Website: ")
 	     (a (@ (href ,(package-home-page package)))
 		,(package-home-page package)))
-	 (li (b "License: "))
-	 (li (b "Build status: "))
-	 (li (b "Patches: "))
-	 (li (b "Package source code: ")))
+	 (li (b "License: ")
+	     ,(license->shtml (package-license package)))
+	 (li (b "Package source: ")
+	     ,(location->shtml (package-location package)))
+	 (li (b "Patches: ")
+	     ,(patches->shtml (package-patches package)))
+	 (li (b "Builds: ")
+	     ,(supported-systems->shtml package)))
 
 	;; Lint issues.
 	,(if (null? lint-issues)
