@@ -19,8 +19,8 @@ hardware.
 
 Our group decided to tackle Go, which was lacking support in Guix on armhf and
 aarch64. Upon checking the build logs from Cuirass and the source code for Go we
-determined that Go did indeed require the `gold` linker from `binutils`. We
-didn't want to modify the copy of `binutils` in Guix since it is part of our
+determined that Go did indeed require the `gold` linker from the GNU Binutils. We
+didn't want to modify the copy of Binutils in Guix since it is part of our
 bootstrap story, so we quickly put together a new package definition which added
 the configure flag to enable `gold`.
 
@@ -38,7 +38,7 @@ the configure flag to enable `gold`.
 This was an obvious first step, and one which we knew would fail. Had it been
 this easy `gold` would have been enabled back in 2012 when it was first added.
 Our error came in the form of one of the binaries not being able to link against
-libstdc++.so, which is in the `gcc:lib` output. This was quickly added and we
+`libstdc++.so`, which is in the `gcc:lib` output. This was quickly added and we
 were off and building again.
 
 ```scheme
@@ -80,7 +80,7 @@ tried our build again.
 
 This time we made it through the full build phase and we knew we were almost
 there. Our enthusiasm was quickly dampened when we got the error during the
-tests "unable to find the 'dc' program". What is this `dc` program? This isn't
+tests: `unable to find the 'dc' program`. What is this `dc` program? This isn't
 any package any of us had heard of before. It definitely wasn't packaged in
 Guix. A quick `apt-cache search dc` search in Ubuntu showed they didn't have
 package either. A second search of Ubuntu, `apt-file search dc | grep '/bin/dc'`
@@ -106,15 +106,15 @@ quickly showed us it was in the `bc` package, and soon we were building
      `(("gcc:lib" ,gcc "lib")))))
 ```
 
-Approaching the end of the check phase we soon ran into another error, there
+Approaching the end of the `check` phase we soon ran into another error, there
 was an unpatched `/bin/sh` somewhere in the source code which was generated
 during the check phase. Based on the build logs we were able to track down
 approximately where the code should be, so we downloaded the source `tar xf
 $(guix build --source binutils)` and started looking. There were many obvious
 `/bin/sh` calls which we cross-referenced with the build logs and the
-'patch-source-shebangs phase, and this left us with some code in
+`patch-source-shebangs` phase, and this left us with some code in
 `gold/Makefile.in`, which by default is not included in the
-'patch-source-shebangs and would need to be fixed manually.
+`patch-source-shebangs` and would need to be fixed manually.
 
 ```scheme
 (define-public binutils-gold
@@ -171,14 +171,14 @@ machine, where we knew we had a working package definition.
 ```
 
 Fortunately for us the changes in the code worked on x86_64 and we still got a
-working binutils-gold output. On our aarch64 side the build was progressing
+working `binutils-gold` output. On our aarch64 side the build was progressing
 nicely and everything seemed fine... until we suddenly were presented with big
 red errors about unrelocatable code. How could it? Everything was working so
 well! Undeterred, we built the source again, this time targeting armhf and were
 unfortunately presented with similar errors. Deciding to address the test
 failures later (It's ARM! It's not as well tested as other architectures!
 Right?) we disabled the tests and unsurprisingly `binutils-gold` built on both
-aarch64-and armhf.
+aarch64 and armhf.
 
 ```scheme
 (define-public binutils-gold
@@ -230,13 +230,13 @@ build, for each package that did build meant one fewer package which failed to
 build which should take a big bite out of our build failures.
 
 Our next test was syncthing for aarch64. `/gnu/store/...-go-1.11.5` exists!
-`/gnu/store/..-syncthing-1.0.0` ... does not. "unknown architecture 'armv7-a'."
+`/gnu/store/..-syncthing-1.0.0` ... does not. "`unknown architecture 'armv7-a'`."
 It seems that Go is confused which architecture it is building for.
 Unfortunately we were reaching the end of our time for hacking, so that will
 have to wait for another day. All that was left now was the test failures on
-binutils-gold for the ARM systems. Some attempts at cargo-culting other code
+`binutils-gold` for the ARM systems. Some attempts at cargo-culting other code
 failed (per-architecture tests we had and overriding flags in
-substitute-keyword-arguments we had, but not together), but after some attempts
+`substitute-keyword-arguments` we had, but not together), but after some attempts
 we were able to create a working package definition we were happy with.
 
 ```scheme
