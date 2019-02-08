@@ -91,10 +91,12 @@
 
 (define (index-builder)
   "Return a Haunt page listing some random packages."
-  ;; TODO: Pick random packages.
+  (define (sample n from)
+    (map (lambda (id) (list-ref from id))
+         (list-tabulate n (lambda _ (random (length from))))))
   (let ((context (list (cons "packages"
-                             (take-at-most (all-packages)
-                                           %max-packages-on-index)))))
+                             (sample %max-packages-on-index
+                                     (all-packages))))))
     (make-page "packages/index.html" (index-t context) sxml->html)))
 
 
