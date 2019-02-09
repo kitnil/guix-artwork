@@ -96,7 +96,9 @@
          (list-tabulate n (lambda _ (random (length from))))))
   (let ((context (list (cons "packages"
                              (sample %max-packages-on-index
-                                     (all-packages))))))
+                                     (all-packages)))
+		       (cons "total"
+			     (length (all-packages))))))
     (make-page "packages/index.html" (index-t context) sxml->html)))
 
 
