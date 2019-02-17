@@ -17,6 +17,7 @@
   #:use-module (srfi srfi-1)
   #:export (detailed-package-preview
 	    issue-count->shtml
+	    letter-selector
 	    license->shtml
 	    lint-issue->shtml
 	    location->shtml
@@ -96,6 +97,31 @@
   `(,(if (> count 0) 'mark 'span)
     ,(number->string count)
     ,(if (= count 1) " issue" " issues")))
+
+
+(define* (letter-selector #:optional (active-letter ""))
+  "Return an SHTML section element representing a widget to list
+   packages by initial.
+
+   ACTIVE-LETTER (string)
+     The letter that should be displayed as active."
+  `(section
+    (@ (class "letter-selector"))
+    (h3 (@ (class "a11y-offset")) "Packages menu: ")
+
+    (h4 (@ (class "selector-title selector-title-top"))
+	"Browse alphabetically")
+    (div
+     (@ (class "selector-box-padded"))
+     ,@(map
+	(lambda (letter)
+	  (list
+	   (button-little
+	    #:label letter
+	    #:url (guix-url (url-path-join "packages" letter ""))
+	    #:active (string=? letter active-letter))
+	   " ")) ; NOTE: Force space for readability in non-CSS browsers.
+	alphabet))))
 
 
 (define (license->shtml license)

@@ -32,7 +32,7 @@ packages to advertise."
      #:css
      (list (guix-url "static/base/css/page.css")
 	   (guix-url "static/base/css/item-preview.css")
-	   (guix-url "static/base/css/sidebar.css")
+	   (guix-url "static/packages/css/letter-selector.css")
 	   (guix-url "static/packages/css/package-list.css"))
      #:crumbs
      (list (crumb "Packages" (guix-url "packages/")))
@@ -56,6 +56,6 @@ packages to advertise."
 
 	(div
 	 (@ (class "sheet sheet-padded justify-left"))
-	 ,@(map detailed-package-preview packages))
-
-	,(sidebar))))))
+	 ,(letter-selector)
+	 ,@(map detailed-package-preview packages)
+	 ,(letter-selector)))))))

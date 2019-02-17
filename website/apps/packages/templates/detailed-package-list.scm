@@ -34,7 +34,7 @@
      #:css
      (list (guix-url "static/base/css/page.css")
 	   (guix-url "static/base/css/item-preview.css")
-	   (guix-url "static/base/css/sidebar.css")
+	   (guix-url "static/packages/css/letter-selector.css")
 	   (guix-url "static/packages/css/package-list.css"))
      #:scripts
      (list (guix-url "static/packages/js/build-status.js"))
@@ -58,9 +58,9 @@
 
 	(div
 	 (@ (class "sheet sheet-padded justify-left"))
+	 ,(letter-selector letter)
 	 ,@(map detailed-package-preview (context-datum context "items"))
+	 ,(letter-selector letter)
 	 ,(page-selector (string->number total-pages)
 			 (string->number page-number)
-			 (guix-url (url-path-join "packages" letter))))
-
-	,(sidebar letter))))))
+			 (guix-url (url-path-join "packages" letter)))))))))

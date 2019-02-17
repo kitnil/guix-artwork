@@ -34,7 +34,7 @@
      #:css
      (list (guix-url "static/base/css/page.css")
 	   (guix-url "static/base/css/item-preview.css")
-	   (guix-url "static/base/css/sidebar.css"))
+	   (guix-url "static/packages/css/letter-selector.css"))
      #:crumbs
      (list (crumb "Packages" (guix-url "packages/"))
 	   (crumb letter (guix-url (url-path-join "packages"
@@ -55,9 +55,9 @@
 
 	(div
 	 (@ (class "sheet"))
+	 ,(letter-selector letter)
 	 ,@(map package-preview (context-datum context "items"))
+	 ,(letter-selector letter)
 	 ,(page-selector (string->number total-pages)
 			 (string->number page-number)
-			 (guix-url (url-path-join "packages" letter))))
-
-	,(sidebar letter))))))
+			 (guix-url (url-path-join "packages" letter)))))))))
