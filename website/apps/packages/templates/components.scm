@@ -65,10 +65,7 @@
 		       #:url (package-home-page package)) ".")
 
      (li (b "Package source:") " "
-	 ,(let* ((l (package-location package))
-		 (ilink (location->ilink l)))
-	    (link-subtle #:label (ilink-name ilink)
-			 #:url (ilink-url ilink)))
+	 ,(location->shtml (package-location package))
 	 ".")
 
      (li (b "Patches:") " "
