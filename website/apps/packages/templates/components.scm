@@ -15,6 +15,8 @@
   #:use-module (guix packages)
   #:use-module (guix gnu-maintenance)
   #:use-module (srfi srfi-1)
+  #:use-module (texinfo)
+  #:use-module (texinfo plain-text)
   #:export (detailed-package-preview
 	    issue-count->shtml
 	    letter-selector
@@ -176,7 +178,9 @@
     (h3 ,(package-name package) " " ,(package-version package))
     (p
      (@ (class "item-summary"))
-     ,(string-summarize (package-description package) 30)
+     ,(string-summarize
+       (stexi->plain-text (texi-fragment->stexi (package-description package)))
+       30)
      "…")))
 
 
