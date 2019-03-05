@@ -31,48 +31,48 @@
  "[procedure] list-group"
  (test-equal
   "Grouping elements of an empty list results in an empty list."
-  (list-group (list) 5)
-  (list))
+  (list)
+  (list-group (list) 5))
  (test-equal
   "Group a list of four in sets of two."
-  (list-group (list "Onnet" "Twoson" "Threed" "Summers") 2)
-  (list (list "Onnet" "Twoson") (list "Threed" "Summers")))
+  (list (list "Onnet" "Twoson") (list "Threed" "Summers"))
+  (list-group (list "Onnet" "Twoson" "Threed" "Summers") 2))
  (test-equal
   "Group a list of five in sets of three."
-  (list-group (list "Onnet" "Twoson" "Threed" "Summers" "Scaraba") 3)
-  (list (list "Onnet" "Twoson" "Threed") (list "Summers" "Scaraba"))))
+  (list (list "Onnet" "Twoson" "Threed") (list "Summers" "Scaraba"))
+  (list-group (list "Onnet" "Twoson" "Threed" "Summers" "Scaraba") 3)))
 
 
 (test-group
  "[procedure] list-slice"
  (test-equal
   "Slice from index A to index B."
-  (list-slice fruit-bag 0 2)
-  (list "uva" "mora"))
+  (list "uva" "mora")
+  (list-slice fruit-bag 0 2))
  (test-equal
   "Slice from index A to index B out of range."
-  (list-slice fruit-bag 1 7)
-  (list "mora" "mango" "kiwi"))
+  (list "mora" "mango" "kiwi")
+  (list-slice fruit-bag 1 7))
  (test-equal
   "Slice from index A."
-  (list-slice fruit-bag 2)
-  (list "mango" "kiwi")))
+  (list "mango" "kiwi")
+  (list-slice fruit-bag 2)))
 
 
 (test-group
  "[procedure] rest"
  (test-equal
   "Empty list results in itself."
-  (rest (list))
-  (list))
+  (list)
+  (rest (list)))
  (test-equal
   "Rest of single-element list is empty list."
-  (rest (list "Hello"))
-  (list))
+  (list)
+  (rest (list "Hello")))
  (test-equal
   "Rest of list of elements is the list but its first element."
-  (rest (list "Hello" "Hola" "Ei"))
-  (list "Hola" "Ei")))
+  (list "Hola" "Ei")
+  (rest (list "Hello" "Hola" "Ei"))))
 
 
 (test-group
@@ -80,18 +80,18 @@
 
  (test-equal
   "Don't add separators to empty lists."
-  (separate (list) "|")
-  (list))
+  (list)
+  (separate (list) "|"))
 
  (test-equal
   "Don't add separators to one-element lists."
-  (separate (list "mango") "|")
-  (list "mango"))
+  (list "mango")
+  (separate (list "mango") "|"))
 
  (test-equal
   "Separate the elements of a list."
-  (separate (list "mango" "kiwi" "papaya" "lemon") "|")
-  (list "mango" "|" "kiwi" "|" "papaya" "|" "lemon")))
+  (list "mango" "|" "kiwi" "|" "papaya" "|" "lemon")
+  (separate (list "mango" "kiwi" "papaya" "lemon") "|")))
 
 
 (test-end SUITE_NAME)

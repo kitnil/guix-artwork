@@ -27,26 +27,26 @@
 
  (test-equal
   "Build a relative path to a file."
-  (path-join "docs" "essays" "humanity.odt")
   (string-join (list "docs" "essays" "humanity.odt")
-	       file-name-separator-string))
+	       file-name-separator-string)
+  (path-join "docs" "essays" "humanity.odt"))
 
  (test-equal
   "Build an absolute path to a directory."
-  (path-join "" "en" "docs" "manual")
   (string-join (list "" "en" "docs" "manual")
-	       file-name-separator-string))
+	       file-name-separator-string)
+  (path-join "" "en" "docs" "manual"))
 
  (test-equal
   "Append a slash to the end of the path when specified."
-  (path-join "" "docs" "manual" "")
   (string-join (list "" "docs" "manual" "")
-	       file-name-separator-string))
+	       file-name-separator-string)
+  (path-join "" "docs" "manual" ""))
 
  (test-equal
   "Build path to the root directory."
-  (path-join "")
-  file-name-separator-string))
+  file-name-separator-string
+  (path-join "")))
 
 
 (test-end SUITE_NAME)

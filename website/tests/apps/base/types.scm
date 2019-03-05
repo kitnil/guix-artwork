@@ -27,8 +27,8 @@
 
  (test-equal
   "Return the appropriate value for the given key in the context."
-  (context-datum '(("HEALTH" . 82) ("COOKIE" . "lemon")) "COOKIE")
-  "lemon"))
+  "lemon"
+  (context-datum '(("HEALTH" . 82) ("COOKIE" . "lemon")) "COOKIE")))
 
 
 (test-end SUITE_NAME)

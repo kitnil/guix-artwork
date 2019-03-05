@@ -25,21 +25,25 @@
 (test-group
  "[procedure] slugify"
 
- (test-assert
+ (test-equal
   "Text is lowercase."
-  (equal? (slugify "Biology") "biology"))
+  "biology"
+  (slugify "Biology"))
 
- (test-assert
+ (test-equal
   "Separate words with a hyphen."
-  (equal? (slugify "Human anatomy") "human-anatomy"))
+  "human-anatomy"
+  (slugify "Human anatomy"))
 
- (test-assert
+ (test-equal
   "Remove reserved characters for IRIs."
-  (equal? (slugify ":/?#[]@!$&'()*+,;=") ""))
+  ""
+  (slugify ":/?#[]@!$&'()*+,;="))
 
- (test-assert
+ (test-equal
   "Remove reserved characters for file names."
-  (equal? (slugify ":/?*\\%\"|<>") "")))
+  ""
+  (slugify ":/?*\\%\"|<>")))
 
 
 
@@ -48,23 +52,23 @@
 
  (test-equal
   "Build a relative path to a web resource."
-  (url-path-join "blog" "tags" "index.html")
-  "blog/tags/index.html")
+  "blog/tags/index.html"
+  (url-path-join "blog" "tags" "index.html"))
 
  (test-equal
   "Build an absolute path to a directory."
-  (url-path-join "" "en" "docs" "manual")
-  "/en/docs/manual")
+  "/en/docs/manual"
+  (url-path-join "" "en" "docs" "manual"))
 
  (test-equal
   "Append a slash to the end of the path when specified."
-  (url-path-join "" "docs" "manual" "")
-  "/docs/manual/")
+  "/docs/manual/"
+  (url-path-join "" "docs" "manual" ""))
 
  (test-equal
   "Build a path to the root directory."
-  (url-path-join "")
-  "/"))
+  "/"
+  (url-path-join "")))
 
 
 (test-end SUITE_NAME)
