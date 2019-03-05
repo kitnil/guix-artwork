@@ -1,20 +1,20 @@
-;;; GuixSD website --- GNU's advanced distro website
+;;; GNU Guix web site
 ;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
 ;;;
-;;; This file is part of GuixSD website.
+;;; This file is part of the GNU Guix web site.
 ;;;
-;;; GuixSD website is free software; you can redistribute it and/or modify it
+;;; The GNU Guix web site is free software; you can redistribute it and/or modify it
 ;;; under the terms of the GNU General Public License as published by
 ;;; the Free Software Foundation; either version 3 of the License, or
 ;;; (at your option) any later version.
 ;;;
-;;; GuixSD website is distributed in the hope that it will be useful, but
+;;; The GNU Guix web site is distributed in the hope that it will be useful, but
 ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 ;;; General Public License for more details.
 ;;;
 ;;; You should have received a copy of the GNU General Public License
-;;; along with GuixSD website.  If not, see <http://www.gnu.org/licenses/>.
+;;; along with the GNU Guix web site.  If not, see <http://www.gnu.org/licenses/>.
 
 ;; Run 'guix build -f guix.scm' to build the web site.
 

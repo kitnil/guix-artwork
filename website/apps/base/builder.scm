@@ -1,4 +1,4 @@
-;;; GuixSD website --- GNU's advanced distro website
+;;; GNU Guix web site
 ;;; Initially written by sirgazil who waives all
 ;;; copyright interest on this file.
 

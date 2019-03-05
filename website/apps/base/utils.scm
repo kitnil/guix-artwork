@@ -1,4 +1,4 @@
-;;; GuixSD website --- GNU's advanced distro website
+;;; GNU Guix web site
 ;;; Copyright © 2013, 2014, 2015, 2016, 2017, 2018 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
@@ -6,20 +6,20 @@
 ;;; Initially written by sirgazil who waives all copyright interest on this
 ;;; file.
 ;;;
-;;; This file is part of GuixSD website.
+;;; This file is part of the GNU Guix web site.
 ;;;
-;;; GuixSD website is free software; you can redistribute it and/or modify it
+;;; The GNU Guix web site is free software; you can redistribute it and/or modify it
 ;;; under the terms of the GNU Affero General Public License as published by
 ;;; the Free Software Foundation; either version 3 of the License, or (at
 ;;; your option) any later version.
 ;;;
-;;; GuixSD website is distributed in the hope that it will be useful, but
+;;; The GNU Guix web site is distributed in the hope that it will be useful, but
 ;;; WITHOUT ANY WARRANTY; without even the implied warranty of
 ;;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 ;;; GNU Affero General Public License for more details.
 ;;;
 ;;; You should have received a copy of the GNU Affero General Public License
-;;; along with GuixSD website.  If not, see <http://www.gnu.org/licenses/>.
+;;; along with the GNU Guix web site.  If not, see <http://www.gnu.org/licenses/>.
 
 (define-module (apps base utils)
   #:use-module (apps aux lists)
