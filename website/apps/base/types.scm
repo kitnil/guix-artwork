@@ -45,7 +45,7 @@
 ;;;
 ;;; description (SXML)
 ;;;   A short description. For example:
-;;;   '(p "Discussion about the development of the GuixSD.").
+;;;   '(p "Discussion about the development of Guix.").
 ;;;
 ;;; url (string)
 ;;;   A URL to the main page of the contact medium.

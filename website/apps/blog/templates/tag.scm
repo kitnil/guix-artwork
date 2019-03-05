@@ -25,7 +25,7 @@
      #:description
      (string-append "Blog posts about "
 		    tag
-		    "on GuixSD and the GNU Guix package manager.")
+		    " on GNU Guix.")
      #:keywords
      '("GNU" "Linux" "Unix" "Free software" "Libre software"
        "Operating system" "GNU Hurd" "GNU Guix package manager"

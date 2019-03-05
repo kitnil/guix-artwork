@@ -15,7 +15,7 @@
   (theme
    #:title '("Contribute")
    #:description
-   "Check all the ways you can contribute to make GuixSD and GNU Guix
+   "Check all the ways you can contribute to make GNU Guix
    better, and join the world-wide community of volunteers."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"
@@ -34,7 +34,7 @@
       (h2 "Contribute")
 
       (p
-       "The Guix System Distribution is a large project developed
+       "GNU Guix is a large project developed
        mostly by volunteers from all around the world. You are welcome
        to join us in the "
        (a (@ (href "https://lists.gnu.org/mailman/listinfo/guix-devel"))

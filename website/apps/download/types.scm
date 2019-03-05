@@ -37,7 +37,7 @@
 ;;;
 ;;; title (string)
 ;;;   The human readable name of the download. For example:
-;;;   "GuixSD Installer".
+;;;   "Guix Installer".
 ;;;
 ;;; description (SXML)
 ;;;   A description of the download. For example:

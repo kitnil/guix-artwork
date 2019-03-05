@@ -28,7 +28,7 @@
       (@ (xmlns "http://www.w3.org/2005/Atom"))
       (id ,id)
       (title ,title)
-      (author (name "GuixSD") (uri ,domain))
+      (author (name "GNU Guix") (uri ,domain))
       (icon ,(guix-url "static/base/img/icon.png"))
       (updated ,(date->string (current-date) "~4"))
       (link (@ (rel "alternate") (href ,alternate)))

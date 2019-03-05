@@ -15,7 +15,7 @@
   (theme
    #:title '("Help")
    #:description
-   "A list of resources about how to use GuixSD and GNU Guix, plus
+   "A list of resources about how to use GNU Guix, plus
    information about getting help from the community of users and
    developers."
    #:keywords
@@ -81,7 +81,7 @@
 		(alt "")))
 	(h3 "GNU Manuals")
 	(p
-	 "GuixSD is a distribution of the "
+	 "Guix is a distribution of the "
 	 (a (@ (href ,(gnu-url))) "GNU operating system")
 	 ".  Documentation for GNU packages is
          available online in various formats. ")
@@ -99,8 +99,7 @@
 	(p
 	 "For real-time support from the community, you can connect
          to the " (code "#guix") " channel on irc.freenode.net. There
-         you can get help about anything related to both the Guix
-         System Distribution and GNU Guix.")
+         you can get help about anything related to GNU Guix.")
 	(p
 	 "The " (code "#guix") " channel is logged. Previous
          conversations can be browsed online. See the "

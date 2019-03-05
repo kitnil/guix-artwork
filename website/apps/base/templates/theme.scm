@@ -30,7 +30,7 @@
      document. The elements of the list are joined together with em
      dashes as separators between them. For example, a list with two
      strings like 'Hello', and 'Blog' will result in a title like
-     'Hello — Blog — GuixSD'.
+     'Hello — Blog — Guix'.
 
    DESCRIPTION (string)
      The description of the document. This is the value used for the
@@ -69,8 +69,8 @@
 
      (head
       ,(if (null? title)
-	   `(title "GuixSD")
-	   `(title ,(string-join (append title '("GuixSD")) " — ")))
+	   `(title "GNU Guix")
+	   `(title ,(string-join (append title '("GNU Guix")) " — ")))
       (meta (@ (charset "UTF-8")))
       (meta (@ (name "keywords") (content ,(string-join keywords ", "))))
       (meta (@ (name "description") (content ,description)))
@@ -91,7 +91,7 @@
 	     css)
       ;; Feeds.
       (link (@ (type "application/atom+xml") (rel "alternate")
-	       (title "GuixSD — Activity Feed")
+	       (title "GNU Guix — Activity Feed")
 	       (href ,(guix-url "feeds/blog.atom"))))
       (link (@ (rel "icon") (type "image/png")
 	       (href ,(guix-url "static/base/img/icon.png"))))

@@ -17,7 +17,7 @@
    #:title '("Security")
    #:description
    "Important information about geting security updates for your
-   GuixSD or GNU Guix installation, and instructions on how to report
+   GNU Guix installation, and instructions on how to report
    security issues."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"
@@ -60,7 +60,7 @@
 
       (h3 "Release signatures")
       (p
-       "Releases of Guix and GuixSD are signed using the OpenPGP "
+       "Releases of Guix are signed using the OpenPGP "
        "key with the fingerprint "
        (span (@ (class "mono")) ,ludovics-key)
        ".  "

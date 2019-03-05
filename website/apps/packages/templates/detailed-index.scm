@@ -20,9 +20,7 @@ packages to advertise."
     (theme
      #:title (list "Packages")
      #:description
-     "List of packages available for the Guix System Distribution
-     (GuixSD) and foreign GNU/Linux distributions through the GNU
-     Guix package manager."
+     "List of packages available through GNU Guix."
      #:keywords
      (list "GNU" "Linux" "Unix" "Free software" "Libre software"
 	   "Operating system" "GNU Hurd" "GNU Guix package manager"

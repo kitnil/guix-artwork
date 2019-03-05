@@ -14,8 +14,8 @@
   (theme
    #:title '("Graphics")
    #:description
-   "Information about images used for the graphical identity of GuixSD
-   and GNU Guix."
+   "Information about images used for the graphical identity of
+   GNU Guix and Guix System (formerly “GuixSD”)."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"
      "Operating system" "GNU Hurd" "GNU Guix package manager"

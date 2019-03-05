@@ -62,7 +62,7 @@
 	 (context
 	  (list
 	   (cons "domain" domain)
-	   (cons "title" "GuixSD — Blog")
+	   (cons "title" "GNU Guix — Blog")
 	   (cons "id" (url-path-join domain "feeds" "blog.atom"))
 	   (cons "alternate" (url-path-join domain "blog" ""))
 	   (cons "posts"
@@ -111,7 +111,7 @@
 	       (list
 		(cons "domain" domain)
 		(cons "title"
-		      (string-append "GuixSD — Blog — " tag-name))
+		      (string-append "GNU Guix — Blog — " tag-name))
 		(cons "id" (url-path-join domain
 					  "feeds"
 					  "blog"

@@ -21,7 +21,7 @@
     (theme
      #:title (list (string-append "Page " page-number) "Blog")
      #:description
-     "Blog posts about GuixSD and the GNU Guix package manager."
+     "Blog posts about GNU Guix."
      #:keywords
      '("GNU" "Linux" "Unix" "Free software" "Libre software"
        "Operating system" "GNU Hurd" "GNU Guix package manager"

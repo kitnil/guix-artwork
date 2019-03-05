@@ -14,8 +14,8 @@
   (theme
    #:title '("About")
    #:description
-   "GuixSD is an advanced distribution of the GNU operating system.
-    GuixSD is technology that respects the freedom of computer users.
+   "Guix is an advanced distribution of the GNU operating system.
+    Guix is technology that respects the freedom of computer users.
     You are free to run the system for any purpose, study how it
     works, improve it, and share it with the whole world."
    #:keywords
@@ -32,18 +32,16 @@
       (h2 "About the Project")
 
       (p
-       "The " (em "Guix System Distribution (GuixSD)") " and the "
-       (em "GNU Guix") " package manager are "
+       "The " (em "GNU Guix") " package and system manager is a "
        (a (@ (href ,(gnu-url "philosophy/free-sw.html")))
 	  "free software")
-       " projects developed by volunteers around the world under the
-       umbrella of the " (a (@ (href ,(gnu-url))) "GNU Project") ". "
-       "This is the official web site for both projects.")
+       " project developed by volunteers around the world under the
+       umbrella of the " (a (@ (href ,(gnu-url))) "GNU Project") ". ")
 
       (p
-       "GuixSD is a distribution of the "
+       "Guix System is an advanced distribution of the "
        (a (@ (href ,(gnu-url))) "GNU operating system")
-       " centered on the GNU Guix package manager.  It uses the "
+       ".  It uses the "
        (a (@ (href ,(gnu-url "software/linux-libre"))) "Linux-libre")
        " kernel, and support for "
        (a (@ (href ,(gnu-url "software/hurd"))) "the Hurd")
@@ -72,7 +70,7 @@
        " language—which makes it nicely hackable.")
 
       (p
-       "GuixSD takes that a step further by supporting stateless,
+       "Guix takes that a step further by additionally supporting stateless,
        reproducible "
        (a (@ (href ,(manual-url "Using-the-Configuration-System.html")))
 	  "operating system configurations")

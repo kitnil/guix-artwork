@@ -13,7 +13,7 @@
              (haunt site))
 
 
-(site #:title "GuixSD"
+(site #:title "GNU Guix"
       #:domain (if (getenv "GUIX_WEB_SITE_INFO")
                    "https://guix.info"
                    "https://gnu.org/software/guix")

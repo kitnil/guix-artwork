@@ -23,7 +23,7 @@
 		   (date->string (post-date post) "~Y")
 		   "Blog")
      #:description
-     "Blog posts about GuixSD and the GNU Guix package manager."
+     "Blog posts about GNU Guix."
      #:keywords tags
      #:active-menu-item "Blog"
      #:css

@@ -31,8 +31,7 @@
   (theme
    #:title '("Download")
    #:description
-   "Installers and source files for the Guix System distribution
-   (GuixSD), and the GNU Guix package manager. GNU Guix can be
+   "Installers and source files for GNU Guix.  GNU Guix can be
    installed on different GNU/Linux distributions."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"

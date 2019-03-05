@@ -14,9 +14,7 @@
   (theme
    #:title '("IRC" "Contact")
    #:description
-   "Installers and source files for the Guix System distribution
-   (GuixSD), and the GNU Guix package manager. GNU Guix can be
-   installed on different GNU/Linux distributions."
+   "Internet relay chat."
    #:keywords
    '("GNU" "Linux" "Unix" "Free software" "Libre software"
      "Operating system" "GNU Hurd" "GNU Guix package manager"
@@ -38,7 +36,7 @@
        "Join the " (code "#guix") " channel on the "
        (a (@ (href "https://en.wikipedia.org/wiki/Freenode"))
 	"Freenode IRC network")
-       " to chat with the GuixSD and GNU Guix community or to get help
+       " to chat with the GNU Guix community or to get help
        in real-time. You can use the chat widget below, or just use
        the "
        (a (@ (href "https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_clients"))
