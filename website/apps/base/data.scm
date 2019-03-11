@@ -195,8 +195,8 @@ het Nederlands.")
    (screenshot
     #:title "Graphical log-in"
     #:slug "slim"
-    #:image (guix-url "static/media/img/slim.png")
-    #:preview (guix-url "static/media/img/guixsd-slim.mini.png")
+    #:image (guix-url "static/media/img/gdm-sessions.png")
+    #:preview (guix-url "static/media/img/gdm-sessions.mini.png")
     #:caption "Graphical log-in screen")
 
    (screenshot
