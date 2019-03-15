@@ -71,7 +71,7 @@ that need to be glued into the final one. They are sorted, and using the
 same tool for video creation our final introductory video is created.
 
 The code for this video creation workflow is available
-[https://git.savannah.gnu.org/cgit/guix/videos.git](on Savannah).
+[on Savannah](https://git.savannah.gnu.org/cgit/guix/videos.git).
 Enjoy!
 
 #### About GNU Guix
