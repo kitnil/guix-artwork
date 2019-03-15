@@ -38,7 +38,7 @@ their output, without showing any slide at all.
 
 ##### Workflow for creating each slide video.
 
-![slide](https://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website/static/blog/img/outreachy-2019-outreachy-2019-slide-video.png)
+![slide](https://www.gnu.org/software/guix/static/blog/img/outreachy-2019-slide-video.png)
 
 The inputs are SVG files and audio files.
 First, SVGs are converted to PNGs (“the slides”).
@@ -51,7 +51,7 @@ and the glued audio file the final slide video is made.
 
 ##### Workflow for creating each command line session video.
 
-![cli](https://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website/static/blog/img/outreachy-2019-outreachy-2019-cli-video.png)
+![cli](https://www.gnu.org/software/guix/static/blog/img/outreachy-2019-cli-video.png)
 
 The input is a session text file that has commands or meta-commands that
 are used to simulate, for example, the typing of a command, or the printing of
@@ -64,7 +64,7 @@ the audio and the slides are glued to have final command line session video.
 
 ##### Workflow for creating the final video.
 
-![gluing](https://git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website/static/blog/img/outreachy-2019-outreachy-2019-gluing-video.png)
+![gluing](https://www.gnu.org/software/guix/static/blog/img/outreachy-2019-gluing-video.png)
 
 Slide videos and command line videos are a “bunch of videos”
 that need to be glued into the final one. They are sorted, and using the
