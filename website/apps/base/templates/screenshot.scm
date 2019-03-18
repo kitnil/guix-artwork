@@ -23,7 +23,8 @@
        "GNU Guile" "Guile Scheme" "Transactional upgrades"
        "Functional package management" "Reproducibility")
      #:active-menu-item "Overview"
-     #:css (list (guix-url "static/base/css/index.css"))
+     #:css (list (guix-url "static/base/css/index.css")
+		 (guix-url "static/base/css/screenshots.css"))
      #:content
      `(main
        (section
@@ -32,10 +33,12 @@
 	 (@ (class "a11y-offset"))
 	 ,(screenshot-title shot))
 
-	(img
-	 (@ (class "responsive-image")
-	    (src ,(screenshot-image shot))
-	    (alt ,(screenshot-caption shot))))
+	(div
+	 (@ (class "screenshot-viewer"))
+	 (img
+	  (@ (class "responsive-image centered-block")
+	     (src ,(screenshot-image shot))
+	     (alt ,(screenshot-caption shot)))))
 
 	(div
 	 (@ (class "screenshots-box top-shadow-bg"))
