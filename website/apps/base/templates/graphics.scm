@@ -39,11 +39,14 @@
       (p
        (@ (class "centered-text"))
        (img (@ (src ,(guix-url "static/base/img/Guix.png"))
-	       (alt "GNU Guix logotype")))
-       (img (@ (src ,(guix-url "static/base/img/GuixSD.png"))
-	       (alt "Guix System Distribution logotype"))))
+	       (alt "GNU Guix logotype"))))
       (p
-       "The GNU Guix and the Guix System Distribution (GuixSD)
+       "The standalone Guix, formerly known as the “Guix System
+       Distribution” or GuixSD, had its own logo, which is now
+       deprecated.")
+
+      (p
+       "The GNU Guix and GuixSD
        logotypes were designed by Luis Felipe López Acevedo
        (a.k.a. sirgazil).  They are available under the following
        terms:")
@@ -56,10 +59,10 @@
 	   "Creative Commons Attribution-ShareAlike 4.0 International License")
 	"."))
       (p
-       "The source files for these logotypes, their variants, and
+       "The source files (SVG) for these logotypes, their variants, and
        other artwork used in the different components of the GNU Guix
        project are available in the "
-       (a (@ (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git"))
+       (a (@ (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/logo"))
 	  "guix-artwork")
        " repository, including the previous GNU Guix logotype designed
        by Nikita Karetnikov in 2013 and "
