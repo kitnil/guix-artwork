@@ -123,7 +123,7 @@ preserving complete version control repositories rather than release
 tarballs.
 
 It is not yet clear to us what to do with plain old tarballs.  On one
-hand, there are here and cannot be ignored.  Furthermore, some provide
+hand, they are here and cannot be ignored.  Furthermore, some provide
 artifacts that are not in version control, such as `configure` scripts,
 and often enough they are accompanied by a cryptographic signature from
 the developers that allows recipients to _authenticate_ the code—an
