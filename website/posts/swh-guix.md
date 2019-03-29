@@ -12,7 +12,7 @@ machines, and manage the operating system running on your machine.
 One foundation that sets it apart from other tools in these areas is
 _reproducibility_.  From a high-level view, Guix allows users to
 _declare_ complete software environments and instantiate them.  They can
-share those environments with others, which can replicate them or adapt
+share those environments with others, who can replicate them or adapt
 them to their needs.  This aspect is key to reproducible computational
 experiments: scientists need to reproduce software environments before
 they can reproduce experimental results, and this is one of the things
@@ -21,10 +21,10 @@ we are focusing on in the context of the
 level, the project, along with others in the [Reproducible
 Builds](https://reproducible-builds.org) community, is working to ensure
 that software build outputs are [reproducible,
-bit-for-bit](https://reproducible-builds.org/docs/definition/).
+bit for bit](https://reproducible-builds.org/docs/definition/).
 
 Work on reproducibility at all levels has been making great progress.
-Guix for instance allows you to [travel back in
+Guix, for instance, allows you to [travel back in
 time](https://www.gnu.org/software/guix/blog/2018/multi-dimensional-transactions-and-rollbacks-oh-my/).
 That Guix can travel back in time _and_ build software reproducibly is a
 great step forward.  But there’s still an important piece that’s missing
@@ -56,7 +56,7 @@ build farms.  This comes for free: the [“substitute”
 mechanism](https://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html)
 extends to all “build artifacts”, including downloads.  However, with
 limited capacity, our build farms do not keep all the source code of all
-the packages for a long time.  Thus, one could very well find themself
+the packages for a long time.  Thus, one could very well find oneself
 unable to rebuild a package months or years later, simply because its
 source code disappeared or moved to a different location.
 
@@ -141,7 +141,7 @@ commits, because that makes it clearer that we’re providing an actual
 release and not an arbitrary revision (this is another illustration of
 [Zooko’s triangle](https://en.wikipedia.org/wiki/Zooko's_triangle)).
 
-This leads me to another limitation that stems from the mismatch between
+This leads to another limitation that stems from the mismatch between
 the way Guix and Software Heritage compute hashes over version control
 checkouts: both compute a hash over a serialized representation of the
 directory, but they serialize the directory in a different way (SWH
@@ -149,7 +149,7 @@ serializes directories as Git trees, while Guix uses “normalized
 archives” or Nars, the format the build daemon manipulates, which is
 inherited from Nix.)  That prevents Guix from looking up revisions by
 content hash.  The solution will probably involve changing Guix to
-support the same method as Software Heritage, and/or adding Guix’ method
+support the same method as Software Heritage, and/or adding Guix’s method
 to Software Heritage.
 
 Having to wait for “cooking” completion can also be problematic.  The
