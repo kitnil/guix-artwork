@@ -39,7 +39,7 @@
        (div
 	(@ (class "summary-box"))
 	(img
-	 (@ (src ,(guix-url "static/base/img/guixsd-manual-icon.png"))
+	 (@ (src ,(guix-url "static/base/img/manual-icon.png"))
 	    (alt "")))
 	(h3 "Guix System Manual")
 	(p
@@ -55,7 +55,7 @@
        (div
 	(@ (class "summary-box"))
 	(img
-	 (@ (src ,(guix-url "static/base/img/guix-manual-icon.png"))
+	 (@ (src ,(guix-url "static/base/img/manual-icon.png"))
 	    (alt "")))
 	(h3 "GNU Guix Manual")
 	(p
