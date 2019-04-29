@@ -1,5 +1,5 @@
 ;;; GNU Guix web site
-;;; Copyright © 2013, 2014, 2015, 2016, 2017, 2018 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2013, 2014, 2015, 2016, 2017, 2018, 2019 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2015 Mathieu Lirzin <mthl@openmailbox.org>
 ;;; Copyright © 2013 Alex Sassmannshausen <alex.sassmannshausen@gmail.com>
 ;;; Copyright © 2017 Eric Bavier <bavier@member.fsf.org>
@@ -101,7 +101,8 @@
       (string-append (guix-root-url-path) subpath)))
 
 
-(define* (manual-url #:optional (subpath ""))
+(define* (manual-url #:optional (subpath "")
+                     #:key (language "en"))
   "Append SUBPATH to the GNU Guix manual URL path.
 
    SUBPATH (string)
@@ -110,11 +111,12 @@
 
    RETURN VALUE (string)
      A URL path. For example:
-     /software/guix/manual/html_node/System-installation.html."
+     /software/guix/manual/en/html_node/System-installation.html."
   (string-append
    (guix-url (if (getenv "GUIX_WEB_SITE_INFO")
-                 "manual/en/"
-                 "manual/html_node/")) subpath))
+                 (string-append "manual/" language "/")
+                 (string-append "manual/" language "/html_node/"))
+             subpath)))
 
 
 
