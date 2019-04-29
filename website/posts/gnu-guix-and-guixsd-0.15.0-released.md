@@ -9,14 +9,14 @@ version 0.15.0!  This release brings us close to what we wanted to have
 for 1.0, so it’s probably one of the last zero-dot-something releases.
 
 The release comes with [GuixSD ISO-9660 installation
-images](https://www.gnu.org/software/guix/manual/html_node/System-Installation.html),
+images](https://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html),
 a [virtual machine image of
-GuixSD](https://www.gnu.org/software/guix/manual/html_node/Running-GuixSD-in-a-VM.html),
+GuixSD](https://www.gnu.org/software/guix/manual/en/html_node/Running-GuixSD-in-a-VM.html),
 and with tarballs to install the package manager on top of your
 GNU/Linux distro, either [from
-source](https://www.gnu.org/software/guix/manual/html_node/Requirements.html)
+source](https://www.gnu.org/software/guix/manual/en/html_node/Requirements.html)
 or [from
-binaries](https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html).
+binaries](https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html).
 
 It’s been 7 months (much too long!) since the previous release, during
 which 100 people contributed code and packages.  The highlights include:

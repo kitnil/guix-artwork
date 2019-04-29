@@ -32,7 +32,7 @@
          (a (@ (href "/software/guix/news/service-composition-in-guixsd.html"))
             "the design of GuixSD’s new service composition framework")
          ".  With this design, we knew we were able to have fine control over the "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Composition.html"))
             "service composition graph")
          ".  Challenge #1 overcome!"
          (br))
@@ -104,7 +104,7 @@
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2016-03/msg00639.html"))
             "one line")
          " in their "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html"))
             "operating system configuration")
          ".  Overall, this has been a nice experience involving a variety of areas."
          (br))

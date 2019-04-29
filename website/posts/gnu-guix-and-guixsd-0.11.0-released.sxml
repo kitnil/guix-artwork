@@ -10,26 +10,26 @@
       (p "It is a pleasure to announce the new beta release of GNU\xa0Guix and GuixSD, version 0.11.0!"
          (br))
       (p "The release comes with USB installation images to install the standalone "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "GuixSD")
          ", and with tarballs to install the package manager on top of your GNU/Linux distro, either "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from binaries")
          ". "
          (br))
       (p "It’s been 4 months since the previous release, during which 70 people contributed code and packages.  The highlights include:"
          (br))
       (ul (li "New GuixSD system services, including an "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Scheduled-Job-Execution.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Scheduled-Job-Execution.html"))
                  "mcron service")
               ", a "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Networking-Services.html"))
                  "Dropbear SSH service")
               ", and a "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Various-Services.html#Dictionary-Services"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Various-Services.html#Dictionary-Services"))
                  "Dico dictionary service")
               ".\n")
           (li "Infrastructure for "
@@ -37,15 +37,15 @@
                  "whole-system tests")
               ".\n")
           (li "Compression support for "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html"))
                  "guix publish")
               ".\n")
           (li "An Emacs mode to "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Emacs-Package-Locations.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Emacs-Package-Locations.html"))
                  "browse package definition locations")
               ".\n")
           (li "GuixSD support for "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Mapped-Devices.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Mapped-Devices.html"))
                  "RAID devices")
               ".\n")
           (li (a (@ (href "https://www.gnu.org/software/guix/packages/"))
@@ -55,7 +55,7 @@
                  "bit-reproducibility")
               " issues fixed\n")
           (li "Assorted improvements to all the "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Utilities.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Utilities.html"))
                  "tool set")
               ", many "
               (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5"))

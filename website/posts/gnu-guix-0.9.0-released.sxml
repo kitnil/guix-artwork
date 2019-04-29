@@ -9,13 +9,13 @@
       (p "We are pleased to announce the next alpha release of GNU Guix, version 0.9.0."
          (br))
       (p "The release comes with USB installation images to install the standalone "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "GuixSD")
          ", and with tarballs to install the package manager on top of a running GNU/Linux system, either "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from binaries")
          "."
          (br))
@@ -25,37 +25,37 @@
               (a (@ (href "/software/guix/news/container-provisioning-with-guix.html"))
                  "automatic container provisioning")
               " in "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-environment.html"))
                  "guix environment")
               ", for development environments, and in "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
                  "guix system")
               ", for full GuixSD deployments.\n")
           (li "A brand new "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Composition.html"))
                  "service composition framework")
               " for GuixSD.  It significantly improves extensibility and modularity, while providing a framework that makes it easy to reason about how system services relate to each other.  This was one of the main design issues that needed to be addressed on the road to 1.0.\n")
           (li "The new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-graph.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-graph.html"))
                  "guix graph")
               " command can draw package dependency graphs with different levels of details.  Likewise, "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
                  "guix system")
               " has a new extension-graph command to draw the system's service composition graph, and a dmd-graph command to draw the service dependency graph as seen by "
               (a (@ (href "http://www.gnu.org/software/dmd/"))
                  "GNU dmd")
               ".\n")
           (li "The new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-challenge.html"))
                  "guix challenge")
               " command allows users to challenge the authenticity of "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html"))
                  "substitutes")
               " provided by a server.  More on that in a future post!\n")
           (li (a (@ (href "http://www.gnu.org/software/guix/packages/"))
                  "543 new packages")
               ", notably Idris and many "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-import.html"))
                  "imported")
               " Haskell, Python, and R packages.\n")
           (li (a (@ (href "http://debbugs.gnu.org/rrd/guix.html"))

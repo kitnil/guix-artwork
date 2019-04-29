@@ -15,14 +15,14 @@
       (p "Containers are a hot topic, and there are many implementations available, but Guix containers are built differently.  Compared to other container implementations such as Docker, the most notable difference is that disk images and layered file systems are not used. Instead, the necessary software packages are inserted into containers via simple bind mounts.  A pleasant consequence of this structure is that software is deduplicated system-wide.  A package used in any number of containers is only on disk in a single place.  Additionally, some containers may be created by unprivileged users, allowing any Guix user to create isolated sandboxes for their applications to play in."
          (br))
       (p "One of the programs that uses call-with-container is "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-environment.html"))
             "'guix environment'")
          ", the generic virtual development environment creation tool.  A --container flag has been introduced that will, as the name suggests, spawn the environment inside of a container.  The container only has file system access to the directory from which 'guix environment' was invoked and the read-only store directories of the dependencies.  Additional directories and files may be shared from the host using the --expose and --share flags.  For example, a \"containerized\" development environment that is capable of building Guix from source may be created like so:"
          (br))
       (div (@ (class "example"))
            (pre "guix environment --container guix "))
       (p "Likewise, the "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
             "'guix system'")
          " tool has been extended with a 'container' action for creating scripts that launch full-blown GuixSD containers:"
          (br))

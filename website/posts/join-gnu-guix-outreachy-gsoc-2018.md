@@ -34,7 +34,7 @@ student](https://developers.google.com/open-source/gsoc/faq#students),
 make sure to apply [by March 27th](https://developers.google.com/open-source/gsoc/timeline).
 
 If you’d like to
-[contribute](https://www.gnu.org/software/guix/manual/html_node/Contributing.html)
+[contribute](https://www.gnu.org/software/guix/manual/en/html_node/Contributing.html)
 to computing freedom, Scheme, functional programming, or operating
 system development, now is a good time to join us.  Let’s get in touch
 on [the mailing lists and on the `#guix` channel on the Freenode IRC

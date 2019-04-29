@@ -10,44 +10,44 @@
       (p "We are pleased to announce the new release of GNU\xa0Guix and GuixSD, version 0.12.0!"
          (br))
       (p "The release comes with USB installation images to install the standalone "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "GuixSD")
          ", and with tarballs to install the package manager on top of your GNU/Linux distro, either "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from binaries")
          ". "
          (br))
       (p "It’s been a little over 4 months since the previous release, during which 76 people contributed code and packages.  The highlights include:"
          (br))
       (ul (li "New GuixSD system services, including a "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Log-Rotation.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Log-Rotation.html"))
                  "log rotation service")
               ", a "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Printing-Services.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Printing-Services.html"))
                  "CUPS printing service")
               ", "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Network-File-System.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Network-File-System.html"))
                  "NFS related services")
               ", and an "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Mail-Services.html#OpenSMTPD-Service"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Mail-Services.html#OpenSMTPD-Service"))
                  "OpenSMTPD service")
               ".\n")
-          (li (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Daemon-Offload-Setup.html"))
+          (li (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Daemon-Offload-Setup.html"))
                  "Guix daemon offloading support")
               " now uses "
               (a (@ (href "https://github.com/artyom-poptsov/guile-ssh"))
                  "Guile-SSH")
               ".\n")
           (li "GuixSD can now be installed to a "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Mapped-Devices.html#index-LUKS"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Mapped-Devices.html#index-LUKS"))
                  "LUKS-encrypted root")
               ".\n")
           (li "New cross-compiler toolchains for i686-w64-mingw32 and arm-none-eabi.\n")
           (li "A new d3.js backend for "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-graph.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-graph.html"))
                  "guix graph")
               ".\n")
           (li (a (@ (href "https://www.gnu.org/software/guix/packages/"))
@@ -55,7 +55,7 @@
               ", 864 package updates notably glibc\xa02.24 and linux-libre\xa04.8.15"
               ".\n")
           (li "Assorted improvements to all the "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Utilities.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Utilities.html"))
                  "tool set")
               ", many "
               (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5"))

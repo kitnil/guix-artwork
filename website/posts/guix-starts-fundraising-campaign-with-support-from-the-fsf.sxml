@@ -20,7 +20,7 @@
          (a (@ (href "https://www.gnu.org/software/guix/packages/"))
             "packages")
          " and users, we felt that the time has come to call to the community to strengthen the project’s infrastructure.  Our first action will be to change the build farm’s front-end, which orchestrates builds and "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html"))
             "distributes binaries")
          ".  Next we want to add more build machines, with two goals in mind: being able to quickly test changes that trigger lots of rebuilds, and being able to identify "
          (a (@ (href "/software/guix/news/reproducible-builds-a-means-to-an-end.html"))

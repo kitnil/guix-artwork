@@ -69,7 +69,7 @@ force the boot from microSD instead of eMMC.
 ![GuixSD installer on BeagleBone Black](https://www.gnu.org/software/guix/static/blog/img/guixsd-bbb1.jpg)
 
 Let's follow the [Guix documentation
-here](https://www.gnu.org/software/guix/manual/html_node/Preparing-for-Installation.html#Preparing-for-Installation)
+here](https://www.gnu.org/software/guix/manual/en/html_node/Preparing-for-Installation.html#Preparing-for-Installation)
 to install GuixSD on eMMC.
 
 First of all, let's plug in an ethernet cable and set up SSH access in order to

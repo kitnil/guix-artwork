@@ -110,7 +110,7 @@ The Shepherd itself remains unaware of namespaces, it simply ends up
 calling
 [`make-forkexec-constructor/container`](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/build/shepherd.scm#n108)
 instead of
-[`make-forkexec-constructor`](https://www.gnu.org/software/shepherd/manual/html_node/Service-De_002d-and-Constructors.html#index-make_002dforkexec_002dconstructor)
+[`make-forkexec-constructor`](https://www.gnu.org/software/shepherd/manual/en/html_node/Service-De_002d-and-Constructors.html#index-make_002dforkexec_002dconstructor)
 and that’s it.  The changes to the service definitions of
 [BitlBee](https://git.savannah.gnu.org/cgit/guix.git/commit/?id=a062b6ca99ad61c9df473fe49a93d69f9698c59d)
 and
@@ -144,7 +144,7 @@ are minimal.  The end result, for Tor, looks like this:
 ```
 
 The
-[`with-imported-modules`](https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html#index-with_002dimported_002dmodules)
+[`with-imported-modules`](https://www.gnu.org/software/guix/manual/en/html_node/G_002dExpressions.html#index-with_002dimported_002dmodules)
 form above instructs Guix to _import_ our `(gnu build shepherd)`
 library, which provides `make-forkexec-constructor/container`, into
 PID 1.  The `start` method of the service specifies the command to start
@@ -158,7 +158,7 @@ mappings, `make-forkexec-constructor/container` automatically adds
 
 So what do these containerized services look like when they’re running?
 When we run
-[`herd status bitblee`](https://www.gnu.org/software/shepherd/manual/html_node/Invoking-herd.html),
+[`herd status bitblee`](https://www.gnu.org/software/shepherd/manual/en/html_node/Invoking-herd.html),
 disappointingly, we don’t see anything special:
 
 ```
@@ -207,7 +207,7 @@ root@guixsd /# echo /var/run/*
 There’s no `/home` and generally very little in BitlBee’s mount
 namespace.  Notably, the namespace lacks `/run/setuid-programs`, which
 is where
-[setuid programs](https://www.gnu.org/software/guix/manual/html_node/Setuid-Programs.html)
+[setuid programs](https://www.gnu.org/software/guix/manual/en/html_node/Setuid-Programs.html)
 live in GuixSD.  Its `/etc` directory contains the minimal set of files
 needed for proper operation rather than the complete `/etc` of the host.
 `/var` contains nothing but BitlBee’s own state files, as well as the
@@ -249,7 +249,7 @@ file system mappings.  Good candidates for increased isolation are HTTP
 servers such as NGINX.  However, for these, it’s more difficult to
 determine the set of file system mappings that must be made.  GuixSD has
 the advantage that it knows
-[how NGINX is configured](https://www.gnu.org/software/guix/manual/html_node/Web-Services.html)
+[how NGINX is configured](https://www.gnu.org/software/guix/manual/en/html_node/Web-Services.html)
 and could potentially derive file system mappings from that information.
 Getting it right may be trickier than it seems, though, so this is
 something we’ll have to investigate.
@@ -279,7 +279,7 @@ framework so we might even be able to automate it.
 At this point it seems that tight integration between the distro and the
 init system is the best way to precisely define system service
 sandboxes.  GuixSD’s
-[declarative approach to system services](https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#System-Services)
+[declarative approach to system services](https://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html#System-Services)
 along with tight Shepherd integration help a lot here, but it remains to
 be seen how difficult it is to create sandboxes for complex system
 services such as NGINX.

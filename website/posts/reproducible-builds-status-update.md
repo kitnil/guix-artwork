@@ -10,14 +10,14 @@ today, now’s a good time for an update on what has happened in Guix land
 in that area!
 
 [Isolated build
-environments](https://www.gnu.org/software/guix/manual/html_node/Features.html)
+environments](https://www.gnu.org/software/guix/manual/en/html_node/Features.html)
 are very helpful to achieve [reproducible
 builds](https://reproducible-builds.org/docs/definition/), but they are
 not sufficient: timestamps and non-determinism can still make a package
 build non-reproducible.  Developers can rely on [`guix build
---check`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-build.html)
+--check`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-build.html)
 and [`guix
-challenge`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html)
+challenge`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-challenge.html)
 to identify non-reproducible builds.
 
 This article provides an overview of the progress made to fix
@@ -101,13 +101,13 @@ which makes it easy to retrieve the faulty binaries and investigate.
 #### Reproducible builds = faster downloads!
 
 There’s a very practical advantage to reproducible builds: anyone who
-[publishes](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html)
+[publishes](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html)
 binaries is in essence a *mirror* of our build farm.
 
 Until now, Guix’s public key infrastructure (PKI) was used pretty
 rigidly: you could download binaries from a server *if and only if* you
 had previously [authorized its public
-key](https://www.gnu.org/software/guix/manual/html_node/Substitutes.html).
+key](https://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html).
 So to download binaries from the person next to you, you would first
 need to retrieve their public key and authorize it.  In addition to
 being inconvenient, it has the drawback of being an all-or-nothing

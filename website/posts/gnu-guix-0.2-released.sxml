@@ -12,7 +12,7 @@
          " is available.  It comes with a number of new features, notably:"
          (br))
       (ul (li "The "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-package.html"))
                  "\"guix package\"")
               " command supports upgrades of user profiles and full-text package searches.\n")
           (li "Binary packages are "
@@ -20,7 +20,7 @@
                  "continuously built")
               " and may be transparently downloaded as \"substitutes\" to the result of a local build.\n")
           (li "The new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-pull.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-pull.html"))
                  "\"guix pull\"")
               " command updates the user's copy of Guix and its distro from Git.\n")
           (li "New Scheme interfaces are available to facilitate package management in various ways.\n"))

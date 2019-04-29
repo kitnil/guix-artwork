@@ -10,42 +10,42 @@
       (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8."
          (br))
       (p "The release comes both with a source tarball, which allows you to install it "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Installation.html"))
             "on top a running GNU/Linux system")
          ", and a USB installation image to install the "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "standalone operating system")
          "."
          (br))
       (p "The highlights for this release include:"
          (br))
       (ul (li "A new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-environment.html"))
                  "guix environment")
               " command for the bookkeeping and reproduction of development environments.\n")
           (li "An "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Emacs-Interface.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Emacs-Interface.html"))
                  "Emacs user interface")
               " as an alternative to the "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-package.html"))
                  "command-line interface")
               " for package management.\n")
           (li "An "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Security-Updates.html"))
                  "experimental mechanism")
               " for faster deployment of  security updates.\n")
           (li "operating-system declarations can now "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/operating_002dsystem-Reference.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/operating_002dsystem-Reference.html"))
                  "specify")
               " swap devices, "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Mapped-Devices.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Mapped-Devices.html"))
                  "mapped devices")
               ", firmware, and more.\n")
           (li "More developer tools, notably "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-lint.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-lint.html"))
                  "guix lint")
               " and "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-import.html"))
                  "guix import")
               ".\n")
           (li "162 packages have been added, with more than 100 package updates.\n"))

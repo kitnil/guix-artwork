@@ -72,7 +72,7 @@ of the interface are listed below.
   to be displayed from the database.
 
 - The frontend consists of HTML templates represented with [Guile
-  SXML](https://www.gnu.org/software/guile/manual/html_node/SXML.html)
+  SXML](https://www.gnu.org/software/guile/manual/en/html_node/SXML.html)
   and the [Bootstrap 4](https://getbootstrap.com/) CSS library.
     
 - The appearance is minimalistic. Every page includes only specific

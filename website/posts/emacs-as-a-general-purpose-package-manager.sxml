@@ -10,12 +10,12 @@
       (p (a (@ (href "http://www.gnu.org/software/guix"))
             "GNU Guix")
          ", the package manager written for the GNU system, now has a neat Emacs user interface!  It offers a visual, user-friendly alternative to the guix package "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-package.html"))
             "command-line interface")
          "."
          (br))
       (p "For those familiar with "
-         (a (@ (href "http://www.gnu.org/software/emacs/manual/html_node/emacs/Packages.html"))
+         (a (@ (href "http://www.gnu.org/software/emacs/manual/en/html_node/emacs/Packages.html"))
             "package.el")
          ", the main user interface is quite similar: commands like guix-newest-available-packages, guix-search-by-regexp, and guix-installed-packages present a browsable list of packages.  Individual packages can be selected, which displays additional details and presents a button to install or delete them.  It is also possible to mark a set of packages for installation, upgrade, or deletion, and execute the set of operations in a single transaction."
          (br))
@@ -23,10 +23,10 @@
          (a (@ (href "http://nongnu.org/geiser/"))
             "Geiser")
          ", the beloved Guile/Emacs interface and development environment, to communicate with the underlying Guile process.  That Guile process, in turn, simply uses Guix and "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Package-Modules.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Package-Modules.html"))
             "the whole distribution")
          " as libraries—the goodness of embedding the "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Defining-Packages.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Defining-Packages.html"))
             "packaging DSL")
          " in a general-purpose language."
          (br))

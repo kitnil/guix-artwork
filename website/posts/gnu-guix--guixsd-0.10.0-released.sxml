@@ -9,39 +9,39 @@
       (p "We are pleased to announce the new beta release of GNU\xa0Guix and GuixSD, version 0.10.0!"
          (br))
       (p "The release comes with USB installation images to install the standalone "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "GuixSD")
          ", and with tarballs to install the package manager on top of a running GNU/Linux system, either "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from binaries")
          "."
          (br))
       (p "It’s been almost 5 months since the previous release, and many things happened!  The highlights include:"
          (br))
       (ul (li "Our “grafting” mechanism for "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Security-Updates.html"))
                  "security updates")
               " has been fixed to be generally applicable.  Read "
               (a (@ (href "/software/guix/news/timely-delivery-of-security-updates.html"))
                  "this post")
               " for more information on the challenges behind this.\n")
-          (li (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+          (li (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html"))
                  "Substitutes")
               " are now fetched by default over HTTPS and from a faster mirror.\n")
           (li "A number of packages have been made "
               (a (@ (href "/software/guix/news/reproducible-builds-a-means-to-an-end.html"))
                  "bit-for-bit reproducible")
               ", including glibc, Perl, Emacs packages, and Python packages.  This work was simplified by "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-challenge.html"))
                  "guix challenge")
               " and by the new "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Additional-Build-Options.html#Additional-Build-Options"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Additional-Build-Options.html#Additional-Build-Options"))
                  "--check")
               " and "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Common-Build-Options.html#Common-Build-Options"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Common-Build-Options.html#Common-Build-Options"))
                  "--rounds")
               " build options, and also by the insight gathered from "
               (a (@ (href "https://reproducible-builds.org/"))
@@ -51,23 +51,23 @@
               (a (@ (href "/software/guix/news/gnome-in-guixsd.html"))
                  "now available")
               ", via the "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Desktop-Services.html"))
                  "gnome-desktop-service procedure")
               ".\n")
           (li (a (@ (href "https://www.gnu.org/software/guix/packages/"))
                  "639 new packages")
               ", about as many package updates, greatly simplified by the addition of new "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-import.html"))
                  "importers")
               " and "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-refresh.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-refresh.html"))
                  "auto-updaters")
               ".\n")
           (li "A wealth of "
               (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5"))
                  "bug fixes")
               ", documentation improvements, "
-              (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Emacs-Interface.html"))
+              (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Emacs-Interface.html"))
                  "Emacs niceties")
               ", and more!\n"))
       (p "See "

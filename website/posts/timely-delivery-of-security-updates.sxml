@@ -21,7 +21,7 @@
          (br))
       (h4 "Updates in a functional package management framework")
       (p "GNU\xa0Guix implements the "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Introduction.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Introduction.html"))
             "functional package management discipline")
          ".  What this means is that the the package graph in Guix is an immutable, "
          (a (@ (href "https://en.wikipedia.org/wiki/Persistent_data_structure"))
@@ -44,15 +44,15 @@
          (a (@ (href "https://en.wikipedia.org/wiki/Referential_transparency"))
             "“referentially transparent”")
          ", and as a bonus, we get "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Features.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Features.html"))
             "features")
          " such as transactional upgrades and rollbacks, peaceful coexistence of different variants of the same package, and more."
          (br))
       (p "But obviously, this update cost is very high when all you want is to deliver an important security update in a core package.  Regarding yesterday’s update, "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-refresh.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-refresh.html"))
             "guix refresh -l openssl")
          " shows that 2,115 packages depend on OpenSSL. On top of that, Guix supports 4 architectures, so needless to say, rebuilding everything that depends on OpenSSL would take time.  Sure, users do not have to wait for "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html"))
             "pre-built binaries")
          " and can instead build just what they need locally; in practice, they’d better have a powerful machine, though."
          (br))
@@ -65,7 +65,7 @@
          (a (@ (href "https://github.com/NixOS/nixpkgs/blob/master/pkgs/build-support/replace-dependency.nix"))
             "in Nixpkgs")
          " in 2013, and Guix itself has provided "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Security-Updates.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Security-Updates.html"))
             "the infrastructure for grafted updates")
          " since "
          (a (@ (href "/software/guix/news/gnu-guix-08-released.html"))

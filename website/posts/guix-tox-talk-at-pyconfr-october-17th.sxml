@@ -18,7 +18,7 @@
          " is a young variant of the "
          (a (@ (href "http://tox.testrun.org/")) "Tox")
          " \"virtualenv\" management tool for Python that uses "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-environment.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-environment.html"))
             "guix environment")
          " as its back-end.  In essence, while Tox restricts itself to building pure Python environments, Guix-Tox takes advantages of Guix to build complete environments, including dependencies that are outside Tox's control, thereby improving environment reproducibility.  Cyril will demonstrate practical use cases with OpenStack."
          (br))

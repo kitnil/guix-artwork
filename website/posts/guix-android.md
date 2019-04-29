@@ -8,7 +8,7 @@ Last year I thought to myself: since my phone is just a computer running
 an operating system called Android (or [Replicant](https://replicant.us/)!),
 and that Android is based on a Linux
 kernel, it's just [another foreign distribution I could install GNU Guix
-on](https://www.gnu.org/software/guix/manual/html_node/Installation.html),
+on](https://www.gnu.org/software/guix/manual/en/html_node/Installation.html),
 right? It turned out it was absolutely the case. Today I was
 reminded on IRC of my attempt last year at installing GNU Guix on my
 phone. Hence this blog post. I'll try to give you all the knowledge and
@@ -62,7 +62,7 @@ make it work on our device.
 #### Installing the necessary files
 
 We will follow the [binary installation
-guide](https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html).
+guide](https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html).
 My hardware is aarch64, so I download the corresponding binary release.
 
 Now it's time to start using adb. Connect your device and obtain root
@@ -137,7 +137,7 @@ rmdir gnu
 rmdir var
 ```
 
-Finally, we need to [create users and groups](https://www.gnu.org/software/guix/manual/html_node/Build-Environment-Setup.html) for Guix to work
+Finally, we need to [create users and groups](https://www.gnu.org/software/guix/manual/en/html_node/Build-Environment-Setup.html) for Guix to work
 properly. Since Bionic doesn't use `/etc/passwd` or `/etc/group`
 to store the users, we need to create them from scratch. Note
 the addition of the root user and group, as well as the `nobody`

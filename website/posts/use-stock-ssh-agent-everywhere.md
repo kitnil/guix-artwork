@@ -25,7 +25,7 @@ customize your entire system to be just the way you want it!
 On GuixSD, I like to use the [GNOME desktop
 environment](https://www.gnome.org).  GNOME is just one of [the
 various desktop environments that GuixSD
-supports](https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html).
+supports](https://www.gnu.org/software/guix/manual/en/html_node/Desktop-Services.html).
 By default, the GNOME desktop environment on GuixSD comes with a lot
 of goodies, including the [GNOME
 Keyring](https://wiki.gnome.org/Projects/GnomeKeyring), which is
@@ -88,9 +88,9 @@ manager](https://sourceforge.net/projects/slim.berlios).  When you log
 in, SLiM presents you with a menu of so-called "desktop sessions",
 which correspond to the desktop environments you've declared in your
 [operating system
-declaration](https://www.gnu.org/software/guix/manual/html_node/operating_002dsystem-Reference.html).
+declaration](https://www.gnu.org/software/guix/manual/en/html_node/operating_002dsystem-Reference.html).
 For example, if you've added the
-[gnome-desktop-service](https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html)
+[gnome-desktop-service](https://www.gnu.org/software/guix/manual/en/html_node/Desktop-Services.html)
 to your operating system declaration, then you'll see an option for
 GNOME at the SLiM login screen.
 
@@ -186,7 +186,7 @@ called `define-record-type*` ([defined in the file guix/records.scm in
 the Guix
 source](https://git.savannah.gnu.org/cgit/guix.git/tree/guix/records.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n178)).
 It's similar to an [SRFI-9
-record](https://www.gnu.org/software/guile/manual/html_node/SRFI_002d9-Records.html#SRFI_002d9-Records).
+record](https://www.gnu.org/software/guile/manual/en/html_node/SRFI_002d9-Records.html#SRFI_002d9-Records).
 The `inherit` feature of this macro is very useful: it creates a new
 copy of an existing record, overriding specific fields in the new copy
 as needed.
@@ -198,7 +198,7 @@ and `arguments` fields in that new copy.  We also use the
 guix/utils.scm in the Guix
 source](https://git.savannah.gnu.org/cgit/guix.git/tree/guix/utils.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n345))
 to add `--disable-ssh-agent` to the list of [configure
-flags](https://www.gnu.org/software/guix/manual/html_node/Build-Systems.html)
+flags](https://www.gnu.org/software/guix/manual/en/html_node/Build-Systems.html)
 defined in the `gnome-keyring` package.  The effect of this is to
 define a new GNOME Keyring package that is built exactly the same as
 the original, but in which the SSH agent is disabled.
@@ -225,7 +225,7 @@ how do we use it?
 
 In GuixSD, the GNOME desktop environment is treated as a [system
 service](
-https://www.gnu.org/software/guix/manual/html_node/Services.html).  To
+https://www.gnu.org/software/guix/manual/en/html_node/Services.html).  To
 make GNOME use our custom GNOME Keyring package, we must somehow
 customize the `gnome-desktop-service` ([defined in the file
 gnu/services/desktop.scm](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/services/desktop.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n795))
@@ -250,7 +250,7 @@ procedure in our operating system declaration, like this:
 Here, the `cons*` procedure just adds the GNOME desktop service to the
 `%desktop-services` list, returning the new list.  For details, please
 refer to [the Guile
-manual](https://www.gnu.org/software/guile/manual/html_node/List-Constructors.html#index-cons_002a).
+manual](https://www.gnu.org/software/guile/manual/en/html_node/List-Constructors.html#index-cons_002a).
 
 Now the question is: what should `my-gnome-desktop-configuration` be?
 Well, if we examine [the definition of this record type in the Guix
@@ -270,7 +270,7 @@ only to aggregate many GNOME packages together, including
 definition](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/gnome.scm?id=263c9941a1e523b360ca9f42d1ed6b11e6e6e285#n5977),
 we can simply invoke `guix edit gnome`, which [opens the file where
 the package is
-defined](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-edit.html#Invoking-guix-edit):
+defined](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-edit.html#Invoking-guix-edit):
 
 ```scheme
 (define-public gnome
@@ -299,7 +299,7 @@ documents and diagrams, playing media, scanning, and much more.")
 ```
 
 Apart from being a little long, this is [just a normal package
-definition](https://www.gnu.org/software/guix/manual/html_node/Defining-Packages.html#Defining-Packages).
+definition](https://www.gnu.org/software/guix/manual/en/html_node/Defining-Packages.html#Defining-Packages).
 We can see that `gnome-keyring` is included in the list of
 `propagated-inputs`.  So, we need to create a replacement for the
 `gnome` package that uses our `gnome-keyring-sans-ssh-agent` instead
@@ -324,9 +324,9 @@ As before, we use `inherit` to create a new copy of the `gnome`
 package that overrides the original `name` and `propagated-inputs`
 fields.  Since Guix packages are just defined using good old scheme,
 we can use existing language features like
-[`map`](https://www.gnu.org/software/guile/manual/html_node/List-Mapping.html#index-map)
+[`map`](https://www.gnu.org/software/guile/manual/en/html_node/List-Mapping.html#index-map)
 and
-[`match-lambda`](https://www.gnu.org/software/guile/manual/html_node/Pattern-Matching.html#Pattern-Matching)
+[`match-lambda`](https://www.gnu.org/software/guile/manual/en/html_node/Pattern-Matching.html#Pattern-Matching)
 to manipulate the list of propagated inputs.  The effect of the above
 is to create a new package that is the same as the `gnome` package but
 uses `gnome-keyring-sans-ssh-agent` instead of `gnome-keyring`.
@@ -351,7 +351,7 @@ Now that we have `gnome-sans-ssh-agent`, we can create a custom
 
 Finally, you need to run the following commands as `root` to create
 and boot into the new [system
-generation](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html)
+generation](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html)
 (replace `MY-CONFIG` with the path to the customized operating system
 configuration file):
 
@@ -370,7 +370,7 @@ tied to any particular desktop session,
 In the unfortunate event that something went wrong and things just
 aren't working when you reboot, don't worry: with GuixSD, you can
 safely roll back to the previous system generation via [the usual
-mechanisms](https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html#index-roll_002dback_002c-of-the-operating-system).
+mechanisms](https://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html#index-roll_002dback_002c-of-the-operating-system).
 For example, you can run this from the command line to roll back:
 
 ```shell
@@ -380,7 +380,7 @@ For example, you can run this from the command line to roll back:
 
 This is one of the great benefits that comes from the fact that [Guix
 follows the functional software deployment
-model](https://www.gnu.org/software/guix/manual/html_node/Introduction.html#Introduction).
+model](https://www.gnu.org/software/guix/manual/en/html_node/Introduction.html#Introduction).
 However, note that because the `~/.xsession` file (like many files in
 your home directory) is not managed by Guix, you must manually undo
 the changes that you made to it in order to roll back fully.

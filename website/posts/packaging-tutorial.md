@@ -221,7 +221,7 @@ Alternatively you can also run `guix environment --ad-hoc guile -- guile` if
 you'd rather not have Guile installed in your user profile.
 
 In the following examples we use the `>` symbol to denote the REPL prompt, that
-is, the line reserved for user input.  See [the Guile manual](https://www.gnu.org/software/guile/manual/html_node/Using-Guile-Interactively.html) for more details on
+is, the line reserved for user input.  See [the Guile manual](https://www.gnu.org/software/guile/manual/en/html_node/Using-Guile-Interactively.html) for more details on
 the REPL.
 
 -   Scheme syntax boils down to a tree of expressions (or *s-expression* in Lisp
@@ -331,7 +331,7 @@ the REPL.
     ```
 
 -   The keyword syntax is `#:`, it is used to create unique identifiers.  See also
-    the [Keywords section in the Guile manual](https://www.gnu.org/software/guile/manual/html_node/Keywords.html).
+    the [Keywords section in the Guile manual](https://www.gnu.org/software/guile/manual/en/html_node/Keywords.html).
 
 -   The percentage `%` is typically used for read-only global variables in the
     build stage.  Note that it is merely a convention, like `_` in C.  Scheme Lisp
@@ -929,7 +929,7 @@ of the traditional Unix system commands:
 
 The license in our last example needs a prefix: this is because of how the
 `license` module was imported in the package, as `#:use-module ((guix licenses)
-#:prefix license:)`.  The [Guile module import mechanism](https://www.gnu.org/software/guile/manual/html_node/Using-Guile-Modules.html) gives the user full
+#:prefix license:)`.  The [Guile module import mechanism](https://www.gnu.org/software/guile/manual/en/html_node/Using-Guile-Modules.html) gives the user full
 control over namespacing: this is needed to avoid clashes between, say, the
 `zlib` variable from `licenses.scm` (a *license* value) and the `zlib` variable
 from `compression.scm` (a *package* value).

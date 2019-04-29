@@ -9,10 +9,10 @@
       (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.1."
          (br))
       (p "The release comes both with a source tarball, which allows you to install it "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Installation.html"))
             "on top of a running GNU/Linux system")
          ", and a USB installation image to install the standalone "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "Guix System Distribution")
          "."
          (br))
@@ -23,21 +23,21 @@
                  "port to ARMv7")
               ".\n")
           (li "New "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
                  "guix system vm")
               " options to share file systems with the host.\n")
           (li "New configuration interfaces for "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Locales.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Locales.html"))
                  "locale definitions")
               " and for "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Base-Services.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Base-Services.html"))
                  "nscd")
               ".\n")
           (li "The addition of a CPAN importer to "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-import.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-import.html"))
                  "guix import")
               ", and more checkers for "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-lint.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-lint.html"))
                  "guix lint")
               ".\n")
           (li "164 new packages and 222 package updates.\n")

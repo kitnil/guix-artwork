@@ -12,7 +12,7 @@ Guix will be present on a few venues in the coming weeks:
      I will present the paper [_Code Staging in
      GNU Guix_](https://hal.inria.fr/hal-01580582/en), which discusses
      the motivation for and genesis of
-     [G-expressions](https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html),
+     [G-expressions](https://www.gnu.org/software/guix/manual/en/html_node/G_002dExpressions.html),
      as well as recent improvements.  It’s an honor to be presenting
      before an audience of experts in the field!
   2. Christopher Baines will be at [freenode

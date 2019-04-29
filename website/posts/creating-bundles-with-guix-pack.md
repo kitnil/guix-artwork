@@ -21,7 +21,7 @@ difficult for a developer, but it’s certainly cumbersome.
 Andy Wingo, the driving force behind Guile, thought that it would be
 nice to propose a binary tarball of Guile 2.2.0 on the day of its
 release.  Guix had already been providing
-[binary tarballs](https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html)
+[binary tarballs](https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html)
 for a couple of years, so why not do the same for Guile?  Essentially,
 the new `guix pack` command is a generalization of what Guix was already
 using.
@@ -46,7 +46,7 @@ then you get a complete “Guile SDK” containing Guile, Emacs,
 
 When you extract the tarball, you get a `/gnu/store` directory with a
 bunch of sub-directories with
-[these long hashes](https://www.gnu.org/software/guix/manual/html_node/Features.html),
+[these long hashes](https://www.gnu.org/software/guix/manual/en/html_node/Features.html),
 one of which is the “profile” containing Guile, Emacs, and Geiser.
 
 You wouldn’t want to ask users to type
@@ -99,7 +99,7 @@ and fairly easy to produce, we added an option to produce images in this
 format (Ricardo Wurmus
 [initially contributed Docker support](https://lists.gnu.org/archive/html/guix-devel/2017-01/msg00188.html)
 for the low-level
-[`guix archive`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-archive.html)
+[`guix archive`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-archive.html)
 tool but we found that it made more sense to have it in `guix pack`):
 
 ```
@@ -129,7 +129,7 @@ guix pack --target=i686-w64-mingw32 guile
 ```
 
 All the
-[package transformation options](https://www.gnu.org/software/guix/manual/html_node/Package-Transformation-Options.html)
+[package transformation options](https://www.gnu.org/software/guix/manual/en/html_node/Package-Transformation-Options.html)
 that Guix supports are available to `guix pack`.  Let’s say you’re a
 developer of a large piece of software such as a web browser like
 [IceCat](https://gnu.org/s/gnuzilla) and you’d like your users to test

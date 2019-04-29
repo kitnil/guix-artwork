@@ -16,7 +16,7 @@ There were problems with actually building the Guix binary in time for
 the 0.13 release. It has since been fixed and I have an unoffical
 aarch64 binary install tarball at http://flashner.co.il/~efraim/. Also there is
 the signing key for my odroid running 
-[`guix publish`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html).
+[`guix publish`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html).
 The URL of my `guix publish` server is `http://git.flashner.co.il:8181`.
 
 General problem points/packages:

@@ -9,34 +9,34 @@
       (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.2."
          (br))
       (p "The release comes both with tarballs, which allow you to install it on top of a running GNU/Linux system, either "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from a binaries")
          ", and a USB installation image to install the standalone "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "Guix System Distribution")
          " (GuixSD)."
          (br))
       (p "The highlights for this release include:"
          (br))
       (ul (li "The "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
                  "new method")
               " to install Guix on a running system from binaries, which can greatly simplify installation.\n")
           (li "GuixSD has new configuration interfaces for things like the "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Name-Service-Switch.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Name-Service-Switch.html"))
                  "name service switch")
               ", new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Services.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Services.html"))
                  "service definitions")
               ", easier "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html"))
                  "desktop-style configuration")
               ", and many tweaks and fixes.\n")
           (li "A new "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html"))
                  "guix publish command")
               " allowing everyone to publish their own binaries.\n")
           (li "718 new "

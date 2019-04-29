@@ -9,13 +9,13 @@
       (p "We are pleased to announce the next alpha release of GNU Guix, version 0.8.3."
          (br))
       (p "The release comes with USB installation images to install the standalone "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
             "Guix System Distribution")
          " (GuixSD), and with tarballs to install the package manager on top of a running GNU/Linux system, either "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Requirements.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Requirements.html"))
             "from source")
          " or "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html"))
             "from binaries")
          "."
          (br))
@@ -24,22 +24,22 @@
       (ul (li "The ability to "
               (em "declare")
               " the packages that must be present in your profile, and to pass that to "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-package.html#profile_002dmanifest"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-package.html#profile_002dmanifest"))
                  "guix package's new --manifest option")
               ".\n")
-          (li (a (@ (href "http://www.gnu.org/software/guix//manual/html_node/Invoking-guix-environment.html"))
+          (li (a (@ (href "http://www.gnu.org/software/guix//manual/en/html_node/Invoking-guix-environment.html"))
                  "guix environment")
               " has a new --ad-hoc option to quickly spawn "
               (em "ad hoc")
               " development environments.\n")
           (li "New tools: "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-edit.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-edit.html"))
                  "guix edit")
               " to open a package recipe, "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-size.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-size.html"))
                  "guix size")
               " to profile the disk usage of a package and its dependencies, "
-              (a (@ (href "http://www.gnu.org/software/guix//manual/html_node/Invoking-guix-gc.html"))
+              (a (@ (href "http://www.gnu.org/software/guix//manual/en/html_node/Invoking-guix-gc.html"))
                  "guix gc --verify")
               " to check the integrity of the store.\n")
           (li (a (@ (href "http://www.gnu.org/software/guix/packages/"))

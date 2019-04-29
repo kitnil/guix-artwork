@@ -23,7 +23,7 @@ share software stacks with machines that do not run Guix.
 
 The tarball format is plain and simple, it’s the one we know and love,
 and it’s been there “forever” [as its name
-suggests](https://www.gnu.org/software/tar/manual/html_node/Introduction.html).
+suggests](https://www.gnu.org/software/tar/manual/en/html_node/Introduction.html).
 The tarball that `guix pack` produces can be readily extracted on
 another machine, one that doesn’t run Guix, and you’re done.  The
 problem though, is that you’ll need to either unpack the tarball in the

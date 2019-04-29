@@ -10,6 +10,6 @@ an academic conference focused on generative programming techniques.  I
 presented [_Code Staging in
 GNU Guix_](https://hal.inria.fr/hal-01580582/en), a paper that discusses
 the motivation for and genesis of
-[G-expressions](https://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html)
+[G-expressions](https://www.gnu.org/software/guix/manual/en/html_node/G_002dExpressions.html)
 as well as recent improvements.  The slides are [available
 here](https://www.gnu.org/software/guix/guix-gpce-20171023.pdf).

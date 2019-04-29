@@ -18,7 +18,7 @@
          " practical, à la Emacs."
          (br))
       (p "Guix provides pre-compiled binaries of software packages as a service to its users—these are "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Substitutes.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html"))
             "substitutes")
          " for local builds.  This is a convenient way to save time, but it could become a threat to users if they cannot establish that those substitutes are authentic—that their "
          (a (@ (href "http://www.gnu.org/licenses/gpl.html#section1"))
@@ -31,7 +31,7 @@
          " that the substitutes (pre-compiled binaries) they download correspond to the source code that supposedly produced them."
          (br))
       (p "Guix builds packages in a "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Features.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Features.html"))
             "fully isolated environment")
          " to maximize reproducibility—a crucial feature inherited from "
          (a (@ (href "http://nixos.org/nix/")) "Nix")
@@ -66,7 +66,7 @@
       (p "Second, we must make it easy for users to use the binary provider of their choice, and possibly to use several of them, something that Guix allows."
          (br))
       (p "Third, it must be equally simple for any user to publish their locally-built binaries as a way to improve diversity and avoid any single point of failure or trust.  The "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html"))
             "guix publish")
          " command is a simple way to serve signed binaries over HTTP.  A fully peer-to-peer approach based on GNUnet was tackled as part of "
          (a (@ (href "/software/guix/news/gsoc-update.html"))
@@ -79,7 +79,7 @@
          (a (@ (href "/software/guix/news/gnu-guix-090-released.html"))
             "just-released")
          " 0.9.0 version of GNU Guix provides a new command called "
-         (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-challenge.html"))
+         (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-challenge.html"))
             "guix challenge")
          ".  The command allows users to automatically compare the build results of their local builds against those served by one or more binary providers.  It allows both to find out about non-reproducible builds—and indeed, has already "
          (a (@ (href "https://lists.gnu.org/archive/html/guix-devel/2015-10/msg00728.html"))

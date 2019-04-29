@@ -16,15 +16,15 @@
       (p "GuixSD is not like your parents’ distro.  Instead of fiddling with configuration files all around, or running commands that do so as a side effect, the system administrator "
          (em "declares")
          " what the system will be like.  This takes the form of an "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html"))
             "operating-system declaration")
          ", which specifies all the details: file systems, user accounts, locale, timezone, system services, etc."
          (br))
       (p "If you’re familiar with it, this may remind you of what deployment tools like Ansible and Puppet provide.  There is an important difference though: GuixSD takes a stateless—or “purely functional”—approach.  This means that instantiating the system with "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
             "guix system")
          " always produces the same result, without modifying the current system state.  This is what makes it possible to test new system configurations, roll-back to previous ones, and so on.  The "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html"))
             "guix system")
          " command allows system configurations to be instantiated on the bare metal, in virtual machines, or in "
          (a (@ (href "/software/guix/news/container-provisioning-with-guix.html"))
@@ -48,7 +48,7 @@
          (br))
       (h4 "Services Beyond Daemons")
       (p "System services are specified in the services field of operating-system declarations, which is a list of service objects.  As a user, we want to be able to ideally add one line specifying the "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Services.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Services.html"))
             "system service")
          " we want to add, possibly with several instances of a service, and have GuixSD do the right thing."
          (br))
@@ -78,25 +78,25 @@
       (p "The lesson learned from these observations is that system services "
          (em "extend")
          " each other in various way.  The new "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Composition.html"))
             "service composition framework")
          " is built around this model: “system services”, broadly defined, can extend each other, and services and their “extends” relationships form a graph.  The root of the graph is the operating system itself."
          (br))
       (p "We can see that this pattern applies to services that are not daemons. PAM is one such example.  Accounts are another example: GuixSD provides an “account service” that can be extended with new user accounts or groups; for example, the "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html#index-ntp_002dservice"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Networking-Services.html#index-ntp_002dservice"))
             "Network time protocol (NTP) daemon")
          " needs to run under the unprivileged “ntp” user, so the NTP service extends the account service with an “ntp” user account.  Likewise, the “/etc” service can be extended with new files to be added to /etc; the “setuid” service can be extended with new programs to be made setuid-root. "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Reference.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Reference.html"))
             "See the manual")
          " for more examples."
          (br))
       (p "The nice thing is that composition of services is made "
          (em "explicit")
          ": extensions can only happen where explicit extension relationships have been "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Types-and-Services.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Types-and-Services.html"))
             "declared")
          ".  By looking at the extension graph, users can see how services fit together.  The "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system.html#system_002dextension_002dgraph"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system.html#system_002dextension_002dgraph"))
             "guix system extension-graph")
          " command, for instance, takes an operating-system declaration and renders the extension graph in the Graphviz format, making it easy to inspect the OS configuration structure."
          (br))
@@ -122,12 +122,12 @@
          (br))
       (h4 "Wrapping Up")
       (p "The new "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Service-Composition.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Service-Composition.html"))
             "service composition framework")
          " in GuixSD 0.9.0 addresses shortcomings found in previous versions of GuixSD.  It simplifies operating-system declarations for users, and provides a highly extensible framework that clearly exposes the way services are composed."
          (br))
       (p "This new framework has already allowed us to integrate "
-         (a (@ (href "https://www.gnu.org/software/guix/manual/html_node/Desktop-Services.html"))
+         (a (@ (href "https://www.gnu.org/software/guix/manual/en/html_node/Desktop-Services.html"))
             "Freedesktop and GNOME services")
          " in a convenient way.  We hope it will prove fruitful as we address other types of services, such as Web services."
          (br))

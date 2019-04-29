@@ -8,14 +8,14 @@ We are pleased to announce the new release of GNU Guix and GuixSD,
 version 0.13.0!
 
 The release comes with
-[GuixSD USB installation images](https://www.gnu.org/software/guix/manual/html_node/System-Installation.html),
+[GuixSD USB installation images](https://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html),
 a
-[virtual machine image of GuixSD](https://www.gnu.org/software/guix/manual/html_node/Running-GuixSD-in-a-VM.html),
+[virtual machine image of GuixSD](https://www.gnu.org/software/guix/manual/en/html_node/Running-GuixSD-in-a-VM.html),
 and with tarballs to install the package manager on top of your
 GNU/Linux distro, either
-[from source](https://www.gnu.org/software/guix/manual/html_node/Requirements.html)
+[from source](https://www.gnu.org/software/guix/manual/en/html_node/Requirements.html)
 or
-[from binaries](https://www.gnu.org/software/guix/manual/html_node/Binary-Installation.html).
+[from binaries](https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html).
 
 It’s been 5 months since the previous release, during which 83 people
 contribute code and packages.  The highlights include:
@@ -23,7 +23,7 @@ contribute code and packages.  The highlights include:
   - Guix now supports aarch64 (64-bit ARM processors).  This release
     does not include a binary installation tarball though, and our build
     farm does not provide aarch64
-    [substitutes](https://www.gnu.org/software/guix/manual/html_node/Substitutes.html)
+    [substitutes](https://www.gnu.org/software/guix/manual/en/html_node/Substitutes.html)
     yet.  We are looking for aarch64 hardware to address this.  Please
     [get in touch with us](https://www.gnu.org/software/guix/donate/) if
     you can help!
@@ -38,7 +38,7 @@ contribute code and packages.  The highlights include:
     vulnerabilities in those daemons.  See
     [this article from April](https://www.gnu.org/software/guix/news/running-system-services-in-containers.html).
   - A new
-    [`guix pack`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-pack.html)
+    [`guix pack`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-pack.html)
     command to create standalone binary bundles is available.  We
     [presented it in March](https://www.gnu.org/software/guix/news/creating-bundles-with-guix-pack.html).
   - Guix now runs on the
@@ -48,7 +48,7 @@ contribute code and packages.  The highlights include:
     Among other things though, the
     [noticeable performance improvement](https://lists.gnu.org/archive/html/guix-devel/2017-04/msg00427.html)
     that comes for free is welcome!
-  - [`guix publish`](https://www.gnu.org/software/guix/manual/html_node/Invoking-guix-publish.html),
+  - [`guix publish`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-publish.html),
     which is what we use to distribute binaries, has a new `--cache`
     operation mode that improves performance when distributing binaries
     to a large number of users, as is the case of our build farm.
@@ -58,13 +58,13 @@ contribute code and packages.  The highlights include:
     [a total of 5,400+](https://www.gnu.org/software/guix/packages/),
     and many updates, including glibc 2.25, Linux-libre 4.11, and GCC 7.
   - New
-    [system services](https://www.gnu.org/software/guix/manual/html_node/Services.html)
+    [system services](https://www.gnu.org/software/guix/manual/en/html_node/Services.html)
     for
-    [Redis](https://www.gnu.org/software/guix/manual/html_node/Database-Services.html#index-redis_002dservice_002dtype),
-    [Exim](https://www.gnu.org/software/guix/manual/html_node/Mail-Services.html#index-exim_002dservice_002dtype),
-    [Open vSwitch](https://www.gnu.org/software/guix/manual/html_node/Networking-Services.html#index-openvswitch_002dservice_002dtype), and more.  The interface of existing
+    [Redis](https://www.gnu.org/software/guix/manual/en/html_node/Database-Services.html#index-redis_002dservice_002dtype),
+    [Exim](https://www.gnu.org/software/guix/manual/en/html_node/Mail-Services.html#index-exim_002dservice_002dtype),
+    [Open vSwitch](https://www.gnu.org/software/guix/manual/en/html_node/Networking-Services.html#index-openvswitch_002dservice_002dtype), and more.  The interface of existing
     services, notably that of the
-    [NGINX service](https://www.gnu.org/software/guix/manual/html_node/Web-Services.html),
+    [NGINX service](https://www.gnu.org/software/guix/manual/en/html_node/Web-Services.html),
     has been greatly improved.
   - Many [bug fixes](https://debbugs.gnu.org/cgi/pkgreport.cgi?pkg=guix#_4_2_5)!
 

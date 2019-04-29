@@ -13,18 +13,18 @@
       (p "Noteworthy features for the release are:"
          (br))
       (ul (li "The GNU operating system can now be "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/System-Installation.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/System-Installation.html"))
                  "installed")
               ".  Try it out!\n")
           (li "To make it possible the "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Invoking-guix-system"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-system"))
                  "guix system")
               " command has been augmented with new options, and support for 'operating-system' "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/Using-the-Configuration-System.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/Using-the-Configuration-System.html"))
                  "declarations")
               " has been vastly improved.\n")
           (li "Programming has been simplified with the introduction of "
-              (a (@ (href "http://www.gnu.org/software/guix/manual/html_node/G_002dExpressions.html"))
+              (a (@ (href "http://www.gnu.org/software/guix/manual/en/html_node/G_002dExpressions.html"))
                  "\"G-expressions\"")
               ", which capture dependencies used by build-side expressions.\n")
           (li "More than 130 "
