@@ -36,21 +36,6 @@
       (div
        (@ (class "centered-text"))
 
-       (div
-	(@ (class "summary-box"))
-	(img
-	 (@ (src ,(guix-url "static/base/img/manual-icon.png"))
-	    (alt "")))
-	(h3 "Guix System Manual")
-	(p
-	 "The documentation about the Guix System Distribution is
-         available online as part of the GNU Guix package manager
-         manual.")
-	(p
-	 ,(link-more
-	   #:label "Read Guix System manual"
-	   #:url (manual-url "GNU-Distribution.html"))))
-
 
        (div
 	(@ (class "summary-box"))
@@ -59,20 +44,23 @@
 	    (alt "")))
 	(h3 "GNU Guix Manual")
 	(p
-	 "Documentation for the GNU Guix package manager is available
-         online. You may also find more information about Guix by running "
+	 "Documentation for GNU Guix is available
+         online.  You may also find more information about Guix by running "
 	 (code "info guix") ".")
 	(p
-	 ,(link-more
-	   #:label "Read Guix manual"
-	   #:url (if (getenv "GUIX_WEB_SITE_INFO")
-                 (guix-url "manual/en/")
-                 (guix-url "manual/")))
-     ,(link-more
-	   #:label "Get Guix reference card"
-	   #:url (if (getenv "GUIX_WEB_SITE_INFO")
-                 "https://www.gnu.org/software/guix/guix-refcard.pdf"
-                 (guix-url "guix-refcard.pdf")))))
+         ,(link-more #:label "Read Guix manual"
+                     #:url (guix-url "manual/en")))
+        (p
+         (a (@ (href ,(guix-url "manual/de"))) "Deutsch") " | "
+         (a (@ (href ,(guix-url "manual/en"))) "English") " | "
+         (a (@ (href ,(guix-url "manual/es"))) "español") " | "
+         (a (@ (href ,(guix-url "manual/fr"))) "français"))
+
+        ,(link-more
+	  #:label "Get Guix reference card"
+	  #:url (if (getenv "GUIX_WEB_SITE_INFO")
+                    "https://www.gnu.org/software/guix/guix-refcard.pdf"
+                    (guix-url "guix-refcard.pdf"))))
 
 
        (div
