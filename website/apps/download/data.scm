@@ -19,16 +19,6 @@
     #:title (string-append "GNU Guix System " (latest-guix-version))
     #:description
     `(div
-      (div
-       (@ (class "message-box msg-info"))
-       (span (@ (class "msg-label")) "Note ")
-       "The Guix System distribution is beta software, "
-       "which means it is "
-       (a
-	(@ (href ,(manual-url "Limitations.html")))
-	"not production-ready")
-       ".  But you can "
-       (a (@ (href ,(guix-url "contribute"))) "help") "!")
       (p "USB/DVD ISO installer of the standalone Guix System."))
     #:image (guix-url "static/base/img/GuixSD-package.png")
     #:base-url (string-append "https://ftp.gnu.org/gnu/guix/guix-system-install-"
