@@ -55,7 +55,7 @@ journey! :-)
 
 # What GNU Guix can do for you
 
-Presumably some of readers are discovering Guix today, so let’s recap
+Presumably some of the readers are discovering Guix today, so let’s recap
 what Guix can do for you as a user.  Guix is a complete toolbox for
 software deployment in general, which makes it different from most of
 the tools you may be familiar with.
@@ -184,7 +184,7 @@ highlights:
      show a progress bar, there’s a new `--verbosity` option recognized
      by all commands, and most commands are now “quiet” by default.
    - There’s a new `--with-git-url` [package transformation
-     options](https://www.gnu.org/software/guix/manual/en/html_node/Package-Transformation-Options.html),
+     option](https://www.gnu.org/software/guix/manual/en/html_node/Package-Transformation-Options.html),
      that goes with `--with-branch` and `--with-commit`.
    - Guix now has a first-class, uniform mechanism to configure
      [keyboard
