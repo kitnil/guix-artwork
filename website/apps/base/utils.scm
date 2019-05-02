@@ -113,10 +113,11 @@
      A URL path. For example:
      /software/guix/manual/en/html_node/System-installation.html."
   (string-append
-   (guix-url (if (getenv "GUIX_WEB_SITE_INFO")
-                 (string-append "manual/" language "/")
-                 (string-append "manual/" language "/html_node/"))
-             subpath)))
+   (guix-url (string-append (if (getenv "GUIX_WEB_SITE_INFO")
+                                (string-append "manual/" language "/")
+                                (string-append "manual/" language
+                                               "/html_node/"))
+                            subpath))))
 
 
 
