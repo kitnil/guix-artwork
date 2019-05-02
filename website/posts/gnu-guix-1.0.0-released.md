@@ -17,6 +17,8 @@ or [from
 binaries](https://www.gnu.org/software/guix/manual/en/html_node/Binary-Installation.html).
 Guix users can update by running `guix pull`.
 
+![Guix 1.0!](https://www.gnu.org/software/guix/static/blog/img/guix-1.0.png)
+
 One-point-oh always means a lot for free software releases.  For Guix,
 1.0 is the result of seven years of development, with code, packaging,
 and documentation contributions made by 260 people, translation work
