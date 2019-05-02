@@ -31,7 +31,7 @@
        (a (@ (href ,(guix-url "contribute"))) "help") "!")
       (p "USB/DVD ISO installer of the standalone Guix System."))
     #:image (guix-url "static/base/img/GuixSD-package.png")
-    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-install-"
+    #:base-url (string-append "https://ftp.gnu.org/gnu/guix/guix-system-install-"
 			      (latest-guix-version) ".")
     #:variants (list (variant "x86_64" "x86_64-linux.iso.xz")
 		     (variant "i686" "i686-linux.iso.xz"))
@@ -43,10 +43,10 @@
     `(div
       (p "QCOW2 virtual machine (VM) image."))
     #:image (guix-url "static/base/img/QEMU-package.png")
-    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guixsd-vm-image-"
+    #:base-url (string-append "https://ftp.gnu.org/gnu/guix/guix-system-vm-image-"
 			      (latest-guix-version) ".")
     #:variants (list (variant "x86_64" "x86_64-linux.xz"))
-    #:manual (manual-url "Running-GuixSD-in-a-VM.html"))
+    #:manual (manual-url "Running-Guix-in-a-VM.html"))
 
    (download
     #:title (string-append "GNU Guix " (latest-guix-version) " Binary")
@@ -55,7 +55,7 @@
       "Self-contained tarball providing binaries for Guix and its
       dependencies, to be installed on top of your Linux-based system.")
     #:image (guix-url "static/base/img/Guix-package.png")
-    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guix-binary-"
+    #:base-url (string-append "https://ftp.gnu.org/gnu/guix/guix-binary-"
 			      (latest-guix-version) ".")
     #:variants (list (variant "x86_64" "x86_64-linux.tar.xz")
 		     (variant "i686" "i686-linux.tar.xz")
@@ -67,7 +67,7 @@
     #:title (string-append "GNU Guix " (latest-guix-version) " Source")
     #:description '(p "Source code distribution.")
     #:image (guix-url "static/base/img/src-package.png")
-    #:base-url (string-append "https://alpha.gnu.org/gnu/guix/guix-"
+    #:base-url (string-append "https://ftp.gnu.org/gnu/guix/guix-"
 			      (latest-guix-version) ".")
     #:variants (list (variant "tarball" "tar.gz"))
     #:manual (manual-url "Requirements.html"))))

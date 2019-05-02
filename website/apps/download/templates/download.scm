@@ -71,5 +71,8 @@
        (@ (class "centered-block limit-width"))
        "Source code and binaries for the Guix System distribution ISO
        image as well as GNU Guix can be found on the GNU servers at "
+       (a (@ (href "https://ftp.gnu.org/gnu/guix/"))
+	  "https://ftp.gnu.org/gnu/guix/")
+       ".  Older releases can still be found on "
        (a (@ (href "https://alpha.gnu.org/gnu/guix/"))
-	  "https://alpha.gnu.org/gnu/guix/") ".")))))
+          "alpha.gnu.org") ".")))))

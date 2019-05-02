@@ -49,7 +49,7 @@
 ;;; base-url (string)
 ;;;   The base URL where all the variants of the download can be
 ;;;   found. For example:
-;;;   "https://alpha.gnu.org/gnu/guix/guixsd-usb-install-0.12.0"
+;;;   "https://ftp.gnu.org/gnu/guix/guix-system-install-0.12.0"
 ;;;
 ;;; variants (list)
 ;;;   A list of <variant> objects that represent the different flavors
