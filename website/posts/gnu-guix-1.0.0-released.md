@@ -58,7 +58,7 @@ what Guix can do for you as a user.  Guix is a complete toolbox for
 software deployment in general, which makes it different from most of
 the tools you may be familiar with.
 
-![Guix manages packages, environments, containers, and systems.](https://www.gnu.org/software/guix/static/blog/img/guix-hexagons.png)
+![Guix manages packages, environments, containers, and systems.](https://www.gnu.org/software/guix/static/blog/img/guix-scope.png)
 
 This may sound a little abstract so let’s look at concrete use cases:
 
