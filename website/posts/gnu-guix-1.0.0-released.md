@@ -175,10 +175,12 @@ highlights:
      Guix System and see what it’s like, or whether you want to use it
      as a development environment, this VM image should be more directly
      useful.
-   - The user interface was improved: diagnostics are now colorized,
-     more operations show a progress bar, there’s a new `--verbosity`
-     option recognized by all commands, and most commands are now
-     “quiet” by default.
+   - The user interface was improved: aliases for common operations
+     [such as `guix search` and `guix
+     install`](https://www.gnu.org/software/guix/manual/en/html_node/Invoking-guix-package.html)
+     are now available, diagnostics are now colorized, more operations
+     show a progress bar, there’s a new `--verbosity` option recognized
+     by all commands, and most commands are now “quiet” by default.
    - There’s a new `--with-git-url` [package transformation
      options](https://www.gnu.org/software/guix/manual/en/html_node/Package-Transformation-Options.html),
      that goes with `--with-branch` and `--with-commit`.
@@ -208,7 +210,7 @@ highlights:
      and [Spanish](https://www.gnu.org/software/guix/manual/es/html_node/)
      translations are nearing completion, and work has begun on a
      [Simplified
-     Chinese](https://www.gnu.org/software/guix/manual/zh_CN/html_node/)
+     Chinese](https://www.gnu.org/software/guix/manual/zh-cn/html_node/)
      translation.  You can help [translate the manual into your
      language](https://translationproject.org/domain/guix-manual.html)
      by [joining the Translation
@@ -239,8 +241,8 @@ day-to-day computer usage and a great playground for the tinkerers among
 us.
 
 Whether you want to help on design, coding, maintenance, system
-administration, translation, testing, artwork, web services, funding…
-[your contributions are
+administration, translation, testing, artwork, web services, funding,
+organizing a Guix install party…  [your contributions are
 welcome](https://www.gnu.org/software/guix/contribute/)!
 
 We’re humans—don’t hesitate to [get in touch with
