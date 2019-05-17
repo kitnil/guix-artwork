@@ -38,7 +38,7 @@ the graphical installer for the standalone system:
     start](https://issues.guix.gnu.org/issue/35550) in the installation
     image, thereby breaking network access; this is now fixed.
   - The installer [now](https://issues.guix.gnu.org/issue/35540) allows
-    you to toggle password and passphrase visibility, and it [no
+    you to toggle the visibility of passwords and passphrases, and it [no
     longer](https://issues.guix.gnu.org/issue/35716) restricts their
     length.
   - The installer [can now
@@ -83,9 +83,9 @@ all the usual GNU/Linux commands—`ls`, `grep`, `ps`, etc.—were _not_ in
 `$PATH`.  That in turn would also prevent Xfce from starting, if you
 chose that desktop environment for your system.
 
-We quickly published in the [system installation
+We quickly published a note in the [system installation
 instructions](https://www.gnu.org/software/guix/manual/en/html_node/Guided-Graphical-Installation.html)
-a note explaining how to work around the issue:
+explaining how to work around the issue:
 
   - First, install packages that provide those commands, along with the
     text editor of your choice (for example, `emacs` or `vim`):
@@ -151,13 +151,13 @@ work as expected, but some of them [specifically test system
 installation](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/tests/install.scm):
 installing to a RAID or encrypted device, with a separate `/home`, using
 Btrfs, etc.  These tests even run on our [continuous integration
-service](http://ci.guix.gnu.org/jobset/guix-master) (search for the
+service](https://ci.guix.gnu.org/jobset/guix-master) (search for the
 “tests.*” jobs there).
 
 Unfortunately, those installation tests target the so-called [“manual”
 installation
 process](https://www.gnu.org/software/guix/manual/en/html_node/Manual-Installation.html),
-which is scriptable.  They do _not_ test installer’s graphical user
+which is scriptable.  They do _not_ test the installer’s graphical user
 interface.  Consequently, testing the user interface (UI) itself was a
 manual process.  Our attention was, presumably, focusing more on UI
 aspects since—so we thought—the actual installation tests were already
