@@ -1,5 +1,5 @@
 title: GNU Guix 1.0.1 released
-date: 2019-05-17 17:17
+date: 2019-05-19 23:30
 author: Ludovic Courtès
 slug: gnu-guix-1.0.1-released
 tags: Releases, System tests
@@ -22,7 +22,7 @@ Guix users can update by running `guix pull`.
 
 It’s been just over two weeks since we [announced
 1.0.0](https://www.gnu.org/software/guix/blog/2019/gnu-guix-1.0.0-released/)—two
-weeks and 702 commits by 39 people already!
+weeks and 706 commits by 40 people already!
 
 This is primarily a bug-fix release, specifically focusing on issues in
 the graphical installer for the standalone system:
@@ -171,8 +171,9 @@ The lesson here is that: manual testing should _also_ look for issues in
 the graphical UI.  The Debian and Guix installer UIs are similar—both
 using the [Newt](https://pagure.io/newt) toolkit.  Debian tests its
 installer using
-[“pre-seeds”](https://wiki.debian.org/DebianInstaller/Preseed), which
-are essentially answers to all the questions and choices the UI would
+[“pre-seeds”](https://wiki.debian.org/DebianInstaller/Preseed)
+([code](https://salsa.debian.org/installer-team/preseed)), which are
+essentially answers to all the questions and choices the UI would
 present.  We could adopt a similar approach, or we could test the UI
 itself at a lower level—reading the screen, and simulating key strokes.
 UI testing is notoriously tricky so we’ll have to figure out how to get
