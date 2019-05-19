@@ -54,7 +54,9 @@
          (a (@ (href ,(guix-url "manual/de"))) "Deutsch") " | "
          (a (@ (href ,(guix-url "manual/en"))) "English") " | "
          (a (@ (href ,(guix-url "manual/es"))) "español") " | "
-         (a (@ (href ,(guix-url "manual/fr"))) "français"))
+         (a (@ (href ,(guix-url "manual/fr"))) "français") " | "
+         (a (@ (href ,(guix-url "manual/ru"))) "русский")  " | "
+         (a (@ (href ,(guix-url "manual/zh-cn"))) "简体中文"))
 
         ,(link-more
 	  #:label "Get Guix reference card"
