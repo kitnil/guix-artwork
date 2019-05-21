@@ -1,7 +1,7 @@
 title: Creating and using a custom Linux kernel on Guix System
-date: 2019-05-20 00:00
+date: 2019-05-21 12:00
 author: Efraim Flashner
-tags: kernel, customization
+tags: Software development, Kernel, Customization
 ---
 
 Guix is, at its core, a source based distribution with
@@ -59,16 +59,16 @@ declared like this:
 ```
 
 Any keys which are not assigned values inherit their default value from
-the make-linux-libre definition.  When comparing the two snippets above,
+the `make-linux-libre` definition.  When comparing the two snippets above,
 you may notice that the code comment in the first doesn't actually refer
-to the extra-version keyword; it is actually for configuration-file.
+to the `#:extra-version` keyword; it is actually for `#:configuration-file`.
 Because of this, it is not actually easy to include a custom kernel
 configuration from the definition, but don't worry, there are other ways
 to work with what we do have.
 
 There are two ways to create a kernel with a custom kernel configuration.
 The first is to provide a standard `.config` file during the build
-process by including an actual `.config` file as a native-input to our
+process by including an actual `.config` file as a native input to our
 custom kernel.  The
 [following](https://git.savannah.gnu.org/cgit/guix.git/tree/gnu/packages/linux.scm#n379)
 is a snippet from the custom 'configure phase of the `make-linux-libre`
