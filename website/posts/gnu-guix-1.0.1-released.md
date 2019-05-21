@@ -51,9 +51,9 @@ the graphical installer for the standalone system:
   - The
     [`NEWS`](https://git.savannah.gnu.org/cgit/guix.git/tree/NEWS?h=version-1.0.1)
     file has more details, but there were also minor bug fixes for
-    [`guix environment`](https://bugs.gnu.org/35618), [`guix
-    search`](https://bugs.gnu.org/35588), and [`guix
-    refresh`](https://bugs.gnu.org/35684).
+    [`guix environment`](https://issues.guix.gnu.org/issue/35618), [`guix
+    search`](https://issues.guix.gnu.org/issue/35588), and [`guix
+    refresh`](https://issues.guix.gnu.org/issue/35684).
 
 A couple of new features were reviewed in time to make it into 1.0.1:
 
