@@ -1,0 +1,39 @@
+# Based on text04 theme for SLiM
+# by Johannes Winkelmann.
+# Modified by Ludovic Courtès <ludo@gnu.org>.
+# Modified further by Diego N. Barbato <dnbarbato@posteo.de>.
+
+# Messages (ie: shutdown)
+msg_color               #FFFFFF
+msg_font                Helvetica:size=18:bold:dpi=75
+msg_x                   50%
+msg_y                   40%
+msg_shadow_color #0e0e0e
+msg_shadow_xoffset -2
+msg_shadow_yoffset 2
+
+# valid values: stretch, tile
+background_style        stretch
+background_color        #1c1c1c
+
+# Input controls
+input_panel_x           50%
+input_panel_y           50%
+input_name_x            184
+input_name_y            183
+input_font              Helvetica:size=14:dpi=75
+input_color             #000000
+
+# Username / password request
+username_font           Helvetica:size=14:bold:dpi=75
+username_color          #f9f9f9
+username_x              80
+username_y              183
+password_x              80
+password_y              183
+username_shadow_color   #0e0e0e
+username_shadow_xoffset -2
+username_shadow_yoffset 2
+
+username_msg            user name:
+password_msg            password:
