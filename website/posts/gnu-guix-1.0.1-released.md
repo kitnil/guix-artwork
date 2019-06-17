@@ -42,7 +42,7 @@ the graphical installer for the standalone system:
     longer](https://issues.guix.gnu.org/issue/35716) restricts their
     length.
   - The installer [can now
-    create](https://issues.guix.gnu.org/issue/35716) Btrfs file
+    create](https://issues.guix.gnu.org/issue/35657) Btrfs file
     systems.
   - `network-manager-applet` is [now](https://issues.guix.gnu.org/35554)
     part of
