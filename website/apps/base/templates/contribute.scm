@@ -205,7 +205,7 @@
 	(p
 	 "Before reporting a bug, please check whether the bug is
          already "
-	 (a (@ (href "https://debbugs.gnu.org/guix"))
+	 (a (@ (href "https://issues.guix.gnu.org"))
 	    "in the bug database")
 	 ". See "
 	 (a (@ (href "https://debbugs.gnu.org/Developer.html"))

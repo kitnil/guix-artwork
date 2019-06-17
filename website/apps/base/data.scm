@@ -93,12 +93,12 @@ het Nederlands.")
     '(p
       "If you found a bug in Guix, check whether the bug is
       already in the "
-      (a (@ (href "https://debbugs.gnu.org/cgi/pkgreport.cgi?package=guix;max-bugs=100"))
+      (a (@ (href "https://issues.guix.gnu.org"))
 	 "bug database")
       ". If it is not, please "
       (a (@ (href "mailto:bug-guix@gnu.org")) "report it."))
     #:url "https://lists.gnu.org/mailman/listinfo/bug-guix"
-    #:log "https://bugs.gnu.org/guix")
+    #:log "https://issues.guix.gnu.org/")
 
    (contact
     #:name "Development Mailing List"
@@ -117,7 +117,7 @@ het Nederlands.")
     `(p
       "Submission of patches.  Every message sent to this mailing list
       leads to a new entry in our "
-      (a (@ (href "https://bugs.gnu.org/guix-patches"))
+      (a (@ (href "https://issues.guix.gnu.org"))
 	 "patch tracking tool")
       ".  See "
       (a (@ (href "https://debbugs.gnu.org/Advanced.html")) "this page")
@@ -129,7 +129,7 @@ het Nederlands.")
 	 "Until February 2017")
       ", the guix-devel mailing list filled that role.")
     #:url "https://lists.gnu.org/mailman/listinfo/guix-patches"
-    #:log "https://bugs.gnu.org/guix-patches")
+    #:log "https://issues.guix.gnu.org")
 
    (contact
     #:name "Commits Mailing List"
