@@ -31,47 +31,47 @@
               #:recursive? #t
               #:select? (git-predicate this-directory)))
 
-(define-syntax let-package
-  (syntax-rules ()
-    ((_ () body ...)
-     (begin body ...))
-    ((_ ((var name) rest ...) body ...)
-     (let ((var (specification->package name)))
-       (let-package (rest ...) body ...)))))
+(define (package+propagated-inputs package)
+  (match (package-transitive-propagated-inputs package)
+    (((labels packages) ...)
+     (cons package packages))))
 
-(let-package ((guix "guix")
-              (guile-json "guile-json")
-              (haunt "haunt")
-              (guile-commonmark "guile-commonmark")
-              (guile-syntax-highlight "guile-syntax-highlight"))
-  (with-imported-modules (source-module-closure
-                          '((guix build utils)))
-    #~(begin
-        (use-modules (guix build utils))
+(define build
+  (with-extensions (append (package+propagated-inputs
+                            (specification->package "guix"))
+                           (package+propagated-inputs
+                            (specification->package "guile-syntax-highlight")))
+    (with-imported-modules (source-module-closure
+                            '((guix build utils)))
+      #~(begin
+          (use-modules (guix build utils))
 
-        (copy-recursively #$source ".")
+          (copy-recursively #$source ".")
 
-        ;; For Haunt.
-        (setenv "GUILE_LOAD_PATH"
-                (string-join (list #+guile-commonmark #+guile-json
-                                   #+guile-syntax-highlight
-                                   #+guix)
-                             "/share/guile/site/2.2:"
-                             'suffix))
-        (setenv "GUILE_LOAD_COMPILED_PATH"
-                #+(file-append guix "/lib/guile/2.2/site-ccache"))
+          ;; For Haunt.
+          (setenv "GUILE_LOAD_PATH" (string-join %load-path ":"))
+          (setenv "GUILE_LOAD_COMPILED_PATH"
+                  (string-join %load-compiled-path ":"))
 
-        ;; So we can read/write UTF-8 files.
-        (setenv "GUIX_LOCPATH"
-                #+(file-append (specification->package "glibc-utf8-locales")
-                               "/lib/locale"))
-        (setenv "LC_ALL" "en_US.utf8")
+          ;; So we can read/write UTF-8 files.
+          (setenv "GUIX_LOCPATH"
+                  #+(file-append (specification->package "glibc-utf8-locales")
+                                 "/lib/locale"))
+          (setenv "LC_ALL" "en_US.utf8")
 
-        (and (zero? (system* #+(file-append haunt "/bin/haunt")
-                             "build"))
-             (begin
-               (mkdir-p #$output)
-               (copy-recursively "site" #$output))))))
+          ;; Use a sane default.
+          (setenv "XDG_CACHE_HOME" "/tmp/.cache")
+
+          ;; Choose the layout for guix.gnu.org.
+          (setenv "GUIX_WEB_SITE_INFO" "t")
+
+          (when (zero? (system* #+(file-append (specification->package "haunt")
+                                               "/bin/haunt")
+                                "build"))
+            (mkdir-p #$output)
+            (copy-recursively "/tmp/gnu.org/software/guix" #$output))))))
+
+(computed-file "guix-web-site" build)
 
 ;; Local Variables:
 ;; eval: (put 'let-package 'scheme-indent-function 1)
