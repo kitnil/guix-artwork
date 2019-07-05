@@ -1,5 +1,5 @@
 ;;; GNU Guix web site
-;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
+;;; Copyright © 2017, 2019 Ludovic Courtès <ludo@gnu.org>
 ;;;
 ;;; This file is part of the GNU Guix web site.
 ;;;
@@ -16,16 +16,20 @@
 ;;; You should have received a copy of the GNU General Public License
 ;;; along with the GNU Guix web site.  If not, see <http://www.gnu.org/licenses/>.
 
-;; Run 'guix build -f guix.scm' to build the web site.
+;; Run 'guix build -f .guix.scm' to build the web site.
 
 (use-modules (guix) (gnu)
              (guix modules)
-             (guix git-download))
+             (guix git-download)
+             (ice-9 match))
+
+(define this-directory
+  (dirname (current-filename)))
 
 (define source
-  (local-file "." "guix-web-site"
+  (local-file this-directory "guix-web-site"
               #:recursive? #t
-              #:select? (git-predicate ".")))
+              #:select? (git-predicate this-directory)))
 
 (define-syntax let-package
   (syntax-rules ()
