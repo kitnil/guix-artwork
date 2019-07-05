@@ -48,7 +48,9 @@
 	     (@ (class "synopsis"))
 	     ,(package-synopsis-shtml package)))
 
-	(p ,(if (gnu-package? package)
+        ;; 'gnu-package?' might fetch stuff from the network.  Assume #f if
+        ;; that doesn't work.
+	(p ,(if (false-if-exception (gnu-package? package))
                 '(it "This is a GNU package.  ")
                 "")
            ,(package-description-shtml package))

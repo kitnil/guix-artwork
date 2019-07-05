@@ -51,9 +51,13 @@
 
     (div
      (@ (class "package-description"))
-     ,(if (gnu-package? package)
+
+     ;; 'gnu-package?' might fetch stuff from the network.  Assume #f if that
+     ;; doesn't work.
+     ,(if (false-if-exception (gnu-package? package))
           '(p (i "This is a GNU package.  "))
           "")
+
      ,(package-description-shtml package))
 
     (ul
