@@ -1,12 +1,12 @@
 title: Towards Guix for DevOps
-date: 2019-07-11 13:14
+date: 2019-07-12 19:00
 author: Jakob L. Kreuze
 tags: GSoC, Programming interfaces, Scheme API
 ---
 
 Hey, there! I'm Jakob, a Google Summer of Code intern and new contributor to
 Guix. Since May, I've been working on a DevOps automation tool for the Guix
-System, which we've been calling 'guix deploy'.
+System, which we've been calling `guix deploy`.
 
 The idea for a Guix DevOps tool has been making rounds on the mailing lists for
 some time now. Years, in fact; Dave Thompson and Chris Webber put together a
@@ -17,8 +17,8 @@ and the wonderful system configuration facilities of Guix. And now, those
 fantasies are becoming a reality.
 
 "DevOps" is a term that might be unfamiliar to a fair number of Guix users. I'll
-spare you the detour to Wikipedia and give a brief explanation of what 'guix
-deploy' does.
+spare you the detour to Wikipedia and give a brief explanation of what `guix
+deploy` does.
 
 Imagine that you've spent the afternoon playing around with Guile's `(web)`
 module, developing software for a web forum. Awesome! But a web forum with no
@@ -37,7 +37,7 @@ got a problem on your hands; you're the proud owner of five or so virtual
 machines, and you need to make sure they're all running the most recent version
 of either your web forum software or Apache.
 
-This is where 'guix deploy' comes into play. Just as you'd use an
+This is where `guix deploy` comes into play. Just as you'd use an
 `operating-system` declaration to configure services and user accounts on a
 computer running the Guix System, you can now use that same `operating-system`
 declaration to remotely manage any number of machines. A "deployment" managing
@@ -104,7 +104,7 @@ your Wildebeest fan site setup might look something like this:
 
 The take-away from that example is that there's a new `machine` type atop the
 good ol' `operating-system` type, specifying how the machine should be
-_provisioned_. The version of 'guix deploy' that's currently on the master
+_provisioned_. The version of `guix deploy` that's currently on the master
 branch only supports `managed-host-environment-type`, which is used for machines
 that are already up and running the Guix System. Provisioning, in that sense,
 only really involves opening an SSH connection to the host. But I'm sure you can
@@ -113,7 +113,26 @@ private server through Linode, or a `libvirt-environment-type` that spins up a
 virtual machine for running your services. Those types are what I'll be working
 on in the coming months, in addition to cleaning up the code that's there now.
 
-And yes, you did read that right. 'guix deploy' is on the Guix master branch
-right now! In fact, we've already a successful deployment right here on
+And yes, you did read that right. `guix deploy` is on the Guix master branch
+right now! In fact, we've already done a successful deployment right here on
 [ci.guix.gnu.org](http://ci.guix.gnu.org/). So, if this sounds as though it'd be up your alley, run `guix
 pull`, crack open the [manual](http://guix.gnu.org/manual/en/html_node/Invoking-guix-deploy.html#Invoking-guix-deploy), and let us know how it goes!
+
+#### About GNU Guix
+
+[GNU Guix](https://www.gnu.org/software/guix) is a transactional package
+manager and an advanced distribution of the GNU system that [respects
+user
+freedom](https://www.gnu.org/distros/free-system-distribution-guidelines.html).
+Guix can be used on top of any system running the kernel Linux, or it
+can be used as a standalone operating system distribution for i686,
+x86_64, ARMv7, and AArch64 machines.
+
+In addition to standard package management features, Guix supports
+transactional upgrades and roll-backs, unprivileged package management,
+per-user profiles, and garbage collection.  When used as a standalone
+GNU/Linux distribution, Guix offers a declarative, stateless approach to
+operating system configuration management.  Guix is highly customizable
+and hackable through [Guile](https://www.gnu.org/software/guile)
+programming interfaces and extensions to the
+[Scheme](http://schemers.org) language.
