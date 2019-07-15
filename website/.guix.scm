@@ -69,7 +69,8 @@
                                                "/bin/haunt")
                                 "build"))
             (mkdir-p #$output)
-            (copy-recursively "/tmp/gnu.org/software/guix" #$output))))))
+            (copy-recursively "/tmp/gnu.org/software/guix" #$output)
+            (symlink "guix.html" (string-append #$output "/index.html")))))))
 
 (computed-file "guix-web-site" build)
 
