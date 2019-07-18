@@ -1,6 +1,7 @@
 (begin
   (use-modules (apps base templates components)
-	           (srfi srfi-19))
+               (apps base utils)
+               (srfi srfi-19))
   `((title . "Back from SeaGL 2018")
     (author . "Chris Marusich")
     (date . ,(make-date 0 0 0 0 10 12 2018 -28800))

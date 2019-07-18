@@ -1,5 +1,6 @@
 (begin
-  (use-modules (srfi srfi-19))
+  (use-modules (srfi srfi-19)
+               (apps base templates components))
   `((title . "Guix at LibrePlanet 2016")
     (author . "David Thompson")
     (date unquote (make-date 0 0 0 0 15 3 2016 3600))
