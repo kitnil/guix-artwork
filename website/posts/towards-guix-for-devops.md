@@ -116,7 +116,7 @@ on in the coming months, in addition to cleaning up the code that's there now.
 And yes, you did read that right. `guix deploy` is on the Guix master branch
 right now! In fact, we've already done a successful deployment right here on
 [ci.guix.gnu.org](http://ci.guix.gnu.org/). So, if this sounds as though it'd be up your alley, run `guix
-pull`, crack open the [manual](http://guix.gnu.org/manual/en/html_node/Invoking-guix-deploy.html#Invoking-guix-deploy), and let us know how it goes!
+pull`, crack open the [manual](https://guix.gnu.org/manual/devel/en/html_node/Invoking-guix-deploy.html), and let us know how it goes!
 
 #### About GNU Guix
 
