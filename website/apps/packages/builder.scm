@@ -1,6 +1,7 @@
 ;;; GNU Guix web site
 ;;; Copyright © 2017 Ludovic Courtès <ludo@gnu.org>
 ;;; Copyright © 2019 Ricardo Wurmus <rekado@elephly.net>
+;;; Copyright © 2019 Nicolò Balzarotti <nicolo@nixo.xyz>
 ;;;
 ;;; Initially written by sirgazil
 ;;; who waives all copyright interest on this file.
@@ -36,6 +37,8 @@
   #:use-module (haunt page)
   #:use-module (haunt utils)
   #:use-module (srfi srfi-1)
+  #:use-module (guix packages)
+  #:use-module (json)
   #:export (builder))
 
 
@@ -62,6 +65,7 @@
   (flatten
    (list
     (index-builder)
+    (packages-json-builder)
     (packages-builder)
     (package-list-builder))))
 
@@ -74,6 +78,18 @@
 (define %max-packages-on-index
   ;; Maximum number of packages shown on /packages.
   30)
+
+(define (packages-json-builder)
+  "Return a JSON page listing all packages."
+  (define (package->json package)
+    `(("name"     . ,(package-name package))
+      ("version"  . ,(package-version package))
+      ("synopsis" . ,(package-synopsis package))
+      ("homepage" . ,(package-home-page package))))
+  (make-page "packages.json"
+	         (list->vector (map package->json (all-packages)))
+             (lambda args
+               (apply scm->json (append args '(#:pretty #t))))))
 
 (define (index-builder)
   "Return a Haunt page listing some random packages."
