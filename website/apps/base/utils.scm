@@ -43,7 +43,7 @@
 ;;; Guix variables.
 ;;;
 
-(define guix-irc-log-url "https://bayfront.guixsd.org/.well-known/logs/")
+(define guix-irc-log-url "http://logs.guix.gnu.org/guix")
 
 (define guix-root-url-path
   (if (getenv "GUIX_WEB_SITE_INFO")
