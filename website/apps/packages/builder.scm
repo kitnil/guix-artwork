@@ -60,24 +60,10 @@
      A list of page objects that represent the web resources of the
      application. See Haunt <page> objects for more information."
   (flatten
-   (if (getenv "GUIX_WEB_SITE_INFO")
-       (list
-        (index-builder)
-        (packages-builder)
-        (package-list-builder))
-
-       ;; These provisional builders are used because of a limitation of
-       ;; the CVS repository used for deploying the website. The idea is
-       ;; to have "package list" and "package detail" pages as proposed
-       ;; in Guix bug #25227. This, however, would generate thousands of
-       ;; pages that could choke the current CVS repository.
-       ;;
-       ;; When this limitation is gone, the above builders should be
-       ;; used instead. They should generate pages as those described
-       ;; in the proposal.
-       (list
-        (detailed-index-builder)
-        (detailed-package-list-builder)))))
+   (list
+    (index-builder)
+    (packages-builder)
+    (package-list-builder))))
 
 
 

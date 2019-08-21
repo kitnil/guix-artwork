@@ -46,9 +46,7 @@
 (define guix-irc-log-url "http://logs.guix.gnu.org/guix")
 
 (define guix-root-url-path
-  (if (getenv "GUIX_WEB_SITE_INFO")
-      (make-parameter "/")
-      (make-parameter "/software/guix/"))) ; Path to GNU Guix site in gnu.org
+  (make-parameter "/")) ; Path to GNU Guix site at guix.gnu.org
 
 (define latest-guix-version
   (make-parameter "1.0.1"))

@@ -60,9 +60,7 @@
 
         ,(link-more
 	  #:label "Get Guix reference card"
-	  #:url (if (getenv "GUIX_WEB_SITE_INFO")
-                    "https://www.gnu.org/software/guix/guix-refcard.pdf"
-                    (guix-url "guix-refcard.pdf"))))
+	  #:url (guix-url "guix-refcard.pdf")))
 
 
        (div

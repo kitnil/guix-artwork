@@ -14,9 +14,7 @@
 
 
 (site #:title "GNU Guix"
-      #:domain (if (getenv "GUIX_WEB_SITE_INFO")
-                   "https://guix.info"
-                   "https://gnu.org/software/guix")
+      #:domain "https://guix.gnu.org"
       #:build-directory "/tmp/gnu.org/software/guix"
       #:readers (list sxml-reader html-reader commonmark-reader)
       #:builders (list base:builder
