@@ -65,12 +65,14 @@
           ;; Choose the layout for guix.gnu.org.
           (setenv "GUIX_WEB_SITE_INFO" "t")
 
-          (when (zero? (system* #+(file-append (specification->package "haunt")
-                                               "/bin/haunt")
-                                "build"))
-            (mkdir-p #$output)
-            (copy-recursively "/tmp/gnu.org/software/guix" #$output)
-            (symlink "guix.html" (string-append #$output "/index.html")))))))
+          (invoke #+(file-append (specification->package "haunt")
+                                 "/bin/haunt")
+                  "build")
+
+          (mkdir-p #$output)
+          (copy-recursively "/tmp/gnu.org/software/guix" #$output
+                            #:log (%make-void-port "w"))
+          (symlink "guix.html" (string-append #$output "/index.html"))))))
 
 (computed-file "guix-web-site" build)
 
