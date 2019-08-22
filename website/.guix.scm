@@ -62,9 +62,6 @@
           ;; Use a sane default.
           (setenv "XDG_CACHE_HOME" "/tmp/.cache")
 
-          ;; Choose the layout for guix.gnu.org.
-          (setenv "GUIX_WEB_SITE_INFO" "t")
-
           (invoke #+(file-append (specification->package "haunt")
                                  "/bin/haunt")
                   "build")
