@@ -21,6 +21,9 @@
 (use-modules (guix) (gnu)
              (guix modules)
              (guix git-download)
+             (guix gexp)
+             (guix channels)
+             (srfi srfi-9)
              (ice-9 match))
 
 (define this-directory
@@ -36,22 +39,58 @@
     (((labels packages) ...)
      (cons package packages))))
 
+;; Representation of the latest channels.  This type exists just so we can
+;; refer to such records in a gexp.
+(define-record-type <latest-channels>
+  (latest-channels channels)
+  latest-channels?
+  (channels latest-channels-channels))
+
+(define-gexp-compiler (latest-channels-compiler (latest <latest-channels>)
+                                                system target)
+  (match latest
+    (($ <latest-channels> channels)
+     (latest-channel-derivation channels))))
+
+(define latest-guix
+  ;; The latest Guix.  Using it rather than the 'guix' package ensures we
+  ;; build the latest package list.
+  (latest-channels %default-channels))
+
 (define build
+  ;; We need Guile-JSON for 'packages-json-builder'.
   (with-extensions (append (package+propagated-inputs
-                            (specification->package "guix"))
+                            (specification->package "guile-json@3"))
+
                            (package+propagated-inputs
                             (specification->package "guile-syntax-highlight")))
     (with-imported-modules (source-module-closure
                             '((guix build utils)))
       #~(begin
-          (use-modules (guix build utils))
+          (use-modules (guix build utils)
+                       (ice-9 popen)
+                       (ice-9 match))
 
           (copy-recursively #$source ".")
 
-          ;; For Haunt.
-          (setenv "GUILE_LOAD_PATH" (string-join %load-path ":"))
-          (setenv "GUILE_LOAD_COMPILED_PATH"
-                  (string-join %load-compiled-path ":"))
+          ;; Set 'GUILE_LOAD_PATH' so that Haunt find the Guix modules and
+          ;; its dependencies.  To find out the load path of Guix and its
+          ;; dependencies, fetch its value over 'guix repl'.
+          (let ((pipe (open-pipe* OPEN_BOTH
+                                  #+(file-append latest-guix "/bin/guix")
+                                  "repl" "-t" "machine")))
+            (pk 'repl-version (read pipe))
+            (write '(list %load-path %load-compiled-path) pipe)
+            (match (read pipe)
+              (('values ('value ((load-path ...) (compiled-path ...))))
+               (setenv "GUILE_LOAD_PATH" (string-join
+                                          (append %load-path load-path)
+                                          ":"))
+               (setenv "GUILE_LOAD_COMPILED_PATH"
+                       (string-join (append %load-compiled-path
+                                            compiled-path)
+                                    ":"))))
+            (close-pipe pipe))
 
           ;; So we can read/write UTF-8 files.
           (setenv "GUIX_LOCPATH"
