@@ -82,10 +82,18 @@
 (define (packages-json-builder)
   "Return a JSON page listing all packages."
   (define (package->json package)
+    (define cpe-name
+      (assoc-ref (package-properties package) 'cpe-name))
+    (define cpe-version
+      (assoc-ref (package-properties package) 'cpe-version))
+
     `(("name"     . ,(package-name package))
       ("version"  . ,(package-version package))
+      ,@(if cpe-name `(("cpe_name" . ,cpe-name)) '())
+      ,@(if cpe-version `(("cpe_version" . ,cpe-version)) '())
       ("synopsis" . ,(package-synopsis package))
       ("homepage" . ,(package-home-page package))))
+
   (make-page "packages.json"
 	         (list->vector (map package->json (all-packages)))
              (lambda args
