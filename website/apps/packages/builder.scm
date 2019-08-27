@@ -38,7 +38,11 @@
   #:use-module (haunt utils)
   #:use-module (srfi srfi-1)
   #:use-module (guix packages)
+  #:use-module (guix download)
+  #:use-module (guix git-download)
+  #:use-module (guix svn-download)
   #:use-module (json)
+  #:use-module (ice-9 match)
   #:export (builder))
 
 
@@ -81,6 +85,31 @@
 
 (define (packages-json-builder)
   "Return a JSON page listing all packages."
+  (define (origin->json origin)
+    (define method
+      (origin-method origin))
+
+    `((type . ,(cond ((eq? url-fetch method) 'url)
+                     ((eq? git-fetch method) 'git)
+                     ((eq? svn-fetch method) 'svn)
+                     (else                   #nil)))
+      ,@(cond ((eq? url-fetch method)
+               `(("url" . ,(match (origin-uri origin)
+                             ((? string? url) (vector url))
+                             ((urls ...) (list->vector urls))))))
+              ((eq? git-fetch method)
+               `(("git_url" . ,(git-reference-url (origin-uri origin)))))
+              ((eq? svn-fetch method)
+               `(("svn_url" . ,(svn-reference-url (origin-uri origin)))))
+              (else '()))
+      ,@(if (eq? method git-fetch)
+            `(("git_ref" . ,(git-reference-commit (origin-uri origin))))
+            '())
+      ,@(if (eq? method svn-fetch)
+            `(("svn_revision" . ,(svn-reference-revision
+                                  (origin-uri origin))))
+            '())))
+
   (define (package->json package)
     (define cpe-name
       (assoc-ref (package-properties package) 'cpe-name))
@@ -91,11 +120,14 @@
       ("version"  . ,(package-version package))
       ,@(if cpe-name `(("cpe_name" . ,cpe-name)) '())
       ,@(if cpe-version `(("cpe_version" . ,cpe-version)) '())
+      ,@(if (origin? (package-source package))
+            `(("source" . ,(origin->json (package-source package))))
+            '())
       ("synopsis" . ,(package-synopsis package))
       ("homepage" . ,(package-home-page package))))
 
   (make-page "packages.json"
-	         (list->vector (map package->json (all-packages)))
+	     (list->vector (map package->json (all-packages)))
              (lambda args
                (apply scm->json (append args '(#:pretty #t))))))
 
