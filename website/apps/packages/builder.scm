@@ -137,8 +137,7 @@
 
   (make-page "packages.json"
 	     (list->vector (map package->json (all-packages)))
-             (lambda args
-               (apply scm->json (append args '(#:pretty #t))))))
+             scm->json))
 
 (define (index-builder)
   "Return a Haunt page listing some random packages."
