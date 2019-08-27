@@ -41,6 +41,7 @@
   #:use-module (guix download)
   #:use-module (guix git-download)
   #:use-module (guix svn-download)
+  #:use-module (guix utils)                       ;location
   #:use-module (json)
   #:use-module (ice-9 match)
   #:export (builder))
@@ -124,7 +125,15 @@
             `(("source" . ,(origin->json (package-source package))))
             '())
       ("synopsis" . ,(package-synopsis package))
-      ("homepage" . ,(package-home-page package))))
+      ("homepage" . ,(package-home-page package))
+      ,@(match (package-location package)
+          ((? location? location)
+           `(("location"
+              . ,(string-append (location-file location) ":"
+                                (number->string
+                                 (+ 1 (location-line location)))))))
+          (#f
+           '()))))
 
   (make-page "packages.json"
 	     (list->vector (map package->json (all-packages)))
