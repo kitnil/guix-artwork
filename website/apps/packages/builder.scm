@@ -125,7 +125,9 @@
             `(("source" . ,(origin->json (package-source package))))
             '())
       ("synopsis" . ,(package-synopsis package))
-      ("homepage" . ,(package-home-page package))
+      ,@(if (package-home-page package)
+            `(("homepage" . ,(package-home-page package)))
+            '())
       ,@(match (package-location package)
           ((? location? location)
            `(("location"
