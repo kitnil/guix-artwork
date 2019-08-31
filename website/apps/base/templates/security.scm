@@ -16,7 +16,7 @@
   (theme
    #:title '("Security")
    #:description
-   "Important information about geting security updates for your
+   "Important information about getting security updates for your
    GNU Guix installation, and instructions on how to report
    security issues."
    #:keywords
