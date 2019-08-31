@@ -201,7 +201,7 @@
 	(h3 (@ (id "testing")) "Test and Bug Reports")
 	(p
 	 "Install the software and send feedback to the community
-         about your experience. Help the project reporting bugs.")
+         about your experience. Help the project by reporting bugs.")
 	(p
 	 "Before reporting a bug, please check whether the bug is
          already "
