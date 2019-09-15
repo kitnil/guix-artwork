@@ -23,6 +23,7 @@
 	    contact->shtml
             horizontal-line
 	    horizontal-separator
+            horizontal-skip
 	    link-more
 	    link-subtle
 	    link-yellow
@@ -179,6 +180,10 @@
 	    `(src ,(guix-url "static/base/img/h-separator.png"))
 	    `(src ,(guix-url "static/base/img/h-separator-dark.png")))
        (alt ""))))
+
+(define (horizontal-skip)
+  "Return SHTML for a small horizontal space."
+  `(span (@ (class "hskip"))))
 
 (define (horizontal-line)
   "Return SHTML for a visible separator to be used in a dropdown menu
@@ -400,13 +405,32 @@ manual.
          (C_ "website menu" (menu-item #:label "Contact" #:active-item active-item #:url (guix-url "contact/")))
          (C_ "website menu" (menu-item #:label "Contribute" #:active-item active-item #:url (guix-url "contribute/")))
          (C_ "website menu" (menu-item #:label "Security" #:active-item active-item #:url (guix-url "security/")))
-         (C_ "website menu" (menu-item #:label "Graphics" #:active-item active-item #:url (guix-url "graphics/")))))))
+         (C_ "website menu" (menu-item #:label "Graphics" #:active-item active-item #:url (guix-url "graphics/")))))
+      ,(horizontal-skip)
+      ;; Languages dropdown.
+      ,(menu-dropdown #:label (locale-display-name) #:active-item active-item
+        #:items
+        (map-in-order
+         (lambda (ietf-info)
+           (let ((lingua (car ietf-info))
+                 (code (cdr ietf-info)))
+             (setlocale LC_ALL (string-append lingua ".utf8"))
+             (let ((out (menu-item #:label (locale-display-name)
+                                   #:active-item active-item
+                                   #:url (guix-url (string-append code "/")
+                                                   #:localize #f))))
+               (setlocale LC_ALL "")
+               out)))
+         (sort (delete %current-lingua
+                       ietf-tags-file-contents
+                       (lambda (a b) (string=? a (car b))))
+               (lambda (a b) string<?))))))
+
 
     ;; Menu button.
     (a
      (@ (class "menu-btn")
-	(href ,(guix-url "menu/"))) "")))
-
+        (href ,(guix-url "menu/"))) "")))
 
 (define (page-indicator page-number total-pages)
   "Return an SHTML span element in the form 'page X of Y' if there is

@@ -109,6 +109,10 @@ label.menu-item {
     background-position: top;
 }
 
+.hskip {
+    padding-left: 10px;
+}
+
 .hline {
     display: none;
 }
@@ -116,7 +120,7 @@ label.menu-item {
 
 
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
     .navbar {
 	position: relative;
 	overflow: visible;
