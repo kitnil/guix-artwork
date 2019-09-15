@@ -1,0 +1,1216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Ludovic Courtès
+# This file is distributed under the same license as the guix-website package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: guix-website\n"
+"Report-Msgid-Bugs-To: ludo@gnu.org\n"
+"POT-Creation-Date: 2019-09-15 14:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. TRANSLATORS: The locale’s display name; please include a country
+#. code like in English (US) *only* if there are multiple
+#. Translation Project teams for the same language.
+#: apps/base/utils.scm:63
+msgid "English (US)"
+msgstr ""
+
+#: apps/base/templates/home.scm:18
+msgctxt "webpage title"
+msgid "GNU's advanced distro and transactional package manager"
+msgstr ""
+
+#: apps/base/templates/home.scm:20 apps/base/templates/about.scm:19
+msgid "Guix is an advanced distribution of the GNU operating system.\n   Guix is technology that respects the freedom of computer users.\n   You are free to run the system for any purpose, study how it\n   works, improve it, and share it with the whole world."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/home.scm:26 apps/base/templates/menu.scm:20 apps/base/templates/screenshot.scm:23 apps/blog/templates/post-list.scm:29 apps/blog/templates/tag.scm:33 apps/packages/templates/detailed-index.scm:27 apps/packages/templates/detailed-package-list.scm:30 apps/packages/templates/index.scm:27 apps/packages/templates/package-list.scm:30 apps/packages/templates/package.scm:32
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|GNU Guile|Guile Scheme|Transactional upgrades|Functional package management|Reproducibility"
+msgstr ""
+
+#: apps/base/templates/home.scm:30 apps/base/templates/components.scm:343 apps/base/templates/screenshot.scm:27
+msgctxt "website menu"
+msgid "Overview"
+msgstr ""
+
+#: apps/base/templates/home.scm:39
+msgid "Summary"
+msgstr ""
+
+#: apps/base/templates/home.scm:41
+msgid "<1>Liberating.</1> Guix is an advanced distribution of the <2>GNU operating system</2> developed by the <3>GNU Project</3>—which respects the <4>freedom of computer users</4>. "
+msgstr ""
+
+#. TRANSLATORS: Package Management, Features and Using the
+#. Configuration System are section names in the English (en)
+#. manual.
+#: apps/base/templates/home.scm:62
+msgid "<1>Dependable.</1> Guix <2>supports<2.1>en</2.1><2.2>Package-Management.html</2.2></2> transactional upgrades and roll-backs, unprivileged package management, <3>and more<3.1>en</3.1><3.2>Features.html</3.2></3>.  When used as a standalone distribution, Guix supports <4>declarative system configuration<4.1>en</4.1><4.2>Using-the-Configuration-System.html</4.2></4> for transparent and reproducible operating systems."
+msgstr ""
+
+#. TRANSLATORS: Defining Packages and System Configuration are
+#. section names in the English (en) manual.
+#: apps/base/templates/home.scm:82
+msgid "<1>Hackable.</1> It provides <2>Guile Scheme</2> APIs, including high-level embedded domain-specific languages (EDSLs) to <3>define packages<3.1>en</3.1><3.2>Defining-Packages.html</3.2></3> and <4>whole-system configurations<4.1>en</4.1><4.2>System-Configuration.html</4.2></4>."
+msgstr ""
+
+#: apps/base/templates/home.scm:104
+msgctxt "button"
+msgid "DOWNLOAD v<1/>"
+msgstr ""
+
+#: apps/base/templates/home.scm:109
+msgctxt "button"
+msgid "CONTRIBUTE"
+msgstr ""
+
+#: apps/base/templates/home.scm:116
+msgid "Discover Guix"
+msgstr ""
+
+#: apps/base/templates/home.scm:118
+msgid "Guix comes with thousands of packages which include applications, system tools, documentation, fonts, and other digital goods readily available for installing with the <1>GNU Guix</1> package manager."
+msgstr ""
+
+#: apps/base/templates/home.scm:135
+msgctxt "button"
+msgid "ALL PACKAGES"
+msgstr ""
+
+#: apps/base/templates/home.scm:142
+msgid "GNU Guix in your field"
+msgstr ""
+
+#: apps/base/templates/home.scm:144
+msgid "Read some stories about how people are using GNU Guix in\ntheir daily lives."
+msgstr ""
+
+#: apps/base/templates/home.scm:155
+msgctxt "button"
+msgid "SOFTWARE DEVELOPMENT"
+msgstr ""
+
+#: apps/base/templates/home.scm:160
+msgctxt "button"
+msgid "BIOINFORMATICS"
+msgstr ""
+
+#: apps/base/templates/home.scm:165
+msgctxt "button"
+msgid "HIGH PERFORMANCE COMPUTING"
+msgstr ""
+
+#: apps/base/templates/home.scm:170
+msgctxt "button"
+msgid "RESEARCH"
+msgstr ""
+
+#: apps/base/templates/home.scm:175
+msgctxt "button"
+msgid "ALL FIELDS..."
+msgstr ""
+
+#: apps/base/templates/home.scm:182
+msgid "GNU Guix in other GNU/Linux distros"
+msgstr ""
+
+#: apps/base/templates/home.scm:194
+msgid "Video: <1>Demo of Guix in another GNU/Linux distribution<1.1/>https://audio-video.gnu.org/video/misc/2016-07__GNU_Guix_Demo_2.webm</1> (1 minute, 30 seconds)."
+msgstr ""
+
+#: apps/base/templates/home.scm:205
+msgid "If you don't use GNU Guix as a standalone GNU/Linux distribution, you still can use it as a package manager on top of any GNU/Linux distribution. This way, you can benefit from all its conveniences."
+msgstr ""
+
+#: apps/base/templates/home.scm:210
+msgid "Guix won't interfere with the package manager that comes with your distribution. They can live together."
+msgstr ""
+
+#: apps/base/templates/home.scm:217
+msgctxt "button"
+msgid "TRY IT OUT!"
+msgstr ""
+
+#: apps/base/templates/home.scm:224 apps/blog/templates/post-list.scm:49
+msgid "Blog"
+msgstr ""
+
+#: apps/base/templates/home.scm:231
+msgctxt "button"
+msgid "ALL POSTS"
+msgstr ""
+
+#: apps/base/templates/home.scm:237 apps/base/templates/contact.scm:36
+msgid "Contact"
+msgstr ""
+
+#: apps/base/templates/home.scm:244
+msgctxt "button"
+msgid "ALL CONTACT MEDIA"
+msgstr ""
+
+#: apps/base/templates/theme.scm:17 apps/base/templates/components.scm:350 apps/base/templates/about.scm:27 apps/base/templates/about.scm:30 apps/base/templates/contact.scm:26 apps/base/templates/contribute.scm:26 apps/base/templates/graphics.scm:24 apps/base/templates/security.scm:28
+msgctxt "website menu"
+msgid "About"
+msgstr ""
+
+#: apps/base/templates/theme.scm:74 apps/base/templates/theme.scm:76
+msgctxt "webpage title"
+msgid "GNU Guix"
+msgstr ""
+
+#: apps/base/templates/theme.scm:98
+msgctxt "webpage title"
+msgid "GNU Guix — Activity Feed"
+msgstr ""
+
+#: apps/base/templates/theme.scm:115
+msgid "Made with <1>♥</1> by humans and powered by <2>GNU Guile</2>.  <3>Source code</3> under the <4>GNU AGPL</4>."
+msgstr ""
+
+#: apps/base/templates/components.scm:48
+msgid "Your location:"
+msgstr ""
+
+#: apps/base/templates/components.scm:50
+msgid "Home"
+msgstr ""
+
+#: apps/base/templates/components.scm:153
+msgid "archive"
+msgstr ""
+
+#: apps/base/templates/components.scm:337
+msgctxt "website menu"
+msgid "Guix"
+msgstr ""
+
+#: apps/base/templates/components.scm:341
+msgid "website menu:"
+msgstr ""
+
+#: apps/base/templates/components.scm:344 apps/download/templates/download.scm:42 apps/download/templates/download.scm:46 apps/download/templates/download.scm:42 apps/download/templates/download.scm:46
+msgctxt "website menu"
+msgid "Download"
+msgstr ""
+
+#: apps/base/templates/components.scm:345 apps/packages/templates/detailed-index.scm:31 apps/packages/templates/detailed-index.scm:38 apps/packages/templates/detailed-package-list.scm:34 apps/packages/templates/detailed-package-list.scm:43 apps/packages/templates/index.scm:31 apps/packages/templates/index.scm:37 apps/packages/templates/package-list.scm:34 apps/packages/templates/package-list.scm:40 apps/packages/templates/package.scm:36 apps/packages/templates/package.scm:41
+msgctxt "website menu"
+msgid "Packages"
+msgstr ""
+
+#: apps/base/templates/components.scm:346 apps/blog/templates/post-list.scm:33 apps/blog/templates/post-list.scm:39 apps/blog/templates/post.scm:29 apps/blog/templates/post.scm:35 apps/blog/templates/tag.scm:37 apps/blog/templates/tag.scm:43
+msgctxt "website menu"
+msgid "Blog"
+msgstr ""
+
+#: apps/base/templates/components.scm:347 apps/base/templates/help.scm:26 apps/base/templates/help.scm:30
+msgctxt "website menu"
+msgid "Help"
+msgstr ""
+
+#: apps/base/templates/components.scm:348 apps/base/templates/donate.scm:26 apps/base/templates/donate.scm:29
+msgctxt "website menu"
+msgid "Donate"
+msgstr ""
+
+#: apps/base/templates/components.scm:353 apps/base/templates/contact.scm:31
+msgctxt "website menu"
+msgid "Contact"
+msgstr ""
+
+#: apps/base/templates/components.scm:354 apps/base/templates/contribute.scm:30
+msgctxt "website menu"
+msgid "Contribute"
+msgstr ""
+
+#: apps/base/templates/components.scm:355 apps/base/templates/security.scm:31
+msgctxt "website menu"
+msgid "Security"
+msgstr ""
+
+#: apps/base/templates/components.scm:356 apps/base/templates/graphics.scm:27
+msgctxt "website menu"
+msgid "Graphics"
+msgstr ""
+
+#: apps/base/templates/components.scm:374
+msgid " (Page <1/> of <2/>)"
+msgstr ""
+
+#: apps/base/templates/components.scm:398
+msgid "Page <1/> of <2/>. Go to another page: "
+msgstr ""
+
+#: apps/base/templates/about.scm:17
+msgctxt "webpage title"
+msgid "About"
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/about.scm:25
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager"
+msgstr ""
+
+#: apps/base/templates/about.scm:35
+msgid "About the Project"
+msgstr ""
+
+#: apps/base/templates/about.scm:37
+msgid "The <1>GNU Guix</1> package and system manager is a <2>free software</2> project developed by volunteers around the world under the\n            umbrella of the <3>GNU Project</3>. "
+msgstr ""
+
+#: apps/base/templates/about.scm:46
+msgid "Guix System is an advanced distribution of the <1>GNU operating system</1>.  It uses the <2>Linux-libre</2> kernel, and support for <3>the Hurd</3> is being worked on.  As a GNU distribution, it is committed\n            to respecting and enhancing <4>the freedom of its users</4>.  As such, it adheres to the <5>GNU Free System Distribution Guidelines</5>."
+msgstr ""
+
+#. TRANSLATORS: Features and Defining Packages are section names
+#. in the English (en) manual.
+#: apps/base/templates/about.scm:64
+msgid "GNU Guix provides <1>state-of-the-art package management features<1.1>en</1.1><1.2>Features.html</1.2></1> such as transactional upgrades and roll-backs, reproducible\n            build environments, unprivileged package management, and\n            per-user profiles.  It uses low-level mechanisms from the <2>Nix</2> package manager, but packages are <3>defined<3.1>en</3.1><3.2>Defining-Packages.html</3.2></3> as native <4>Guile</4> modules, using extensions to the <5>Scheme</5> language—which makes it nicely hackable."
+msgstr ""
+
+#. TRANSLATORS: Using the Configuration System, Initial RAM Disk
+#. and Defining Services are section names in the English (en)
+#. manual.
+#: apps/base/templates/about.scm:85
+msgid "Guix takes that a step further by additionally supporting stateless,\n           reproducible <1>operating system configurations<1.1>en</1.1><1.2>Using-the-Configuration-System.html</1.2></1>. This time the whole system is hackable in Scheme, from the <2>initial RAM disk<2.1>en</2.1><2.2>Initial-RAM-Disk.html</2.2></2> to the <3>initialization system</3>, and to the <4>system services<4.1>en</4.1><4.2>Defining-Services.html</4.2></4>."
+msgstr ""
+
+#: apps/base/templates/about.scm:106
+msgid "Maintainer"
+msgstr ""
+
+#: apps/base/templates/about.scm:108
+msgid "Guix is currently maintained by Ludovic Courtès and Ricardo\n          Wurmus.  Please use the <1>mailing lists</1> for contact. "
+msgstr ""
+
+#: apps/base/templates/about.scm:116
+msgid "Licensing"
+msgstr ""
+
+#: apps/base/templates/about.scm:118
+msgid "Guix is free software; you can redistribute it and/or modify\n          it under the terms of the <1>GNU General Public License</1> as published by the Free Software Foundation; either\n          version 3 of the License, or (at your option) any later\n          version. "
+msgstr ""
+
+#: apps/base/data.scm:25
+msgid "IRC Channel"
+msgstr ""
+
+#: apps/base/data.scm:27
+msgid "Join the <1/> channel on the Freenode IRC network to chat\n       with the community about GNU Guix or to get help in\n       real-time."
+msgstr ""
+
+#: apps/base/data.scm:36
+msgid "Info Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:38
+msgid "Subscribe to the <1/> low-traffic mailing\nlist to receive important announcements sent by the project maintainers (in\nEnglish)."
+msgstr ""
+
+#: apps/base/data.scm:47
+msgid "Help Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:52
+msgid "Subscribe to the Help mailing list to get support\nfrom the GNU Guix community via email.  You can post messages in English\nthough we also accept other languages."
+msgstr ""
+
+#: apps/base/data.scm:56
+msgctxt "unique lingua code like en or zh-cn"
+msgid "en"
+msgstr ""
+
+#: apps/base/data.scm:127
+msgid "Bug Reporting"
+msgstr ""
+
+#: apps/base/data.scm:129
+msgid "If you found a bug in Guix, check whether the bug is\n       already in the <1>bug database</1>. If it is not, please <2>report it.</2>"
+msgstr ""
+
+#: apps/base/data.scm:141
+msgid "Development Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:143
+msgid "Discussion about the development of GNU Guix. <1> Until July 2013</1>, the bug-Guix mailing list filled that role. "
+msgstr ""
+
+#: apps/base/data.scm:153
+msgid "Patches Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:155
+msgid "Submission of patches.  Every message sent to this mailing list\n       leads to a new entry in our <1>patch tracking tool</1>.  See <2>this page</2> for more information on how to use it; see <3>the manual<3.1>en</3.1><3.2>Submitting-Patches.html</3.2></3> for more information on how to submit a patch.  <4>Until February 2017</4>, the guix-devel mailing list filled that role."
+msgstr ""
+
+#: apps/base/data.scm:174
+msgid "Commits Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:176
+msgid "Notifications of commits made to the <1>Git repositories</1>."
+msgstr ""
+
+#: apps/base/data.scm:185
+msgid "Security Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:187
+msgid "This is a private mailing list that anyone can post to to <1>report security issues</1> in Guix itself or in the <2>packages</2> it provides.  Posting here allows Guix developers to address\n       the problem before it is widely publicized."
+msgstr ""
+
+#: apps/base/data.scm:199
+msgid "Sysadmin Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:201
+msgid "Private mailing list for the <1>build farm</1> system administration."
+msgstr ""
+
+#: apps/base/data.scm:213
+msgid "GNU System Discuss Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:215
+msgid "Discussion about the development of the broader GNU system."
+msgstr ""
+
+#: apps/base/data.scm:220
+msgid "GNU/Linux-libre Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:222
+msgid "Workgroup for fully free GNU/Linux distributions."
+msgstr ""
+
+#: apps/base/data.scm:227
+msgid "GNU Info Mailing List"
+msgstr ""
+
+#: apps/base/data.scm:229
+msgid "GNU software announcements."
+msgstr ""
+
+#: apps/base/data.scm:238
+msgctxt "screenshot title"
+msgid "Graphical log-in"
+msgstr ""
+
+#: apps/base/data.scm:242
+msgid "Graphical log-in screen"
+msgstr ""
+
+#: apps/base/data.scm:245
+msgctxt "screenshot title"
+msgid "GNOME"
+msgstr ""
+
+#: apps/base/data.scm:249
+msgid "Control your computer with the GNOME desktop environment"
+msgstr ""
+
+#: apps/base/data.scm:252
+msgctxt "screenshot title"
+msgid "Xfce"
+msgstr ""
+
+#: apps/base/data.scm:256
+msgid "The Xfce desktop environment with GNU Emacs and IceCat"
+msgstr ""
+
+#: apps/base/data.scm:259
+msgctxt "screenshot title"
+msgid "Virtual machine"
+msgstr ""
+
+#: apps/base/data.scm:263
+msgid "Virtual machine started with 'guix system vm'"
+msgstr ""
+
+#: apps/base/data.scm:266
+msgctxt "screenshot title"
+msgid "Enlightenment"
+msgstr ""
+
+#: apps/base/data.scm:270
+msgid "Enlightenment, Inkscape, and Serbian text"
+msgstr ""
+
+#: apps/base/templates/help.scm:17
+msgctxt "webpage title"
+msgid "Help"
+msgstr ""
+
+#: apps/base/templates/help.scm:19
+msgid "A list of resources about how to use GNU Guix, plus\n   information about getting help from the community of users and\n   developers."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/help.scm:24
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Help resources"
+msgstr ""
+
+#: apps/base/templates/help.scm:35
+msgid "Help"
+msgstr ""
+
+#: apps/base/templates/help.scm:46
+msgid "GNU Guix Manual"
+msgstr ""
+
+#: apps/base/templates/help.scm:47
+msgid "Documentation for GNU Guix is available\n            online.  You may also find more information about Guix by running <1>info guix</1>."
+msgstr ""
+
+#: apps/base/templates/help.scm:53
+msgid "Read Guix manual"
+msgstr ""
+
+#: apps/base/templates/help.scm:64
+msgid "Get Guix reference card"
+msgstr ""
+
+#: apps/base/templates/help.scm:72
+msgid "GNU Manuals"
+msgstr ""
+
+#: apps/base/templates/help.scm:73
+msgid "Guix is a distribution of the <1>GNU operating system</1>.  Documentation for GNU packages is\n            available online in various formats. "
+msgstr ""
+
+#: apps/base/templates/help.scm:81
+msgid "Browse GNU manuals"
+msgstr ""
+
+#: apps/base/templates/help.scm:89
+msgid "IRC Chat"
+msgstr ""
+
+#: apps/base/templates/help.scm:90
+msgid "For real-time support from the community, you can connect\n            to the <1/> channel on irc.freenode.net. There\n            you can get help about anything related to GNU Guix."
+msgstr ""
+
+#: apps/base/templates/help.scm:95
+msgid "The <1/> channel is logged. Previous\n            conversations can be browsed online. See the <2>channel logs</2>. "
+msgstr ""
+
+#: apps/base/templates/help.scm:102
+msgid "Connect"
+msgstr ""
+
+#: apps/base/templates/help.scm:110
+msgid "Mailing lists"
+msgstr ""
+
+#: apps/base/templates/help.scm:111
+msgid "Email support from the community is also available through\n            several mailing list. The messages sent to the lists are\n            public and archived online."
+msgstr ""
+
+#: apps/base/templates/help.scm:119
+msgid "See all lists"
+msgstr ""
+
+#: apps/base/templates/contact.scm:17 apps/base/templates/irc.scm:18 apps/base/templates/irc.scm:29
+msgctxt "webpage title"
+msgid "Contact"
+msgstr ""
+
+#: apps/base/templates/contact.scm:19
+msgid "A list of channels to communicate with GNU Guix users\n   and developers about anything you want."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/contact.scm:23
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Community|Mailing lists|IRC channels|Bug reports|Help"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:17
+msgctxt "webpage title"
+msgid "Contribute"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:19
+msgid "Check all the ways you can contribute to make GNU Guix\n   better, and join the world-wide community of volunteers."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/contribute.scm:23
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Volunteer|Development|Translation|I18N|L10N|Artwork"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:35 apps/base/templates/contribute.scm:110 apps/base/templates/contribute.scm:227
+msgid "Contribute"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:37
+msgid "GNU Guix is a large project developed\n           mostly by volunteers from all around the world. You are welcome\n           to join us in the <1>development mailing list</1> or in the <2>#guix channel</2> in IRC Freenode. Tell us how would you like to help, and we\n          will do our best to guide you. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:51
+msgid "We want to provide a warm, friendly, and harassment-free environment,\n           so that anyone can contribute to the best of their abilities.  To\n           this end our project uses a “Contributor Covenant”, which was adapted\n           from <1>https://contributor-covenant.org/</1>.  You can find the full pledge in the <2>CODE-OF-CONDUCT</2> file."
+msgstr ""
+
+#: apps/base/templates/contribute.scm:72
+msgid "Project Management"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:73
+msgid "We use <1>Savannah</1> as the central point for development, maintenance and\n            distribution of the Guix System Distribution and GNU Guix."
+msgstr ""
+
+#: apps/base/templates/contribute.scm:79
+msgid "The source files for all the components of the project,\n            including software, web site, documentation, and artwork, are\n            available in <1>Git repositories</1> at Savannah. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:89
+msgid "Access Savannah"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:94
+msgid "Art"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:95
+msgid "We are always looking for artists to help us design and\n            improve user interfaces, and create multimedia material for\n            documentation, presentations, and promotional items. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:100
+msgid "The artwork used in the different components of the project\n            is available in the <1>guix-artwork</1> repository. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:116
+msgid "Documentation"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:117
+msgid "You can read the <1>project documentation</1> already available in the system and in the website, and\n            help us identify any errors or omissions. Creating new\n            manuals, tutorials, and blog entries will also help users and\n            developers discover what we do. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:125
+msgid "Helping improve the documentation of the <1>packaged software</1> is another way to contribute. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:132
+msgid "Start writing"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:138 apps/packages/templates/detailed-index.scm:43 apps/packages/templates/index.scm:42
+msgid "Packages"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:139
+msgid "Hundreds of software, documentation, and assets need to be\n            packaged to make it easier for users to install their\n            favorite tools with the Guix package manager, and be\n            productive using the system. "
+msgstr ""
+
+#. TRANSLATORS: Packaging Guidelines is a section name in the
+#. English (en) manual.
+#: apps/base/templates/contribute.scm:147
+msgid "Information on how to add packages to the distribution can\n            be found <1>in the manual<1.1>en</1.1><1.2>Packaging-Guidelines.html</1.2></1>. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:157
+msgid "Check out the <1>package database</1> for a list of available packages, and the <2>patch-tracking database</2> for a list of pending submissions."
+msgstr ""
+
+#: apps/base/templates/contribute.scm:168
+msgid "Send a new package"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:174
+msgid "Programming"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:175
+msgid "Source code is in the <1>main Git repository</1>.  We use <2>GNU Guile</2> as the main programming and extension language for the\n            components of the system. "
+msgstr ""
+
+#. TRANSLATORS: Contributing is a section name in the English
+#. (en) manual.
+#: apps/base/templates/contribute.scm:187
+msgid "You will find it useful to browse the <1>Guile manual</1> or other <2>introductory material about Scheme</2>. Also, make sure to read the <3>Contributing<3.1>en</3.1><3.2>Contributing.html</3.2></3> section of the manual for more details on the development\n            setup, as well as the coding and cooperation conventions used\n            in the project. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:205
+msgid "Send a patch"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:211
+msgid "System Administration"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:212
+msgid "Our system infrastructure makes it possible for all the\n            contributors to communicate and collaborate in the project,\n            and users to be able to download and install packages. Help\n            us keep the system up and running smoothly. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:218
+msgid "You can also <1>donate hardware or hosting</1> for our <2>build farm</2>.  "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:233
+msgid "Test and Bug Reports"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:234
+msgid "Install the software and send feedback to the community\n            about your experience. Help the project by reporting bugs."
+msgstr ""
+
+#: apps/base/templates/contribute.scm:238
+msgid "Before reporting a bug, please check whether the bug is\n            already <1>in the bug database</1>. See <2>the developer information page</2> for more information on how to manipulate bug reports. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:250
+msgid "Report a bug"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:256
+msgid "Translation"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:257
+msgid "You can help translate the <1>software</1>, the <2>package descriptions</2>, and the <3>manual</3> into your language.  See the <4>Translation Project</4> for information on how you can help."
+msgstr ""
+
+#: apps/base/templates/contribute.scm:276
+msgid "<1>Software packages</1> provided by the system may have their own translation\n            tools.  Visit their websites and help translate. "
+msgstr ""
+
+#: apps/base/templates/contribute.scm:283
+msgid "Start translating"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:287
+msgid "Other resources for contributors"
+msgstr ""
+
+#: apps/base/templates/contribute.scm:288
+msgid "Documents, supporting material of previous talks, and\n          auxiliary information useful to hackers and maintainers is\n          available at <1/>."
+msgstr ""
+
+#: apps/base/templates/donate.scm:17
+msgctxt "webpage title"
+msgid "Donate"
+msgstr ""
+
+#: apps/base/templates/donate.scm:19
+msgid "We are looking for donations of hardware and optionally\n   hosting for machines (they should be usable with exclusively\n   free software)."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/donate.scm:24
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Donations"
+msgstr ""
+
+#: apps/base/templates/donate.scm:34
+msgid "Donate"
+msgstr ""
+
+#: apps/base/templates/donate.scm:36
+msgid "The <1>build farm</1> of the Guix System Distribution runs on donated hardware and hosting. As the distribution grows (see the <2>package list</2>), so do the computing and storage needs."
+msgstr ""
+
+#: apps/base/templates/donate.scm:47
+msgid "We have <1>started a fundraising campaign</1> to strengthen our build farm, with <2>support from the Free Software Foundation (FSF)</2>.  Please consider helping out by making a donation on this\n          FSF-hosted page:"
+msgstr ""
+
+#: apps/base/templates/donate.scm:63
+msgctxt "button"
+msgid "♥ DONATE!"
+msgstr ""
+
+#: apps/base/templates/donate.scm:66
+msgid "Hardware and Hosting"
+msgstr ""
+
+#: apps/base/templates/donate.scm:71
+msgid "We are also looking for donations of hardware and optionally\n           hosting for the following kinds of machines (they should be\n           usable with exclusively free software): "
+msgstr ""
+
+#: apps/base/templates/donate.scm:78
+msgid "x86_64 machines, with on the order of 1 TiB of storage\n               and 4 GiB of RAM;"
+msgstr ""
+
+#: apps/base/templates/donate.scm:81
+msgid "armv7 machines (such as the Novena) to more quickly test\n               and provide binaries for the armhf-linux port;"
+msgstr ""
+
+#: apps/base/templates/donate.scm:84
+msgid "mips64el machines to strengthen this port."
+msgstr ""
+
+#: apps/base/templates/donate.scm:87
+msgid "Please get in touch with us through the <1>usual channels</1> or using the <2/> private alias to\n           discuss any opportunities. "
+msgstr ""
+
+#: apps/base/templates/donate.scm:95
+msgid "Thanks to the donors!"
+msgstr ""
+
+#: apps/base/templates/donate.scm:100
+msgid "The table below summarizes hardware and hosting donations that\n           make the <1>build farm</1> for the Guix System Distribution a reality."
+msgstr ""
+
+#: apps/base/templates/donate.scm:110
+msgid "<1>machine</1><2>system</2><3>donors</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:114
+msgid "<1>hydra.gnu.org</1><2>build farm front-end</2><3>Free Software Foundation</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:124
+msgid "<1>berlin.guixsd.org</1><2>build farm with 25 build nodes for x86_64-linux and\ni686-linux, and dedicated storage</2><3><3.1>Max Delbrück Center for Molecular Medicine</3.1> (hardware and hosting)</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:136
+msgid "<1>overdrive1.guixsd.org</1><2>aarch64-linux</2><3><3.1>ARM Holdings</3.1></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:146
+msgid "<1>bayfront.guixsd.org</1><2>new build farm front-end (WIP)</2><3>Igalia</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:158
+msgid "<1>hydra.gnunet.org</1><2>x86_64-linux, i686-linux</2><3><3.1>Free Secure Network Systems Group</3.1> at the <3.2>Technische Universität München</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:171
+msgid "<1>chapters.gnu.org</1><2>x86_64-linux, i686-linux</2><3><3.1><3.1.1>GNU España</3.1.1> (hardware)</3.1><3.2><3.2.1>FSF France</3.2.1> (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:186
+msgid "<1>librenote</1><2>mips64el-linux</2><3><3.1>Daniel Clark (hardware)</3.1><3.2>Mark H Weaver (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:195
+msgid "<1>hydra-slave0</1><2>mips64el-linux</2><3>Free Software Foundation</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:205
+msgid "<1>guix.sjd.se</1><2>x86_64-linux, i686-linux</2><3>Simon Josefsson</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:215
+msgid "<1>x15.sjd.se</1><2>armhf-linux</2><3>Simon Josefsson</3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:225
+msgid "<1>hydra-slave1</1><2>armhf-linux</2><3><3.1>Steve Sprang (hardware)</3.1><3.2>Mark H Weaver (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:235
+msgid "<1>hydra-slave2</1><2>armhf-linux</2><3><3.1><3.1.1>Harmon Instruments</3.1.1> (hardware)</3.1><3.2>Mark H Weaver (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:248
+msgid "<1>hydra-slave3</1><2>armhf-linux</2><3><3.1><3.1.1>Kosagi (Sutajio Ko-Usagi Pte Ltd)</3.1.1> (hardware)</3.1><3.2>Mark H Weaver (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/donate.scm:261
+msgid "<1>redhill</1><2>armhf-linux</2><3><3.1><3.1.1>Kosagi (Sutajio Ko-Usagi Pte Ltd)</3.1.1> (hardware)</3.1><3.2>Andreas Enge (hosting)</3.2></3>"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:16
+msgctxt "webpage title"
+msgid "Graphics"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:18
+msgid "Information about images used for the graphical identity\n   of GNU Guix and Guix System (formerly “GuixSD”)."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/graphics.scm:22
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Donations|Branding|Logo"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:32
+msgid "Graphics"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:34
+msgid "For questions regarding the graphics listed in this page,\n          please contact <1>help-guix@gnu.org</1>."
+msgstr ""
+
+#: apps/base/templates/graphics.scm:44
+msgid "GNU Guix logotype"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:45
+msgid "The standalone Guix, formerly known as the “Guix System\n          Distribution” or GuixSD, had its own logo, which is now\n          deprecated."
+msgstr ""
+
+#: apps/base/templates/graphics.scm:51
+msgid "The GNU Guix and GuixSD\n          logotypes were designed by Luis Felipe López Acevedo\n          (a.k.a. sirgazil).  They are available under the following\n          terms:"
+msgstr ""
+
+#: apps/base/templates/graphics.scm:65
+msgid "The source files (SVG) for these logotypes, their variants, and\n          other artwork used in the different components of the GNU Guix\n          project are available in the <1>guix-artwork</1> repository, including the previous GNU Guix logotype designed\n          by Nikita Karetnikov in 2013 and <2>superseded</2> by the golden GNU in 2016."
+msgstr ""
+
+#: apps/base/templates/irc.scm:17 apps/base/templates/irc.scm:30
+msgctxt "webpage title"
+msgid "IRC"
+msgstr ""
+
+#: apps/base/templates/irc.scm:20
+msgid "Internet relay chat."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/irc.scm:23
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|IRC|chat"
+msgstr ""
+
+#: apps/base/templates/irc.scm:35
+msgid "IRC"
+msgstr ""
+
+#: apps/base/templates/irc.scm:37
+msgid "Join the <1/> channel on the <2>Freenode IRC network</2> to chat with the GNU Guix community or to get help\n          in real-time. You can use the chat widget below, or just use\n          the <3>IRC client</3> of your preference. Note that the conversations that happen\n          on the <4/> channel are logged (<5>browse the log</5>)."
+msgstr ""
+
+#: apps/base/templates/menu.scm:16
+msgctxt "webpage title"
+msgid "Menu"
+msgstr ""
+
+#: apps/base/templates/menu.scm:17
+msgid "Website menu."
+msgstr ""
+
+#: apps/base/templates/menu.scm:24
+msgctxt "website menu"
+msgid "Menu"
+msgstr ""
+
+#: apps/base/templates/screenshot.scm:19
+msgctxt "webpage title"
+msgid "Screenshots"
+msgstr ""
+
+#: apps/base/templates/security.scm:19
+msgctxt "webpage title"
+msgid "Security"
+msgstr ""
+
+#: apps/base/templates/security.scm:21
+msgid "Important information about getting security updates\n   for your GNU Guix installation, and instructions on how\n   to report security issues."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/base/templates/security.scm:26
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Security updates"
+msgstr ""
+
+#: apps/base/templates/security.scm:36
+msgid "Security"
+msgstr ""
+
+#: apps/base/templates/security.scm:38
+msgid "How to report security issues"
+msgstr ""
+
+#: apps/base/templates/security.scm:39
+msgid "To report sensitive security issues in Guix itself or the\n           packages it provides, you can write to the private mailing list <1/>.  This list is monitored by a\n           small team of Guix developers."
+msgstr ""
+
+#: apps/base/templates/security.scm:46
+msgid "If you prefer to send your report using OpenPGP encrypted email,\n           please send it to one of the following Guix developers using their\n           respective OpenPGP key:"
+msgstr ""
+
+#: apps/base/templates/security.scm:65
+msgid "Release signatures"
+msgstr ""
+
+#: apps/base/templates/security.scm:66
+msgid "Releases of Guix are signed using the OpenPGP key with the fingerprint <1/>.  Users should <2>verify<2.1>en</2.1><2.2>Binary-Installation.html</2.2></2> their downloads before extracting or running them."
+msgstr ""
+
+#: apps/base/templates/security.scm:78
+msgid "Security updates"
+msgstr ""
+
+#: apps/base/templates/security.scm:79
+msgid "When security vulnerabilities are found in Guix or the packages provided by Guix, we will provide <1>security updates<1.1>en</1.1><1.2>Security-Updates.html</1.2></1> quickly and with minimal disruption for users."
+msgstr ""
+
+#: apps/base/templates/security.scm:87
+msgid "Guix uses a “rolling release” model.  All security bug-fixes are pushed directly to the master branch.  There is no “stable” branch that only receives security fixes."
+msgstr ""
+
+#: apps/download/data.scm:20 apps/download/data.scm:20
+msgctxt "download page title"
+msgid "GNU Guix System <1/>"
+msgstr ""
+
+#: apps/download/data.scm:23 apps/download/data.scm:23
+msgid "USB/DVD ISO installer of the standalone Guix System."
+msgstr ""
+
+#. TRANSLATORS: System installation is a section name in the
+#. English (en) manual.
+#. TRANSLATORS: System installation is a section name in the
+#. English (en) manual.
+#: apps/download/data.scm:31 apps/download/data.scm:31
+msgid "<1>en</1>System-Installation.html"
+msgstr ""
+
+#: apps/download/data.scm:35 apps/download/data.scm:35
+msgctxt "download page title"
+msgid "GNU Guix <1/> QEMU Image"
+msgstr ""
+
+#: apps/download/data.scm:38 apps/download/data.scm:38
+msgid "QCOW2 virtual machine (VM) image."
+msgstr ""
+
+#. TRANSLATORS: Running Guix in a VM is a section name in the
+#. English (en) manual.
+#. TRANSLATORS: Running Guix in a VM is a section name in the
+#. English (en) manual.
+#: apps/download/data.scm:45 apps/download/data.scm:45
+msgid "<1>en</1>Running-Guix-in-a-VM.html"
+msgstr ""
+
+#: apps/download/data.scm:49 apps/download/data.scm:49
+msgctxt "download page title"
+msgid "GNU Guix <1/> Binary"
+msgstr ""
+
+#: apps/download/data.scm:51 apps/download/data.scm:51
+msgid "Self-contained tarball providing binaries for Guix and its\n       dependencies, to be installed on top of your Linux-based system."
+msgstr ""
+
+#. TRANSLATORS: Binary Installation is a section name in the
+#. English (en) manual.
+#. TRANSLATORS: Binary Installation is a section name in the
+#. English (en) manual.
+#: apps/download/data.scm:64 apps/download/data.scm:64
+msgid "<1>en</1>Binary-Installation.html"
+msgstr ""
+
+#: apps/download/data.scm:68 apps/download/data.scm:68
+msgctxt "download page title"
+msgid "GNU Guix <1/> Source"
+msgstr ""
+
+#: apps/download/data.scm:69 apps/download/data.scm:69
+msgid "Source code distribution."
+msgstr ""
+
+#. TRANSLATORS: Requirements is a section name in the English (en)
+#. manual.
+#. TRANSLATORS: Requirements is a section name in the English (en)
+#. manual.
+#: apps/download/data.scm:76 apps/download/data.scm:76
+msgid "<1>en</1>Requirements.html"
+msgstr ""
+
+#: apps/download/templates/components.scm:25 apps/download/templates/components.scm:25
+msgid "Download options:"
+msgstr ""
+
+#: apps/download/templates/components.scm:38 apps/download/templates/components.scm:38
+msgid "Signatures: "
+msgstr ""
+
+#: apps/download/templates/components.scm:50 apps/download/templates/components.scm:50
+msgid "<1>Installation instructions</1>."
+msgstr ""
+
+#: apps/download/templates/download.scm:33 apps/download/templates/download.scm:33
+msgctxt "webpage title"
+msgid "Download"
+msgstr ""
+
+#: apps/download/templates/download.scm:35 apps/download/templates/download.scm:35
+msgid "Installers and source files for GNU Guix.  GNU Guix can be\n   installed on different GNU/Linux distributions."
+msgstr ""
+
+#. TRANSLATORS: |-separated list of webpage keywords
+#. TRANSLATORS: |-separated list of webpage keywords
+#: apps/download/templates/download.scm:39 apps/download/templates/download.scm:39
+msgid "GNU|Linux|Unix|Free software|Libre software|Operating system|GNU Hurd|GNU Guix package manager|Installer|Source code|Package manager"
+msgstr ""
+
+#: apps/download/templates/download.scm:51 apps/download/templates/download.scm:51
+msgid "Download"
+msgstr ""
+
+#: apps/download/templates/download.scm:53 apps/download/templates/download.scm:53
+msgid "As of version <1/>, the standalone Guix System <2>can be installed</2> on an i686, x86_64, ARMv7, or AArch64 machine.  It uses the <3>Linux-Libre</3> kernel and the <4>GNU Shepherd</4> init system. Alternately, GNU Guix\n          can be installed as an additional package manager on top of an\n          installed Linux-based system."
+msgstr ""
+
+#: apps/download/templates/download.scm:73 apps/download/templates/download.scm:73
+msgid "Source code and binaries for the Guix System distribution ISO\n          image as well as GNU Guix can be found on the GNU servers at <1/>.  Older releases can still be found on <2/>."
+msgstr ""
+
+#: apps/blog/templates/components.scm:33 apps/blog/templates/post.scm:46
+msgctxt "SRFI-19 date->string format"
+msgid "~B ~e, ~Y"
+msgstr ""
+
+#: apps/blog/templates/components.scm:37
+msgctxt "blog post summary ellipsis"
+msgid "…"
+msgstr ""
+
+#: apps/blog/templates/components.scm:48
+msgid "Blog menu: "
+msgstr ""
+
+#: apps/blog/templates/components.scm:53
+msgid "Get topic updates"
+msgstr ""
+
+#: apps/blog/templates/components.scm:54
+msgid "Get blog updates"
+msgstr ""
+
+#: apps/blog/templates/components.scm:66
+msgctxt "button"
+msgid "Atom feed"
+msgstr ""
+
+#: apps/blog/templates/components.scm:68
+msgid "Posts by topic"
+msgstr ""
+
+#: apps/blog/templates/feed.scm:32
+msgctxt "feed author name"
+msgid "GNU Guix"
+msgstr ""
+
+#: apps/blog/templates/post-list.scm:23 apps/blog/templates/post-list.scm:40 apps/blog/templates/tag.scm:25 apps/blog/templates/tag.scm:45 apps/packages/templates/detailed-package-list.scm:24 apps/packages/templates/detailed-package-list.scm:47 apps/packages/templates/package-list.scm:24 apps/packages/templates/package-list.scm:44
+msgid "Page <1/>"
+msgstr ""
+
+#: apps/blog/templates/post-list.scm:24 apps/blog/templates/post.scm:25 apps/blog/templates/tag.scm:26
+msgctxt "webpage title"
+msgid "Blog"
+msgstr ""
+
+#: apps/blog/templates/post-list.scm:26 apps/blog/templates/post.scm:27
+msgid "Blog posts about GNU Guix."
+msgstr ""
+
+#: apps/blog/templates/post.scm:52
+msgid "Related topics:"
+msgstr ""
+
+#: apps/blog/templates/tag.scm:28
+msgid "Blog posts about <1/> on GNU Guix."
+msgstr ""
+
+#: apps/blog/templates/tag.scm:54
+msgid "Blog — "
+msgstr ""
+
+#: apps/packages/templates/components.scm:59 apps/packages/templates/package.scm:56
+msgid "This is a GNU package.  "
+msgstr ""
+
+#: apps/packages/templates/components.scm:66
+msgid "<1>License:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:70
+msgid "<1>Website:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:74
+msgid "<1>Package source:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:78
+msgid "<1>Patches:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:82
+msgid "<1>Lint issues:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:89
+msgid "<1>Builds:</1> <2/>."
+msgstr ""
+
+#: apps/packages/templates/components.scm:104
+msgid " issue"
+msgid_plural " issues"
+msgstr[0] ""
+msgstr[1] ""
+
+#: apps/packages/templates/components.scm:115 apps/packages/templates/components.scm:221
+msgid "Packages menu: "
+msgstr ""
+
+#: apps/packages/templates/components.scm:117 apps/packages/templates/components.scm:223
+msgid "Browse alphabetically"
+msgstr ""
+
+#: apps/packages/templates/components.scm:204 apps/packages/templates/components.scm:270
+msgid "None"
+msgstr ""
+
+#: apps/packages/templates/detailed-index.scm:22 apps/packages/templates/detailed-package-list.scm:25 apps/packages/templates/index.scm:22 apps/packages/templates/package-list.scm:25 apps/packages/templates/package.scm:28
+msgctxt "webpage title"
+msgid "Packages"
+msgstr ""
+
+#: apps/packages/templates/detailed-index.scm:24 apps/packages/templates/detailed-package-list.scm:27 apps/packages/templates/index.scm:24
+msgid "List of packages available through GNU Guix."
+msgstr ""
+
+#: apps/packages/templates/detailed-index.scm:45 apps/packages/templates/index.scm:44
+msgid "GNU Guix provides <1/> packages transparently <2>available as pre-built binaries</2>. These pages provide a complete list of the packages.  Our <3>continuous integration system</3> shows their current build status (updated <4/>)."
+msgstr ""
+
+#: apps/packages/templates/detailed-package-list.scm:56 apps/packages/templates/package-list.scm:53
+msgid "Packages — "
+msgstr ""
+
+#: apps/packages/templates/package.scm:62
+msgid "<1>Website: </1>"
+msgstr ""
+
+#: apps/packages/templates/package.scm:65
+msgid "<1>License: </1>"
+msgstr ""
+
+#: apps/packages/templates/package.scm:67
+msgid "<1>Package source: </1>"
+msgstr ""
+
+#: apps/packages/templates/package.scm:69
+msgid "<1>Patches: </1>"
+msgstr ""
+
+#: apps/packages/templates/package.scm:71
+msgid "<1>Builds: </1>"
+msgstr ""
+
+#: apps/packages/templates/package.scm:77
+msgid "<1>Lint issues</1><2><2.1/>. See <2.2>package definition</2.2> in Guix source code.</2>"
+msgstr ""

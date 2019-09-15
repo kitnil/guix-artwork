@@ -8,6 +8,7 @@
   #:use-module (apps base templates theme)
   #:use-module (apps base types)
   #:use-module (apps base utils)
+  #:use-module (apps i18n)
   #:use-module (apps packages templates components)
   #:export (package-list-t))
 
@@ -20,25 +21,27 @@
 	(total-pages
 	 (number->string (context-datum context "total-pages"))))
     (theme
-     #:title (list (string-append "Page " page-number) letter "Packages")
+     #:title (list (G_ (string-append "Page " page-number ""))
+                   letter (C_ "webpage title" "Packages"))
      #:description
      "List of packages available through GNU Guix."
      #:keywords
-     '("GNU" "Linux" "Unix" "Free software" "Libre software"
-       "Operating system" "GNU Hurd" "GNU Guix package manager"
-       "GNU Guile" "Guile Scheme" "Transactional upgrades"
-       "Functional package management" "Reproducibility")
-     #:active-menu-item "Packages"
+     (string-split ;TRANSLATORS: |-separated list of webpage keywords
+      (G_ "GNU|Linux|Unix|Free software|Libre software|Operating \
+system|GNU Hurd|GNU Guix package manager|GNU Guile|Guile \
+Scheme|Transactional upgrades|Functional package \
+management|Reproducibility") #\|)
+     #:active-menu-item (C_ "website menu" "Packages")
      #:css
      (list (guix-url "static/base/css/page.css")
 	   (guix-url "static/base/css/item-preview.css")
 	   (guix-url "static/packages/css/letter-selector.css"))
      #:crumbs
-     (list (crumb "Packages" (guix-url "packages/"))
+     (list (crumb (C_ "website menu" "Packages") (guix-url "packages/"))
 	   (crumb letter (guix-url (url-path-join "packages"
 						  letter
 						  "")))
-	   (crumb (string-append "Page " page-number)
+           (crumb (G_ (string-append "Page " page-number ""))
 		  (guix-url (url-path-join "packages"
 					   "page"
 					   page-number
@@ -47,7 +50,7 @@
      `(main
        (section
 	(@ (class "page centered-text"))
-	(h2 "Packages — " ,letter
+	(h2 (G_ "Packages — ") ,letter
 	    ,(page-indicator (string->number page-number)
 			     (string->number total-pages)))
 

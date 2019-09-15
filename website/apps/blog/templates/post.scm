@@ -9,6 +9,7 @@
   #:use-module (apps base utils)
   #:use-module (apps blog utils)
   #:use-module ((apps blog templates components) #:prefix blog:)
+  #:use-module (apps i18n)
   #:use-module (haunt post)
   #:use-module (srfi srfi-19)
   #:export (post-t))
@@ -21,17 +22,17 @@
     (theme
      #:title (list (post-ref post 'title)
 		   (date->string (post-date post) "~Y")
-		   "Blog")
+                   (C_ "webpage title" "Blog"))
      #:description
-     "Blog posts about GNU Guix."
+     (G_ "Blog posts about GNU Guix.")
      #:keywords tags
-     #:active-menu-item "Blog"
+     #:active-menu-item (C_ "website menu" "Blog")
      #:css
      (list (guix-url "static/base/css/page.css")
 	   (guix-url "static/base/css/code.css")
 	   (guix-url "static/blog/css/post.css"))
      #:crumbs
-     (list (crumb "Blog" (guix-url "blog/"))
+     (list (crumb (C_ "website menu" "Blog") (guix-url "blog/"))
 	   (crumb (post-ref post 'title)
 		  (guix-url (post-url-path post))))
      #:content
@@ -42,13 +43,14 @@
 	(p
 	 (@ (class "post-metadata centered-text"))
 	 ,(post-ref post 'author) " — "
-	 ,(date->string (post-date post) "~B ~e, ~Y"))
+         ,(date->string (post-date post) (C_ "SRFI-19 date->string format"
+                                             "~B ~e, ~Y")))
 
 	,(syntax-highlight (post-sxml post))
 
 	(div
 	 (@ (class "tag-list"))
-	 (p "Related topics:")
+         ,(G_ `(p "Related topics:"))
 
 	 ,@(map
 	    (lambda (tag)

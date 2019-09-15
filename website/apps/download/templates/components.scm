@@ -4,6 +4,7 @@
 
 (define-module (apps download templates components)
   #:use-module (apps download types)
+  #:use-module (apps i18n)
   #:export (download))
 
 
@@ -21,7 +22,7 @@
     (img (@ (src ,(download-image dnd)) (alt "")))
     (h3 ,(download-title dnd))
     ,(download-description dnd)
-    (p "Download options:")
+    ,(G_ `(p "Download options:"))
     ,@(map (lambda (variant)
 	     `(a
 	       (@ (class "download-btn")
@@ -34,7 +35,7 @@
 	  (download-variants dnd))
 
     (p
-     "Signatures: "
+     ,(G_ "Signatures: ")
      ,@(map (lambda (variant)
 	     `(a
 	       (@ (class "signature-btn")
@@ -46,4 +47,9 @@
 	       " ")) ; Force a space for readability in non-CSS browsers.
 	    (download-variants dnd)))
 
-    (p (a (@ (href ,(download-manual dnd))) "Installation instructions") ".")))
+    ,(G_
+      `(p
+        ,(G_
+          `(a (@ (href ,(download-manual dnd)))
+              "Installation instructions"))
+        "."))))

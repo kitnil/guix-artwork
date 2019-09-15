@@ -8,6 +8,7 @@
   #:use-module (apps aux web)
   #:use-module (apps base utils)
   #:use-module (apps blog utils)
+  #:use-module (apps i18n)
   #:use-module (haunt post)
   #:use-module (srfi srfi-19)
   #:export (post-preview
@@ -29,11 +30,12 @@
     (h3 ,(post-ref post 'title))
     (p
      (@ (class "item-date"))
-     ,(date->string (post-date post) "~B ~e, ~Y"))
+     ,(date->string (post-date post) (C_ "SRFI-19 date->string format"
+                                         "~B ~e, ~Y")))
     (p
      (@ (class "item-summary"))
      ,(string-summarize (sxml->string* (post-sxml post)) 30)
-     "…")))
+     (C_ "blog post summary ellipsis" "…"))))
 
 
 (define* (sidebar tags #:optional (current-tag #false))
@@ -44,13 +46,13 @@
      Haunt's 'posts/group-by-tag' procedure in (haunt post) module."
   `(section
     (@ (class "side-bar"))
-    (h3 (@ (class "a11y-offset")) "Blog menu: ")
+    (h3 (@ (class "a11y-offset")) (G_ "Blog menu: "))
 
     (h4
      (@ (class "bar-title bar-title-top"))
      ,(if current-tag
-	  "Get topic updates"
-	  "Get blog updates"))
+          (G_ "Get topic updates")
+          (G_ "Get blog updates")))
     (ul
      (@ (class "bar-list"))
      (li (@ (class "bar-item"))
@@ -62,9 +64,9 @@
 					     (slugify current-tag)
 					     ".atom"))))
 		    `(href ,(guix-url (url-path-join "feeds" "blog.atom")))))
-	    " Atom feed")))
+            (C_ "button" "Atom feed"))))
 
-    (h4 (@ (class "bar-title")) "Posts by topic")
+    (h4 (@ (class "bar-title")) (G_ "Posts by topic"))
     (ul
      (@ (class "bar-list"))
      ,@(map

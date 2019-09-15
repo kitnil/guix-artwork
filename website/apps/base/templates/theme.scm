@@ -5,15 +5,16 @@
 (define-module (apps base templates theme)
   #:use-module (apps base templates components)
   #:use-module (apps base utils)
+  #:use-module (apps i18n)
   #:export (theme))
 
 
 (define* (theme #:key
-		(lang-tag "en")
+                (lang-tag %current-ietf-tag)
 		(title '())
 		(description "")
 		(keywords '())
-		(active-menu-item "About")
+                (active-menu-item (C_ "website menu" "About"))
 		(css '())
 		(scripts '())
 		(crumbs '())
@@ -23,7 +24,8 @@
    LANG-TAG (string)
      IETF language tag. This is used to specify the language of the
      document. For example: en, en-CA. If not provided, the value
-     defaults to English (en).
+     defaults to the currently built language, i.e. the
+     %current-ietf-tag from (apps i18n).
 
    TITLE (list)
      A list of strings to form the value of the title element of the
@@ -65,12 +67,14 @@
   `((doctype "html")
 
     (html
-     (@ (lang "en"))
+     (@ (lang lang-tag))
 
      (head
       ,(if (null? title)
-	   `(title "GNU Guix")
-	   `(title ,(string-join (append title '("GNU Guix")) " — ")))
+           `(title ,(C_ "webpage title" "GNU Guix"))
+           `(title ,(string-join (append title
+                                         (C_ "webpage title" '("GNU Guix")))
+                                 " — ")))
       (meta (@ (charset "UTF-8")))
       (meta (@ (name "keywords") (content ,(string-join keywords ", "))))
       (meta (@ (name "description") (content ,description)))
@@ -91,7 +95,7 @@
 	     css)
       ;; Feeds.
       (link (@ (type "application/atom+xml") (rel "alternate")
-	       (title "GNU Guix — Activity Feed")
+	       (title (C_ "webpage title" "GNU Guix — Activity Feed"))
 	       (href ,(guix-url "feeds/blog.atom"))))
       (link (@ (rel "icon") (type "image/png")
 	       (href ,(guix-url "static/base/img/icon.png"))))
@@ -108,17 +112,22 @@
       ,(if (null? crumbs) "" (breadcrumbs crumbs))
 
       ,content
-      (footer
-       "Made with " (span (@ (class "metta")) "♥")
-       " by humans and powered by "
-       (a (@ (class "link-yellow") (href ,(gnu-url "software/guile/")))
-	  "GNU Guile") ".  "
-	  (a
-	   (@ (class "link-yellow")
-	      (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website"))
-	   "Source code")
-	  " under the "
-	  (a
-	   (@ (class "link-yellow")
-	      (href ,(gnu-url "licenses/agpl-3.0.html")))
-	   "GNU AGPL") ".")))))
+      ,(G_
+        `(footer
+          "Made with " ,(G_ `(span (@ (class "metta")) "♥"))
+          " by humans and powered by "
+          ,(G_ `(a
+                 (@ (class "link-yellow")
+                    (href ,(gnu-url "software/guile/")))
+                 "GNU Guile"))
+          ".  "
+          ,(G_ `(a
+                 (@ (class "link-yellow")
+                    (href "//git.savannah.gnu.org/cgit/guix/guix-artwork.git/tree/website"))
+                 "Source code"))
+          " under the "
+          ,(G_ `(a
+                 (@ (class "link-yellow")
+                    (href ,(gnu-url "licenses/agpl-3.0.html")))
+                 "GNU AGPL"))
+          "."))))))

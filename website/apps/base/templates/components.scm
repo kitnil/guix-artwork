@@ -1,4 +1,5 @@
 ;;; GNU Guix web site
+;;; Copyright © 2019 Florian Pelz <pelzflorian@pelzflorian.de>
 ;;; Initially written by sirgazil who waves all
 ;;; copyright interest on this file.
 
@@ -12,6 +13,7 @@
   #:use-module (apps aux web)
   #:use-module (apps base types)
   #:use-module (apps base utils)
+  #:use-module (apps i18n)
   #:use-module (srfi srfi-1)
   #:use-module (ice-9 match)
   #:export (breadcrumbs
@@ -23,6 +25,8 @@
 	    link-more
 	    link-subtle
 	    link-yellow
+            manual-href
+            manual-link-yellow
 	    navbar
 	    page-indicator
 	    page-selector
@@ -41,9 +45,9 @@
      (apps base types)."
   `(nav
     (@ (class "breadcrumbs"))
-    (h2 (@ (class "a11y-offset")) "Your location:")
+    ,(G_ `(h2 (@ (class "a11y-offset")) "Your location:"))
 
-    (a (@ (class "crumb") (href ,(guix-url))) "Home") (span " → ")
+    ,(G_ `(a (@ (class "crumb") (href ,(guix-url))) "Home")) (span " → ")
     ,@(separate (crumbs->shtml crumbs) '(span " → "))))
 
 
@@ -121,8 +125,9 @@
        (sxml->string*
         (match (contact-description contact)
           ((and multilingual (((? string?) (? string?)) ...))
-           (match (assoc "en" multilingual)
-             (("en" blurb) blurb)))
+           (let ((code %current-lang))
+             (match (assoc code multilingual)
+               ((code blurb) blurb))))
           (blurb
            blurb)))
        30)
@@ -145,7 +150,7 @@
     ,(if (string=? (contact-log contact) "")
 	 ""
 	 `(small
-	   " (" (a (@ (href ,(contact-log contact))) "archive") ") "))
+	   " (" ,(G_ `(a (@ (href ,(contact-log contact))) "archive")) ") "))
 
     ;; The description can be a list of language/blurb pairs.
     ,(match (contact-description contact)
@@ -216,6 +221,51 @@
   `(a (@ (class "link-yellow") (href ,url)) ,label))
 
 
+
+
+(define (manual-href label manual-lang _1 subpath _2)
+  "Return an HTML a element with its href attribute pointing to the
+manual.  It can be marked for translation as:
+
+  (G_ (manual-href \"some-text\" (G_ \"en\") (G_ \"Some-section.html\")))
+
+   LABEL (string)
+     The content of the a element.
+
+   MANUAL-LANG (string)
+     The normalized language for the Guix manual as produced by
+'doc/build.scm' in the Guix source tree, i.e. \"en\" for the English
+manual.
+
+   SUBPATH (string)
+     The same as in the manual-url procedure."
+  ;; The _ arguments are placeholders for args added by G_, cf. i18n-howto.txt.
+  `(a (@ (href ,(manual-url subpath #:language manual-lang))) label))
+
+(define* (manual-link-yellow label manual-lang _1 #:optional (subpath "") _2)
+  "Return a link-yellow component pointing to the manual.  It can be
+used like this:
+
+  (manual-link-yellow \"some-text\" (G_ \"en\") \"Package-Management.html\")
+
+   LABEL (string)
+     The label of the link-yellow.
+
+   MANUAL-LANG (string)
+     The normalized language for the Guix manual as produced by
+'doc/build.scm' in the Guix source tree, i.e. \"en\" for the English
+manual.
+
+   SUBPATH (string)
+     The same as in the manual-url procedure."
+  ;; The _ arguments are placeholders for args added by G_, cf. i18n-howto.txt.
+  (link-yellow
+   #:label label
+   #:url (manual-url subpath #:language manual-lang)))
+
+
+
+
 (define* (menu-dropdown #:key (label "Item") (active-item "") (url "#") (items '()))
   "Return an SHTML li element representing a dropdown for the navbar.
 
@@ -284,26 +334,26 @@
     (h1
      (a
       (@ (class "branding") (href ,(guix-url)))
-      (span (@ (class "a11y-offset")) "Guix")))
+      ,(C_ "website menu" `(span (@ (class "a11y-offset")) "Guix"))))
 
     ;; Menu.
     (nav (@ (class "menu"))
-     (h2 (@ (class "a11y-offset")) "Website menu:")
+         ,(G_ `(h2 (@ (class "a11y-offset")) "website menu:"))
      (ul
-      ,(menu-item #:label "Overview" #:active-item active-item #:url (guix-url))
-      ,(menu-item #:label "Download" #:active-item active-item #:url (guix-url "download/"))
-      ,(menu-item #:label "Packages" #:active-item active-item #:url (guix-url "packages/"))
-      ,(menu-item #:label "Blog" #:active-item active-item #:url (guix-url "blog/"))
-      ,(menu-item #:label "Help" #:active-item active-item #:url (guix-url "help/"))
-      ,(menu-item #:label "Donate" #:active-item active-item #:url (guix-url "donate/"))
+      ,(C_ "website menu" (menu-item #:label "Overview" #:active-item active-item #:url (guix-url)))
+      ,(C_ "website menu" (menu-item #:label "Download" #:active-item active-item #:url (guix-url "download/")))
+      ,(C_ "website menu" (menu-item #:label "Packages" #:active-item active-item #:url (guix-url "packages/")))
+      ,(C_ "website menu" (menu-item #:label "Blog" #:active-item active-item #:url (guix-url "blog/")))
+      ,(C_ "website menu" (menu-item #:label "Help" #:active-item active-item #:url (guix-url "help/")))
+      ,(C_ "website menu" (menu-item #:label "Donate" #:active-item active-item #:url (guix-url "donate/")))
 
-      ,(menu-dropdown #:label "About" #:active-item active-item #:url (guix-url "about/")
+      ,(menu-dropdown #:label (C_ "website menu" "About") #:active-item active-item #:url (guix-url "about/")
 	#:items
-	(list
-	 (menu-item #:label "Contact" #:active-item active-item #:url (guix-url "contact/"))
-	 (menu-item #:label "Contribute" #:active-item active-item #:url (guix-url "contribute/"))
-	 (menu-item #:label "Security" #:active-item active-item #:url (guix-url "security/"))
-	 (menu-item #:label "Graphics" #:active-item active-item #:url (guix-url "graphics/"))))))
+        (list
+         (C_ "website menu" (menu-item #:label "Contact" #:active-item active-item #:url (guix-url "contact/")))
+         (C_ "website menu" (menu-item #:label "Contribute" #:active-item active-item #:url (guix-url "contribute/")))
+         (C_ "website menu" (menu-item #:label "Security" #:active-item active-item #:url (guix-url "security/")))
+         (C_ "website menu" (menu-item #:label "Graphics" #:active-item active-item #:url (guix-url "graphics/")))))))
 
     ;; Menu button.
     (a
@@ -321,10 +371,10 @@
    TOTAL-PAGES (number)
      The total number of pages that should be displayed."
   (if (> total-pages 1)
-      `(span
-	(@ (class "page-number-indicator"))
-	" (Page " ,(number->string page-number)
-	" of " ,(number->string total-pages) ")")
+      (G_ `(span
+            (@ (class "page-number-indicator"))
+            " (Page " ,(number->string page-number)
+            " of " ,(number->string total-pages) ")"))
       ""))
 
 
@@ -345,8 +395,8 @@
     (@ (class "page-selector"))
     (h3
      (@ (class "a11y-offset"))
-     ,(string-append "Page " (number->string active-page) " of "
-		     (number->string pages) ". Go to another page: "))
+     ,(G_ (string-append "Page " (number->string active-page) " of "
+                         (number->string pages) ". Go to another page: ")))
     ,(if (> pages 1)
 	 (map
 	  (lambda (page-number)

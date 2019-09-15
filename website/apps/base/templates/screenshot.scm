@@ -7,6 +7,7 @@
   #:use-module (apps base templates theme)
   #:use-module (apps base types)
   #:use-module (apps base utils)
+  #:use-module (apps i18n)
   #:export (screenshot-t))
 
 
@@ -15,14 +16,15 @@
   (let ((shot (context-datum context "screenshot"))
 	(shots (context-datum context "screenshots")))
     (theme
-     #:title (list (screenshot-title shot) "Screenshots")
+     #:title (list (screenshot-title shot) (C_ "webpage title" "Screenshots"))
      #:description (screenshot-caption shot)
      #:keywords
-     '("GNU" "Linux" "Unix" "Free software" "Libre software"
-       "Operating system" "GNU Hurd" "GNU Guix package manager"
-       "GNU Guile" "Guile Scheme" "Transactional upgrades"
-       "Functional package management" "Reproducibility")
-     #:active-menu-item "Overview"
+     (string-split ;TRANSLATORS: |-separated list of webpage keywords
+      (G_ "GNU|Linux|Unix|Free software|Libre software|Operating \
+system|GNU Hurd|GNU Guix package manager|GNU Guile|Guile \
+Scheme|Transactional upgrades|Functional package \
+management|Reproducibility") #\|)
+     #:active-menu-item (C_ "website menu" "Overview")
      #:css (list (guix-url "static/base/css/index.css")
 		 (guix-url "static/base/css/screenshots.css"))
      #:content
