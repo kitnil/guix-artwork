@@ -21,6 +21,7 @@
 	    button-little
 	    contact-preview
 	    contact->shtml
+            horizontal-line
 	    horizontal-separator
 	    link-more
 	    link-subtle
@@ -179,6 +180,13 @@
 	    `(src ,(guix-url "static/base/img/h-separator-dark.png")))
        (alt ""))))
 
+(define (horizontal-line)
+  "Return SHTML for a visible separator to be used in a dropdown menu
+like a menu item."
+  `(img (@ (class "hline")
+           (src ,(guix-url "static/base/img/h-separator.png"))
+           (alt ""))))
+
 
 (define* (link-more #:key (label "More") (url "#") (light #false))
   "Return an SHTML a element that looks like a 'more →' link.
@@ -285,19 +293,52 @@ manual.
    ITEMS (list of menu items)
      A list of menu items as returned by the menu-item procedure in this
      same module. If not provided, the value defaults to an empty list."
-  `(li
-    (@ (class "dropdown"))
-    (a
-     (@ (class
-	 ,(if (string=? (string-downcase label) (string-downcase active-item))
-	      "menu-item menu-item-active dropdown-btn"
-	      "menu-item dropdown-btn"))
-	(href ,url))
-     ,label)
-    (div
-     (@ (class "submenu"))
-     (div (@ (class "submenu-triangle")) " ")
-     (ul ,@items))))
+  (let ((label-hash (number->string (string-hash label))))
+    `(li
+      (@ (class ,(if (string=? (string-downcase label)
+                               (string-downcase active-item))
+                     "menu-item menu-item-active dropdown dropdown-btn"
+                     "menu-item dropdown dropdown-btn")))
+      ,@(let ((id (string-append "visible-dropdown-" label-hash)))
+          `(;; show dropdown when button is checked:
+            (style ,(string-append "#" id ":checked ~ #submenu-" label-hash "
+{
+    width: initial;
+    height: initial;
+    min-width: 150px;
+    overflow: initial;
+}"))
+            ;; show uncheck version of button iff button is checked
+            (style ,(string-append "#" id ":checked \
+~ label[for=all-dropdowns-hidden]
+{
+    display: initial;
+}"))
+            (style "label[for=all-dropdowns-hidden]
+{
+    display: none;
+}")
+            ;; show check version of button iff button is unchecked
+            (style ,(string-append "#" id ":checked ~ label[for=" id "]
+{
+    display: none;
+}"))
+            (input (@ (class "menu-hidden-input")
+                      (type "radio")
+                      (name "dropdown")
+                      (id ,id)))
+            (label
+             (@ (for ,id))
+             ,label)
+            (label
+             (@ (for "all-dropdowns-hidden"))
+             ,label)))
+      (div
+       (@ (class "submenu")
+          (id ,(string-append "submenu-" label-hash)))
+       (div (@ (class "submenu-triangle"))
+            " ")
+       (ul ,@items)))))
 
 
 (define* (menu-item #:key (label "Item") (active-item "") (url "#"))
@@ -338,7 +379,11 @@ manual.
 
     ;; Menu.
     (nav (@ (class "menu"))
-         ,(G_ `(h2 (@ (class "a11y-offset")) "website menu:"))
+     ,(G_ `(h2 (@ (class "a11y-offset")) "website menu:"))
+     (input (@ (class "menu-hidden-input")
+               (type "radio")
+               (name "dropdown")
+               (id "all-dropdowns-hidden")))
      (ul
       ,(C_ "website menu" (menu-item #:label "Overview" #:active-item active-item #:url (guix-url)))
       ,(C_ "website menu" (menu-item #:label "Download" #:active-item active-item #:url (guix-url "download/")))
@@ -347,9 +392,11 @@ manual.
       ,(C_ "website menu" (menu-item #:label "Help" #:active-item active-item #:url (guix-url "help/")))
       ,(C_ "website menu" (menu-item #:label "Donate" #:active-item active-item #:url (guix-url "donate/")))
 
-      ,(menu-dropdown #:label (C_ "website menu" "About") #:active-item active-item #:url (guix-url "about/")
+      ,(menu-dropdown #:label (C_ "website menu" "About") #:active-item active-item
 	#:items
         (list
+         (C_ "website menu" (menu-item #:label "About" #:active-item active-item #:url (guix-url "about/")))
+         (horizontal-line)
          (C_ "website menu" (menu-item #:label "Contact" #:active-item active-item #:url (guix-url "contact/")))
          (C_ "website menu" (menu-item #:label "Contribute" #:active-item active-item #:url (guix-url "contribute/")))
          (C_ "website menu" (menu-item #:label "Security" #:active-item active-item #:url (guix-url "security/")))
