@@ -77,11 +77,7 @@ though we also accept other languages."))
                                  (string=? (cadar to-delete) (cadr b))
                                  ;; but language code is different
                                  (not (string=? (cadddr to-delete) (car b))))))
-         `(("de"
-            "Melden Sie sich bei der „Help“-Mailingliste an, um per E-Mail
-gemeinschaftlichen Rat zu GuixSD und Guix zu bekommen.  Sie können
-Nachrichten auch auf deutsch verfassen.")
-           ("eo"
+         `(("eo"
             "Subskribu al la retmesaĝolisto \"Help\" por demandi helpon pri
 GNU Guix al la grupo.  Vi povas skribi esperantlingve.")
            ("es"
