@@ -82,7 +82,7 @@ het Nederlands.")
 языке.")
       ("zh-Hant"
        "訂閱「Help」郵件群組以電郵從GuixSD及GNU Guix社群取得支援。你可以使用
-正體、繁體中文發送訊息"))
+正體、繁體中文發送訊息。"))
 
     #:url "https://lists.gnu.org/mailman/listinfo/help-guix"
     #:log "https://lists.gnu.org/archive/html/help-guix")
