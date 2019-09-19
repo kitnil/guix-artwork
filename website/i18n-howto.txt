@@ -1,0 +1,86 @@
+With sexp-xgettext, arbitrary s-expressions can be marked for
+translation (not only strings like with normal xgettext).
+
+S-expressions can be marked with G_ (simple marking for translation),
+N_ (“complex” marking with different forms depending on number like
+ngettext), C_ (“complex” marking distinguished from other markings by
+a msgctxt like pgettext) or NC_ (mix of both).
+
+Marking a string for translation behaves like normal gettext.  Marking
+a parenthesized expression (i.e. a list or procedure call) extracts
+each string from the parenthesized expression.  If a symbol, keyword
+or other parenthesized expression occurs between the strings, it is
+extracted as an XML element.  Expressions before or after all strings
+are not extracted.  If strings from a parenthesized sub-expression
+shall be extracted too, the sub-expression must again be marked with
+G_ unless it is the only sub-expression or it follows a quote,
+unquote, quasiquote or unquote-splicing.  The order of XML elements
+can be changed in the translation to produce a different ordering
+inside a parenthesized expression.  If a string shall not be extracted
+from a marked expression, it must be wrapped, for example by a call to
+the identity procedure.  Be careful when marking non-SHTML content
+such as procedure calls for translation: Additional strings will be
+inserted between non-string elements.
+
+Known issues:
+
+* Line numbers are sometimes off.
+
+* Some less important other TODOs in the comments.
+
+=====
+
+The following commands are an example of the translation for locale
+de_DE.  Adapt as necessary.  We assume the software requirements
+mentioned in the README are installed.
+
+To create a pot file:
+
+guile scripts/sexp-xgettext.scm -f po/POTFILES \
+                                -o po/guix-website.pot \
+                                --from-code=UTF-8 \
+                                --copyright-holder="Ludovic Courtès" \
+                                --package-name="guix-website" \
+                                --msgid-bugs-address="ludo@gnu.org" \
+                                --keyword=G_ \
+                                --keyword=N_:1,2 \
+                                --keyword=C_:1c,2 \
+                                --keyword=NC_:1c,2,3
+
+To create a po file from a pot file, do the usual:
+
+cd po
+msginit -l de --no-translator
+
+To merge an existing po file with a new pot file:
+
+cd po
+msgmerge -U de.po guix-website.pot
+
+To update mo files:
+
+mkdir -p de/LC_MESSAGES
+cd po
+msgfmt de.po
+cd ..
+mv po/messages.mo de/LC_MESSAGES/guix-website.mo
+
+To build all languages:
+
+guix build -f .guix.scm
+
+To test the de_DE translation:
+
+guix environment --ad-hoc haunt
+LC_ALL=de_DE.utf8 \
+ GUILE_LOAD_PATH=$(guix build guile-syntax-highlight)/share/guile/site/2.2:$GUILE_LOAD_PATH \
+ GUIX_WEB_SITE_LOCAL=yes \
+ haunt build
+GUILE_LOAD_PATH=$(guix build guile-syntax-highlight)/share/guile/site/2.2:$GUILE_LOAD_PATH \
+ haunt serve
+
+For checking for errors / debugging newly marked files you can try:
+
+GUILE_LOAD_PATH=.:$(guix build haunt)/share/guile/site/2.2:\
+$(guix build guile-syntax-highlight)/share/guile/site/2.2:$GUILE_LOAD_PATH \
+ guile apps/base/templates/about.scm   # an example for debugging about.scm

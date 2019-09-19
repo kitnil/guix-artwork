@@ -1,0 +1,3 @@
+# Translation with sexp-xgettext requires the full LL_CC locale name
+# to be specified.
+en_US

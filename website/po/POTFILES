@@ -1,0 +1,34 @@
+# high-priority files that should come first in the PO file
+apps/base/utils.scm
+apps/base/templates/home.scm
+apps/base/templates/theme.scm
+apps/base/templates/components.scm
+apps/base/templates/about.scm
+apps/base/data.scm
+apps/base/templates/help.scm
+# other files
+apps/base/templates/contact.scm
+apps/base/templates/contribute.scm
+apps/base/templates/donate.scm
+apps/base/templates/graphics.scm
+apps/base/templates/irc.scm
+apps/base/templates/menu.scm
+apps/base/templates/screenshot.scm
+apps/base/templates/security.scm
+apps/download/data.scm
+apps/download/templates/components.scm
+apps/download/templates/download.scm
+apps/blog/templates/components.scm
+apps/blog/templates/feed.scm
+apps/blog/templates/post-list.scm
+apps/blog/templates/post.scm
+apps/blog/templates/tag.scm
+apps/download/data.scm
+apps/download/templates/components.scm
+apps/download/templates/download.scm
+apps/packages/templates/components.scm
+apps/packages/templates/detailed-index.scm
+apps/packages/templates/detailed-package-list.scm
+apps/packages/templates/index.scm
+apps/packages/templates/package-list.scm
+apps/packages/templates/package.scm
